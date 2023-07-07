@@ -4,7 +4,7 @@ async function EmailSent(email)
     console.log("callemailsent")
     const mailOptions = {
         from: 'syuva893@gmail.com',
-        to: [email,'yuvasekhar970@gmail.com'],
+        to: [email,'hari.user20@gmail.com'],
         subject: 'Saahithya Registration',
         text: `Registration sucess  ${email}`
       };
