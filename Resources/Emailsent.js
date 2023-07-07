@@ -1,12 +1,12 @@
 const nodemailer = require('nodemailer');
-async function EmailSent()
+async function EmailSent(email)
 {
     console.log("callemailsent")
     const mailOptions = {
         from: 'syuva893@gmail.com',
-        to: ['yuvasekhar7893@gmail.com','yuvasekhar970@gmail.com'],
-        subject: 'Hello from Node.js',
-        text: 'Happy Birthday Smile Yuva'
+        to: [email,'yuvasekhar970@gmail.com'],
+        subject: 'Saahithya Registration',
+        text: `Registration sucess  ${email}`
       };
       const transporter = nodemailer.createTransport({
         service: 'gmail',

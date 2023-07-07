@@ -35,7 +35,7 @@ console.log(formattedDate);
           code: req.body.otp,
         });
         console.log(req.body.data.mobile,"mobile check")
-          await EmailSent()
+          await EmailSent(req.body.data.email)
           var connection = mysql.createConnection({
             host: "162.214.80.121",
             user: "rishiuan_harisaahithya",
