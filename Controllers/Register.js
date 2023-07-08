@@ -3,7 +3,7 @@
 var mysql = require('mysql2');
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
 const TWILIO_ACCOUNT_SID = "ACf8253f88733b8853ef16262e1f1df7b6";
-const  TWILIO_AUTH_TOKEN = "ebd3ae3bb3395148ab82e6c9e9f026ac";
+const  TWILIO_AUTH_TOKEN = "983a6d34ed1949b36048097bbb2a87c0";
 const TWILIO_SERVICE_SID = "VA93fc6b4b82426bb21d9d840d53fcb501";
   // process.env;
 const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, {
@@ -13,8 +13,10 @@ var connection = mysql.createConnection({
   host: "162.214.80.121",
   user: "rishiuan_harisaahithya",
   password: "Saketh!7727",
-database:"rishiuan_saahithya"
-});  
+  database: "rishiuan_saahithya",
+  timeout: 6000000 // 60 seconds (adjust as needed)
+});
+ 
 module.exports.register = async (req,res)=>{
   console.log(req.body)
     var data=req.body
