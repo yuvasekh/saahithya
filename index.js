@@ -18,10 +18,10 @@ require("dotenv").config();
 // const upload = multer();
 // app.use(upload.any());
 
-var server = app.listen(8001, function () {
-  var host = server.address().address;
+const port = process.env.PORT || 8006;
 
-  var port = server.address().port;
-
-  console.log(" app listening at http://%s:%s", host, port);
+const server = app.listen(port, function () {
+  const host = server.address().address;
+  const port = server.address().port;
+  console.log("App listening at http://%s:%s", host, port);
 });
