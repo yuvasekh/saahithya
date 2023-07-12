@@ -13,7 +13,8 @@ var connection = mysql.createConnection({
   host: "162.214.80.121",
   user: "rishiuan_harisaahithya",
   password: "Saketh!7727",
-  database: "rishiuan_saahithya", // 60 seconds (adjust as needed)
+  database: "rishiuan_saahithya",
+  connectTimeout: 10000000, // 60 seconds (adjust as needed)
 });
  
 module.exports.register = async (req,res)=>{
