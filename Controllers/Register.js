@@ -13,8 +13,7 @@ var connection = mysql.createConnection({
   host: "162.214.80.121",
   user: "rishiuan_harisaahithya",
   password: "Saketh!7727",
-  database: "rishiuan_saahithya",
-  timeout: 6000000 // 60 seconds (adjust as needed)
+  database: "rishiuan_saahithya", // 60 seconds (adjust as needed)
 });
  
 module.exports.register = async (req,res)=>{
@@ -68,7 +67,7 @@ module.exports.register = async (req,res)=>{
       
         } else {
           console.log('Email already exists.');
-          res.status(500).json({message:error})
+          res.status(500).json({message:"Email Already Exists"})
         }
       });
     }
