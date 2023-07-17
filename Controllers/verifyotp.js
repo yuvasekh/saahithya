@@ -1,4 +1,4 @@
-var mysql = require('mysql2');
+
 var {EmailSent}=require('../Resources/Emailsent')
 
 var mysql = require('mysql2');
@@ -36,13 +36,8 @@ console.log(formattedDate);
         });
         console.log(req.body.data.mobile,"mobile check")
           await EmailSent(req.body.data.email)
-          var connection = mysql.createConnection({
-            host: "162.214.80.121",
-            user: "rishiuan_harisaahithya",
-            password: "Saketh!7727",
-          database:"rishiuan_saahithya",
-          connectTimeout: 10000000,
-          });  
+   
+  
           const selectQuery = 'SELECT COUNT(*) AS count FROM register WHERE email = ?';
         //   const insertQuery = 'INSERT INTO users (email) VALUES (?)';
           const insertQuery = 'INSERT INTO register  VALUES (?, ?, ?, ?, ?, ?, ?, ?)';

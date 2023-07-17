@@ -4,14 +4,12 @@ const jwt = require('jsonwebtoken');
 
 module.exports.login = async (req,res)=>{
   console.log(req.body)
-
-  var connection = mysql.createConnection({
-    host: "162.214.80.121",
-    user: "rishiuan_harisaahithya",
-    password: "Saketh!7727",
-  database:"rishiuan_saahithya",
-  connectTimeout: 10000000,
-  });  
+  const connection = mysql.createConnection({
+    host: process.env.server,
+    user: process.env.user,
+    password: process.env.password,
+    database: process.env.database,
+  });
  
    
     const query = 'SELECT * FROM register WHERE email = ? AND password = ?';
