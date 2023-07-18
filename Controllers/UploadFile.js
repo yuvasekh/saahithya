@@ -12,7 +12,7 @@ const { BlobServiceClient } = require("@azure/storage-blob");
 
 
 module.exports.uploadFiles = async (req, res) => {
-    // console.log(req.body)
+    console.log(req.body)
 
     let data = req.files;
     console.log(data[0], "adata",data[1])
@@ -36,9 +36,9 @@ module.exports.uploadFiles = async (req, res) => {
             await uploadBytesToBlobStorage(pdfId, fileContent);
             
             const query = `INSERT INTO UploadedFiles 
-                          VALUES (?, ?, ?, ?, 0, 0, 0, 0, 'hari24vsm@gmail.com', ?, ?)`;
+                          VALUES (?, ?, ?, ?, 0, 0, 0, 0, 'hari24vsm@gmail.com', ?, ?,0,?)`;
             
-            const values = [pdfId, req.body.originalname, req.body.categoryName, req.body.authorName, imageContent, formattedTime];
+            const values = [pdfId, req.body.BookTitle, req.body.categoryName, req.body.authorName, imageContent, formattedTime,req.body.description];
             
             db.query(query, values, (err, rows) => {
               if (err) {
