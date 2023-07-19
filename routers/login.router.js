@@ -4,6 +4,9 @@ const {verifyotp}=require('../Controllers/verifyotp')
 const {uploadFiles}=require('../Controllers/UploadFile')
 const {getData}=require('../Controllers/getData')
 const {getDataById}=require('../Controllers/getDataById')
+const {topBooks}=require("../Controllers/topBooks")
+const {latest}=require('../Controllers/latest')
+const {categories}=require('../Controllers/categories')
 const basePath = "/register"
 module.exports = (app) => {
   console.log("inside ");
@@ -13,6 +16,9 @@ module.exports = (app) => {
   app.route('/uploadfile').post(uploadFiles)
   app.route('/getdata').post(getData)
   app.route('/getdatabyid').post(getDataById)
+  app.route('/category/:categoryname').post(categories)
+  app.route('/latest').get(latest)
+  app.route('/trending').get(topBooks)
   // app.route(basePath).post(addProjects)
   // app.route(basePath+projectByid).get(getProjectsById)
   // app.route(basePath+files).get(getFiles)
