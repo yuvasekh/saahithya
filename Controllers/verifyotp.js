@@ -1,15 +1,22 @@
 
 var {EmailSent}=require('../Resources/Emailsent')
+var {Jwttoken}=require('../Resources/Jwttoken')
 
 var mysql = require('mysql2');
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
 const TWILIO_ACCOUNT_SID = "ACf8253f88733b8853ef16262e1f1df7b6";
-const  TWILIO_AUTH_TOKEN = "983a6d34ed1949b36048097bbb2a87c0";
+const  TWILIO_AUTH_TOKEN = "5cbc41ef02ff6fe74926d44b5936e684";
 const TWILIO_SERVICE_SID = "VA93fc6b4b82426bb21d9d840d53fcb501";
   // process.env;
 const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, {
   lazyLoading: true,
 });
+const connection = mysql.createConnection({
+  host: process.env.server,
+  user: process.env.user,
+  password: process.env.password,
+  database: process.env.database,
+}); 
 module.exports.verifyotp = async (req, res) => {
     // console.log(req.body.data,"check++++++++++")
     // const { data, otp } = req.body.data ?? {};
@@ -38,9 +45,9 @@ console.log(formattedDate);
           await EmailSent(req.body.data.email)
    
   
-          const selectQuery = 'SELECT COUNT(*) AS count FROM register WHERE email = ?';
+          const selectQuery = 'SELECT COUNT(*) AS count FROM Register WHERE email = ?';
         //   const insertQuery = 'INSERT INTO users (email) VALUES (?)';
-          const insertQuery = 'INSERT INTO register  VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+          const insertQuery = 'INSERT INTO Register  VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
           connection.query(selectQuery, [req.body.data.email], (error, results) => {
             if (error) {
               throw error;
@@ -52,12 +59,14 @@ console.log(formattedDate);
           
               
               
-              connection.query(insertQuery, [req.body.data.name, req.body.data.email, req.body.data.mobile,req.body.data.gender, req.body.data.password,req.body.data.address,"user",formattedDate], (error,result) => {
+              connection.query(insertQuery, [req.body.data.name, req.body.data.email, req.body.data.mobile,req.body.data.gender, req.body.data.password,req.body.data.address,"user",formattedDate],async (error,result) => {
                 if (error) {
                  
                   res.status(500).json({message:error})
                 }
-                console.log('Email inserted successfully.');
+                var token=await Jwttoken(req.body.data.email,"user",req.body.data.mobile)
+                console.log('Email inserted successfully.',token);
+                res.cookie('Token',token, { maxAge: 900000, httpOnly: true });
                 res.status(200).json(result);
               });
             } else {

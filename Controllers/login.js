@@ -12,7 +12,7 @@ module.exports.login = async (req,res)=>{
   });
  
    
-    const query = 'SELECT * FROM register WHERE email = ? AND password = ?';
+    const query = 'SELECT * FROM Register WHERE email = ? AND password = ?';
 
   connection.query(query, [req.body.email, req.body.password], (error, results) => {
     if (error) {

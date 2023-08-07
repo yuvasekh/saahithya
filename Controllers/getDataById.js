@@ -6,7 +6,7 @@ module.exports.getDataById = async (req, res) => {
 
 // var result=await downloadTextFile(FileId)
 res.status(200).json(result)
-    // db.query(`select * from UploadedFiles where Id='${FileId}')`, (err, rows) => {
+    // db.query(`select * from UploadFiles where Id='${FileId}')`, (err, rows) => {
     //     if (err) {
     //         console.error('Error executing query:', err.stack);
     //         res.status(500).json({ message: err })

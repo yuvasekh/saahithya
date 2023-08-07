@@ -8,7 +8,10 @@ const {topBooks}=require("../Controllers/topBooks")
 const {latest}=require('../Controllers/latest')
 const {categories}=require('../Controllers/categories')
 const {TextEditor}=require('../Controllers/TextEditor')
-const {payment}=require('../Controllers/payemnt')
+const {addtocarts}=require('../Controllers/addtocart')
+const {updatecart}=require('../Controllers/updatecart')
+const {getCart}=require('../Controllers/getCart')
+// const {payment}=require('../Controllers/payemnt')
 const basePath = "/register"
 module.exports = (app) => {
   console.log("inside ");
@@ -22,17 +25,7 @@ module.exports = (app) => {
   app.route('/latest').get(latest)
   app.route('/trending').get(topBooks)
   app.route('/textupload').post(TextEditor)
-  app.route('/payment').post(payment)
-  app.route(basePath).post(addProjects)
-  app.route(basePath+projectByid).get(getProjectsById)
-  app.route(basePath+files).get(getFiles)
-  app.route(basePath+uploadpath).post(uploadFiles)
-  app.route(basePath+trains).post(train);
-  app.route(basePath+querys).post(query);
-  app.route(basePath+deletefiles).delete(deleteFile);
-  app.route(basePath+deleteProjects).delete(deleteProject);
-  app.route(basePath+trainingStatuses).get(trainingStatus);
-  app.route(basePath+resetTrainings).post(resetTraining);
-  app.route(basePath+up).put(modifyProject);
-  app.route(chat).post(Chatusers);
+  app.route('/addtocart').post(addtocarts)
+  app.route('/getCart').post(getCart)
+  app.route('/updatecart').put(updatecart)
 };

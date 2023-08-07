@@ -12,10 +12,10 @@ const { BlobServiceClient } = require("@azure/storage-blob");
 
 
 module.exports.uploadFiles = async (req, res) => {
-    console.log(req.body)
+    console.log(req.body,"initial")
 
     let data = req.files;
-    console.log(data[0], "adata",data[1])
+    // console.log(data[0], "adata",data[1])
     if (data) {
 
             console.log("fileNames:----->", data[0].originalname);
@@ -25,7 +25,7 @@ module.exports.uploadFiles = async (req, res) => {
             var fileContent =  data[0].buffer;
             const imageContent = data[1].buffer;
             console.log(imageContent, "------------------->");
-            
+            let Numberofpages=0
             // Assuming you have the Readable stream correctly set up
             let fileStream = Readable.from(fileContent);
             
@@ -35,10 +35,10 @@ module.exports.uploadFiles = async (req, res) => {
             let pdfId = uuidv4();
             await uploadBytesToBlobStorage(pdfId, fileContent);
             
-            const query = `INSERT INTO UploadedFiles 
-                          VALUES (?, ?, ?, ?, 0, 0, 0, 0, 'hari24vsm@gmail.com', ?, ?,0,?)`;
-            
-            const values = [pdfId, req.body.BookTitle, req.body.categoryName, req.body.authorName, imageContent, formattedTime,req.body.description];
+            const query = `INSERT INTO UploadFiles 
+                          VALUES (?, ?, ?,?,?, 0, 0, 0, 0,?,?,?,'syuva893@gmail.com',?,0,?)`;
+      
+            const values = [pdfId, req.body.BookTitle,req.body.categoryName, req.body.SubCategory, req.body.authorName, req.body.Price,req.body.description,Numberofpages,formattedTime,imageContent];
             
             db.query(query, values, (err, rows) => {
               if (err) {

@@ -4,8 +4,8 @@ module.exports.categories = async (req, res) => {
    
     let categories=req.params.categoryname
 
-          console.log(`select * from UploadedFiles where CategoryName='${categories}'`)
-    db.query(`select * from UploadedFiles where CategoryName='${categories}'`, (err, rows) => {
+          console.log(`select * from UploadFiles where CategoryName='${categories}'`)
+    db.query(`select * from UploadFiles where CategoryName='${categories}'`, (err, rows) => {
         if (err) {
             console.error('Error executing query:', err); 
             // res.status(500).json({message:err})

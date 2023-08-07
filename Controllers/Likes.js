@@ -3,7 +3,7 @@ module.exports.latest = async (req, res) => {
     console.log("latest")
 
           
-    db.query('SELECT * FROM UploadedFiles ORDER BY Publishtime DESC LIMIT 7', (err, rows) => {
+    db.query('SELECT * FROM UploadFiles ORDER BY PublishedTime DESC LIMIT 7', (err, rows) => {
         if (err) {
             console.error('Error executing query:', err.stack); 
             res.status(500).json({message:err})

@@ -4,6 +4,8 @@ var app = express();
 
 require("dotenv").config();
 const cors = require("cors");
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
 app.use(cors());
 var bodyParser = require("body-parser");
 
