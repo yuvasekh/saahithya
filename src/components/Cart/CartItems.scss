@@ -1,0 +1,70 @@
+/* components/Card.css */
+.cartPage
+{
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 16px;
+    margin: 8px;
+    max-width: 98vw;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+  }
+  .buynow
+  {
+    
+    background-color: #f8991f;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    line-height: 24px;
+    color: #fff;
+    width: 144px;
+    display: flex;
+    height: 45px;
+    margin-left: 100px;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+  .img1
+{
+    border-radius: 20px;
+    height: 250px;
+    width: 280px;
+}
+  h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+  .details
+  {
+ 
+    display: flex;
+  }
+  .price
+  {
+    margin-top: 50px;
+  }
+  .bottonItem
+  {
+    display: flex;
+    justify-content: end;
+    margin: 25px;
+  }
+  .BookName
+  {
+    margin-top: 30px;
+margin-left: 100px;
+  }
+}

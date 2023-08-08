@@ -1,0 +1,32 @@
+.mains
+{
+    .react-pdf__Document
+    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+    }
+    .subitem
+    {
+        display: flex;
+        position: relative;
+        justify-content: space-evenly;
+        gap: 32px;
+    }
+    .react-pdf__Page
+    {
+        top: 5px;
+        position: relative;
+        height: 78vh;
+        overflow: scroll;
+    }
+    .buttonnormal
+    {
+       border: groove;
+       height:40px;
+       align-content:center;
+       position: relative;
+    }
+}

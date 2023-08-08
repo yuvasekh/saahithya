@@ -1,0 +1,22 @@
+.my-form {
+    padding: 20px;  
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    justify-content: center;
+ 
+  }
+  .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  //  height: 77vh;
+  }
+  .ant-upload
+  {
+    height: 48px !important;
+  }
+  :where(.css-dev-only-do-not-override-1wazalj).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select >.ant-upload, :where(.css-dev-only-do-not-override-1wazalj).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload.ant-upload-select >.ant-upload
+  {
+    height: 20px;
+    font-size: 12px !important;
+  }

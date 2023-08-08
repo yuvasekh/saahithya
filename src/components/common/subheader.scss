@@ -1,0 +1,184 @@
+
+.subheader
+{
+ 
+  top: 0;
+  left:0;
+  position: relative;
+  width: 100vw;
+  height: 80px;
+align-items: center;
+justify-content: start;
+  right: 0;
+  gap: 30px;
+
+display: flex;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0,0.2);
+  a{
+    color: black !important;
+  }
+  .logosmain
+  {
+    background-color: green !important;
+  height: 63px;
+  width: 200px
+  }
+  .ant-input 
+  {
+      height: 20px;
+    
+      background: none !important;
+  }
+  .anticon 
+  {
+    font-size: 23px;
+  }
+  .anticon selected 
+  {
+    font-size: 23px;
+  }
+    
+    .subheader-content {
+      display: flex;
+      align-items: center;
+   margin: 125px;
+      justify-content:center;
+      gap: 110px;
+    }
+    .registerbutton
+    {
+      text-align: center;
+      background-color: #f8991f;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      border-radius: 7px;
+      line-height: 24px;
+      color: #fff;
+      width: 144px;
+      height: 45px;
+    }
+    .signinbutton
+    {
+      text-align: center;
+      background-color: #f8991f;
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      border: none;
+      border-radius: 7px;
+      line-height: 24px;
+      color: #fff;
+      width: 144px;
+      height: 45px;
+    }
+    .subheader-item {
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .search-bar
+    {
+      margin: 5 px;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      gap: 15px;
+    }
+    .red-dot {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: red;
+    }
+    .bell-container {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .bell-icon {
+      font-size: 24px;
+    }
+    
+  
+    .logoitems
+    {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+      .blinking-button {
+        animation: blinking 1s infinite;
+        border-radius: 16px;
+        min-height:40px; 
+        min-width: 90px;
+        border-color:red;
+        color: white;
+        cursor: pointer;
+      }
+      
+    @keyframes blinking {
+      0% { background-color: red; border-color: red;}
+      50% { background-color: blue; border-color: blue;}
+      100% { background-color: red;border-color: red; }
+    }
+    
+ 
+}
+//110
+// @media only screen and (max-width:1352.73px ) and (min-width: 670px)  {
+//   .subheaders
+//   {
+//     height: 75px;
+//     background-color: red;
+//   .logosmain
+//   {
+//   height: 58px;
+//   width: 180px;
+//   background-color: rgb(63, 219, 42);
+//   }
+//   }
+// }
+// @media only screen and (max-width:1190.40px ) and (min-width: 591px)  {
+//   .subheaders
+//   {
+//     background-color: rgb(187, 255, 0);
+//   }
+
+// }
+// @media only screen and (max-width:992px ) and (min-width: 492px)  {
+//   .subheaders
+//   {
+//     background-color: rgb(22, 232, 85);
+//   }
+
+// }
+// @media only screen and (min-width:1653.33px ) {
+//   .subheaders
+//   {
+//     background-color: rgb(236, 46, 176);
+//   }
+
+// }
+// // @media only screen and (min-width:1860px ) {
+// //   .subheaders
+// //   {
+// //     background-color: rgb(201, 163, 29);
+// //   }
+
+// // }
+// @media only screen and (min-width:1984px ) {
+//   .subheaders
+//   {
+//     background-color: rgb(29, 69, 201);
+//   }
+
+// }
