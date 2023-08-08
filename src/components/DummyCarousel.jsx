@@ -6,6 +6,8 @@ import img4 from '../Resources/cover (4).jpg'
 import img5 from '../Resources/cover (5).jpg'
 import img6 from '../Resources/cover (6).jpg'
 import img7 from '../Resources/cover (7).jpg'
+import Trending from '../Resources/Images/Landing_components/trendingnew.jpg'
+import Upcoming from '../Resources/Images/Landing_components/upcoming.jpg'
 import './DummyCarosel.scss'
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -118,6 +120,9 @@ console.log(filesdata,"----------->>>>>>>>>")
       
       <h3>టాప్ ట్రెండింగ్ సిరీస్</h3>
       <div className='bookimages'>
+      <div className='ld-con'>
+          <img className='ld-img' src={Trending} />
+        </div>
         {
           filesdata.map((item,index)=>
           (
@@ -129,6 +134,9 @@ console.log(filesdata,"----------->>>>>>>>>")
       <br></br>
       <h3>ఇటీవల అప్డేట్ చేసిన టాప్ సిరీస్</h3>
       <div className='bookimages'>
+        <div className='ld-con'>
+          <img className='ld-img' src={Upcoming} />
+        </div>
         
         {
           filesdata1.map((item,index)=>
