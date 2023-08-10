@@ -22,6 +22,10 @@ import Prerana from '../../Resources/Images/prerana.jpg';
 import Patalu from '../../Resources/Images/songs.jpg';
 import Minikathalu from '../../Resources/Images/mini kathalu.jpg';
 import Sports from '../../Resources/Images/sports.jpg';
+import Detective from '../../Resources/Images/Detective.jpg';
+import Crime from '../../Resources/Images/Crime.jpg';
+import Bio from '../../Resources/Images/Bio.jpg';
+
 import './Categories.scss';
 
 
@@ -41,9 +45,9 @@ import { useNavigate } from 'react-router-dom';
     {img:Mandalikhakathalu,imgdesc:"మాండలిక కథలు"}, {img:Prerana,imgdesc:"ప్రేరణ"},
     {img:Patalu,imgdesc:"పాటలు"}, {img:Minikathalu,imgdesc:"మినీ కథలు"},
     {img:Sports,imgdesc:"క్రీడలు"},
-    // {img:Detective,imgdesc:"డిటెక్టివ్"},
-    // {img:Crime,imgdesc:"క్రైమ్"},
-    // {img:Bio,imgdesc:"బయో"}
+    {img:Detective,imgdesc:"డిటెక్టివ్"},
+    {img:Crime,imgdesc:"క్రైమ్"},
+    {img:Bio,imgdesc:"బయో"}
   ];
 
 const Categories = () => {

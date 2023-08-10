@@ -3,14 +3,14 @@ import React from 'react';
 import { Button, Input } from 'antd';
 import { BellOutlined, BookOutlined, CompassOutlined, EditOutlined, HomeOutlined, InfoCircleOutlined, SearchOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
 import logoimg from '../../Resources/saahithya_logo.jpg'
-import { Outlet, Link } from "react-router-dom"; 
+// import { Outlet, Link } from "react-router-dom"; 
 // import child from './child.png';
-import child from '../../Resources/child.png'
+// import child from '../../Resources/child.png'
 import { Select } from 'antd';
 
 
 import './CommonHeader.scss';
-import write from'../../Resources/write.jpg';
+// import write from'../../Resources/write.jpg';
  const CommonHeader = () => {
   const handleChange = (value) => {
     console.log(`selected ${value}`);
@@ -46,22 +46,19 @@ import write from'../../Resources/write.jpg';
     ]}/>
     </div>
         <div className="header-content">
-        <div style={{display:'flex',justifyContent:'end',gap:'20px',margin:'55px'}}> 
+        <div style={{display:'flex',justifyContent:'end'}}> 
      
         <div className="header-item">
          
-        
-          <div>
-          <Button className='signinbutton' >SignIn</Button>
-          </div>
-       
+            <div>
+                <Button className='signinbutton' >SignIn</Button>
+            </div>
         </div>  
         <div className="header-item">
          
-        
-         <div>
-         <Button className='registerbutton'>Register</Button>
-         </div>
+            <div>
+                <Button className='registerbutton'>Register</Button>
+            </div>
          </div>
       
        </div> 

@@ -20,11 +20,17 @@ import Otpverification from './components/Login/Otpverification';
 import Upload from './components/UploadFile';
 import Teams from './components/Teams/Home';
 import Read from '../src//components/Read'
-import PaymentForm from './components/Payment';
-import bookstore from './Resources/bookstore.jpg'
-import child from './Resources/child.png'
-import img1 from './Resources/img1.jpg'
-import ImageRotator from './components/ImageRotator';
+// import PaymentForm from './components/Payment';
+// import bookstore from './Resources/bookstore.jpg'
+// import child from './Resources/child.png'
+// import img1 from './Resources/img1.jpg'
+// // import ImageRotator from './components/ImageRotator';
+// import Readimg from './Resources/Images/Landing_components/read'
+// import Write from './Resources/Images/Landing_components/write'
+// import Listen from './Resources/Images/Landing_components/listen'
+// import Record from './Resources/Images/Landing_components/record'
+// import Watch from './Resources/Images/Landing_components/watching'
+// import Uploadimg from './Resources/Images/Landing_components/upload'
 import Subheader from './components/common/Subheader';
 import Subcategories from './components/categories/Subcategorires';
 import Privacy from './components/Privacy/Privacy'
@@ -45,18 +51,21 @@ const a = 100;
 const App = () => {
     const location = useLocation();
   var path = location.pathname;
-  const images = [
-    bookstore,
-    child,
-   img1,
-    // Add more image URLs here
-  ];
+  // const images = [
+  //   Readimg,
+  //   Write,
+  //  Listen,
+  //  Record,
+  //  Uploadimg,
+  //  Watch
+  //   // Add more image URLs here
+  // ];
 
   return (
     <div className='app'>
 
 {
-  path=='/'?<><CommonHeader /> <Subheader/></>:<> <Header /></>
+  path=='/'?<><CommonHeader /> <Subheader/></>:<><CommonHeader /> <Header /></>
 
 }
 

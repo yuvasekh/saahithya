@@ -1,81 +1,65 @@
-.header
-{
- 
-    top: 0;
-    left:0;
-    position: relative;
-    width: 100vw;
-    height: 80px;
-  align-items: center;
-  justify-content: space-between;
-    right: 0;
+.header-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 80px;
 
-display: flex;
-    box-shadow: 0px 2px 4px rgb(0, 0, 0,0.2);
-    a{
-      color: black !important;
-    }
-    .logos
-    {
-    height: 63px;
-    width: 200px
-    }
-    .ant-input 
-    {
-        height: 20px;
-      
-        background: none !important;
-    }
-    .anticon 
-    {
-      font-size: 23px;
-    }
-    .anticon selected 
-    {
-      font-size: 23px;
-    }
-      
-      .header-content {
-        display: flex;
-        align-items: center;
-        margin: 25px;
-        justify-content: end;
-        gap: 30px;
-    
-      }
-      
-      .header-item {
-    
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      .search-bar
-      {
-        margin: 5 px;
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        gap: 15px;
-      }
-      .red-dot {
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: red;
-      }
-      .bell-container {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .bell-icon {
-        font-size: 24px;
-      }
-      
-    
-      
+  a{
+    color: black;
+  }
+
+  a:hover{
+    text-decoration: underline;
+  }
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0px 15px 0px;
+  box-shadow: 0px 2px 4px rgb(0, 0, 0,0.2);
+}
+
+.header-content{
+  display: flex;
+  flex-direction: row;
+  margin-left: 90px;
+}
+
+.search-bar{
+  display: flex;
+  flex-direction: row;
+  right: 0;
+  position: absolute;
+}
+.bell-container{
+  margin-right: 30px;
+  
+  .bell-icon{
+    font-size: 40px;
+  }
+}
+
+.shop{
+  margin-right: 70px;
+  .shop-icon{
+    font-size: 40px;
+  }
+}
+
+.hrt{
+  background-color: black;
+  border-radius: 10px;
+  border-style: solid;
+  
+}
+
+.red-dot {
+  position: absolute;
+  // top: 0;
+  left: 2px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
 }

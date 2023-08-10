@@ -7,11 +7,10 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-<div id='footer' className='p-3 bg-dark text-white'>
+<div id='footer' className='bg-dark text-white'>
 
-
-    <Row className='ft-con' style={{textAlign:'center'}}>
-        <Col className='footer-container1' style={{textAlign:'center'}}>
+    <Row className='ft-con' >
+        <Col className='footer-container1' >
         <p className='footer-head' style={{fontWeight:'600',fontSize:'25px'}}>Useful Links</p>
             <Row>
                 <Col >

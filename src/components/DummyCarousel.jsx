@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import img1 from '../Resources/img1.jpg'
-import img2 from '../Resources/cover (2).jpg'
-import img3 from '../Resources/cover (3).jpg'
-import img4 from '../Resources/cover (4).jpg'
-import img5 from '../Resources/cover (5).jpg'
-import img6 from '../Resources/cover (6).jpg'
-import img7 from '../Resources/cover (7).jpg'
+// import img1 from '../Resources/img1.jpg'
+// import img2 from '../Resources/cover (2).jpg'
+// import img3 from '../Resources/cover (3).jpg'
+// import img4 from '../Resources/cover (4).jpg'
+// import img5 from '../Resources/cover (5).jpg'
+// import img6 from '../Resources/cover (6).jpg'
+// import img7 from '../Resources/cover (7).jpg'
 import Trending from '../Resources/Images/Landing_components/trendingnew.jpg'
 import Upcoming from '../Resources/Images/Landing_components/upcoming.jpg'
 import './DummyCarosel.scss'
@@ -110,10 +110,10 @@ console.log(filesdata,"----------->>>>>>>>>")
   }
   console.log(props, "props")
   return (
-    <div className='homecontent'>
+    <div className='homecontent' style={{marginTop:"40px"}}>
       {
         path!=='/'?<><p className='heading'> కనుగొనండి
-        <br></br>
+      
         కథల ప్రపంచం
       </p></>:<></>
       }

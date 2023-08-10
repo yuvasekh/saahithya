@@ -10,7 +10,7 @@ import { Select } from 'antd';
 import './subheader.scss'
 
 // import './Subheader.scss';
-import write from'../../Resources/write.jpg';
+// import write from'../../Resources/write.jpg';
  const Subheader = () => {
   const handleChange = (value) => {
     console.log(`selected ${value}`);
