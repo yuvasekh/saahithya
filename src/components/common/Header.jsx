@@ -1,14 +1,14 @@
 import React from 'react';
 import './Header.scss';
 import { Input } from 'antd';
-import { BellOutlined, CompassOutlined, EditOutlined, HomeOutlined, SearchOutlined, ShoppingCartOutlined, UploadOutlined, UserOutlined, UsergroupDeleteOutlined } from '@ant-design/icons';
+import { AudioOutlined,BellOutlined, CompassOutlined, EditOutlined, HomeOutlined, SearchOutlined, ShoppingCartOutlined, UploadOutlined, UserOutlined, UsergroupDeleteOutlined } from '@ant-design/icons';
 // import logoimg from '../../Resources/saahithya_logo.jpg'
 import { Outlet, Link, useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate=useNavigate()
   const goToCart=(()=>
   {
-    alert("ok")
+    // alert("ok")
     navigate('/cartLogs')
     
   })
@@ -34,7 +34,7 @@ const Header = () => {
           <CompassOutlined style={{fontSize: "30px"}}/>
      
      
-           <Link to="/categories">Category</Link> 
+           <Link to="/categoryOptions">Category</Link> 
          
         </div>
         <div className="header-item">
@@ -44,6 +44,7 @@ const Header = () => {
            <Link to="/authors">Authors</Link> 
          
         </div>
+ 
         <div className="header-item" >
          
           <EditOutlined style={{fontSize: "30px"}}/>

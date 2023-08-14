@@ -38,7 +38,8 @@ import Refund from './components/Privacy/Refund'
 import Terms from './components/Privacy/Terms'
 import Shipping from './components/Privacy/Shipping';
 import Contactus from './components/Privacy/Contactus';
-
+import AudioOptions from './components/Audio/AudioOptions';
+import CategoryOptions from './components/categories/CategoryOptiions'
 
 function useQuery() {
   const { search } = useLocation();
@@ -78,10 +79,12 @@ const App = () => {
           <Route path="/register" element={<Register  />} />
           <Route path="/login" element={<Login  />} />
           <Route path="/categories" element={<Categories  />} />
+          <Route path="/categoryOptions" element={<CategoryOptions  />} />
           <Route path="/categorieitem" element={<CategoryItems  />} />
           <Route path="/subcateogories" element={<Subcategories  />} />
           <Route path="/authors" element={<Authors  />} />
           <Route path="/itemdesc" element={<Itemdesc  />} />
+          <Route path="/audio" element={<AudioOptions  />} />
 
           <Route path="/upload" element={<Upload  />} />
           <Route path="/teams" element={<Teams  />} />

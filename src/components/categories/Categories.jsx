@@ -31,7 +31,7 @@ import './Categories.scss';
 
 
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
  const imagearray = [
     {img:Children,imgdesc:"పిల్లలు"},  {img:Athyadamika ,imgdesc:"ఆధ్యాత్మికం"},
     {img:strilu,imgdesc:"మహిళ"}, {img:Love,imgdesc:"ప్రేమ"},
@@ -52,9 +52,15 @@ import { useNavigate } from 'react-router-dom';
 
 const Categories = () => {  
     const navigate=useNavigate();
+    const location = useLocation();
+
+  
+    const myProp = location.state && location.state.myProp;
+    console.log(myProp,"sssssssss")
     const test=(item)=>
     {
        console.log(item,"cnecccccccccccc")
+       item['type']=myProp.imgdesc
       navigate('/subcateogories', { state: { myProp:item } })
     }
   return (
