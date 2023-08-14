@@ -8,6 +8,7 @@ const navigate=useNavigate()
   const location = useLocation();
   
 const myProp = location.state && location.state.myProp;
+console.log(myProp,"sssssssss")
 useEffect(()=>
 {
   async function items()

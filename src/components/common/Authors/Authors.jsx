@@ -10,18 +10,16 @@ import grandhakarthalu from '../../../Resources/Images/grandhakarthalu.jpg'
 const Authors = () => {
     const navigate=useNavigate();
     const imagearray = [
-        // {img:nannaya,imgdesc:"ప్రాచీన కవులు"},  
-        {img:thikkana,imgdesc:"ఆధునిక కవులు"},
-        // {img:pothana,imgdesc:"నవలా రచయితలు"}, 
-        {img:srinadhudu,imgdesc:"వర్ధమాన కవులు"},
-        {img:grandhakarthalu,imgdesc:"గ్రంధకర్తలు"}
-       
-      ];
+      {img:thikkana,imgdesc:"ఆధునిక కవులు"},
+       {img:srinadhudu,imgdesc:"వర్ధమాన కవులు"},
+      {img:grandhakarthalu,imgdesc:"గ్రంధకర్తలు"}
+     
+    ];
       const test=(item)=>
       {
       
          
-          navigate('/categorieitem', { state: { myProp:item } })
+          navigate('/subcateogories', { state: { myProp:item } })
       }
   return (
     <>

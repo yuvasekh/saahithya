@@ -120,9 +120,9 @@ console.log(filesdata,"----------->>>>>>>>>")
       
       <h3>టాప్ ట్రెండింగ్ సిరీస్</h3>
       <div className='bookimages'>
-      <div className='ld-con'>
+      {/* <div className='ld-con'>
           <img className='ld-img' src={Trending} />
-        </div>
+        </div> */}
         {
           filesdata.map((item,index)=>
           (
@@ -134,9 +134,9 @@ console.log(filesdata,"----------->>>>>>>>>")
       <br></br>
       <h3>ఇటీవల అప్డేట్ చేసిన టాప్ సిరీస్</h3>
       <div className='bookimages'>
-        <div className='ld-con'>
+        {/* <div className='ld-con'>
           <img className='ld-img' src={Upcoming} />
-        </div>
+        </div> */}
         
         {
           filesdata1.map((item,index)=>

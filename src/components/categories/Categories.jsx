@@ -50,12 +50,12 @@ import { useNavigate } from 'react-router-dom';
     {img:Bio,imgdesc:"బయో"}
   ];
 
-const Categories = () => {
+const Categories = () => {  
     const navigate=useNavigate();
     const test=(item)=>
     {
-       
-      navigate('/categorieitem', { state: { myProp:item } })
+       console.log(item,"cnecccccccccccc")
+      navigate('/subcateogories', { state: { myProp:item } })
     }
   return (
 
