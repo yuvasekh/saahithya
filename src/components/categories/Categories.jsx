@@ -36,7 +36,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
     {img:Children,imgdesc:"పిల్లలు"},  {img:Athyadamika ,imgdesc:"ఆధ్యాత్మికం"},
     {img:strilu,imgdesc:"మహిళ"}, {img:Love,imgdesc:"ప్రేమ"},
      {img:Romance,imgdesc:"రొమాన్స్"}, {img:Samajikam,imgdesc:"సామాజికం"},
-    {img:Health,imgdesc:"ఆరోగ్యం"}, {img:Horror,imgdesc:"హర్రర్"},
+    {img:Health,imgdesc:"ఆరోగ్యం"}, {img:Horror,imgdesc:"Horror"},
     {img:Comedy,imgdesc:"హాస్యం"}, {img:Life,imgdesc:"జీవితం"},
     {img:Science,imgdesc:"సైన్స్"},
     {img:Suspence,imgdesc:"సస్పెన్స్"}, {img:Anubandhalu,imgdesc:"అనుబంధాలు"},

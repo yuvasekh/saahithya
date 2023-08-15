@@ -43,24 +43,39 @@ useEffect(()=>
 },[items])
   return (
     <div className='cartPage' >
-        <h1>Welcome To Cart</h1>
+      
         <div className='card'>
     {
-        items!==undefined?<>      {
+        items!==undefined?<>     <h2 style={{textAlign:'start'}}>Shopping Cart</h2>   {
           items.map((item,index)=>
           (
-           <div className='details'> <div><img  src={`data:image/png;base64,${item.ItemImage.data}`} className='img1'/> </div> <div className='BookName'><h3 style={{fontWeight:'bold'}}>{item.BookName}</h3></div><div className='price'><h3 style={{fontWeight:'bold'}}>{item.Price}</h3>In stock
-           Eligible for FREE Shipping</div></div>
+           <div className='details'>
+             <div><img  src={`data:image/png;base64,${item.ItemImage.data}`} className='img1'/> </div>
+              <div className='BookName'>
+              <h3 style={{fontWeight:'semi-bold'}}>{item.BookName}</h3>
+              <h2 className='price'>
+              <h3 style={{fontWeight:'bold'}}>{item.Price}</h3>In stock
+           Eligible for FREE Shipping</h2></div></div>
           ))
         }</>:<></>
       }
      
  </div>
  <div className='bottonItem'>
+  <div>
+  <p style={{textAlign:'center'}}>
+Your order is eligible for FREE Delivery Details:
+<br></br>
+
+ <h2>
+Subtotal (2 item):   500.00
+
+</h2>
+  </p>
  <Button className='buynow'>Buy Now</Button>
  </div>
- <br></br>
- <br></br>
+ </div>
+
  </div>
   )
 }

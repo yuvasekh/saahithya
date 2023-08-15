@@ -40,7 +40,7 @@ import Shipping from './components/Privacy/Shipping';
 import Contactus from './components/Privacy/Contactus';
 import AudioOptions from './components/Audio/AudioOptions';
 import CategoryOptions from './components/categories/CategoryOptiions'
-
+import Poll from './components/Quiz/Poller';
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -50,6 +50,8 @@ const { Content } = Layout;
 const a = 100;
 
 const App = () => {
+  const question = "What's your favorite color?";
+  const options = ['Red', 'Blue', 'Green', 'Yellow'];
     const location = useLocation();
   var path = location.pathname;
   // const images = [
@@ -85,7 +87,7 @@ const App = () => {
           <Route path="/authors" element={<Authors  />} />
           <Route path="/itemdesc" element={<Itemdesc  />} />
           <Route path="/audio" element={<AudioOptions  />} />
-
+          <Route path="/pole" element={  <Poll question={question} options={options} />} />
           <Route path="/upload" element={<Upload  />} />
           <Route path="/teams" element={<Teams  />} />
           <Route path="/read" element={<Read  />} />
