@@ -89,8 +89,10 @@ return response.data
 }
 export  async function getDataById(data)
 {
+  const formData = new FormData();
+  formData.append("FileId",data);
   console.log(data,"yuvaback")
-return await axios.post(`${rootUrl}api/getdatabyid`,data).then((response)=>
+return await axios.post(`${rootUrl}api/getdatabyid`,formData).then((response)=>
 {
 console.log(response)
 }).catch((error)=>
@@ -160,6 +162,20 @@ return response.data
 // })
 // }
 export async function addToCart(data) {
+  try {
+    console.log(data, "yuvaback000");
+    const formData = new FormData();
+    formData.append("FileId",data);
+    const response = await axios.post(`${rootUrl}api/addtocart`, formData);
+    console.log(response.data); // Print the response data
+    return response.data; // Return the response data to handle it outside the function if needed
+  } catch (error) {
+    console.error('Error:', error.message);
+    // Handle the error further or throw it to be caught by the calling function
+    throw error;
+  }
+}
+export async function createpole(data) {
   try {
     console.log(data, "yuvaback000");
     const formData = new FormData();

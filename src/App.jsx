@@ -41,6 +41,9 @@ import Contactus from './components/Privacy/Contactus';
 import AudioOptions from './components/Audio/AudioOptions';
 import CategoryOptions from './components/categories/CategoryOptiions'
 import Poll from './components/Quiz/Poller';
+import Quiz from './components/Quiz/Quiz'
+import QuizCreation from './components/Quiz/QuizCreation'
+import PoleCreation from './components/Quiz/PoleCreation';
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -97,6 +100,11 @@ const App = () => {
           <Route path="/Refund" element={<Refund/>} />
           <Route path="/Shipping" element={<Shipping/>} />
           <Route path="/Contactus" element={<Contactus/>} />
+          <Route path="/quiz" element={<Quiz/>} />
+          <Route path="/createquiz" element={<QuizCreation/>} />
+          <Route path="/createpole" element={<PoleCreation/>} />
+
+
 
   
         </Routes>
