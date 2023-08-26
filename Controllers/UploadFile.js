@@ -1,4 +1,3 @@
-
 const { Readable } = require("stream");
 var path = require("path");
 const { v4: uuidv4 } = require("uuid");
@@ -36,17 +35,21 @@ module.exports.uploadFiles = async (req, res) => {
             await uploadBytesToBlobStorage(pdfId, fileContent);
             
             const query = `INSERT INTO UploadFiles 
-                          VALUES (?, ?, ?,?,?, 0, 0, 0, 0,?,?,?,'syuva893@gmail.com',?,0,?)`;
+                          VALUES (?, ?, ?,?,?, 0, 0, 0, 0,?,?,?,'syuva893@gmail.com',?,0,?,"Books","Telugu")`;
       
             const values = [pdfId, req.body.BookTitle,req.body.categoryName, req.body.SubCategory, req.body.authorName, req.body.Price,req.body.description,Numberofpages,formattedTime,imageContent];
-            
-            db.query(query, values, (err, rows) => {
-              if (err) {
-                console.error('Error executing query:', err.stack);
-                return;
-              }
-              console.log('Query req.body:', rows);
-            });
+            async function dummy() {
+              console.log('hari')
+               db.query(query, values, (err, rows) => {
+                console.log('hari2')
+                if (err) {
+                  console.error('Error executing query:', err.stack);
+                  return;
+                }
+                console.log('Query req.body:', rows);
+              });
+            } 
+            await dummy()
             
 
         console.log("yuva");

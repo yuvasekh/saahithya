@@ -7,12 +7,13 @@ const connection = mysql.createConnection({
   password: process.env.password,
   database: process.env.database,
 }); 
+const { v4: uuidv4 } = require("uuid");
  
 module.exports.addtocarts = async (req,res)=>{
   console.log(req.body.FileId,"yuva fileId")
 
     var FileId=req.body.FileId
-    
+    let Id = uuidv4();
     // var email=req.bodyp.email
 
       const selectQuery = `SELECT COUNT(*) AS count FROM cart WHERE email ="syuva893@gmail.com" and Fileid='${FileId}'`;
@@ -32,7 +33,7 @@ module.exports.addtocarts = async (req,res)=>{
               throw error;
             }
             console.log(results)
-            connection.query(insertQuery, [2,results[0].FileId,results[0].CategoryName,results[0].SubCategory,1,results[0].Price,results[0].Email,results[0].FileImage,results[0].FileName],async (error, results) => {
+            connection.query(insertQuery, [Id,results[0].FileId,results[0].CategoryName,results[0].SubCategory,1,results[0].Price,results[0].Email,results[0].FileImage,results[0].FileName],async (error, results) => {
                 if (error) {
                   throw error;
                 }

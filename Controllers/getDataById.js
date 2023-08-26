@@ -1,10 +1,11 @@
 const db = require('../Resources/db');
-// const {downloadTextFile} = require('../Resources/getFromBlob')
+const {downloadTextFile} = require('../Resources/getFromBlob')
 module.exports.getDataById = async (req, res) => {
-    var FileId = "4dc0ef71-447e-431a-9fc3-2c7fa9fc8007"
+    console.log(req.body.FileId,"check")
+    var FileId = req.body.FileId
     console.log(FileId, "uuuu")
 
-// var result=await downloadTextFile(FileId)
+var result=await downloadTextFile(FileId)
 res.status(200).json(result)
     // db.query(`select * from UploadFiles where Id='${FileId}')`, (err, rows) => {
     //     if (err) {

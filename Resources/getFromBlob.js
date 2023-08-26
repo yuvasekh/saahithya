@@ -1,18 +1,20 @@
 const { BlobServiceClient } = require("@azure/storage-blob");
 const fs = require("fs");
 
-async function downloadTextFile(containerName, blobName, destinationFilePath) {
+async function downloadTextFile(FileId) {
   // Enter your storage account name and connection string here
-  const connectionString = "DefaultEndpointsProtocol=https;AccountName=<YOUR_STORAGE_ACCOUNT_NAME>;AccountKey=<YOUR_STORAGE_ACCOUNT_KEY>;EndpointSuffix=core.windows.net";
-  
+  const connectionString =
+    "DefaultEndpointsProtocol=https;AccountName=saahithyapdffiles;AccountKey=FTfLKISSRTsofZ9GP3YCGuOxclz//ORfSDlhW3/JL7bLYVlTlbuTHtXBStwZ6dF0VsXEK7IErH1R+AStganC6w==;EndpointSuffix=core.windows.net";
+
   // Create a BlobServiceClient using the connection string
-  const blobServiceClient = BlobServiceClient.fromConnectionString(connectionString);
+  const blobServiceClient =
+    BlobServiceClient.fromConnectionString(connectionString);
 
   // Get a reference to a container
   const containerClient = blobServiceClient.getContainerClient(containerName);
 
   // Get a block blob client and download the blob
-  const blobClient = containerClient.getBlockBlobClient(blobName);
+  const blobClient = containerClient.getBlockBlobClient(FileId + ".pdf");
 
   try {
     // Download the blob to the specified file destination
@@ -24,9 +26,9 @@ async function downloadTextFile(containerName, blobName, destinationFilePath) {
 }
 
 // Usage example
-const containerName = "your-container-name";
+const containerName = "uploadfilessaahithya";
 const blobName = "your-blob-name.pdf";
 const destinationFilePath = "./downloads/your-file.pdf";
 
-downloadTextFile(containerName, blobName, destinationFilePath);
-module.exports.downloadTextFile=downloadTextFile
+downloadTextFile("123");
+module.exports.downloadTextFile = downloadTextFile;

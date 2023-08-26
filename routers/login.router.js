@@ -11,6 +11,7 @@ const {TextEditor}=require('../Controllers/TextEditor')
 const {addtocarts}=require('../Controllers/addtocart')
 const {updatecart}=require('../Controllers/updatecart')
 const {getCart}=require('../Controllers/getCart')
+const {createpole}=require('../Controllers/contest')
 // const {payment}=require('../Controllers/payemnt')
 const basePath = "/register"
 module.exports = (app) => {
@@ -28,4 +29,5 @@ module.exports = (app) => {
   app.route('/addtocart').post(addtocarts)
   app.route('/getCart').post(getCart)
   app.route('/updatecart').put(updatecart)
+  app.route('/createpole').put(createpole)
 };
