@@ -27,7 +27,7 @@ const [selectedimage,setSelectedImage]=useState(myProp.FileImage.data)
 // },[selectedimage])
   function readPage(FileID)
   {
-  
+    console.log(FileID,"message")
      navigate('/read', { state: { myProp:FileID } })
     
   }

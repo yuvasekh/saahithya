@@ -56,7 +56,7 @@ import './CommonHeader.scss';
          <div>
              {/* <Button className='registerbutton' style={{ width:"16vw",fontSize:"15px" }}> */}
              <Link to="/categoryOptions">
-             <Button className='registerbutton' style={{ width:"16vw",fontSize:"15px" }}>
+             <Button className='registerbutton' style={{ width:"12vw",fontSize:"17px",backgroundColor:"#266B69" }}>
               CATEGORIES
             </Button>
             </Link>
@@ -69,13 +69,17 @@ import './CommonHeader.scss';
        
         <div className="header-item">
             <div>
-                <Button className='signinbutton' >SignIn</Button>
+              <Link to="/login">
+                <Button className='signinbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>SignIn</Button>
+              </Link>
             </div>
         </div>  
         <div className="header-item">
          
             <div>
-                <Button className='registerbutton'>Register</Button>
+            <Link to="/register">
+                <Button className='registerbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>Register</Button>
+              </Link>
             </div>
          </div>
       

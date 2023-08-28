@@ -46,6 +46,7 @@ import Quiz from './components/Quiz/Quiz'
 import QuizCreation from './components/Quiz/QuizCreation'
 import PoleCreation from './components/Quiz/PoleCreation';
 import Publications from './components/Landing/Publications';
+import Faq from './components/Privacy/Faq';
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -103,6 +104,7 @@ const App = () => {
           <Route path="/Shipping" element={<Shipping/>} />
           <Route path="/Contactus" element={<Contactus/>} />
           <Route path="/Publications" element={<Publications/>} />
+          <Route path="/Faq" element={<Faq/>} />
 {/* <<<<<<< HEAD */}
           <Route path="/Looks" element={<Looks/>} />
 {/* ======= */}
