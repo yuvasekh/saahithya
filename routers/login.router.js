@@ -11,7 +11,7 @@ const {TextEditor}=require('../Controllers/TextEditor')
 const {addtocarts}=require('../Controllers/addtocart')
 const {updatecart}=require('../Controllers/updatecart')
 const {getCart}=require('../Controllers/getCart')
-const {createpole}=require('../Controllers/contest')
+const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz}=require('../Controllers/contest')
 // const {payment}=require('../Controllers/payemnt')
 const basePath = "/register"
 module.exports = (app) => {
@@ -29,5 +29,11 @@ module.exports = (app) => {
   app.route('/addtocart').post(addtocarts)
   app.route('/getCart').post(getCart)
   app.route('/updatecart').put(updatecart)
-  app.route('/createpole').put(createpole)
+  app.route('/createpole').post(createpole)
+  app.route('/poller').post(participatepole)
+  app.route('/createquiz').post(createquiz)
+  app.route('/getpole').get(getpole)
+  app.route('/getquiz').get(getquiz)
+  app.route('/getquizresults').get(getquizresults)
+  app.route('/participateQuiz').post(participateQuiz)
 };

@@ -8,11 +8,10 @@ const cookieParser = require('cookie-parser');
 app.use(cookieParser());
 app.use(cors());
 var bodyParser = require("body-parser");
-
 let apirouter = require('./routers/router');
 app.use('/api',apirouter)
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 require("dotenv").config();
 var multer = require("multer");
 
