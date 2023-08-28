@@ -107,7 +107,11 @@ const Footer = () => {
             <div>
                 <h1>Get to Know Us</h1>
                 <div>
+<<<<<<< HEAD
                     <Link to ='/home'><p>Home</p></Link>
+=======
+                    <Link to ='/'><p>Home</p></Link>
+>>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
                     <Link to ='/aboutus'><p>About Us</p></Link>
                     <Link to ='/contactus'><p>Contact Us</p></Link>
                     <Link to ='/testmonials'><p>Testmonials</p></Link>
@@ -132,8 +136,13 @@ const Footer = () => {
                 <h1>Work With Saahithya</h1>
                 <div>
                     <Link to ='/upload'><p>Sell</p></Link>
+<<<<<<< HEAD
                     <Link to ='/advertise'><p>Advertise On Saahithya</p></Link>
                     <Link to ='/author'><p>Become An Author</p></Link>
+=======
+                    <Link to ='/register'><p>Advertise On Saahithya</p></Link>
+                    <Link to ='/register'><p>Become An Author</p></Link>
+>>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
                 </div>
             </div>
 

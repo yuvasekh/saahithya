@@ -6,7 +6,7 @@ const Terms = () => {
     <>
       <div className='para' >
 
-<div class="container terms"><h1 class="center">GENERAL TERMS OF USE</h1><p><strong>This document/agreement/understanding is a computer-generated electronic record published in
+<div class=" "><h1 class="center">GENERAL TERMS OF USE</h1><p><strong>This document/agreement/understanding is a computer-generated electronic record published in
 terms of Rule 3 of the Information Technology (Intermediary Guidelines and Digital Media Ethics
 Code) Rules, 2021 (amended from time to time) read with Information Technology Act, 2000
 (amended from time to time) and does not require any physical or digital signatures.</strong></p>

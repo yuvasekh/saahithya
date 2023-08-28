@@ -1,37 +1,29 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Layout } from 'antd';
-import './App.scss';
-import Header from './components/common/Header';
-import DummyCarousel from './components/DummyCarousel';
-import TextEditor from './components/TextEditor';
-import CommonHeader from './components/common/CommonHeader';
-import Footer from './components/common/Footer';
-import Landingpage from './components/Landing/Landingpage';
-import Looks from './components/Landing/Looks';
-import Register from './components/Login/Register';
-import Login from './components/Login/Login';
-import { useLocation } from "react-router-dom"; 
-import Categories from './components/categories/Categories';
-import CategoryItems from './components/categories/CategoryItems';
-import Itemdesc from './components/Itemdes';
-import Authors from './components/common/Authors/Authors';
-import CartItems from './components/Cart/CartItems';
-import Otpverification from './components/Login/Otpverification';
-import Upload from './components/UploadFile';
-import Teams from './components/Teams/Home';
-import Read from '../src//components/Read'
-// import PaymentForm from './components/Payment';
-// import bookstore from './Resources/bookstore.jpg'
-// import child from './Resources/child.png'
-// import img1 from './Resources/img1.jpg'
-// // import ImageRotator from './components/ImageRotator';
-// import Readimg from './Resources/Images/Landing_components/read'
-// import Write from './Resources/Images/Landing_components/write'
-// import Listen from './Resources/Images/Landing_components/listen'
-// import Record from './Resources/Images/Landing_components/record'
-// import Watch from './Resources/Images/Landing_components/watching'
-// import Uploadimg from './Resources/Images/Landing_components/upload'
+import { Layout } from "antd";
+import "./App.scss";
+import Header from "./components/common/Header";
+import DummyCarousel from "./components/DummyCarousel";
+import TextEditor from "./components/TextEditor";
+import CommonHeader from "./components/common/CommonHeader";
+import Footer from "./components/common/Footer";
+import Landingpage from "./components/Landing/Landingpage";
+import Register from "./components/Login/Register";
+import Login from "./components/Login/Login";
+import { useLocation } from "react-router-dom";
+import Categories from "./components/categories/Categories";
+import CategoryItems from "./components/categories/CategoryItems";
+import Itemdesc from "./components/Itemdes";
+import Authors from "./components/common/Authors/Authors";
+import CartItems from "./components/Cart/CartItems";
+import Otpverification from "./components/Login/Otpverification";
+import Upload from "./components/UploadFile";
+import Teams from "./components/Teams/Home";
+import Read from "../src//components/Read";
+import Poll from "./components/Quiz/Poller";
+import Quiz from "./components/Quiz/Quiz";
+import Competation from "../src/components/Teams/Competation"
+import PoleCreation from "./components/Quiz/PoleCreation";
 import Subheader from './components/common/Subheader';
 import Subcategories from './components/categories/Subcategorires';
 import Privacy from './components/Privacy/Privacy'
@@ -41,11 +33,18 @@ import Shipping from './components/Privacy/Shipping';
 import Contactus from './components/Privacy/Contactus';
 import AudioOptions from './components/Audio/AudioOptions';
 import CategoryOptions from './components/categories/CategoryOptiions'
-import Poll from './components/Quiz/Poller';
-import Quiz from './components/Quiz/Quiz'
 import QuizCreation from './components/Quiz/QuizCreation'
+<<<<<<< HEAD
 import PoleCreation from './components/Quiz/PoleCreation';
 import Publications from './components/Landing/Publications';
+=======
+import Publications from './components/Landing/Publications';
+<<<<<<< HEAD
+import Faq from './components/Privacy/Faq';
+=======
+import Looks from "./components/Landing/Looks";
+>>>>>>> 20f35a3ee21c9f831408396047d738cf7dd0aff1
+>>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -56,72 +55,87 @@ const a = 100;
 
 const App = () => {
   const question = "What's your favorite color?";
-  const options = ['Red', 'Blue', 'Green', 'Yellow'];
-    const location = useLocation();
+  const options = ["Red", "Blue", "Green", "Yellow"];
+  const location = useLocation();
   var path = location.pathname;
-  // const images = [
-  //   Readimg,
-  //   Write,
-  //  Listen,
-  //  Record,
-  //  Uploadimg,
-  //  Watch
-  //   // Add more image URLs here
-  // ];
 
   return (
-    <div className='app'>
+    <div className="app">
+      {path == "/" ? (
+        <>
+          <CommonHeader /> <Subheader />
+        </>
+      ) : (
+        <>
+          <CommonHeader /> <Header />
+        </>
+      )}
 
-{
-  path=='/'?<><CommonHeader /> <Subheader/></>:<><CommonHeader /> <Header /></>
-
-}
-
-
-        <Routes>
+      <Routes>
         <Route path="/vaidateotp" element={<Otpverification />} />
-          <Route path="/" element={ <Landingpage/> } />
-          <Route path="/home" element={<DummyCarousel  />} />  
-          <Route path="/texteditor" element={<TextEditor  />} />
-          <Route path="/register" element={<Register  />} />
-          <Route path="/login" element={<Login  />} />
-          <Route path="/categories" element={<Categories  />} />
-          <Route path="/categoryOptions" element={<CategoryOptions/>} />
-          <Route path="/categorieitem" element={<CategoryItems  />} />
-          <Route path="/subcateogories" element={<Subcategories  />} />
-          <Route path="/authors" element={<Authors  />} />
-          <Route path="/itemdesc" element={<Itemdesc  />} />
-          <Route path="/audio" element={<AudioOptions  />} />
-          <Route path="/pole" element={  <Poll question={question} options={options} />} />
-          <Route path="/upload" element={<Upload  />} />
-          <Route path="/teams" element={<Teams  />} />
-          <Route path="/read" element={<Read  />} />
-          <Route path="/cartLogs" element={<CartItems  />} /> 
-          <Route path="/Privacy" element={<Privacy/>} />
+        <Route path="/" element={<Landingpage />} />
+        <Route path="/home" element={<DummyCarousel />} />
+        <Route path="/texteditor" element={<TextEditor />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/categoryOptions" element={<CategoryOptions />} />
+        <Route path="/categorieitem" element={<CategoryItems />} />
+        <Route path="/subcateogories" element={<Subcategories />} />
+        <Route path="/authors" element={<Authors />} />
+        <Route path="/itemdesc" element={<Itemdesc />} />
+        <Route path="/audio" element={<AudioOptions />} />
+        <Route
+          path="/pole"
+          element={<Poll question={question} options={options} />}
+        />
+              <Route path="/createcompetataion" element={<Competation />} />
+        <Route path="/upload" element={<Upload />} />
+        <Route path="/teams" element={<Teams />} />
+        <Route path="/read" element={<Read />} />
+        <Route path="/cartLogs" element={<CartItems />} />
+        <Route path="/Privacy" element={<Privacy />} />
+        <Route path="/Terms" element={<Terms />} />
+        <Route path="/Refund" element={<Refund />} />
+        <Route path="/Shipping" element={<Shipping />} />
+        <Route path="/Contactus" element={<Contactus />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/createquiz" element={<QuizCreation />} />
+        <Route path="/createpole" element={<PoleCreation />} />
+        <Route path="/Privacy" element={<Privacy/>} />
           <Route path="/Terms" element={<Terms/>} />
           <Route path="/Refund" element={<Refund/>} />
           <Route path="/Shipping" element={<Shipping/>} />
           <Route path="/Contactus" element={<Contactus/>} />
           <Route path="/Publications" element={<Publications/>} />
+<<<<<<< HEAD
 {/* <<<<<<< HEAD */}
           <Route path="/Looks" element={<Looks/>} />
 {/* ======= */}
           <Route path="/quiz" element={<Quiz/>} />
           <Route path="/createquiz" element={<QuizCreation/>} />
           <Route path="/createpole" element={<PoleCreation/>} />
+=======
+<<<<<<< HEAD
+          <Route path="/Faq" element={<Faq/>} />
+{/* <<<<<<< HEAD */}
+=======
+>>>>>>> 20f35a3ee21c9f831408396047d738cf7dd0aff1
+          <Route path="/Looks" element={<Looks/>} />
+>>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
 
+          
 
+<<<<<<< HEAD
 {/* >>>>>>> d951c21619de79e73d6e7f03b1638ebfdd28f006 */}
+=======
+     
+      </Routes>
+        
+         
+>>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
 
-  
-        </Routes>
-
-<div>
-<Footer/>
-</div>
-  
-        {/* <Footer/> */}
-      
+      {/* <Footer/> */}
     </div>
   );
 };

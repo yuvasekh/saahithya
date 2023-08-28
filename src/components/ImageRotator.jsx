@@ -22,16 +22,14 @@ const pagemove=()=>
   return (
     <div className="image-rotator">
       <div className='content'>
+        <h1 style={{fontSize:"40px"}}>మీ పుస్తకాన్ని ప్రచురించండి...</h1>
         <h1>Publish your Book...</h1>
-        <h1>Publish your Story...</h1>
 
       <br/>
       <p >
-      All the tools you need to write publish
-      <br/>and sell your book in
-      paperback and ebook Worldwide
+      "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..  మనసు విదిల్చిన భావోద్వేగాలు"
       </p>
-    <Button className='bookssection' onClick={()=>{pagemove()}}>Books Section</Button>
+    <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" }}>Books Section</Button>
       </div>
 
       <div className='imagescontent'>

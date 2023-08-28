@@ -1,9 +1,11 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
+import {createquiz} from '../services/api'
 
 const RepeatedForm = () => {
-  const onFinish = (values) => {
+  const onFinish = async(values) => {
     console.log('Form values:', values);
+    await createquiz(values)
   };
 
   return (
@@ -35,6 +37,7 @@ const RepeatedForm = () => {
             >
               <Input />
             </Form.Item>
+            
             <Form.Item name={`input2-${index}`} label={`Input 2 ${index + 1}`}  rules={[
                 {
                   required: true,
@@ -59,6 +62,18 @@ const RepeatedForm = () => {
               ]}>
               <Input />
             </Form.Item>
+            <Form.Item
+        name={`answer-${index}`}
+        label={`Answer ${index + 1}`}
+        rules={[
+          {
+            required: true,
+            message: `Please enter Answer ${index + 1}`,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
             {/* Repeat similar Form.Item components for input2, input3, and input4 */}
           </div>
         ))}

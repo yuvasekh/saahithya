@@ -16,15 +16,24 @@ const url =
     const [pageNumber, setPageNumber] = useState(1);
     const location = useLocation();
     const myProp = location.state && location.state.myProp;
-    useEffect(()=>
-    {
-      async function data()
-      {
-        var res=await getDataById(myProp)
-        console.log(res)
-      }
-      data()
-    })
+    console.log(myProp,"readfile")
+
+    const [url,seturl] = useState(`https://saahithyapdffiles.blob.core.windows.net/uploadfilessaahithya/${myProp}.pdf?sp=r&st=2023-08-28T11:42:38Z&se=2023-12-30T19:42:38Z&spr=https&sv=2022-11-02&sr=c&sig=fvbUPQhstqAT7OaFy7XS7LuERdDsNu6U8uACd72XLmA%3D`);
+
+    useEffect(()=>{
+      console.log(`https://saahithyapdffiles.blob.core.windows.net/uploadfilessaahithya/${myProp}.pdf?sp=r&st=2023-08-28T11:42:38Z&se=2023-12-30T19:42:38Z&spr=https&sv=2022-11-02&sr=c&sig=fvbUPQhstqAT7OaFy7XS7LuERdDsNu6U8uACd72XLmA%3D`)
+    seturl(`https://saahithyapdffiles.blob.core.windows.net/uploadfilessaahithya/${myProp}.pdf?sp=r&st=2023-08-28T11:42:38Z&se=2023-12-30T19:42:38Z&spr=https&sv=2022-11-02&sr=c&sig=fvbUPQhstqAT7OaFy7XS7LuERdDsNu6U8uACd72XLmA%3D`)
+    },[])
+    // useEffect(()=>
+    // {
+    //   async function data()
+    //   {
+    //     var res=await getDataById(myProp)
+    //     console.log(res)
+    //   }
+    //   data()
+    // })
+    
     /*To Prevent right click on screen*/
     document.addEventListener("contextmenu", (event) => {
       event.preventDefault();
