@@ -1,9 +1,11 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
+import {createpole} from '../services/api'
 
 const PoleCreation = () => {
-  const onFinish = (values) => {
+  const onFinish =async (values) => {
     console.log('Form values:', values);
+    await createpole(values);
   };
 
   return (
@@ -59,7 +61,18 @@ const PoleCreation = () => {
               ]}>
               <Input />
             </Form.Item>
-            
+            <Form.Item
+              name={`answer`}
+              label={`answer`}
+              rules={[
+                {
+                  required: true,
+                  message: `Please enter Answer `,
+                },
+              ]}
+            >
+                <Input />
+            </Form.Item>
       
         <Form.Item>
           <Button type="primary" htmlType="submit">

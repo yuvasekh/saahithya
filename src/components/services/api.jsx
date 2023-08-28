@@ -176,16 +176,97 @@ export async function addToCart(data) {
   }
 }
 export async function createpole(data) {
-  try {
+
     console.log(data, "yuvaback000");
     const formData = new FormData();
-    formData.append("FileId",data);
-    const response = await axios.post(`${rootUrl}api/addtocart`, formData);
+    formData.append("Poledata",data);
+   return await axios.post(`${rootUrl}api/createpole`, data).then((res)=>
+   {
+    return res.data;
+   }).catch((error)=>
+   {
+return error
+   })
+ 
+}
+export  async function getpole()
+{
+return await axios.get(`${rootUrl}api/getpole`).then((response)=>
+{
+console.log(response.data)
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export async function poller(data) {
+ 
+  
+    const dataToSend = {
+      data: data,
+      Email: "syuva893@gmail.com"
+     
+    };
+    return await axios.post(`${rootUrl}api/poller`, dataToSend).then((response)=>
+    {
+      console.log(response.data)
+      return response.data
+    }).catch((error)=>
+    {
+
+      console.error('Error:', error.message);
+    })
+
+  
+}
+
+export async function createquiz(data) {
+  try {
+
+ console.log(data,"api")
+    const dataToSend = {
+      data: data,
+      Email: 'syuva893@gmail.com'
+      // Add more key-value pairs as needed
+    };
+    const response = await axios.post(`${rootUrl}api/createquiz`, dataToSend);
     console.log(response.data); // Print the response data
-    return response.data; // Return the response data to handle it outside the function if needed
+    return response.data;
   } catch (error) {
     console.error('Error:', error.message);
     // Handle the error further or throw it to be caught by the calling function
     throw error;
   }
+}
+export  async function getquiz()
+{
+return await axios.get(`${rootUrl}api/getquiz`).then((response)=>
+{
+console.log(response.data)
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export async function participateQuiz(data) {
+ 
+  
+  const dataToSend = {
+    data: data,
+    Email: "syuva893@gmail.com"
+   
+  };
+  return await axios.post(`${rootUrl}api/participateQuiz`, dataToSend).then((response)=>
+  {
+    console.log(response.data)
+    return response.data
+  }).catch((error)=>
+  {
+
+    console.error('Error:', error.message);
+  })
+
+
 }
