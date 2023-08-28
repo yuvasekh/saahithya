@@ -8,6 +8,7 @@ import TextEditor from './components/TextEditor';
 import CommonHeader from './components/common/CommonHeader';
 import Footer from './components/common/Footer';
 import Landingpage from './components/Landing/Landingpage';
+import Looks from './components/Landing/Looks';
 import Register from './components/Login/Register';
 import Login from './components/Login/Login';
 import { useLocation } from "react-router-dom"; 
@@ -81,7 +82,7 @@ const App = () => {
           <Route path="/register" element={<Register  />} />
           <Route path="/login" element={<Login  />} />
           <Route path="/categories" element={<Categories  />} />
-          <Route path="/categoryOptions" element={<CategoryOptions  />} />
+          <Route path="/categoryOptions" element={<CategoryOptions/>} />
           <Route path="/categorieitem" element={<CategoryItems  />} />
           <Route path="/subcateogories" element={<Subcategories  />} />
           <Route path="/authors" element={<Authors  />} />
@@ -97,6 +98,7 @@ const App = () => {
           <Route path="/Refund" element={<Refund/>} />
           <Route path="/Shipping" element={<Shipping/>} />
           <Route path="/Contactus" element={<Contactus/>} />
+          <Route path="/Looks" element={<Looks/>} />
 
   
         </Routes>

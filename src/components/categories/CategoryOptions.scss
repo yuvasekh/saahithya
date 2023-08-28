@@ -1,31 +1,34 @@
-.categorycontainer
+.category-container
 {
-    width: 100vw;
+    width: 100%;
+    height: 40vh;
     display: grid;
     position: relative;
     grid-template-columns: repeat(4,1fr);
     grid-auto-rows:230px;
-    gap: 10px;
+    gap: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+
     
-.containerimg
+.container-img
+
     {
-        width: 340px;
-        height: 200px;
-        /* box-shadow:box-shadow: 0 2px 4px 0 #111; */
+        width: 470px;
+        height:300px;
         box-shadow: 0 2px 4px 0 #111;
         border: none;
-        border-radius: 10px;
-        
-        
+        border-radius: 5px;
     }
-    .containerimg:hover 
+
+    .container-img:hover 
         {
         transform: scale(1.1);
         }
-      .containerimg 
+      .container-img
         {
         transition: transform 0.5s;
-        width: 21em;
+        width: 29em;
         }
-      
+
 }

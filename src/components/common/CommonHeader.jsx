@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 // import './Header.scss';
 import { Button, Input } from 'antd';
 import { BellOutlined, BookOutlined, CompassOutlined, EditOutlined, HomeOutlined, InfoCircleOutlined, SearchOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
@@ -48,8 +49,25 @@ import './CommonHeader.scss';
         <div className="header-content">
         <div style={{display:'flex',justifyContent:'end'}}> 
      
+
+
+
         <div className="header-item">
-         
+         <div>
+             {/* <Button className='registerbutton' style={{ width:"16vw",fontSize:"15px" }}> */}
+             <Link to="/categoryOptions">
+             <Button className='registerbutton' style={{ width:"16vw",fontSize:"15px" }}>
+              CATEGORIES
+            </Button>
+            </Link>
+         </div>
+      </div>
+
+
+
+       
+       
+        <div className="header-item">
             <div>
                 <Button className='signinbutton' >SignIn</Button>
             </div>

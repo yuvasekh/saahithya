@@ -1,34 +1,45 @@
+
+
+
 .landing-page
 {
+  
+  background-color: #E0F4EB;
+
   .saahithyalogo
-  {
+  { 
     height: 450px;
     
   }
   .subcontentimg
   {
-    width: 400px;
-    height: 190px;
+    width: 380px;
+    height: 200px;
+    border-radius: 20px;
   }
     .animationcontainer
     {
         display: flex;
         gap: 2px;
     }
-    .video{
-  width: 80vw;
-  height: 400px;
-    }
-    .imgtelugu
-    {
-        width: 20vw;
 
-    }
-    .telugutalli
-    {
-        width: 20vw;
-        height: 500px;
-    }
+
+  //   .video{
+  // width: 80vw;
+  // height: 400px;
+  //   }
+    // .imgtelugu
+    // {
+    //     width: 20vw;
+
+    // }
+    // .telugutalli
+    // {
+    //     width: 20vw;
+    //     height: 500px;
+    // }
+
+    
     .iframeclass
     {
         height: 500px;
@@ -46,7 +57,7 @@
         height: 600px;
     }
     
-   position: relative;
+        position: relative;
     .videocontainer
     {
       
@@ -78,15 +89,15 @@
     border-top: 1px solid #fcfcfc;
     border-bottom: 1px solid #f0e7e7;
     display: grid;
-    background-color: #e8e1e1d4;
+    background-color: #489248d4;
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-// margin: 35px;
-display: flex;
-justify-content:start;
-gap: 92px;
+    // margin: 35px;
+    display: flex;
+    justify-content:start;
+    gap: 92px;
     grid-template-columns: repeat(3,1fr);
     align-items: center;
-    height: 400px;
+    height: 350px;
 }
 .ant-modal
 {
@@ -99,8 +110,8 @@ gap: 92px;
     margin-left: 40px;
     // margin-top: 30px;
     border-radius: 15px;
-    height: 340px;
-    width: 400px;
+    height: 300px;
+    width: 380px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
 }
@@ -125,6 +136,11 @@ gap: 92px;
     animation-iteration-count: 1;
     animation-direction: left;
   }
+
+
+
+
+
 
 }
 @keyframes slidein {
@@ -227,6 +243,9 @@ gap: 92px;
     }
   
   }
+
+
+  
 //   @media only screen and (min-width:1984px ) {
 //     .landing-page
 //     {
