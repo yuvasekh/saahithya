@@ -28,7 +28,144 @@
       .container-img
         {
         transition: transform 0.5s;
-        width: 29em;
+        width: 28em;
         }
 
 }
+
+.container-img{
+
+    width:470px;
+    height: 300px;
+    border-radius:5px;
+}
+
+
+
+
+//media-Quires
+//media-Quires
+//media-Quires
+
+//75
+//75
+@media only screen and  (max-width:2048.36px ) and (min-width: 942.93px) {
+    .container-img
+    {
+        width: 470px;
+        height:300px;
+        box-shadow: 0 2px 4px 0 #111;
+        border: none;
+        border-radius: 5px;
+
+        .container-img{
+
+            width:470px;
+            height: 300px;
+            border-radius:5px;
+        }
+    }
+}
+
+//80
+//80
+@media only screen and  (max-width:1920px ) and (min-width: 884px) {
+    .container-img
+    {
+        width: 470px;
+        height:300px;
+        box-shadow: 0 2px 4px 0 #111;
+        border: none;
+        border-radius: 5px;
+
+        .container-img{
+
+            width:470px;
+            height: 300px;
+            border-radius:5px;
+        }
+    }
+}
+
+
+//90
+//90
+@media only screen and  (max-width:1706.67px ) and (min-width: 785.78px){
+    .container-img
+    {
+        width: 470px;
+        height:300px;
+        box-shadow: 0 2px 4px 0 #111;
+        border: none;
+        border-radius: 5px;
+
+
+        .container-img{
+
+            width:470px;
+            height: 300px;
+            border-radius:5px;
+        }
+    }
+}
+
+//100
+//100
+@media only screen and (max-width:1536px ) and (min-width: 707.20px){
+    .container-img
+    {
+        
+        box-shadow: 0 2px 4px 0 #111;
+        border: none;
+        border-radius: 5px;
+
+        .container-img-size{
+
+            width:470px;
+            height: 300px;
+            border-radius:5px;
+        }
+    }
+}
+
+//110
+//110
+@media only screen and (max-width:1396.36px ) and (min-width: 642.91px)  {
+    .container-img
+    {
+        width: 470px;
+        height:300px;
+        box-shadow: 0 2px 4px 0 #111;
+        border: none;
+        border-radius: 5px;
+
+
+        .container-img{
+
+            width:470px;
+            height: 300px;
+            border-radius:5px;
+        }
+    }
+}
+
+//125
+//125
+@media only screen and (max-width:1352.73px ) and (min-width: 670px){
+    .container-img
+    {
+        width: 470px;
+        height:300px;
+        box-shadow: 0 2px 4px 0 #111;
+        border: none;
+        border-radius: 5px;
+
+        .container-img{
+
+            width:470px;
+            height: 300px;
+            border-radius:5px;
+        }
+    }
+}
+

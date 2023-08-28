@@ -1,45 +1,128 @@
-#footer {
-    background-color: #0e0101;
-    // padding: 20px;
-    // text-align: start;
-  // left: 0;
-  // bottom: 0;
-//   .ant-typography a {
-//     color: #0e0101 !important;
-//     /* Apply your custom styles here */
+// #footer {
+//     background-color: #0e0101;
+//     // padding: 20px;
+//     // text-align: start;
+//   // left: 0;
+//   // bottom: 0;
+// //   .ant-typography a {
+// //     color: #0e0101 !important;
+// //     /* Apply your custom styles here */
+// //   }
+// //   a.ant-typography-link {
+// //     /* Apply your custom styles here */
+// //     color: #0e0101 !important;
+// //   }
+// .custom-margin-top {
+//     margin-top: 30px;
 //   }
-//   a.ant-typography-link {
-//     /* Apply your custom styles here */
-//     color: #0e0101 !important;
+  
+//   a
+//   {
+//     color: rgb(246, 241, 241) !important;
 //   }
-.custom-margin-top {
-    margin-top: 30px;
-  }
-  
-  a
-  {
-    color: rgb(246, 241, 241) !important;
-  }
   
 
-// .footer-head{
-//     // font-size: 24px;
+// // .footer-head{
+// //     // font-size: 24px;
+// // }
+// // .footer-container{
+// //    text-align: center;
+
+// // }
+
+// // .footer-container1{
+// //     margin-left: 100px;
+// //     text-align: center;
+// // }
+
+// // .ft-con{
+// //     padding-top: 20px;
+// //     background-color: rgb(48, 46, 46);
+// //     color: white;
+// // }a
+
+
+// }  
+
+
+
+
+
+
+
+.footer-con{
+  background-color: #266B69;
+  padding-top: 10px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  .footer-head{
+
+    h1{
+
+      font-size: 35px;
+      font-weight: normal;
+      color: white;
+
+      span{
+        font-weight: bold;
+      }
+    }
+    text-align: center;
+    
+  }
+
+}
+
+.sec-con{
+  display: flex;
+  justify-content: space-around;
+
+  h1{
+    font-size: 24px;
+    color: white;
+  }
+}
+
+a{
+  color: white;
+}
+
+// .second{
+//   background-color: white;
 // }
-// .footer-container{
-//    text-align: center;
 
-// }
+.footer-sec{
+  .footer-sec-con{
+    text-align: center;
 
-// .footer-container1{
-//     margin-left: 100px;
-//     text-align: center;
-// }
+    h1{
+      font-size: 35px;
+      color: white;
+      font-weight: normal;
+    }
 
-// .ft-con{
-//     padding-top: 20px;
-//     background-color: rgb(48, 46, 46);
-//     color: white;
-// }a
+    h3{
+      font-size: 35px;
+      color: white;
+      font-weight: 100;
+    }
+  }
+}
 
+.social-icons{
+  // background-color: rgb(208, 206, 206);
+  color: white;
+  text-align: center;
+  font-size: 35px;
 
-}  
+  .facebook{
+    background-color: white;
+    color: #4267B2;
+    
+  }
+  .instagram{
+    // background-image: linear-gradient(#405DE6,#5851DB,#833AB4,#c13584,#E1306C,#FD1D1D);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  }
+}

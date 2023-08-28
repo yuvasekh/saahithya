@@ -27,18 +27,18 @@ const Header = () => {
         <div className="header-content">
           <div className="header-item">
        
-          <HomeOutlined style={{fontSize: "30px"}}/>
+          <HomeOutlined style={{fontSize: "20px"}}/>
           <Link to="/">Home</Link> 
         </div>
         <div className="header-item">
-          <CompassOutlined style={{fontSize: "30px"}}/>
+          <CompassOutlined style={{fontSize: "20px"}}/>
      
      
            <Link to="/categoryOptions">Category</Link> 
          
         </div>
         <div className="header-item">
-          <UsergroupDeleteOutlined  style={{fontSize: "30px"}}/>
+          <UsergroupDeleteOutlined  style={{fontSize: "20px"}}/>
      
      
            <Link to="/authors">Authors</Link> 
@@ -47,13 +47,13 @@ const Header = () => {
  
         <div className="header-item" >
          
-          <EditOutlined style={{fontSize: "30px"}}/>
+          <EditOutlined style={{fontSize: "20px"}}/>
           <Link to="/texteditor">Write</Link>  
        
         </div>
         <div className="header-item" >
       
-         <UploadOutlined style={{fontSize: "30px"}}/>
+         <UploadOutlined style={{fontSize: "20px"}}/>
          <Link to="/upload">Upload</Link>  
       
        </div>
