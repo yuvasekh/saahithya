@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import img1 from '../../Resources/Images/horror.jpg';
-import img2 from '../../Resources/Images/comedy.jpg';
-import img3 from '../../Resources/Images/life.jpg';
-import img4 from '../../Resources/Images/love.jpg';
+import Novels from '../../Resources/Images/Novels.jpg'
+import Books2 from '../../Resources/Images/Books2.jpg';
+import Quotes from '../../Resources/Images/Quotes.jpg';
+import Cartoons from '../../Resources/Images/Cartoon.jpg';
+import Others from '../../Resources/Images/Others.jpg';
 // import img5 from '../../Resources/Images/history.jfif';
 // import img6 from '../../Resources/Images/child sahityam.jfif';
 // import img7 from '../../Resources/Images/woman.jpg';
@@ -28,8 +29,9 @@ import img4 from '../../Resources/Images/love.jpg';
 import './Categories.scss';
 import { useNavigate,useLocation } from 'react-router-dom';
  const imagearray = [
-    {img:img1,imgdesc:"Novel"},  {img:img2,imgdesc:"Books"},
-    {img:img3,imgdesc:"Quotes"}, {img:img4,imgdesc:"Cartoons"},
+    {img:Novels,imgdesc:"Novel"},  {img:Books2,imgdesc:"Books"},
+    {img:Quotes,imgdesc:"Quotes"}, {img:Cartoons,imgdesc:"Cartoons"},
+    {img:Others,imgdesc:"Others"}
   ];
 
 const Subcategories = () => {
@@ -53,7 +55,7 @@ const Subcategories = () => {
       {imagearray.map((item, index) => (
         <div className='containerimg' key={index} onClick={()=>{test(item)}}>
           <img src={item.img} style={{ width: '340px', height: '200px' }} alt={`image-${index}`} />
-          <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
+          <h2 style={{ color: 'Black', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
         </div>
       ))}
     </div>

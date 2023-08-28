@@ -2,7 +2,7 @@ import React from 'react';
 // import './Header.scss';
 import { Button, Input } from 'antd';
 import { BellOutlined, BookOutlined, CompassOutlined, EditOutlined, HomeOutlined, InfoCircleOutlined, SearchOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
-import logoimg from '../../Resources/saahithya_logo.jpg'
+// import logoimg from '../../Resources/saahithya_logo.jpg'
 import { Outlet, Link } from "react-router-dom"; 
 // import child from './child.png';
 import child from '../../Resources/child.png'
@@ -47,7 +47,7 @@ import './subheader.scss'
       <div className="subheader-item">
          
      
-         <Link to="/">Publications</Link> 
+         <Link to="/Publications">Publications</Link> 
        
       </div>
       <div className="subheader-item">

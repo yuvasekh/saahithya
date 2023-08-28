@@ -5,7 +5,7 @@
     position: relative;
     grid-template-columns: repeat(4,1fr);
     grid-auto-rows:230px;
-    gap: 22px;
+    gap: 10px;
     
 .containerimg
     {
@@ -15,7 +15,17 @@
         box-shadow: 0 2px 4px 0 #111;
         border: none;
         border-radius: 10px;
-     
-      
+        
+        
     }
+    .containerimg:hover 
+        {
+        transform: scale(1.1);
+        }
+      .containerimg 
+        {
+        transition: transform 0.5s;
+        width: 21em;
+        }
+      
 }

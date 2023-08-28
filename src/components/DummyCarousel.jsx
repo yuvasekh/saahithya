@@ -6,8 +6,8 @@ import React, { useEffect, useState } from 'react'
 // import img5 from '../Resources/cover (5).jpg'
 // import img6 from '../Resources/cover (6).jpg'
 // import img7 from '../Resources/cover (7).jpg'
-import Trending from '../Resources/Images/Landing_components/trendingnew.jpg'
-import Upcoming from '../Resources/Images/Landing_components/upcoming.jpg'
+// import Trending from '../Resources/Images/Landing_components/trendingnew.jpg'
+// import Upcoming from '../Resources/Images/Landing_components/upcoming.jpg'
 import './DummyCarosel.scss'
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

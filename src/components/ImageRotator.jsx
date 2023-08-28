@@ -22,19 +22,20 @@ const pagemove=()=>
   return (
     <div className="image-rotator">
       <div className='content'>
-        <h1>Publish your Book.
-.</h1>
-<h1>Publish your Story</h1>
-<p className='para'>
-All the tools you need to write, publish and sell your book in
+        <h1>Publish your Book...</h1>
+        <h1>Publish your Story...</h1>
 
-</p>
-<p> paperback and ebook Worldwide
-</p>
-        <Button className='bookssection' onClick={()=>{pagemove()}}>Books Section</Button>
+      <br/>
+      <p >
+      All the tools you need to write publish
+      <br/>and sell your book in
+      paperback and ebook Worldwide
+      </p>
+    <Button className='bookssection' onClick={()=>{pagemove()}}>Books Section</Button>
       </div>
+
       <div className='imagescontent'>
-      <img src={images[currentImageIndex]} alt="Rotating Image" style={{width:'320px',height:'320px'}}/>
+      <img  className="image-rotator-image-size" src={images[currentImageIndex]} alt="Rotating Image"/>
       </div>
 
       {/* <ImageRotator images={images} /> */}

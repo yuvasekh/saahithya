@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: row;
   padding: 15px 0px 15px 0px;
-  box-shadow: 0px 2px 4px rgb(0, 0, 0,0.2);
+  box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
 }
 
 .header-content{
@@ -36,14 +36,14 @@
   margin-right: 30px;
   
   .bell-icon{
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
 .shop{
   margin-right: 70px;
   .shop-icon{
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 
@@ -58,8 +58,8 @@
   position: absolute;
   // top: 0;
   left: 2px;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: red;
 }

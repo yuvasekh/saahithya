@@ -12,7 +12,10 @@ const Authors = () => {
     const imagearray = [
       {img:thikkana,imgdesc:"ఆధునిక కవులు"},
        {img:srinadhudu,imgdesc:"వర్ధమాన కవులు"},
-      {img:grandhakarthalu,imgdesc:"గ్రంధకర్తలు"}
+       {img:thikkana,imgdesc:"ఆధునిక కవులు"},
+       {img:grandhakarthalu,imgdesc:"గ్రంధకర్తలు"},
+       {img:srinadhudu,imgdesc:"వర్ధమాన కవులు"}
+     
      
     ];
       const test=(item)=>
@@ -24,11 +27,11 @@ const Authors = () => {
   return (
     <>
 
-<div className='categorycontainers' style={{position:'relative',margin:'35px'}}>
+<div className='categorycontainers' style={{position:'relative',margin:'10px'}}>
       {imagearray.map((item, index) => (
         <div className='containerimg' key={index} onClick={()=>{test(item)}}>
           <img src={item.img} className='imgauthors' alt={`image-${index}`} />
-          <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
+          <h2 style={{ color: 'red', fontWeight:"bold", marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
         </div>
       ))}
     </div>

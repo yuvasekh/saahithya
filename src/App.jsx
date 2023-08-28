@@ -20,31 +20,22 @@ import Otpverification from "./components/Login/Otpverification";
 import Upload from "./components/UploadFile";
 import Teams from "./components/Teams/Home";
 import Read from "../src//components/Read";
-// import PaymentForm from './components/Payment';
-// import bookstore from './Resources/bookstore.jpg'
-// import child from './Resources/child.png'
-// import img1 from './Resources/img1.jpg'
-// // import ImageRotator from './components/ImageRotator';
-// import Readimg from './Resources/Images/Landing_components/read'
-// import Write from './Resources/Images/Landing_components/write'
-// import Listen from './Resources/Images/Landing_components/listen'
-// import Record from './Resources/Images/Landing_components/record'
-// import Watch from './Resources/Images/Landing_components/watching'
-// import Uploadimg from './Resources/Images/Landing_components/upload'
-import Subheader from "./components/common/Subheader";
-import Subcategories from "./components/categories/Subcategorires";
-import Privacy from "./components/Privacy/Privacy";
-import Refund from "./components/Privacy/Refund";
-import Terms from "./components/Privacy/Terms";
-import Shipping from "./components/Privacy/Shipping";
-import Contactus from "./components/Privacy/Contactus";
-import AudioOptions from "./components/Audio/AudioOptions";
-import CategoryOptions from "./components/categories/CategoryOptiions";
 import Poll from "./components/Quiz/Poller";
 import Quiz from "./components/Quiz/Quiz";
-import QuizCreation from "./components/Quiz/QuizCreation";
 import Competation from "../src/components/Teams/Competation"
 import PoleCreation from "./components/Quiz/PoleCreation";
+import Subheader from './components/common/Subheader';
+import Subcategories from './components/categories/Subcategorires';
+import Privacy from './components/Privacy/Privacy'
+import Refund from './components/Privacy/Refund'
+import Terms from './components/Privacy/Terms'
+import Shipping from './components/Privacy/Shipping';
+import Contactus from './components/Privacy/Contactus';
+import AudioOptions from './components/Audio/AudioOptions';
+import CategoryOptions from './components/categories/CategoryOptiions'
+import QuizCreation from './components/Quiz/QuizCreation'
+import Publications from './components/Landing/Publications';
+import Looks from "./components/Landing/Looks";
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -102,11 +93,20 @@ const App = () => {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/createquiz" element={<QuizCreation />} />
         <Route path="/createpole" element={<PoleCreation />} />
-      </Routes>
+        <Route path="/Privacy" element={<Privacy/>} />
+          <Route path="/Terms" element={<Terms/>} />
+          <Route path="/Refund" element={<Refund/>} />
+          <Route path="/Shipping" element={<Shipping/>} />
+          <Route path="/Contactus" element={<Contactus/>} />
+          <Route path="/Publications" element={<Publications/>} />
+          <Route path="/Looks" element={<Looks/>} />
 
-      <div>
-        <Footer />
-      </div>
+          
+
+     
+      </Routes>
+        
+         
 
       {/* <Footer/> */}
     </div>
