@@ -37,6 +37,7 @@ const Landingpage = () => {
   },[])
   return (
     <>
+    <div className="landing-con">
     <div className='landing-page'>
       <ImageRotator images={images} />
       <div className='animationcontainer'>
@@ -80,6 +81,7 @@ const Landingpage = () => {
       <div>
         <h1 style={{marginLeft:'50px'}}>Authors</h1>
         <Authors/>
+        </div>
         </div>
       </>
   );

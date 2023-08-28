@@ -65,11 +65,11 @@ const Categories = () => {
     }
   return (
 
-    <div className='categorycontainer' style={{position:'relative',margin:'35px'}}>
+    <div className='categorycontainer' >
       {imagearray.map((item, index) => (
         <div className='containerimg' key={index} onClick={()=>{test(item)}}>
-          <img src={item.img} style={{ width: '340px', height: '200px' }} alt={`image-${index}`} />
-          <h2 style={{ color: 'white',backdropFilter:'blur(20px) saturate(70%)' ,fontWeight:'700', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
+          <img   src={item.img} className='category-image-size01' alt={`image-${index}`} />
+          <h2 className="heading-one" style={{backdropFilter:'blur(20px) saturate(70%)' }}>{item.imgdesc}</h2>
         </div>
       ))}
     </div>

@@ -43,63 +43,17 @@ const UploadFile = () => {
   };
 
 
-
-
   return (
+
+    <>
     <div>
-      {/* <Modal
-        title={<div className="text-center">Upload</div>}
-        footer={null}
-        open={isModalOpen}
-        onOk={handleOk}
-        onCancel={handleCancel}
-        destroyOnClose
-      >
-        <div className="p-4">
-          <Dragger
-            {...propsData}
-            onChange={(info) => fileChange(info)}
-            customRequest={dummyRequest}
-            itemRender={(origin, locFile) => {
-              return (
-                <div>
-                  {isUploaded[locFile.uid] == "success" ? (
-                    <div className=" gap-2">
-                      {" "}
-                      <CheckCircleFilled className="text-green-400 mr-1" />
-                      {locFile.name}
-                    </div>
-                  ) : isUploaded[locFile.uid] == "failed" ? (
-                    <div className=" gap-2">
-                      {" "}
-                      <CloseCircleOutlined className="text-red-400 mr-1" />
-                      {locFile.name}
-                    </div>
-                  ) : (
-                    <div className=" gap-2 mr-1">
-                      <LoadingOutlined /> {locFile.name}
-                    </div>
-                  )}
-                </div>
-              );
-            }}
-          >
-            <p className="ant-upload-drag-icon">
-              <UploadOutlined style={{ fontSize: "25" }}></UploadOutlined>
-            </p>
-            <p className="ant-upload-text" style={{ fontWeight: "600" }}>
-              Click or drag file to this area to upload
-            </p>
-          </Dragger>
-        </div>
-      </Modal>  */}
       <h1 style={{ display: 'flex', textAlign: 'center', alignContent: 'center', justifyContent: 'center', color: 'tomato' }}>Publish A Book</h1>
      
-      <div className='form-container'>
-
-        <Form onFinish={onFinish} className="my-form">
+      <div className='form-container' style={{height:"100vh"}}>
+        <Form onFinish={onFinish} className="my-form" style={{height:"110vh"}}>
           <Form.Item
             label="Author Name"
+            // style={{ fontSize:"20px" }}
             name="authorName"
             rules={[
               {
@@ -243,18 +197,12 @@ const UploadFile = () => {
             </div>
           </Form.Item>
 
-
-
-
-
-
-
-
         </Form>
         <br></br>
         <br></br>
       </div>
     </div>
+    </>
   )
 }
 export default UploadFile

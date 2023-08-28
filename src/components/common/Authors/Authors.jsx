@@ -31,7 +31,7 @@ const Authors = () => {
       {imagearray.map((item, index) => (
         <div className='containerimg' key={index} onClick={()=>{test(item)}}>
           <img src={item.img} className='imgauthors' alt={`image-${index}`} />
-          <h2 style={{ color: 'black', fontWeight:"bold", marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
+          <h2 style={{ color: 'red', fontWeight:"bold", marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
         </div>
       ))}
     </div>

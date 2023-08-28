@@ -29,7 +29,7 @@ const CategoryOptions = () => {
     <div className='category-container' style={{position:'relative',margin:'35px'}}>
       {imagearray.map((item, index) => (
         <div className='container-img' key={index} onClick={()=>{test(item)}}>
-          <img src={item.img} style={{width: '470px', height: '300px', borderRadius:"5px"}} alt={`image-${index}`} />
+          <img src={item.img} className='container-img-size' alt={`image-${index}`} />
           <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
         </div>
       ))}
