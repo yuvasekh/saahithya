@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
 import { useLocation } from 'react-router-dom';
-import { Document, Page, pdfjs } from 'react-pdf'; // Import pdfjs to use worker
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function PDFViewer() {
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
   const location = useLocation();
   const [url,setUrl]=useState()
   const myProp = location.state && location.state.myProp;
@@ -13,10 +15,6 @@ useEffect(()=>{
   let data=`https://saahithyapdffiles.blob.core.windows.net/uploadfilessaahithya/${myProp}.pdf?sp=r&st=2023-08-28T11:42:38Z&se=2023-12-30T19:42:38Z&spr=https&sv=2022-11-02&sr=c&sig=fvbUPQhstqAT7OaFy7XS7LuERdDsNu6U8uACd72XLmA%3D`
 setUrl(data)
 },[])
-
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
@@ -33,13 +31,22 @@ setUrl(data)
     }
   }
 
+  const viewerStyle = {
+    width: '100%', // Set the width of the viewer
+    height: '200px', // Set the height of the viewer
+  };
+
   return (
     <div>
       <Document
         file={url}
         onLoadSuccess={onDocumentLoadSuccess}
       >
-        <Page pageNumber={pageNumber} />
+        <Page
+          pageNumber={pageNumber}
+          width={800} // Set the width of the page
+          style={viewerStyle}
+        />
       </Document>
       <div>
         <button onClick={goToPrevPage} disabled={pageNumber <= 1}>

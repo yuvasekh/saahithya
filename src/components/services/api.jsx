@@ -1,7 +1,7 @@
 
 import { faTemperatureUp } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-const rootUrl="http://localhost:8001/"
+const rootUrl="https://saahithyabackend.azurewebsites.net/"
 export  async function getSuggestions(text)
 {
    let  temp=[]
