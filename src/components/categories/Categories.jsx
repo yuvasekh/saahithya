@@ -33,21 +33,21 @@ import './Categories.scss';
 
 import { useLocation, useNavigate } from 'react-router-dom';
  const imagearray = [
-    {img:Children,imgdesc:"పిల్లలు"},  {img:Athyadamika ,imgdesc:"ఆధ్యాత్మికం"},
-    {img:strilu,imgdesc:"మహిళ"}, {img:Love,imgdesc:"ప్రేమ"},
-     {img:Romance,imgdesc:"రొమాన్స్"}, {img:Samajikam,imgdesc:"సామాజికం"},
-    {img:Health,imgdesc:"ఆరోగ్యం"}, {img:Horror,imgdesc:"హర్రర్"},
-    {img:Comedy,imgdesc:"హాస్యం"}, {img:Life,imgdesc:"జీవితం"},
-    {img:Science,imgdesc:"సైన్స్"},
-    {img:Suspence,imgdesc:"సస్పెన్స్"}, {img:Anubandhalu,imgdesc:"అనుబంధాలు"},
-    {img:Fantasy,imgdesc:"ఫాంటసీ"}, {img:Vantillu,imgdesc:"వంటిల్లు"},
-    {img:Anubavalu,imgdesc:"అనుభవాలు"},
-    {img:Mandalikhakathalu,imgdesc:"మాండలికకథలు"}, {img:Prerana,imgdesc:"ప్రేరణ"},
-    {img:Patalu,imgdesc:"పాటలు"}, {img:Minikathalu,imgdesc:"మినీ కథలు"},
-    {img:Sports,imgdesc:"క్రీడలు"},
-    {img:Detective,imgdesc:"డిటెక్టివ్"},
-    {img:Crime,imgdesc:"క్రైమ్"},
-    {img:Bio,imgdesc:"బయో"}
+    {img:Children,imgdesc:"Child"},  {img:Athyadamika ,imgdesc:"athyadmika"},
+    {img:strilu,imgdesc:"Women"}, {img:Love,imgdesc:"Prema"},
+     {img:Romance,imgdesc:"Romance"}, {img:Samajikam,imgdesc:"samajikam"},
+    {img:Health,imgdesc:"Health"}, {img:Horror,imgdesc:"Horror"},
+    {img:Comedy,imgdesc:"Comedy"}, {img:Life,imgdesc:"Life"},
+    {img:Science,imgdesc:"Science"},
+    {img:Suspence,imgdesc:"Suspence"}, {img:Anubandhalu,imgdesc:"Anubandhalu"},
+    {img:Fantasy,imgdesc:"Fantasy"}, {img:Vantillu,imgdesc:"Kitchen"},
+    {img:Anubavalu,imgdesc:"Anubavalu"},
+    {img:Mandalikhakathalu,imgdesc:"Mandalika kathalu"}, {img:Prerana,imgdesc:"Prerana"},
+    {img:Patalu,imgdesc:"Patalu"}, {img:Minikathalu,imgdesc:"Mini kathalu"},
+    {img:Sports,imgdesc:"Sports"},
+    {img:Detective,imgdesc:"Detective"},
+    {img:Crime,imgdesc:"Crime"},
+    {img:Bio,imgdesc:"Bio"}
   ];
 
 const Categories = () => {  

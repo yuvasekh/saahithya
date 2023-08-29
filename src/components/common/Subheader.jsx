@@ -29,7 +29,7 @@ import './subheader.scss'
         <div className="subheader-item">
          
      
-           <Link to="/">About</Link> 
+           <Link to="/Comingsoon">Aboutus</Link> 
          
         </div>
         <div className="subheader-item">
@@ -41,7 +41,7 @@ import './subheader.scss'
         <div className="subheader-item">
          
      
-         <Link to="/">Media</Link> 
+         <Link to="/Comingsoon">Media</Link> 
        
       </div>
       <div className="subheader-item">
@@ -53,20 +53,20 @@ import './subheader.scss'
       <div className="subheader-item">
          
      
-           <Link to="/">Events</Link> 
+           <Link to="/Comingsoon">Events</Link> 
          
         </div>
         <div className="subheader-item">
          
      
-         <Link to="/">Contactus</Link> 
+         <Link to="/Comingsoon">Contactus</Link> 
        
       </div>
       <div className="subheader-item">
          
-     
+        <Link to='/Comingsoon'>
        <Button className='registerbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>Download App</Button>
-       
+       </Link>
       </div>
       </div>
      

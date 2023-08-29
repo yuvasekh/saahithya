@@ -32,7 +32,9 @@ const UploadFile = () => {
   };
 
   const [projectData, setProjectData] = useState([]);
-  const categoryOptions = ['Horror', 'Comedy', 'Crime',"Genra","Life","Prema","Child","Women","samajikam","Health","athyadmika","Suspence","Science","Anubandhalu","LGBT","Mandalika kathalu","Prerana","Patalu","Mini kathalu","Sports","Kotha rachanalu","Blog"];
+  const categoryOptions = ['Horror', 'Comedy', 'Crime',"Genra","Life","Prema","Fantacy",
+  "Child","Women","samajikam","Health","athyadmika","Suspence","Science","Anubandhalu"
+  ,"LGBT","Mandalika kathalu","Prerana","Patalu","Mini kathalu","Sports","Kotha rachanalu","Blog","Romance","Anubavalu","Detective","Bio","Life","Kitchen"];
   const subcategoryOptions = ['Novel', 'Books', 'Crime',"Genra"];
   const onFinish = async (values) => {
     console.log('Form values:', values);
@@ -46,11 +48,11 @@ const UploadFile = () => {
   return (
 
     <>
-    <div>
-      <h1 style={{ display: 'flex', textAlign: 'center', alignContent: 'center', justifyContent: 'center', color: 'tomato' }}>Publish A Book</h1>
+    <div className='upload-con'>
+      <h1 style={{  textAlign: 'center',   color: 'tomato' }}>Publish A Book</h1>
      
-      <div className='form-container' style={{height:"100vh"}}>
-        <Form onFinish={onFinish} className="my-form" style={{height:"110vh"}}>
+      <div className='form-container' >
+        <Form onFinish={onFinish} className="my-form" >
           <Form.Item
             label="Author Name"
             // style={{ fontSize:"20px" }}
@@ -126,6 +128,7 @@ const UploadFile = () => {
         <Input.TextArea rows={4} placeholder="Enter your message here" />
       </Form.Item>
 
+     
 
           <Form.Item>
 

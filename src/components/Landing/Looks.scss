@@ -12,7 +12,12 @@
     // border-style: solid;
 }
 
-
+.element{
+    background: linear-gradient(to left, #00FF00 47%, #00FFFF 58%);
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 
 .container {
@@ -112,7 +117,7 @@
     background-image: url("../../Resources/Images/Landing_components/Write.jpg") ;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     // align-items: center;
     // padding: 20px;
     // box-sizing: border-box;
@@ -127,7 +132,7 @@
     background-image: url("../../Resources/Images/Landing_components/Record.jpg") ;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     // align-items: center;
     // padding: 20px;
     // box-sizing: border-box;
@@ -141,7 +146,7 @@
     background-image: url("../../Resources/Images/Landing_components/Upload.jpg") ;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     // align-items: center;
     // padding: 20px;
     // box-sizing: border-box;
