@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 // import './Header.scss';
 import { useLocation } from 'react-router-dom';
 import { Avatar, Button, Input,Dropdown } from 'antd';
@@ -15,6 +15,7 @@ import './CommonHeader.scss';
 import { register } from '../services/api';
 // import write from'../../Resources/write.jpg';
  const CommonHeader = () => {
+  const navigate=useNavigate()
   const location = useLocation();
 var token=localStorage.getItem('token')
 // const [token,setToken]=useState(localStorage.getItem('token'))
@@ -39,6 +40,7 @@ useEffect(()=>
   {
     localStorage.clear();
     // setToken(null)
+    navigate('/')
     token=null
     setflag(true)
 

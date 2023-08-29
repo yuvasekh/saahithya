@@ -41,7 +41,8 @@ const UploadFile = () => {
   const onFinish = async (values) => {
     console.log('Form values:', values);
 
-    await fileUpload(values)
+    var res=await fileUpload(values)
+    console.log(res,"test")
 
     // You can perform further actions with the form values here
   };
@@ -51,7 +52,7 @@ const UploadFile = () => {
 
     <>
     <div className='upload-con'>
-      <h1 style={{  textAlign: 'center',   color: 'tomato',marginTop:'0px',paddingTop:'15px' }}>Publish A Book</h1>
+      <h1 style={{  textAlign: 'center',   color: 'tomato' }}>Publish A Book</h1>
      
       <div className='form-container' >
         <Form onFinish={onFinish} className="my-form" >
@@ -237,13 +238,9 @@ const UploadFile = () => {
               </Button>
             </div>
           </Form.Item>
-          <br></br>
-        <br></br>
+        
         </Form>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+      
       </div>
     </div>
     </>
