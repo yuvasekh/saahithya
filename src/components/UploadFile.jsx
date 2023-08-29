@@ -36,6 +36,8 @@ const UploadFile = () => {
   "Child","Women","samajikam","Health","athyadmika","Suspence","Science","Anubandhalu"
   ,"LGBT","Mandalika kathalu","Prerana","Patalu","Mini kathalu","Sports","Kotha rachanalu","Blog","Romance","Anubavalu","Detective","Bio","Life","Kitchen"];
   const subcategoryOptions = ['Novel', 'Books', 'Crime',"Genra"];
+  const categoryOptions1 = ['Books', 'Audio', 'Reels'];
+  const categoryOptions2 = ['Telugu', 'English'];
   const onFinish = async (values) => {
     console.log('Form values:', values);
 
@@ -65,6 +67,42 @@ const UploadFile = () => {
             ]}
           >
             <Input />
+          </Form.Item>
+          <Form.Item
+            label="Book Type"
+            name="BookType"
+            rules={[
+              {
+                required: true,
+                message: 'Please enter the Book Type',
+              },
+            ]}
+          >
+            <Select placeholder="Select a category">
+              {categoryOptions1.map((category) => (
+                <Option key={category} value={category}>
+                  {category}
+                </Option>
+              ))}
+            </Select>
+          </Form.Item>
+          <Form.Item
+            label="Book Language"
+            name="Book Language"
+            rules={[
+              {
+                required: true,
+                message: 'Please enter the Book Language',
+              },
+            ]}
+          >
+            <Select placeholder="Select a Book Language">
+              {categoryOptions2.map((category) => (
+                <Option key={category} value={category}>
+                  {category}
+                </Option>
+              ))}
+            </Select>
           </Form.Item>
           <Form.Item
             label="Category Name"
@@ -199,8 +237,11 @@ const UploadFile = () => {
               </Button>
             </div>
           </Form.Item>
-
+          <br></br>
+        <br></br>
         </Form>
+        <br></br>
+        <br></br>
         <br></br>
         <br></br>
       </div>

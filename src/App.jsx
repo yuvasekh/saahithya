@@ -52,7 +52,8 @@ const App = () => {
   const options = ["Red", "Blue", "Green", "Yellow"];
   const location = useLocation();
   var path = location.pathname;
-
+var token=localStorage.getItem('token')
+console.log(token,"In app.jsx")
   return (
     <div className="app">
       {path == "/" ? (
@@ -83,7 +84,7 @@ const App = () => {
           path="/pole"
           element={<Poll question={question} options={options} />}
         />
-              <Route path="/createcompetataion" element={<Competation />} />
+        <Route path="/createcompetataion" element={<Competation />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/read" element={<Read />} />
@@ -97,22 +98,20 @@ const App = () => {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/createquiz" element={<QuizCreation />} />
         <Route path="/createpole" element={<PoleCreation />} />
-        <Route path="/Privacy" element={<Privacy/>} />
+         <Route path="/Privacy" element={<Privacy/>} />
           <Route path="/Terms" element={<Terms/>} />
           <Route path="/Refund" element={<Refund/>} />
           <Route path="/Shipping" element={<Shipping/>} />
           <Route path="/Contactus" element={<Contactus/>} />
           <Route path="/Publications" element={<Publications/>} />
           <Route path="/Looks" element={<Looks/>} />
-
           <Route path="/quiz" element={<Quiz/>} />
           <Route path="/createquiz" element={<QuizCreation/>} />
           <Route path="/createpole" element={<PoleCreation/>} />
-
           <Route path="/Looks" element={<Looks/>} />
 </Routes>
 
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 };

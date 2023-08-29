@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 // import './Header.scss';
+import { useLocation } from 'react-router-dom';
 import { Button, Input } from 'antd';
 import { BellOutlined, BookOutlined, CompassOutlined, EditOutlined, HomeOutlined, InfoCircleOutlined, SearchOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
 import logoimg from '../../Resources/saahithya_logo.png'
@@ -11,8 +12,12 @@ import { Select } from 'antd';
 
 
 import './CommonHeader.scss';
+import { register } from '../services/api';
 // import write from'../../Resources/write.jpg';
  const CommonHeader = () => {
+  const location = useLocation();
+var token=localStorage.getItem('token')
+console.log(token,"Common header")
   const handleChange = (value) => {
     console.log(`selected ${value}`);
   };
@@ -66,22 +71,24 @@ import './CommonHeader.scss';
 
 
        
-       
-        <div className="header-item">
-            <div>
-              <Link to="/login">
-                <Button className='signinbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>SignIn</Button>
-              </Link>
-            </div>
-        </div>  
-        <div className="header-item">
-         
-            <div>
-            <Link to="/register">
-                <Button className='registerbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>Register</Button>
-              </Link>
-            </div>
-         </div>
+       {
+        token==null?<>   <div className="header-item">
+        <div>
+          <Link to="/login">
+            <Button className='signinbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>SignIn</Button>
+          </Link>
+        </div>
+    </div>  
+    <div className="header-item">
+     
+        <div>
+        <Link to="/register">
+            <Button className='registerbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>Register</Button>
+          </Link>
+        </div>
+     </div></>:<></>
+       }
+     
       
        </div> 
       </div>

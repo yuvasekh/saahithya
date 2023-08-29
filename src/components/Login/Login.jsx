@@ -17,7 +17,9 @@ const LoginForm = () => {
       console.log(res, "yuva");
       if (res.status === 200) {
         console.log(res.data.token)
+        localStorage.setItem('token',res.data.token)
         navigate('/home', { state: { myProp: values } });
+        
         // Uncomment the above line after importing the navigate function
       } else {
         setError('Login failed. Please try again.');

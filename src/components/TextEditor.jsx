@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import html2pdf from 'html2pdf.js';
+
 // import getSuggestions from '../api'
 import './TextEditor.css'
 import { Button } from 'antd';
@@ -8,9 +10,24 @@ const TextEditor = (props) => {
     console.log(props)
   const [content, setContent] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
-
+  const handleDownload = () => {
+    const editorContent = document.querySelector('.ql-editor').innerHTML;
+    const pdfOptions = {
+      margin: 10,
+      filename: 'editor_content.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    };
+  
+    const pdfElement = document.createElement('div');
+    pdfElement.innerHTML = editorContent;
+  
+    html2pdf().from(pdfElement).set(pdfOptions).save();
+  };
+  
   const handleEditorChange = async (value,e) => {
-    console.log(e.ops,"gggggggggggg")
+    // console.log(e.ops,"gggggggggggg")
     // var res = await getSuggestions(value);
     // if(e.ops[0].insert!=undefined ||  e.ops[1]?.insert=='')
     // {
@@ -51,6 +68,7 @@ const TextEditor = (props) => {
         )}
       </ul>
       <Button/>
+      <Button onClick={handleDownload}>Download PDF</Button>
     </div>
   );
 };
