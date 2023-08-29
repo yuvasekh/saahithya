@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Link} from "react-router-dom";
 // import './Header.scss';
 import { useLocation } from 'react-router-dom';
-import { Button, Input } from 'antd';
+import { Avatar, Button, Input,Dropdown } from 'antd';
 import { BellOutlined, BookOutlined, CompassOutlined, EditOutlined, HomeOutlined, InfoCircleOutlined, SearchOutlined, TeamOutlined, UserOutlined } from '@ant-design/icons';
 import logoimg from '../../Resources/saahithya_logo.png'
 // import { Outlet, Link } from "react-router-dom"; 
@@ -17,10 +17,43 @@ import { register } from '../services/api';
  const CommonHeader = () => {
   const location = useLocation();
 var token=localStorage.getItem('token')
-console.log(token,"Common header")
+// const [token,setToken]=useState(localStorage.getItem('token'))
+console.log("common1",token)
+const [flag,setflag]=useState(false)
+useEffect(()=>
+{
+  console.log("common")
+   
+  // setToken(localStorage.getItem('token'))
+
+},[])
+useEffect(()=>
+{
+  console.log(token,"Common header")
+},[flag])
+
   const handleChange = (value) => {
     console.log(`selected ${value}`);
   };
+  const logout=(()=>
+  {
+    localStorage.clear();
+    // setToken(null)
+    token=null
+    setflag(true)
+
+  })
+  const items = [
+  
+    {
+      key: "1",
+      label: (
+        <div className="flex  items-center gap-2 p-1" onClick={logout}>
+          <div className="text-sm font-semibold">Logout</div>
+        </div>
+      ),
+    },
+  ];
   return (
     <div className='headers'>
       <div className='logoitems'>
@@ -52,7 +85,7 @@ console.log(token,"Common header")
     ]}/>
     </div>
         <div className="header-content">
-        <div style={{display:'flex',justifyContent:'end'}}> 
+        <div className='loginItems'> 
      
 
 
@@ -86,7 +119,22 @@ console.log(token,"Common header")
             <Button className='registerbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>Register</Button>
           </Link>
         </div>
-     </div></>:<></>
+     </div></>:<> <Dropdown
+            menu={{ items }}
+            placement="bottom"
+            trigger={"click"}
+            arrow={{
+              pointAtCenter: true,
+            }}
+          >
+            <Avatar
+              className="flex items-center justify-center cursor-pointer"
+              size="large"
+          
+              icon={<UserOutlined />}
+            />
+          </Dropdown></>
+
        }
      
       

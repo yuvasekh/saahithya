@@ -43,10 +43,15 @@ display: flex;
     .header-content {
       display: flex;
       align-items: center;
-      // margin: 25px;
-      justify-content: end;
+      margin: 25px;
+      justify-content: space-evenly;
       // gap: 30px;
   
+    }
+    .loginItems
+    {
+      justify-content: space-evenly;
+      display: flex;
     }
     .registerbutton
     {

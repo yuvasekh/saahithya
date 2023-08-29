@@ -1,6 +1,6 @@
 import { Form, Input, Button } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { login } from '../services/api';
 import { useNavigate } from 'react-router-dom';
 // Import the navigate function from the appropriate package or library
@@ -8,7 +8,21 @@ import { useNavigate } from 'react-router-dom';
 const LoginForm = () => {
   const navigate=useNavigate();
   const [error, setError] = useState(null);
-
+  // useEffect(() => {
+  //   const handleStorageChange = (e) => {
+  //     if (e.key === 'token') {
+  //       console.log(e.newValue,"changestrack")
+  //       setToken(e.newValue);
+  //     }
+  //   };
+  
+  //   window.addEventListener('storage', handleStorageChange);
+  
+  //   return () => {
+  //     window.removeEventListener('storage', handleStorageChange);
+  //   };
+  // }, []);
+  
   const onFinish = async (values) => {
     console.log('Form values:', values);
     try { 

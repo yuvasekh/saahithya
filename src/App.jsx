@@ -23,20 +23,20 @@ import Teams from "./components/Teams/Home";
 import Read from "../src//components/Read";
 import Poll from "./components/Quiz/Poller";
 import Quiz from "./components/Quiz/Quiz";
-import Competation from "../src/components/Teams/Competation"
+import Competation from "../src/components/Teams/Competation";
 import PoleCreation from "./components/Quiz/PoleCreation";
-import Subheader from './components/common/Subheader';
-import Subcategories from './components/categories/Subcategorires';
-import Privacy from './components/Privacy/Privacy'
-import Refund from './components/Privacy/Refund'
-import Terms from './components/Privacy/Terms'
-import Shipping from './components/Privacy/Shipping';
-import Contactus from './components/Privacy/Contactus';
-import AudioOptions from './components/Audio/AudioOptions';
-import CategoryOptions from './components/categories/CategoryOptiions'
-import QuizCreation from './components/Quiz/QuizCreation'
-import Publications from './components/Landing/Publications';
-import Faq from './components/Privacy/Faq';
+import Subheader from "./components/common/Subheader";
+import Subcategories from "./components/categories/Subcategorires";
+import Privacy from "./components/Privacy/Privacy";
+import Refund from "./components/Privacy/Refund";
+import Terms from "./components/Privacy/Terms";
+import Shipping from "./components/Privacy/Shipping";
+import Contactus from "./components/Privacy/Contactus";
+import AudioOptions from "./components/Audio/AudioOptions";
+import CategoryOptions from "./components/categories/CategoryOptiions";
+import QuizCreation from "./components/Quiz/QuizCreation";
+import Publications from "./components/Landing/Publications";
+import Faq from "./components/Privacy/Faq";
 import Looks from "./components/Landing/Looks";
 
 function useQuery() {
@@ -52,8 +52,8 @@ const App = () => {
   const options = ["Red", "Blue", "Green", "Yellow"];
   const location = useLocation();
   var path = location.pathname;
-var token=localStorage.getItem('token')
-console.log(token,"In app.jsx")
+  var token = localStorage.getItem("token");
+  console.log(token, "In app.jsx");
   return (
     <div className="app">
       {path == "/" ? (
@@ -98,20 +98,20 @@ console.log(token,"In app.jsx")
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/createquiz" element={<QuizCreation />} />
         <Route path="/createpole" element={<PoleCreation />} />
-         <Route path="/Privacy" element={<Privacy/>} />
-          <Route path="/Terms" element={<Terms/>} />
-          <Route path="/Refund" element={<Refund/>} />
-          <Route path="/Shipping" element={<Shipping/>} />
-          <Route path="/Contactus" element={<Contactus/>} />
-          <Route path="/Publications" element={<Publications/>} />
-          <Route path="/Looks" element={<Looks/>} />
-          <Route path="/quiz" element={<Quiz/>} />
-          <Route path="/createquiz" element={<QuizCreation/>} />
-          <Route path="/createpole" element={<PoleCreation/>} />
-          <Route path="/Looks" element={<Looks/>} />
-</Routes>
+        <Route path="/Privacy" element={<Privacy />} />
+        <Route path="/Terms" element={<Terms />} />
+        <Route path="/Refund" element={<Refund />} />
+        <Route path="/Shipping" element={<Shipping />} />
+        <Route path="/Contactus" element={<Contactus />} />
+        <Route path="/Publications" element={<Publications />} />
+        <Route path="/Looks" element={<Looks />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/createquiz" element={<QuizCreation />} />
+        <Route path="/createpole" element={<PoleCreation />} />
+        <Route path="/Looks" element={<Looks />} />
+      </Routes>
 
-      <Footer/>
+      <Footer />
     </div>
   );
 };
