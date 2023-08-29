@@ -12,7 +12,6 @@ const {addtocarts}=require('../Controllers/addtocart')
 const {updatecart}=require('../Controllers/updatecart')
 const {getCart}=require('../Controllers/getCart')
 const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,getquizresults}=require('../Controllers/contest')
-// const {payment}=require('../Controllers/payemnt')
 const basePath = "/register"
 module.exports = (app) => {
   console.log("inside ");

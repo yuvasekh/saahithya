@@ -5,7 +5,7 @@ var {Jwttoken}=require('../Resources/Jwttoken')
 var mysql = require('mysql2');
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
 const TWILIO_ACCOUNT_SID = "ACf8253f88733b8853ef16262e1f1df7b6";
-const  TWILIO_AUTH_TOKEN = "6ff2554e32c23e2a592ce891c3510c77";
+const  TWILIO_AUTH_TOKEN = "c3349ec2f74c88b5d835863baaa35f8e";
 const TWILIO_SERVICE_SID = "VA93fc6b4b82426bb21d9d840d53fcb501";
   // process.env;
 const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, {
