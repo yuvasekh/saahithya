@@ -52,12 +52,31 @@ const TextEditor = (props) => {
     ['link', 'image'], // links and images
     ['clean'], // remove formatting
   ];
-
+  const handleSetCursorPosition = () => {
+    if (quillRef.current) {
+      const editor = quillRef.current.getEditor();
+      const indexToSetCursor = 10; // Set the index where you want to move the cursor
+      editor.setSelection(indexToSetCursor);
+    }
+  };
+  
+  const handleNextPage = () => {
+    if (quillRef.current) {
+      const editor = quillRef.current.getEditor();
+      const currentPage = getCurrentPageNumber(); // Implement a function to get the current page number
+      const nextPageIndex = getNextPageIndex(currentPage); // Implement a function to get the index of the next page
+  
+      if (nextPageIndex !== null) {
+        scrollToPageIndex(editor, nextPageIndex);
+      }
+    }
+  };
+  
   return (
     <div>
       <ReactQuill
         value={content}
-        // onChange={handleEditorChange}
+        onChange={handleSetCursorPosition}
         modules={{ toolbar: toolbarOptions }}
       />
       <ul>
