@@ -17,8 +17,10 @@ import {
 } from "@ant-design/icons";
 import { fileUpload } from '../components/services/api'
 import '../components/Layout/Upload.scss'
+import { useNavigate } from 'react-router-dom';
 const UploadFile = () => {
   const { Option } = Select;
+  const navigate=useNavigate()
   // let { projectId } = useParams();
   const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -42,8 +44,14 @@ const UploadFile = () => {
     console.log('Form values:', values);
 
     var res=await fileUpload(values)
-    console.log(res,"test")
-
+    console.log(res.status,"test")
+    if(res.status==200)
+    {
+      navigate('/home')
+    }
+else{
+  alert("Uplaod Failed")
+}
     // You can perform further actions with the form values here
   };
 
