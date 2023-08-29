@@ -110,7 +110,7 @@ const App = () => {
           <Route path="/Looks" element={<Looks/>} />
 </Routes>
 
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   );
 };
