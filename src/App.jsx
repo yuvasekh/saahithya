@@ -34,17 +34,10 @@ import Contactus from './components/Privacy/Contactus';
 import AudioOptions from './components/Audio/AudioOptions';
 import CategoryOptions from './components/categories/CategoryOptiions'
 import QuizCreation from './components/Quiz/QuizCreation'
-<<<<<<< HEAD
-import PoleCreation from './components/Quiz/PoleCreation';
 import Publications from './components/Landing/Publications';
-=======
-import Publications from './components/Landing/Publications';
-<<<<<<< HEAD
 import Faq from './components/Privacy/Faq';
-=======
 import Looks from "./components/Landing/Looks";
->>>>>>> 20f35a3ee21c9f831408396047d738cf7dd0aff1
->>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
+
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -108,32 +101,14 @@ const App = () => {
           <Route path="/Shipping" element={<Shipping/>} />
           <Route path="/Contactus" element={<Contactus/>} />
           <Route path="/Publications" element={<Publications/>} />
-<<<<<<< HEAD
-{/* <<<<<<< HEAD */}
           <Route path="/Looks" element={<Looks/>} />
-{/* ======= */}
+
           <Route path="/quiz" element={<Quiz/>} />
           <Route path="/createquiz" element={<QuizCreation/>} />
           <Route path="/createpole" element={<PoleCreation/>} />
-=======
-<<<<<<< HEAD
-          <Route path="/Faq" element={<Faq/>} />
-{/* <<<<<<< HEAD */}
-=======
->>>>>>> 20f35a3ee21c9f831408396047d738cf7dd0aff1
+
           <Route path="/Looks" element={<Looks/>} />
->>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
-
-          
-
-<<<<<<< HEAD
-{/* >>>>>>> d951c21619de79e73d6e7f03b1638ebfdd28f006 */}
-=======
-     
-      </Routes>
-        
-         
->>>>>>> 676c05b7e83c98b8c6426497ca6676a706bfe726
+</Routes>
 
       {/* <Footer/> */}
     </div>
