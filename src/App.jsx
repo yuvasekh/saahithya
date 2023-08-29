@@ -51,7 +51,8 @@ const App = () => {
   const options = ["Red", "Blue", "Green", "Yellow"];
   const location = useLocation();
   var path = location.pathname;
-
+var token=localStorage.getItem('token')
+console.log(token,"In app.jsx")
   return (
     <div className="app">
       {path == "/" ? (
