@@ -21,7 +21,7 @@ const CategoryOptions = () => {
     const navigate=useNavigate()
     const test=((item)=>
     {
-  alert(item.imgdesc)
+  // alert(item.imgdesc)
   navigate('/categories', { state: { myProp:item } })
     })
   return (

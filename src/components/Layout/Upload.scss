@@ -1,24 +1,35 @@
 .my-form {
   padding: 20px;  
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-<<<<<<< HEAD
+
 
     justify-content: center;
     margin-bottom: 15px;
     border-radius: 15px;
+    background-color: white;
   }
   .form-container {
     // display: flex;
     // justify-content: center;
     // align-items: center;
     width: 50vw;
-    margin-left: 340px;
+    margin-left: 390px;
+    
     
   //  height: 77vh;
   }
 
+  @media only screen and (max-width:1352.73px ) and (min-width: 670px){
+    .form-container {
+      width: 50vw;
+      margin-left:310px ;
+    
+    }
+  }
 
-
+.upload-con{
+  background-color: #E0F4EB;
+}
   // .ant-upload
   // {
    
@@ -196,11 +207,8 @@
 
 
 // }
-=======
-  width: 500px;
-  justify-content: center;
 
-}
+
 .form-container {
   display: flex;
   justify-content: center;
@@ -216,4 +224,4 @@
   height: 20px;
   font-size: 12px !important;
 }
->>>>>>> ebd5de1f8d17d69ee7e50f014957b6818a193aba
+

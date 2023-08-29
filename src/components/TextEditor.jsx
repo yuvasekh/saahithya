@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import html2pdf from 'html2pdf.js';
+// import html2pdf from 'html2pdf.js';
 
 // import getSuggestions from '../api'
 import './TextEditor.css'

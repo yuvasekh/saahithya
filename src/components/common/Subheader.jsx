@@ -64,7 +64,7 @@ import './subheader.scss'
       </div>
       <div className="subheader-item">
          
-        <Link to='/Comingsoon'>
+      <Link to='/Comingsoon'>
        <Button className='registerbutton' style={{ fontSize:"17px",backgroundColor:"#266B69" }}>Download App</Button>
        </Link>
       </div>
