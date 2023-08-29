@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { useLocation } from 'react-router-dom';
-
+import './Read.scss'
+import { Button } from 'antd';
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function PDFViewer() {
@@ -31,31 +32,27 @@ setUrl(data)
     }
   }
 
-  const viewerStyle = {
-    width: '100%', // Set the width of the viewer
-    height: '200px', // Set the height of the viewer
-  };
+  
 
   return (
-    <div>
+    <div className='mains'>
       <Document
         file={url}
         onLoadSuccess={onDocumentLoadSuccess}
       >
         <Page
           pageNumber={pageNumber}
-          width={800} // Set the width of the page
-          style={viewerStyle}
+  
         />
       </Document>
-      <div>
-        <button onClick={goToPrevPage} disabled={pageNumber <= 1}>
+      <div className='buttonItems'>
+        <Button onClick={goToPrevPage} disabled={pageNumber <= 1} className='buttonnormal'>
           Previous Page
-        </button>
+        </Button>
         <p>Page {pageNumber} of {numPages}</p>
-        <button onClick={goToNextPage} disabled={pageNumber >= numPages}>
+        <Button onClick={goToNextPage} disabled={pageNumber >= numPages} className='buttonnormal'>
           Next Page
-        </button>
+        </Button>
       </div>
     </div>
   );

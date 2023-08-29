@@ -7,6 +7,11 @@
     align-items: center;
     align-content: center;
     position: relative;
+
+    }
+    .react-pdf__Page__canvas
+    {
+        width: 545px;
     }
     .subitem
     {
@@ -22,11 +27,17 @@
         height: 78vh;
         overflow: scroll;
     }
-    .buttonnormal
-    {
-       border: groove;
-       height:40px;
-       align-content:center;
-       position: relative;
-    }
+   .buttonItems
+   {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+   }
+   .ant-btn{
+    color: white;
+    margin-top: 12px;
+    background-color: rgb(38, 107, 105);
+
+
+   }
 }
