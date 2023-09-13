@@ -22,13 +22,21 @@ module.exports.uploadFiles = async (req, res) => {
     const date = new Date(dateString);
     const mysqlDatetime = date.toISOString().slice(0, 19).replace("T", " ");
     console.log(date);
-    let pdfId = uuidv4();
+   
   
-    await uploadBytesToBlobStorage(pdfId, fileContent);
+
     const query = `INSERT INTO UploadFiles 
                           VALUES (?, ?, ?,?,?, ?, ?, ?, 0,?,?,?,'syuva893@gmail.com',?,0,?,"Books","Telugu")`;
+                let count=0
 for(var i=0;i<splitArray.length;i++)
 {
+  count++;
+  let pdfId = uuidv4();
+  if(count==1)
+  {
+    await uploadBytesToBlobStorage(pdfId, fileContent);
+  }
+  
   const Likes = Math.floor(Math.random() * 1000);
   const Views = Math.floor(Math.random() * 1000);
   const Rating = 5;
