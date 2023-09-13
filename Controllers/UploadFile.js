@@ -28,16 +28,17 @@ module.exports.uploadFiles = async (req, res) => {
             // Assuming you have the Readable stream correctly set up
             let fileStream = Readable.from(fileContent);
             
-            let date = new Date();
+            let date = req.body['Published Year']
+
             console.log(date);
-            const formattedTime = date.toISOString().slice(0, 19).replace('T', ' ');
+           
             let pdfId = uuidv4();
             await uploadBytesToBlobStorage(pdfId, fileContent);
             
             const query = `INSERT INTO UploadFiles 
                           VALUES (?, ?, ?,?,?, 0, 0, 0, 0,?,?,?,'syuva893@gmail.com',?,0,?,"Books","Telugu")`;
       
-            const values = [pdfId, req.body.BookTitle,req.body.categoryName, req.body.SubCategory, req.body.authorName, req.body.Price,req.body.description,Numberofpages,formattedTime,imageContent];
+            const values = [pdfId, req.body.BookTitle,req.body.categoryName, req.body.SubCategory, req.body.authorName, req.body.Price,req.body.description,Numberofpages,date,imageContent];
             async function dummy() {
               console.log('hari')
                db.query(query, values, (err, rows) => {

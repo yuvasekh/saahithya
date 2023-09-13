@@ -1,11 +1,12 @@
 const db = require('../Resources/db');
 module.exports.categories = async (req, res) => {
-    console.log(req.params.categoryname,"category??????????????/")
+    console.log(req.body,"category??????????????/")
    
-    let categories=req.params.categoryname
+    let requestdata=req.body
 
-          console.log(`select * from UploadFiles where CategoryName='${categories}'`)
-    db.query(`select * from UploadFiles where CategoryName='${categories}'`, (err, rows) => {
+    let query = `select * from UploadFiles where CategoryName='${requestdata.category.category}' and BookLanguage='${requestdata.category.languageandtype.language}' and Type='${requestdata.category.languageandtype.BookType}' and SubCategory='${requestdata.subcategory}'`;
+
+    db.query(query, (err, rows) => {
         if (err) {
             console.error('Error executing query:', err); 
             // res.status(500).json({message:err})

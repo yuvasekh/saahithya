@@ -11,7 +11,8 @@ const {TextEditor}=require('../Controllers/TextEditor')
 const {addtocarts}=require('../Controllers/addtocart')
 const {updatecart}=require('../Controllers/updatecart')
 const {getCart}=require('../Controllers/getCart')
-const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,getquizresults}=require('../Controllers/contest')
+const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,getquizresults}=require('../Controllers/contest');
+const { getallusers } = require("../Controllers/getallusers");
 const basePath = "/register"
 module.exports = (app) => {
   console.log("inside ");
@@ -21,7 +22,7 @@ module.exports = (app) => {
   app.route('/uploadfile').post(uploadFiles)
   app.route('/getdata').post(getData)
   app.route('/getdatabyid').post(getDataById)
-  app.route('/category/:categoryname').post(categories)
+  app.route('/category').post(categories)
   app.route('/latest').get(latest)
   app.route('/trending').get(topBooks)
   app.route('/textupload').post(TextEditor)
@@ -33,6 +34,7 @@ module.exports = (app) => {
   app.route('/createquiz').post(createquiz)
   app.route('/getpole').get(getpole)
   app.route('/getquiz').get(getquiz)
+  app.route('/getallusers').get(getallusers)
   app.route('/getquizresults').get(getquizresults)
   app.route('/participateQuiz').post(participateQuiz)
 };
