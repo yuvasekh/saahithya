@@ -1,62 +1,70 @@
 const { Readable } = require("stream");
 var path = require("path");
 const { v4: uuidv4 } = require("uuid");
-// const multipart = require("parse-multipart");
-var mysql = require('mysql2');
 const { uploadBytesToBlobStorage } = require("../Resources/UploadToBlob");
-const { file } = require("googleapis/build/src/apis/file");
-// app.js (or any other main file)
-const db = require('../Resources/db');
-const { BlobServiceClient } = require("@azure/storage-blob");
-
+const db = require("../Resources/db");
 
 module.exports.uploadFiles = async (req, res) => {
-    console.log(req.body,"initial")
-
-    let data = req.files;
-    // console.log(data[0], "adata",data[1])
-    if (data) {
-
-            console.log("fileNames:----->", data[0].originalname);
-            var extension = path.extname( data[0].originalname);
-            console.log("extension:----->", extension);
-         
-            var fileContent =  data[0].buffer;
-            const imageContent = data[1].buffer;
-            console.log(imageContent, "------------------->");
-            let Numberofpages=0
-            // Assuming you have the Readable stream correctly set up
-            let fileStream = Readable.from(fileContent);
-            
-            let date = req.body['Published Year']
-
-            console.log(date);
-           
-            let pdfId = uuidv4();
-            await uploadBytesToBlobStorage(pdfId, fileContent);
-            
-            const query = `INSERT INTO UploadFiles 
-                          VALUES (?, ?, ?,?,?, 0, 0, 0, 0,?,?,?,'syuva893@gmail.com',?,0,?,"Books","Telugu")`;
-      
-            const values = [pdfId, req.body.BookTitle,req.body.categoryName, req.body.SubCategory, req.body.authorName, req.body.Price,req.body.description,Numberofpages,date,imageContent];
-            async function dummy() {
-              console.log('hari')
-               db.query(query, values, (err, rows) => {
-                console.log('hari2')
-                if (err) {
-                  console.error('Error executing query:', err.stack);
-                  return;
-                }
-                console.log('Query req.body:', rows);
-              });
-            } 
-            await dummy()
-            
-
-        console.log("yuva");
-        res.status(200).json({ data: "uploaded" });
-    } else {
-        res.status(500).json({ message: "There is no data to process" });
-        console.log("There is no data to process");
+  console.log(req.body.categoryName, "initial");
+  let categorieArray=req.body.categoryName
+  let splitArray=categorieArray.split(',')
+  console.log(splitArray,"splitArray")
+  let data = req.files;
+  if (data) {
+    console.log("fileNames:----->", data[0].originalname);
+    var extension = path.extname(data[0].originalname);
+    console.log("extension:----->", extension);
+    var fileContent = data[0].buffer;
+    const imageContent = data[1].buffer;
+    console.log(imageContent, "------------------->");
+    let Numberofpages = 0;
+    let dateString = req.body["Published Year"];
+    const date = new Date(dateString);
+    const mysqlDatetime = date.toISOString().slice(0, 19).replace("T", " ");
+    console.log(date);
+    let pdfId = uuidv4();
+  
+    await uploadBytesToBlobStorage(pdfId, fileContent);
+    const query = `INSERT INTO UploadFiles 
+                          VALUES (?, ?, ?,?,?, ?, ?, ?, 0,?,?,?,'syuva893@gmail.com',?,0,?,"Books","Telugu")`;
+for(var i=0;i<splitArray.length;i++)
+{
+  const Likes = Math.floor(Math.random() * 1000);
+  const Views = Math.floor(Math.random() * 1000);
+  const Rating = 5;
+    const values = [
+      pdfId,
+      req.body.BookTitle,
+     splitArray[i],
+      req.body.SubCategory,
+      req.body.authorName,
+      Likes,
+      Views,
+      Rating,
+      req.body.Price,
+      req.body.description,
+      Numberofpages,
+      mysqlDatetime,
+      imageContent,
+    ];
+    async function dummy() {
+      db.query(query, values, (err, rows) => {
+        if (err) {
+          console.error("Error executing query:", err.stack);
+          return;
+        }
+        console.log("Query req.body:", rows);
+      });
     }
+    await dummy();
+
+    console.log("yuva");
+  }
+
+    
+    res.status(200).json({ data: "uploaded" });
+  } else {
+    res.status(500).json({ message: "There is no data to process" });
+    console.log("There is no data to process");
+  }
 };
