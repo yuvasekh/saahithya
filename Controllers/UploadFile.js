@@ -22,7 +22,7 @@ module.exports.uploadFiles = async (req, res) => {
     const date = new Date(dateString);
     const mysqlDatetime = date.toISOString().slice(0, 19).replace("T", " ");
     console.log(date);
-   
+    let pdfId = uuidv4();
   
     await uploadBytesToBlobStorage(pdfId, fileContent);
     const query = `INSERT INTO UploadFiles 
