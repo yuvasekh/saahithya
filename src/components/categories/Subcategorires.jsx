@@ -16,13 +16,14 @@ import { useNavigate,useLocation } from 'react-router-dom';
 const Subcategories = () => {
     const location = useLocation();
     const myProp = location.state && location.state.myProp;
+    console.log(myProp,"subcategoryItems")
     const navigate=useNavigate();
 
     const test=(item)=>
     {
         
        var items={
-        subcategory:item,
+        subcategory:item.imgdesc,
         category:myProp
        }
        console.log(items,"total")

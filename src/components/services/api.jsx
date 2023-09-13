@@ -1,16 +1,15 @@
 
 import { faTemperatureUp } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-const rootUrl="https://saahithyabackend.azurewebsites.net/"
+const rootUrl="http://localhost:8001/"
 export  async function getSuggestions(text)
 {
-   let  temp=[]
-    const content = text.replace(/<[^>]+>/g, '');
-  
-   await axios.post('http://localhost:3000/text',{ key: content })
+   console.log(text)
+  let temp=[]
+    await axios.post(`${rootUrl}api/textupload`,{content: text})
   .then((response) => {
-    // console.log('Response:', response.data[1][0][1]);
-       temp.push(  response.data[1][0][1])
+   
+       temp.push(  response.data)
   })
   .catch((error) => {
     console.error('Error:', error.message);
@@ -100,9 +99,9 @@ console.log(response)
   console.error('Error:', error.message);
 })
 }
-export  async function categories (categoryname,subcategoryname)
+export  async function categories (requesteddata)
 {
-return await axios.post(`${rootUrl}api/category/${categoryname,subcategoryname}`).then((response)=>
+return await axios.post(`${rootUrl}api/category`,requesteddata).then((response)=>
 {
 console.log(response)
 return response.data
@@ -269,4 +268,16 @@ export async function participateQuiz(data) {
   })
 
 
+}
+export  async function getallusers ()
+{
+  // console.log(data,"yuvaback")
+return await axios.get(`${rootUrl}api/getallusers`).then((response)=>
+{
+console.log(response)
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
 }

@@ -38,6 +38,9 @@ import QuizCreation from "./components/Quiz/QuizCreation";
 import Publications from "./components/Landing/Publications";
 import Faq from "./components/Privacy/Faq";
 import Looks from "./components/Landing/Looks";
+import MyEditor from "./components/Text";
+import Admin from "./components/Admin/Index";
+import Langugage from "./components/categories/language"
 
 function useQuery() {
   const { search } = useLocation();
@@ -80,8 +83,9 @@ const App = () => {
         <Route path="/authors" element={<Authors />} />
         <Route path="/itemdesc" element={<Itemdesc />} />
         <Route path="/audio" element={<AudioOptions />} />
+        <Route path="/text" element={<MyEditor />} />
         <Route
-          path="/pole"
+          path="/poll"
           element={<Poll question={question} options={options} />}
         />
         <Route path="/createcompetataion" element={<Competation />} />
@@ -97,7 +101,7 @@ const App = () => {
         <Route path="/Contactus" element={<Contactus />} />
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/createquiz" element={<QuizCreation />} />
-        <Route path="/createpole" element={<PoleCreation />} />
+        <Route path="/createpoll" element={<PoleCreation />} />
         <Route path="/Privacy" element={<Privacy />} />
         <Route path="/Terms" element={<Terms />} />
         <Route path="/Refund" element={<Refund />} />
@@ -105,13 +109,11 @@ const App = () => {
         <Route path="/Contactus" element={<Contactus />} />
         <Route path="/Publications" element={<Publications />} />
         <Route path="/Looks" element={<Looks />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/createquiz" element={<QuizCreation />} />
-        <Route path="/createpole" element={<PoleCreation />} />
-        <Route path="/Looks" element={<Looks />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path='/language' element={<Langugage/>}/>
       </Routes>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

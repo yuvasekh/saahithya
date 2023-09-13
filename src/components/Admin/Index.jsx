@@ -8,42 +8,15 @@ import {
   MenuUnfoldOutlined,
   PieChartOutlined,
 } from "@ant-design/icons";
+import UsersList from './UsersList.jsx'
 import { Button, Menu } from "antd";
 import { Link } from "react-router-dom";
-import CreateCompetation from "./Competation.jsx";
-import QuizCreation from "../Quiz/QuizCreation.jsx";
+
 import CategoryOptions from "../categories/CategoryOptiions.jsx";
 import DummyCarousel from "../DummyCarousel.jsx";
-import PoleCreation from "../Quiz/PoleCreation.jsx";
-import OnGoingCompetation from "./OnGoingCompetation.jsx";
-import Quiz from "../Quiz/Quiz.jsx";
-import Poll from "../Quiz/Poller.jsx";
 
 const Teams = () => {
-  
-  const sendData = (data) => {
-    console.log(data,"valuesssssssssssss")
-    if(data=='poll')
-    {
-      setShowItem(<PoleCreation/>)
-    }
-    if(data=='quiz')
-    {
-      setShowItem(<QuizCreation/>)
-    }
-    if(data=='pollarea')
-    {
-      setShowItem(<Poll/>)
-    }
-    if(data=='quizarea')
-    {
-      setShowItem(<Quiz/>)
-    }
-  }
-  const [showItem, setShowItem] = useState(<CreateCompetation sendData={sendData} />);
-  useEffect(()=>
-    {
-    },[showItem])
+  const [showItem, setShowItem] = useState(<UsersList/>);
   function getItem(label, key, icon, children, type) {
     return {
       key,
@@ -53,6 +26,10 @@ const Teams = () => {
       type,
     };
   }
+// useEffect(()=>
+// {
+
+// },[showItem])
   const items = [
     getItem("Categories", "1", <PieChartOutlined />, [
       getItem("Each Category", "11"),
@@ -61,7 +38,7 @@ const Teams = () => {
     ]),
     getItem("Competitions", "2", <DesktopOutlined />, [
       getItem("createcompetataion", "21"), // This line seems incorrect, fix the usage of the Link component
-      getItem("OnGoingCompetions", "23"),
+      getItem("Competions", "23"),
       getItem("Scores", "24"),
     ]),
     getItem("ChatRoom", "3", <ContainerOutlined />),
@@ -93,9 +70,6 @@ const Teams = () => {
     }
     if (values == 21) {
       setShowItem(<CreateCompetation key={showItem} />);
-    }
-    if (values == 23) {
-      setShowItem(<OnGoingCompetation sendData={sendData} />);
     }
     console.log(values, "values");
   };

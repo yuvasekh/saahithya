@@ -19,10 +19,14 @@ import { useNavigate,useLocation } from 'react-router-dom';
 
 const CategoryOptions = () => {
     const navigate=useNavigate()
+    const location = useLocation();
+    const myProp = location.state && location.state.myProp;
+    console.log(myProp,"checkprops")
     const test=((item)=>
     {
   // alert(item.imgdesc)
-  navigate('/categories', { state: { myProp:item } })
+  var append={language:myProp,BookType:item.imgdesc}
+  navigate('/categories', { state: { myProp:append } })
     })
   return (
 

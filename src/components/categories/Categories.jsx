@@ -32,23 +32,59 @@ import './Categories.scss';
 
 
 import { useLocation, useNavigate } from 'react-router-dom';
- const imagearray = [
-    {img:Children,imgdesc:"Child"},  {img:Athyadamika ,imgdesc:"athyadmika"},
-    {img:strilu,imgdesc:"Women"}, {img:Love,imgdesc:"Prema"},
-     {img:Romance,imgdesc:"Romance"}, {img:Samajikam,imgdesc:"samajikam"},
-    {img:Health,imgdesc:"Health"}, {img:Horror,imgdesc:"Horror"},
-    {img:Comedy,imgdesc:"Comedy"}, {img:Life,imgdesc:"Life"},
-    {img:Science,imgdesc:"Science"},
-    {img:Suspence,imgdesc:"Suspence"}, {img:Anubandhalu,imgdesc:"Anubandhalu"},
-    {img:Fantasy,imgdesc:"Fantasy"}, {img:Vantillu,imgdesc:"Kitchen"},
-    {img:Anubavalu,imgdesc:"Anubavalu"},
-    {img:Mandalikhakathalu,imgdesc:"Mandalika kathalu"}, {img:Prerana,imgdesc:"Prerana"},
-    {img:Patalu,imgdesc:"Patalu"}, {img:Minikathalu,imgdesc:"Mini kathalu"},
-    {img:Sports,imgdesc:"Sports"},
-    {img:Detective,imgdesc:"Detective"},
-    {img:Crime,imgdesc:"Crime"},
-    {img:Bio,imgdesc:"Bio"}
+ const Teluguimagearray = [
+    {img:Children,imgdesc:"పిల్లలు"},  {img:Athyadamika ,imgdesc:"ఆధ్యాత్మిక"},
+    {img:strilu,imgdesc:"స్త్రీలు"}, {img:Love,imgdesc:"ప్రేమ"},
+     {img:Romance,imgdesc:"రోమాన్స్"}, {img:Samajikam,imgdesc:"సామాజికం"},
+    {img:Health,imgdesc:"ఆరోగ్యం"}, {img:Horror,imgdesc:"భయం"},
+    {img:Comedy,imgdesc:"కామెడీ"}, {img:Life,imgdesc:"జీవితం"},
+    {img:Science,imgdesc:"శాస్త్రం"},
+    {img:Suspence,imgdesc:"సస్పెన్స్"}, {img:Anubandhalu,imgdesc:"అనుబంధాలు"},
+    {img:Fantasy,imgdesc:"ఫాంటసీ"}, {img:Vantillu,imgdesc:"వంటిల్లు"},
+    {img:Anubavalu,imgdesc:"అనుబావలు"},
+    {img:Mandalikhakathalu,imgdesc:"మండలిక కథలు"}, {img:Prerana,imgdesc:"ప్రేరణ"},
+    {img:Patalu,imgdesc:"పాటలు"}, {img:Minikathalu,imgdesc:"మిని కథలు"},
+    {img:Sports,imgdesc:"క్రీడలు"},
+    {img:Detective,imgdesc:"డిటెక్టివ్"},
+    {img:Crime,imgdesc:"క్రైమ్"},
+    {img:Bio,imgdesc:"జీవిత చరిత్ర"}
   ];
+  const Englishimagearray = [
+    { img: Children, imgdesc: "Adventure" },
+    { img: Children, imgdesc: "Banned Books" },
+    { img: Children, imgdesc: "Business & Money" },
+    { img: Children, imgdesc: "Classics" },
+    { img: Children, imgdesc: "Philosophy & Inspiration" },
+    { img: Children, imgdesc: "Drama" },
+    { img: Children, imgdesc: "Fiction And Literature" },
+    { img: Children, imgdesc: "Gay/Lesbian/LGBTQ+" },
+    { img: Children, imgdesc: "History" },
+    { img: Children, imgdesc: "Poetry" },
+    { img: Children, imgdesc: "Science Fiction" },
+    { img: Children, imgdesc: "War" },
+    { img: Children, imgdesc: "Travel" },
+    { img: Children, imgdesc: "Psychology" },
+    { img: Children, imgdesc: "Periodical & Mythology" },
+    { img: Children, imgdesc: "Biography" },
+    { img: Children, imgdesc: "Cooking" },
+    { img: Children, imgdesc: "Games/Sports" },
+    { img: Children, imgdesc: "Music" },
+    { img: Children, imgdesc: "Mystery/Detective" },
+    { img: Children, imgdesc: "Thriller & Suspense" },
+    { img:Children, imgdesc: "Humor/Comedy" },
+    { img: Children, imgdesc: "Children" },
+    { img: Children, imgdesc: "Devotional" },
+    { img: Children, imgdesc: "Love" },
+    { img: Children, imgdesc: "Romance" },
+    { img:Children, imgdesc: "Health" },
+    { img: Children, imgdesc: "Horror" },
+    { img: Children, imgdesc: "Fantasy" },
+    { img: Children, imgdesc: "Epic/Short Stories" },
+    { img: Children, imgdesc: "Crime" }
+];
+
+
+
 
 const Categories = () => {  
     const navigate=useNavigate();
@@ -56,22 +92,31 @@ const Categories = () => {
 
   
     const myProp = location.state && location.state.myProp;
-    console.log(myProp,"sssssssss")
+    console.log(myProp,"language")
     const test=(item)=>
     {
-       console.log(item,"cnecccccccccccc")
+      var append={languageandtype:myProp,category:item.imgdesc}
+       console.log(append,"cnecccccccccccc")
+
        item['type']=myProp.imgdesc
-      navigate('/subcateogories', { state: { myProp:item } })
+      navigate('/subcateogories', { state: { myProp:append } })
     }
   return (
 
-    <div className='categorycontainer' >
-      {imagearray.map((item, index) => (
-        <div className='containerimg' key={index} onClick={()=>{test(item)}}>
-          <img   src={item.img} className='category-image-size01' alt={`image-${index}`} />
-          <h2 className="heading-one" style={{backdropFilter:'blur(20px) saturate(70%)' }}>{item.imgdesc}</h2>
-        </div>
-      ))}
+    <div className='categorycontainer'>
+      {myProp?.language === "Telugu"
+        ? Teluguimagearray.map((item, index) => (
+            <div className='containerimg' key={index} onClick={() => test(item)}>
+              <img src={item.img} className='category-image-size01' alt={`image-${index}`} />
+              <h2 className="heading-one" style={{ backdropFilter: 'blur(20px) saturate(70%)' }}>{item.imgdesc}</h2>
+            </div>
+          ))
+        : Englishimagearray.map((item, index) => (
+            <div className='containerimg' key={index} onClick={() => test(item)}>
+              <img src={item.img} className='category-image-size01' alt={`image-${index}`} />
+              <h2 className="heading-one" style={{ backdropFilter: 'blur(20px) saturate(70%)' }}>{item.imgdesc}</h2>
+            </div>
+          ))}
     </div>
   );
 };

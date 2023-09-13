@@ -8,12 +8,12 @@ const navigate=useNavigate()
   const location = useLocation();
   
 const myProp = location.state && location.state.myProp;
-console.log(myProp,"sssssssss")
+console.log(myProp,"whole")
 useEffect(()=>
 {
   async function items()
   {
-   var res= await categories(myProp.subcategory.imgdesc,myProp.category.imgdesc)
+   var res= await categories(myProp)
    console.log(res,"checl")
        
    const bufferToBase64 = (buffer) => {

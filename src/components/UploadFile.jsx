@@ -42,7 +42,6 @@ const UploadFile = () => {
   const categoryOptions2 = ['Telugu', 'English'];
   const onFinish = async (values) => {
     console.log('Form values:', values);
-
     var res=await fileUpload(values)
     console.log(res.status,"test")
     if(res.status==200)
