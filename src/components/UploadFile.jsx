@@ -19,6 +19,7 @@ import {
 import { fileUpload } from '../components/services/api'
 import '../components/Layout/Upload.scss'
 import { useNavigate } from 'react-router-dom';
+import Checkbox from 'antd/es/checkbox/Checkbox';
 const UploadFile = () => {
   const { Option } = Select;
   const navigate=useNavigate()
@@ -103,14 +104,14 @@ const bookCategories = [
     console.log('Form values:', values);
     var res=await fileUpload(values)
     console.log(res.status,"test")
-//     if(res.status==200)
-//     {
-//       navigate('/home')
-//     }
-// else{
-//   alert("Uplaod Failed")
-// }
-    // You can perform further actions with the form values here
+    if(res.status==200)
+    {
+      navigate('/home')
+    }
+else{
+  alert("Uplaod Failed")
+}
+
   };
 
 const handleChange=((e)=>
@@ -177,31 +178,34 @@ const handleChange=((e)=>
             </Select>
           </Form.Item>
           <Form.Item
-            label="Category Name"
-            name="categoryName"
-            rules={[
-              {
-                required: true,
-                message: 'Please enter the category name',
-              },
-            ]}
-          >
-            <Select placeholder="Select a category">
-              {
-           LanguageSelection=="Telugu"?   categoryOptions.map((category) => (
-            <Option key={category} value={category}>
-              {category}
-            </Option>
-          )):   bookCategories.map((category) => (
-            <Option key={category} value={category}>
-              {category}
-            </Option>
-          ))
-              }
-             
-           
-            </Select>
-          </Form.Item>
+        label="Category Name"
+        name="categoryName"
+        rules={[
+          {
+            required: true,
+            message: 'Please select at least one category',
+          },
+        ]}
+      >
+        <Select
+          mode="multiple"
+          placeholder="Select categories"
+          style={{ width: '100%' }}
+        >
+          {LanguageSelection === 'Telugu'
+            ? categoryOptions.map((category) => (
+                <Option key={category} value={category}>
+                  <Checkbox>{category}</Checkbox>
+                </Option>
+              ))
+            : bookCategories.map((category) => (
+                <Option key={category} value={category}>
+                  <Checkbox>{category}</Checkbox>
+                </Option>
+              ))}
+        </Select>
+      </Form.Item>
+
           <Form.Item
             label="SubCategory Name"
             name="SubCategory"

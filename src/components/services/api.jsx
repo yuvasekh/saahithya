@@ -66,11 +66,6 @@ export async function fileUpload(values) {
   formData.append("description",values.description);
   formData.append("Published Year",values['Published Year']);
   formData.append("image",values.BookCover.fileList[0].originFileObj);
-
-//   console.log(formData)
-//   for (var key of formData.entries()) {
-//     console.log(key[0] + ', ' + key[1]);
-// }
   return await axios.post(
     `${rootUrl}api/uploadfile`,
     formData
@@ -273,7 +268,7 @@ export async function participateQuiz(data) {
 }
 export  async function getallusers ()
 {
-  // console.log(data,"yuvaback")
+
 return await axios.get(`${rootUrl}api/getallusers`).then((response)=>
 {
 console.log(response)
