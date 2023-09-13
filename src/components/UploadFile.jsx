@@ -7,7 +7,8 @@ import {
   Drawer,
   Input,
   Form,
-  Select
+  Select,
+  DatePicker
 } from "antd";
 import { PlusOutlined } from '@ant-design/icons';
 import {
@@ -21,6 +22,7 @@ import { useNavigate } from 'react-router-dom';
 const UploadFile = () => {
   const { Option } = Select;
   const navigate=useNavigate()
+  const [LanguageSelection,setLanguageSelection]=useState("Telugu")
   // let { projectId } = useParams();
   const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -34,9 +36,66 @@ const UploadFile = () => {
   };
 
   const [projectData, setProjectData] = useState([]);
-  const categoryOptions = ['Horror', 'Comedy', 'Crime',"Genra","Life","Prema","Fantacy",
-  "Child","Women","samajikam","Health","athyadmika","Suspence","Science","Anubandhalu"
-  ,"LGBT","Mandalika kathalu","Prerana","Patalu","Mini kathalu","Sports","Kotha rachanalu","Blog","Romance","Anubavalu","Detective","Bio","Life","Kitchen"];
+  const categoryOptions = [
+    "పిల్లలు",
+    "ఆధ్యాత్మిక",
+    "స్త్రీలు",
+    "ప్రేమ",
+    "రోమాన్స్",
+    "సామాజికం",
+    "ఆరోగ్యం",
+    "భయం",
+    "కామెడీ",
+    "జీవితం",
+    "శాస్త్రం",
+    "సస్పెన్స్",
+    "అనుబంధాలు",
+    "ఫాంటసీ",
+    "వంటిల్లు",
+    "అనుబావలు",
+    "మండలిక కథలు",
+    "ప్రేరణ",
+    "పాటలు",
+    "మిని కథలు",
+    "క్రీడలు",
+    "డిటెక్టివ్",
+    "క్రైమ్",
+    "జీవిత చరిత్ర"
+];
+const bookCategories = [
+  "Adventure",
+  "Banned Books",
+  "Business & Money",
+  "Classics",
+  "Philosophy & Inspiration",
+  "Drama",
+  "Fiction And Literature",
+  "Gay/Lesbian/LGBTQ+",
+  "History",
+  "Poetry",
+  "Science Fiction",
+  "War",
+  "Travel",
+  "Psychology",
+  "Periodical & Mythology",
+  "Biography",
+  "Cooking",
+  "Games/Sports",
+  "Music",
+  "Mystery/Detective",
+  "Thriller & Suspense",
+  "Humor/Comedy",
+  "Children",
+  "Devotional",
+  "Love",
+  "Romance",
+  "Health",
+  "Horror",
+  "Fantasy",
+  "Epic/Short Stories",
+  "Crime"
+];
+
   const subcategoryOptions = ['Novel', 'Books', 'Crime',"Genra"];
   const categoryOptions1 = ['Books', 'Audio', 'Reels'];
   const categoryOptions2 = ['Telugu', 'English'];
@@ -44,17 +103,21 @@ const UploadFile = () => {
     console.log('Form values:', values);
     var res=await fileUpload(values)
     console.log(res.status,"test")
-    if(res.status==200)
-    {
-      navigate('/home')
-    }
-else{
-  alert("Uplaod Failed")
-}
+//     if(res.status==200)
+//     {
+//       navigate('/home')
+//     }
+// else{
+//   alert("Uplaod Failed")
+// }
     // You can perform further actions with the form values here
   };
 
-
+const handleChange=((e)=>
+{
+  console.log(e,"event")
+  setLanguageSelection(e)
+})
   return (
 
     <>
@@ -103,10 +166,11 @@ else{
                 message: 'Please enter the Book Language',
               },
             ]}
+           
           >
-            <Select placeholder="Select a Book Language">
+            <Select placeholder="Select a Book Language"  onChange={handleChange}>
               {categoryOptions2.map((category) => (
-                <Option key={category} value={category}>
+                <Option key={category} value={category} >
                   {category}
                 </Option>
               ))}
@@ -123,11 +187,19 @@ else{
             ]}
           >
             <Select placeholder="Select a category">
-              {categoryOptions.map((category) => (
-                <Option key={category} value={category}>
-                  {category}
-                </Option>
-              ))}
+              {
+           LanguageSelection=="Telugu"?   categoryOptions.map((category) => (
+            <Option key={category} value={category}>
+              {category}
+            </Option>
+          )):   bookCategories.map((category) => (
+            <Option key={category} value={category}>
+              {category}
+            </Option>
+          ))
+              }
+             
+           
             </Select>
           </Form.Item>
           <Form.Item
@@ -237,7 +309,22 @@ else{
       >
         <Input type="number" />
       </Form.Item>
-
+      <Form.Item
+    label="Published Year"
+    name="Published Year"
+    rules={[
+        {
+            required: true,
+            message: 'Please enter the Published Year',
+        },
+    ]}
+>
+    <DatePicker
+        style={{ width: '100%' }}
+        format="YYYY-MM-DD" // You can customize the date format
+         // Add the onChange event handler here
+    />
+</Form.Item>
             <div style={{ display: 'flex', gap: '12px' }}>
 
               <Button type="primary" htmlType="submit">

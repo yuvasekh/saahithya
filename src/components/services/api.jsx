@@ -63,6 +63,8 @@ export async function fileUpload(values) {
   formData.append("SubCategory",values.SubCategory);
   formData.append("fileName",values.fileName);
   formData.append("Price",values.Price);
+  formData.append("description",values.description);
+  formData.append("Published Year",values['Published Year']);
   formData.append("image",values.BookCover.fileList[0].originFileObj);
 
 //   console.log(formData)
