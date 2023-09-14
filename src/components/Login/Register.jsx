@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { register  } from '../services/api';
 import { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
+import registerimage from '../../assets/register.png'
+
 const Register = () => {
   const navigate=useNavigate()
   const [error, setError] = useState(null);
@@ -40,7 +42,10 @@ const Register = () => {
   };
   return (
     <div className='formdiv'>
+     
       <h1 style={{color:'#f8780e',fontWeight:'650'}}>Register to saahithya.com</h1>
+      <div style={{display:'flex',gap:'42px',justifyContent:'start'}}>
+      <img src={registerimage} style={{width:'300px',height:'300px'}}/>
       <Form onFinish={onFinish} onFieldsChange={handleFormChange} style={{ width: '550px', background: 'white', padding: '40px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)' }}>
 
       <Row gutter={24}>
@@ -183,7 +188,7 @@ const Register = () => {
         )}
        
     </Form>
-   
+    </div>
 
     <br></br>
     </div>
