@@ -16,11 +16,20 @@ export  async function getSuggestions(text)
   });
   return temp[0]
 }
-export  async function register(data)
+export  async function register(values)
 {
-  console.log(data,"yuvaback")
-  
-return await axios.post(`${rootUrl}api/register`,data).then((response)=>
+  console.log(values,"yuvaback")
+  const formData = new FormData();
+  formData.append("name",values.name);
+  formData.append("confirmPassword",values.confirmPassword);
+  formData.append("password",values.password);
+  formData.append("mobile",values.mobile);
+  formData.append("gender",values.gender);
+  formData.append("email",values.email);
+  formData.append("address",values.address);
+  formData.append("dob",values.dob);
+  formData.append("inputFile",values.Profile.fileList[0].originFileObj);
+return await axios.post(`${rootUrl}api/register`,formData).then((response)=>
 {
 // console.log(response)
 return response;
@@ -42,10 +51,22 @@ return response;
   console.error('Error:', error.message);
 })
 }
-export  async function Otpvlidate(data)
+export  async function Otpvlidate(values)
 {
-  console.log(data,"yuvaback")
-await axios.post(`${rootUrl}api/verifyotp`,data).then((response)=>
+  const formData = new FormData();
+  formData.append("name",values.data.name);
+  formData.append("confirmPassword",values.data.confirmPassword);
+  formData.append("password",values.data.password);
+  formData.append("mobile",values.data.mobile);
+  formData.append("gender",values.data.gender);
+  formData.append("email",values.data.email);
+  formData.append("address",values.data.address);
+  formData.append("dob",values.data.dob);
+  formData.append("otp",values.otp);
+  formData.append("inputFile",values.data.Profile.fileList[0].originFileObj);
+  
+  console.log(values,"yuvaback")
+await axios.post(`${rootUrl}api/verifyotp`,formData).then((response)=>
 {
 console.log(response)
 }).catch((error)=>

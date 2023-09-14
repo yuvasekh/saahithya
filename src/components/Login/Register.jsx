@@ -1,5 +1,5 @@
-import { Form, Input, DatePicker, Select, Row, Col, Button ,Upload} from 'antd';
-import { UserOutlined, CalendarOutlined, MailOutlined, PhoneOutlined, EnvironmentOutlined, LockOutlined, CheckOutlined, PlusOutlined } from '@ant-design/icons';
+import { Form, Input, DatePicker, Select,   message,Row, Col, Button ,Upload} from 'antd';
+import { UserOutlined, CalendarOutlined, MailOutlined, PhoneOutlined, EnvironmentOutlined, LockOutlined, CheckOutlined, PlusOutlined, LoadingOutlined } from '@ant-design/icons';
 import './Register.scss'
 const { Option } = Select;
 import { useNavigate } from 'react-router-dom';
