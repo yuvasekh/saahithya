@@ -12,7 +12,7 @@ import { useNavigate,useLocation } from 'react-router-dom';
 const CreateCompetation = (props) => {
 const test=((item)=>
 { 
-
+console.log(item,"itemaname")
 let nav=item.imgdesc 
 
   props.sendData(nav)

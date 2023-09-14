@@ -92,7 +92,7 @@ const Teams = () => {
       setShowItem(<DummyCarousel />);
     }
     if (values == 21) {
-      setShowItem(<CreateCompetation key={showItem} />);
+      setShowItem(<CreateCompetation sendData={sendData} />);
     }
     if (values == 23) {
       setShowItem(<OnGoingCompetation sendData={sendData} />);

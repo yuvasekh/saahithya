@@ -3,16 +3,7 @@ import './Poll.scss';
 import {poller,getpole} from '../services/api'
 const Poll = () => {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [options, setOptions] = useState([
-    { id: 1, text: 'Option 1', votes: 0 },
-    { id: 2, text: 'Option 2', votes: 0 },
-    { id: 3, text: 'Option 3', votes: 0 },
-  ]);
-  const [options1, setOptions1] = useState([
-    { id: 1, text: 'Option 1', votes: 0 },
-    { id: 2, text: 'Option 2', votes: 0 },
-    { id: 3, text: 'Option 3', votes: 0 },
-  ]);
+  const [options, setOptions] = useState([]);
   const [percentage,setpercentage]=useState()
   const [question,setquestion]=useState()
   const [votes,setvotes]=useState([])
@@ -22,15 +13,21 @@ const Poll = () => {
     async function getdata()
     {
       var resp=await getpole()
-      console.log(resp,"Inside")
-      setquestion(resp.PoleQuestion)
-      setOptions([
-        { id: 1, text: resp.PoleOption1, votes: 0 ,Poleid:resp.PoleId},
-        { id: 2, text: resp.PoleOption2, votes: 0 ,Poleid:resp.PoleId},
-        { id: 3, text: resp.PoleOption3, votes: 0,Poleid:resp.PoleId},
-        { id: 4, text: resp.PoleOption4, votes: 0,Poleid:resp.PoleId},
-      ])
-      return resp;
+      console.log(resp,"InsidePollapi")
+      
+      if(resp)
+      {
+        console.log("InsideIf")
+        setquestion(resp.PoleQuestion)
+        setOptions([
+          { id: 1, text: resp.PoleOption1, votes: 0 ,Poleid:resp.PoleId},
+          { id: 2, text: resp.PoleOption2, votes: 0 ,Poleid:resp.PoleId},
+          { id: 3, text: resp.PoleOption3, votes: 0,Poleid:resp.PoleId},
+          { id: 4, text: resp.PoleOption4, votes: 0,Poleid:resp.PoleId},
+        ])
+        return resp;
+      }
+  
  
     }
     getdata()
@@ -69,17 +66,20 @@ setflag(false)
   return (
     <div className="opinion-poll">
       <h2>Opinion Poll</h2>
-      <p>{question}?</p>
+    
       <ul className="options-list">
-        {options.map((option) => (
-          <li
-            key={option.id}
-            className={`option ${selectedOption === option.id ? 'selected' : ''}`}
-            onClick={() => handleOptionChange(option)}
-          >
-            {option.text}  - {Math.floor(option.votes)}%
-          </li>
-        ))}
+        {
+          options.length>0?<>  <p>{question}?</p>{options.map((option) => (
+            <li
+              key={option.id}
+              className={`option ${selectedOption === option.id ? 'selected' : ''}`}
+              onClick={() => handleOptionChange(option)}
+            >
+              {option.text}  - {Math.floor(option.votes)}%
+            </li>
+          ))}</>:<h1>No Pool's At</h1>
+        }
+       
       </ul>
 
     </div>
