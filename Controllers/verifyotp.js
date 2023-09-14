@@ -1,6 +1,6 @@
 var { EmailSent } = require("../Resources/Emailsent");
 var { Jwttoken } = require("../Resources/Jwttoken");
-
+const moment = require('moment');
 var mysql = require("mysql2");
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
 const TWILIO_ACCOUNT_SID = "ACf8253f88733b8853ef16262e1f1df7b6";
@@ -17,29 +17,27 @@ const connection = mysql.createConnection({
   database: process.env.database,
 });
 module.exports.verifyotp = async (req, res) => {
-  console.log(req.body.data.mobile, req.body.otp, "mobile check");
-  var dob = req.body.data.dob;
+  console.log(req.body, req.body.otp, "mobile check");
+  var dob = req.body.dob;
+  let data = req.files;
+  console.log(data,"data")
   const year = dob["$y"];
   const month = dob["$M"] + 1; // Note: Month is zero-based, so add 1
   const day = dob["$D"];
-  const dateObj = new Date(year, month, day);
-  const formattedDate1 = dateObj.toDateString();
-  const parsedDate = new Date(formattedDate1);
-  const formattedDate = parsedDate.toISOString().slice(0, 10);
-
+  const formattedDate = moment(dob["$d"]).format('YYYY-MM-DD HH:mm:ss');
   try {
     const result = await client.verify
       .services(TWILIO_SERVICE_SID)
       .verificationChecks.create({
-        to: `+91 ${req.body.data.mobile}`,
+        to: `+91 ${req.body.mobile}`,
         code: req.body.otp,
       });
-    console.log(req.body.data.mobile, "mobile check");
-    await EmailSent(req.body.data.email);
+    console.log(req.body.mobile, "mobile check");
+    await EmailSent(req.body.email);
     const selectQuery =
       "SELECT COUNT(*) AS count FROM Register WHERE email = ?";
-    const insertQuery = "INSERT INTO Register  VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    connection.query(selectQuery, [req.body.data.email], (error, results) => {
+    const insertQuery = "INSERT INTO Register  VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+    connection.query(selectQuery, [req.body.email], (error, results) => {
       if (error) {
         throw error;
       }
@@ -50,14 +48,15 @@ console.log(count,"Email Count")
         connection.query(
           insertQuery,
           [
-            req.body.data.name,
-            req.body.data.email,
-            req.body.data.mobile,
-            req.body.data.gender,
-            req.body.data.password,
-            req.body.data.address,
+            req.body.name,
+            req.body.email,
+            req.body.mobile,
+            req.body.gender,
+            req.body.password,
+            req.body.address,
             "user",
             formattedDate,
+            data[0].buffer
           ],
           async (error, result) => {
             if (error) {
@@ -66,9 +65,9 @@ console.log(count,"Email Count")
             }
             console.log("No error")
             var token = await Jwttoken(
-              req.body.data.email,
+              req.body.email,
               "user",
-              req.body.data.mobile
+              req.body.mobile
             );
             console.log("Email inserted successfully.", token);
 
