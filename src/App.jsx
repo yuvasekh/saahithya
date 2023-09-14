@@ -113,7 +113,7 @@ const App = () => {
         <Route path='/language' element={<Langugage/>}/>
       </Routes>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

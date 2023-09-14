@@ -1,5 +1,5 @@
-import { Form, Input, DatePicker, Select, Row, Col, Button } from 'antd';
-import { UserOutlined, CalendarOutlined, MailOutlined, PhoneOutlined, EnvironmentOutlined, LockOutlined, CheckOutlined } from '@ant-design/icons';
+import { Form, Input, DatePicker, Select, Row, Col, Button ,Upload} from 'antd';
+import { UserOutlined, CalendarOutlined, MailOutlined, PhoneOutlined, EnvironmentOutlined, LockOutlined, CheckOutlined, PlusOutlined } from '@ant-design/icons';
 import './Register.scss'
 const { Option } = Select;
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +9,16 @@ import { Outlet, Link } from "react-router-dom";
 const Register = () => {
   const navigate=useNavigate()
   const [error, setError] = useState(null);
-
+  const [imageUrl, setImageUrl] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const handleImageUpload = async (file) => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setImageUrl(URL.createObjectURL(file));
+      message.success('Image uploaded successfully');
+    }, 2000);
+  };
   const onFinish = async(values) => {
     console.log('Form values:', values);
     register(values)
@@ -122,6 +131,45 @@ const Register = () => {
             <Input.Password prefix={<CheckOutlined />} placeholder="Confirm Password" />
           </Form.Item>
         </Col>
+        <Form.Item
+              label="Upload Profile picture"
+              name="Profile"
+              rules={[
+                {
+                  required: true,
+                  message: 'Upload Profile picture',
+                },
+              ]}
+            >
+
+              <Upload
+
+
+                name="avatar"
+                listType="picture-card"
+                showUploadList={false}
+                beforeUpload={(file) => {
+                  // Ensure only image files are uploaded
+                  const isImage = file.type.startsWith('image/');
+                  if (!isImage) {
+                    message.error('You can only upload image files');
+                  }
+                  return isImage;
+                }}
+                customRequest={({ file }) => handleImageUpload(file)}
+              >
+                {imageUrl ? (
+                  <img src={imageUrl} alt="Uploaded" style={{ width: '50%' }} />
+                ) : (
+                  <div>
+                    {loading ? <LoadingOutlined /> : <PlusOutlined />}
+
+                    <div>Upload</div>
+                  </div>
+                )}
+              </Upload>
+
+            </Form.Item>
       </Row>
       <Form.Item>
        <div style={{display:'flex',gap:'32px',alignContent:'center',alignItems:'center'}}>
