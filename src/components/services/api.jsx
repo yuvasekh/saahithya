@@ -81,10 +81,13 @@ export async function fileUpload(values) {
   formData.append("authorName",values.authorName);
   formData.append("categoryName",values.categoryName);
   formData.append("BookTitle",values.BookTitle);
+  formData.append("Book Language",values['Book Language']);
+  formData.append("BookType",values.BookType);
   formData.append("SubCategory",values.SubCategory);
   formData.append("fileName",values.fileName);
   formData.append("Price",values.Price);
   formData.append("description",values.description);
+  formData.append("AuthorCategory",values.AuthorCategory);
   formData.append("Published Year",values['Published Year']);
   formData.append("image",values.BookCover.fileList[0].originFileObj);
   return await axios.post(

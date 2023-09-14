@@ -100,6 +100,7 @@ const bookCategories = [
   const subcategoryOptions = ['Novel', 'Books', 'Crime',"Genra"];
   const categoryOptions1 = ['Books', 'Audio', 'Reels'];
   const categoryOptions2 = ['Telugu', 'English'];
+  const AuthorCategoryOptions = ['గ్రంధకర్తలు', 'ఆధునిక కవులు','వర్ధమాన కవులు'];
   const onFinish = async (values) => {
     console.log('Form values:', values);
     var res=await fileUpload(values)
@@ -249,8 +250,26 @@ const handleChange=((e)=>
       >
         <Input.TextArea rows={4} placeholder="Enter your message here" />
       </Form.Item>
-
-     
+{LanguageSelection=="Telugu"?<>     <Form.Item
+            label="Author Category"
+            name="AuthorCategory"
+            rules={[
+              {
+                required: true,
+                message: 'Please enter the Author Category',
+              },
+            ]}
+           
+          >
+            <Select placeholder="Select a Author Category">
+              {AuthorCategoryOptions.map((category) => (
+                <Option key={category} value={category} >
+                  {category}
+                </Option>
+              ))}
+            </Select>
+          </Form.Item></>:<></>}
+ 
 
           <Form.Item>
 
