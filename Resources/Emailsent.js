@@ -12,7 +12,7 @@ async function EmailSent(email)
         service: 'gmail',
         auth: {
           user:"syuva893@gmail.com",
-          pass:"ciuzijdkvodejnzl"
+          pass:"bqmsnfrvjxictcjh"
         }
       });
       
