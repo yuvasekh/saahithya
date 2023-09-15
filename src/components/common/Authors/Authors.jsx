@@ -22,7 +22,7 @@ const Authors = () => {
       {
       
          
-          navigate('/subcateogories', { state: { myProp:item } })
+          navigate('/authorsgroup', { state: { myProp:item } })
       }
   return (
     <>

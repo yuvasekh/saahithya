@@ -302,3 +302,27 @@ return response.data
   console.error('Error:', error.message);
 })
 }
+export  async function authorCategoryImages(data)
+{
+  console.log(data,"requestedCategory")
+return await axios.post(`${rootUrl}api/authorcategoryimages/${data}`).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function authorCategory(data)
+{
+  console.log(data,"authorcategoryapi")
+return await axios.post(`${rootUrl}api/authorcategory`,data).then((response)=>
+{
+console.log(response.data)
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}

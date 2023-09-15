@@ -41,6 +41,8 @@ import Looks from "./components/Landing/Looks";
 import MyEditor from "./components/Text";
 import Admin from "./components/Admin/Index";
 import Langugage from "./components/categories/language"
+import AuthorsBooksDisplay from './components/common/Authors/AuthorsBooksDisplay'
+import AuthorsGroup from "./components/common/Authors/AuthorsGroup";
 
 function useQuery() {
   const { search } = useLocation();
@@ -77,7 +79,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/categories" element={<Categories />} />
-        <Route path="/categoryOptions" element={<CategoryOptions />} />
+        <Route path="/categoryOptions" element={<CategoryOptions />}/>
         <Route path="/categorieitem" element={<CategoryItems />} />
         <Route path="/subcateogories" element={<Subcategories />} />
         <Route path="/authors" element={<Authors />} />
@@ -111,6 +113,10 @@ const App = () => {
         <Route path="/Looks" element={<Looks />} />
         <Route path="/admin" element={<Admin />} />
         <Route path='/language' element={<Langugage/>}/>
+        <Route path='/authorsgroup' element={<AuthorsGroup/>}/>
+        <Route path='/authorsbooksdisplay' element={<AuthorsBooksDisplay/>}/>
+
+
       </Routes>
 
       <Footer />
