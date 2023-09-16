@@ -1,58 +1,11 @@
-// #footer {
-//     background-color: #0e0101;
-//     // padding: 20px;
-//     // text-align: start;
-//   // left: 0;
-//   // bottom: 0;
-// //   .ant-typography a {
-// //     color: #0e0101 !important;
-// //     /* Apply your custom styles here */
-// //   }
-// //   a.ant-typography-link {
-// //     /* Apply your custom styles here */
-// //     color: #0e0101 !important;
-// //   }
-// .custom-margin-top {
-//     margin-top: 30px;
-//   }
-  
-//   a
-//   {
-//     color: rgb(246, 241, 241) !important;
-//   }
-  
-
-// // .footer-head{
-// //     // font-size: 24px;
-// // }
-// // .footer-container{
-// //    text-align: center;
-
-// // }
-
-// // .footer-container1{
-// //     margin-left: 100px;
-// //     text-align: center;
-// // }
-
-// // .ft-con{
-// //     padding-top: 20px;
-// //     background-color: rgb(48, 46, 46);
-// //     color: white;
-// // }a
-
-
-// }  
-
-
-
 h1{
-  font-family: Roboto;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
 p{
-  font-family: Roboto;  
+  font-size: 13px;
+  font-family: sans-serif;  
   font-weight: bold;
 }
 
@@ -63,10 +16,11 @@ p{
   right: 0;
   left: 0;
   .footer-head{
+    margin-bottom: 25px;
 
     h1{
 
-      font-size: 35px;
+      font-size: 30px;
       font-weight: normal;
       color: white;
 
@@ -74,18 +28,17 @@ p{
         font-weight: bold;
       }
     }
-    text-align: center;
+   
     
   }
 
 }
 
 .sec-con{
-  display: flex;
-  justify-content: space-around;
+
 
   h1{
-    font-size: 24px;
+    font-size: 20px;
     color: white;
   }
 }
@@ -94,22 +47,18 @@ a{
   color: white;
 }
 
-// .second{
-//   background-color: white;
-// }
 
 .footer-sec{
   .footer-sec-con{
-    text-align: center;
 
     h1{
-      font-size: 35px;
+      font-size: 20px;
       color: white;
       font-weight: normal;
     }
 
     h3{
-      font-size: 35px;
+      font-size: 20px;
       color: white;
       font-weight: 100;
     }
@@ -117,9 +66,8 @@ a{
 }
 
 .social-icons{
-  // background-color: rgb(208, 206, 206);
+
   color: white;
-  text-align: center;
   font-size: 35px;
 
   .facebook{
@@ -128,7 +76,21 @@ a{
     
   }
   .instagram{
-    // background-image: linear-gradient(#405DE6,#5851DB,#833AB4,#c13584,#E1306C,#FD1D1D);
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  }
+
+  .twitter{
+    background-color: white;
+    color: #1DA1F2;
+  }
+
+  .pinterest{
+    background-color: white;
+    color: #E60023;
+  }
+
+  .linkedin{
+    background-color: white;
+    color: #0077b5;
   }
 }

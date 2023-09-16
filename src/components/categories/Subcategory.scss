@@ -1,0 +1,16 @@
+.sub-cat-img{
+    height: 30vh;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.sub-cat-img:hover 
+        {
+        transform: scale(1.1);
+        }
+      .sub-cat-img
+        {
+        transition: transform 0.5s;
+        // width: 21em;
+        }

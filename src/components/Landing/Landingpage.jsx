@@ -78,7 +78,7 @@ const Landingpage = () => {
     </div>
 
       <div><Looks/></div>
-      <div>
+      <div style={{padding:'10px 25px 20px 0px'}}>
         <h1 style={{marginLeft:'50px'}}>Authors</h1>
         <Authors/>
         </div>

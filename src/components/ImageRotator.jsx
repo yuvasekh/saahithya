@@ -21,23 +21,24 @@ const pagemove=()=>
 }
   return (
     <div className="image-rotator">
-      <div className='content'>
-        <h1 style={{fontSize:"40px"}}>మీ పుస్తకాన్ని ప్రచురించండి...</h1>
-        <h1>Publish your Book...</h1>
+      <div className='row'>
+        <div className='content col-12 col-md-8'>
+          <h1 >మీ పుస్తకాన్ని ప్రచురించండి...</h1>
+          <h1>Publish your Book...</h1>
 
-      <br/>
-      <p >
-      "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..  మనసు విదిల్చిన భావోద్వేగాలు"
-      </p>
-    <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" }}>Books Section</Button>
-      </div>
+          <br/>
+          <p >
+            "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..  మనసు విదిల్చిన భావోద్వేగాలు"
+          </p>
+          <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" }}>Books Section</Button>
+        </div>
 
-      <div className='imagescontent'>
-      <img  className="image-rotator-image-size" src={images[currentImageIndex]} alt="Rotating Image"/>
-      </div>
+        <div className='imagescontent col-12 col-md-4'>
+          <img  className="image-rotator-image-size" src={images[currentImageIndex]} alt="Rotating Image"/>
+        </div>
 
       {/* <ImageRotator images={images} /> */}
-      
+      </div>
     </div>
   );
 };

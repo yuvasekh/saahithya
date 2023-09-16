@@ -14,31 +14,23 @@ const Header = () => {
   })
   return (
     <>
-    <div className='header'  >
-      <div className="search-bar">
-         <div className="bell-container">
-            <BellOutlined className="bell-icon" />
-            <span className="red-dot" />
-          </div>
-          <div className='shop'>
-            <ShoppingCartOutlined className='shop-icon' onClick={()=>{goToCart()}}/>
-          </div>
-      </div>
+    <div className='header'>
+   
+
         <div className="header-content">
           <div className="header-item">
        
-          <HomeOutlined style={{fontSize: "20px"}}/>
+          <HomeOutlined className="Home-Outlined"/>
           <Link to="/">Home</Link> 
         </div>
+
         <div className="header-item">
-          <CompassOutlined style={{fontSize: "20px"}}/>
-     
-     
+          <CompassOutlined className='Compass-Outlined'/>
            <Link to="/language">Category</Link> 
-         
         </div>
+
         <div className="header-item">
-          <UsergroupDeleteOutlined  style={{fontSize: "20px"}}/>
+          <UsergroupDeleteOutlined  className='Usergroup-DeleteOutlined'/>
      
      
            <Link to="/authors">Authors</Link> 
@@ -47,23 +39,33 @@ const Header = () => {
  
         <div className="header-item" >
          
-          <EditOutlined style={{fontSize: "20px"}}/>
+          <EditOutlined  className='Edit-Outlined'/>
           <Link to="/texteditor">Write</Link>  
        
         </div>
         <div className="header-item" >
       
-         <UploadOutlined style={{fontSize: "20px"}}/>
+         <UploadOutlined className='Upload-Outlined'/>
          <Link to="/upload">Upload</Link>  
       
+
+      
+
        </div>
-        {/* <div className="header-item">
-         
-          <UserOutlined style={{fontSize: "30px"}}/>
-          <Link to="/register">User</Link> 
-       
-        </div> */}
-        </div>
+
+   
+       <div className="vamsi-search-fixed">
+         <div className="bell-container">
+            <BellOutlined className="bell-icon" />
+            <span className="red-dot" />
+          </div>
+          <div className='shop'>
+            <ShoppingCartOutlined className='shop-icon' onClick={()=>{goToCart()}}/>
+          </div>
+      </div>
+
+
+      </div>
     </div>
 
     </>

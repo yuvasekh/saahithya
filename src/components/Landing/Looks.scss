@@ -1,37 +1,40 @@
-.wrap-con {
-    margin-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+// .wrap-con {
+//     margin-right: 40px;
+//     padding-top: 10px;
+//     padding-bottom: 10px;
+//     padding-left: 20px;
+//     padding-right: 20px;
     // display: flex;
     // justify-content: center;
     // align-items: center;   
     // font-family: sans-serif;
     // border-width: 2px;
     // border-style: solid;
-}
+// }
 
 .element{
-    background: linear-gradient(to left, #00FF00 47%, #00FFFF 58%);
+    background: linear-gradient(to left, #000000 47%, #000000 58%); 
     
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 
-.container {
-    display: flex;
-    justify-content: space-between;
+.con {
+    // display: flex;
+    // justify-content: space-between;
+    margin: 0px;
 }
 
-.container .card {
-    // border-width: 0px;
+.con .card {
+    border-width: 0px;
     border-style: none;
-    background-color: #E0F4EB;
+    background-color:  #E0F4EB;
+    // margin-right: 10px;
 }
 
-.container .card .icon {
+.con .card .icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -47,7 +50,7 @@
 }
 
 
-.container .card:nth-child(1) .icon {
+.con .card:nth-child(1) .icon {
     
     // background: #e07768;
     background-image: url("../../Resources/Images/Landing_components/Read.jpg") ;
@@ -55,20 +58,20 @@
     
 
 }
-.container .card .icon4 {
+.con .card .icon4 {
     
     // background: #e07768;
     background-image: url("../../Resources/Images/Landing_components/Write.jpg") ;
     background-size: cover;
    
 }
-.container .card:nth-child(2) .icon {
+.con .card:nth-child(2) .icon {
     // background: #6eadd4;
     background-image: url("../../Resources/Images/Landing_components/Listen.jpg") ;
     background-size: cover;
 }
 
-.container .card:nth-child(3) .icon {
+.con .card:nth-child(3) .icon {
     // background: #4aada9;
     background-image: url("../../Resources/Images/Landing_components/Watch.jpg") ;
     background-size: cover;
@@ -77,34 +80,34 @@
 
 
 
-.container .card .face {
-    width: 400px;
+.con .card .face {
+    // width: 400px;
     height: 200px;
     transition: 0.5s;
 }
 
-.container .card .face.face1 {
+.con .card .face.face1 {
     position: relative;
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
     z-index: 1;
     transform: translateY(100px);
 
     
 }
 
-.container .card:hover .face.face1{
+.con .card:hover .face.face1{
     transform: translateY(0px);
     margin-bottom: 10px;
 
 }
 
-.container .card .face.face1 .content {
+.con .card .face.face1 .content {
     opacity: 1;
     transition: 0.5s;
 }
 
-.container .card:hover .face.face1 .content {
+.con .card:hover .face.face1 .content {
     opacity: 1;
 }
 
@@ -112,11 +115,11 @@
 
 
 
-.container .card .face.face2 {
+.con .card .face.face2 {
     // position: relative;
     background-image: url("../../Resources/Images/Landing_components/Write.jpg") ;
     background-size: cover;
-    display: flex;
+    // display: flex;
     // justify-content: center;
     // align-items: center;
     // padding: 20px;
@@ -127,11 +130,11 @@
 
 
 }
-.container .card .face.face3 {
+.con .card .face.face3 {
     position: relative;
     background-image: url("../../Resources/Images/Landing_components/Record.jpg") ;
     background-size: cover;
-    display: flex;
+    // display: flex;
     // justify-content: center;
     // align-items: center;
     // padding: 20px;
@@ -141,11 +144,11 @@
     font-size: 15px;
 }
 
-.container .card .face.face4 {
+.con .card .face.face4 {
     position: relative;
     background-image: url("../../Resources/Images/Landing_components/Upload.jpg") ;
     background-size: cover;
-    display: flex;
+    // display: flex;
     // justify-content: center;
     // align-items: center;
     // padding: 20px;
@@ -155,14 +158,14 @@
     font-size: 15px;
 }
 
-.container .card:hover .face.face3{
+.con .card:hover .face.face3{
     transform: translateY(0);
 }
 
-.container .card:hover .face.face4{
+.con .card:hover .face.face4{
     transform: translateY(0);
 }
 
-.container .card:hover .face.face2{
+.con .card:hover .face.face2{
     transform: translateY(0);
 }

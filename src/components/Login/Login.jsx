@@ -3,6 +3,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useState,useEffect } from 'react';
 import { login } from '../services/api';
 import { useNavigate } from 'react-router-dom';
+import './Login.scss'
 // Import the navigate function from the appropriate package or library
 
 const LoginForm = () => {
@@ -49,21 +50,15 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='formdiv' style={{ position: 'relative', left: '600px',alignContent:'center',alignItems:'center' }}>
+    <div className='formdiv' >
    <br></br>
       <h1 style={{ color: '#f8780e', fontWeight: '650', fontSize: '42px' }}>Login to Saaithya.com</h1>
       <br></br>
       <Form
+      className='login-form'
         name="login-form"
         onFinish={onFinish}
         onFieldsChange={handleFormChange}
-        style={{
-          width: '300px',
-          marginLeft: '60px',
-          background: 'white',
-          padding: '20px',
-          boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-        }}
       >
         <Form.Item
           name="email"

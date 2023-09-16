@@ -1,6 +1,6 @@
 import React from 'react'
 import './Publications.scss'
-import srisripic from '../../Resources/srisripic.png'
+import sri from '../../Resources/Images/sri.png'
 import { Link } from "react-router-dom"; 
 
 const Publications = () => {
@@ -12,7 +12,7 @@ const Publications = () => {
 
              <div className="con-two">
                 <Link to ="https://srisrikalavedika.com/" target="_blank">
-                <img className="image-sri" src ={srisripic} alt="#"/>
+                  <img className="image-sri" src ={sri} alt="#"/>
                 </Link>
 
              </div>

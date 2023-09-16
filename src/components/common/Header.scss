@@ -1,7 +1,17 @@
+.header
+{
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0px 15px 0px;
+  box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
+  background-color: rgb(255, 255, 255);
+  
+
+
 .header-item{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   margin-right: 80px;
 
   a{
@@ -13,25 +23,43 @@
   }
 }
 
-.header{
-  display: flex;
-  flex-direction: row;
-  padding: 15px 0px 15px 0px;
-  box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
-}
+
 
 .header-content{
   display: flex;
   flex-direction: row;
-  margin-left: 90px;
+  margin-left: 30px;
 }
 
-.search-bar{
+.vamsi-search-fixed{
   display: flex;
   flex-direction: row;
-  right: 0;
-  position: absolute;
+  margin-left:1050px;
+  position: relative;
 }
+
+.Home-Outlined{
+  font-size: 30px;
+}
+
+.Compass-Outlined{
+  font-size: 30px;
+}
+
+
+.Usergroup-DeleteOutlined{
+  font-size: 30px;
+}
+
+.Edit-Outlined{
+  font-size: 30px;
+}
+
+.Upload-Outlined{
+  font-size: 30px;
+}
+
+
 .bell-container{
   margin-right: 30px;
   
@@ -62,4 +90,450 @@
   height: 12px;
   border-radius: 50%;
   background-color: red;
+}
+}
+
+
+
+
+
+//media quiries
+//media quiries
+//media quiries
+
+/* Small screens (e.g., smartphones) */
+@media (max-width: 576px) {
+
+
+  .header
+{
+  display: flex;
+  flex-direction: row;
+  padding: 15px 0px 15px 0px;
+  box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
+  background-color: rgb(255, 255, 255);
+  
+
+
+.header-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 15px;
+
+  a{
+    color: black;
+  }
+
+  a:hover{
+    text-decoration: underline;
+  }
+}
+
+
+
+.header-content{
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+}
+
+.search-bar{
+  display: flex;
+  flex-direction: row;
+  right:0;
+  position: fixed;
+}
+
+.Home-Outlined{
+  font-size: 20px;
+}
+
+.Compass-Outlined{
+  font-size: 20px;
+}
+
+
+.Usergroup-DeleteOutlined{
+  font-size: 20px;
+}
+
+.Edit-Outlined{
+  font-size: 20px;
+}
+
+.Upload-Outlined{
+  font-size: 20px;
+}
+
+
+.vamsi-search-fixed{
+  display: flex;
+  flex-direction: row;
+  margin-left:50px;
+  position: relative;
+}
+
+.bell-container{
+  margin-right: 25px;
+  
+  .bell-icon{
+    font-size: 25px;
+  }
+}
+
+.shop{
+  margin-right: 70px;
+  .shop-icon{
+    font-size: 30px;
+  }
+}
+
+.hrt{
+  background-color: black;
+  border-radius: 10px;
+  border-style: solid;
+  
+}
+
+.red-dot {
+  position: absolute;
+  // top: 0;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: red;
+}
+}
+
+}
+
+
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 992px) {
+  /* Add styles for medium-sized screens here */
+  .header
+  {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0px 15px 0px;
+    box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
+    background-color: rgb(255, 255, 255);
+    
+  
+  
+  .header-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 50px;
+  
+    a{
+      color: black;
+    }
+  
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+  
+  
+  
+  .header-content{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+  }
+  
+  .search-bar{
+    display: flex;
+    flex-direction: row;
+    right:0;
+    position: fixed;
+    // background-color: rgb(255, 255, 255);
+  }
+
+  .Home-Outlined{
+    font-size: 28px;
+  }
+  
+  .Compass-Outlined{
+    font-size: 28px;
+  }
+
+
+  .Usergroup-DeleteOutlined{
+    font-size: 28px;
+  }
+
+  .Edit-Outlined{
+    font-size: 28px;
+  }
+
+  .Upload-Outlined{
+    font-size: 28px;
+  }
+
+
+  .vamsi-search-fixed{
+    display: flex;
+    flex-direction: row;
+    margin-left:250px;
+    position: relative;
+  }
+
+  .bell-container{
+    margin-right: 28px;
+    
+    .bell-icon{
+      font-size: 28px;
+    }
+  }
+  
+  .shop{
+    margin-right: 70px;
+    .shop-icon{
+      font-size: 30px;
+    }
+  }
+  
+  .hrt{
+    background-color: black;
+    border-radius: 10px;
+    border-style: solid;
+    
+  }
+  
+  .red-dot {
+    position: absolute;
+    // top: 0;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: red;
+  }
+  }
+}
+
+
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .header
+  {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0px 15px 0px;
+    box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
+    background-color: rgb(255, 255, 255);
+    
+  
+  
+  .header-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 50px;
+  
+    a{
+      color: black;
+    }
+  
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+  
+  
+  
+  .header-content{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+  }
+  
+  .search-bar{
+    display: flex;
+    flex-direction: row;
+    right:0;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .Home-Outlined{
+    font-size: 25px;
+  }
+  
+  .Compass-Outlined{
+    font-size: 25px;
+  }
+
+
+  .Usergroup-DeleteOutlined{
+    font-size: 25px;
+  }
+
+  .Edit-Outlined{
+    font-size: 25px;
+  }
+
+  .Upload-Outlined{
+    font-size: 25px;
+  }
+
+.vamsi-search-fixed{
+    display: flex;
+    flex-direction: row;
+    margin-left:500px;
+    position: relative;
+  }
+
+
+  .bell-container{
+    margin-right: 28px;
+    
+    .bell-icon{
+      font-size: 28px;
+    }
+  }
+  
+  .shop{
+    margin-right: 70px;
+    .shop-icon{
+      font-size: 30px;
+    }
+  }
+  
+  .hrt{
+    background-color: black;
+    border-radius: 10px;
+    border-style: solid;
+    
+  }
+  
+  .red-dot {
+    position: absolute;
+    // top: 0;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: red;
+  }
+  }
+  /* Add styles for large-sized screens here */
+}
+
+
+
+/* Extra-large screens (e.g., large desktops) */
+@media (min-width: 1201px) {
+  .header
+  {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 0px 15px 0px;
+    box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
+    background-color: rgb(255, 255, 255);
+    
+  
+  
+  .header-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 80px;
+  
+    a{
+      color: black;
+    }
+  
+    a:hover{
+      text-decoration: underline;
+    }
+  }
+  
+  
+  
+  .header-content{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40px;
+  }
+  
+  .search-bar{
+    display: flex;
+    flex-direction: row;
+    right:0;
+    position: fixed;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .Home-Outlined{
+    font-size: 25px;
+  }
+  
+  .Compass-Outlined{
+    font-size: 25px;
+  }
+
+
+  .Usergroup-DeleteOutlined{
+    font-size: 25px;
+  }
+
+  .Edit-Outlined{
+    font-size: 25px;
+  }
+
+  .Upload-Outlined{
+    font-size: 25px;
+  }
+
+
+
+  .vamsi-search-fixed{
+    display: flex;
+    flex-direction: row;
+    margin-left:1050px;
+    position: relative;
+  }
+
+
+  .bell-container{
+    margin-right: 28px;
+    
+    .bell-icon{
+      font-size: 28px;
+    }
+  }
+  
+  .shop{
+    margin-right: 70px;
+    .shop-icon{
+      font-size: 30px;
+    }
+  }
+  
+  .hrt{
+    background-color: black;
+    border-radius: 10px;
+    border-style: solid;
+    
+  }
+  
+  .red-dot {
+    position: absolute;
+    // top: 0;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: red;
+  }
+  }
+  /* Add styles for extra-large screens here */
 }

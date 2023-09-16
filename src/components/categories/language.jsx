@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
-import "./CategoryOptions.scss";
+import "./language.scss";
+import "bootstrap/dist/css/bootstrap.min.css"
 
-import Audio from "../../Resources/Images/Audio.jpg";
-import Books from "../../Resources/Images/Books.jpg";
-import Clips from "../../Resources/Images/Vedioclips.jpg";
+import Telugu from "../../Resources/Images/Options/telugu.jpg"
+import English from "../../Resources/Images/Options/english.jpg";
+// import Clips from "../../Resources/Images/Vedioclips.jpg";
 
 import { useNavigate, useLocation } from "react-router-dom";
 const imagearray = [
-  { img: Audio, imgdesc: "Telugu" },
-  { img: Books, imgdesc: "English" },
+  { img: Telugu, imgdesc: "Telugu" },
+  { img: English, imgdesc: "English" },
 ];
 
 const Language = () => {
@@ -17,31 +18,36 @@ const Language = () => {
     navigate("/categoryOptions", { state: { myProp: item.imgdesc } });
   };
   return (
-    <div
-      className="category-container"
-      style={{ position: "relative", margin: "35px" }}
-    >
-      {imagearray.map((item, index) => (
-        <div
-          className="container-img"
-          key={index}
-          onClick={() => {
-            test(item);
-          }}
-        >
-          <img
-            src={item.img}
-            className="container-img-size"
-            alt={`image-${index}`}
-          />
-          <h2
-            style={{ color: "white", marginTop: "-42px", marginLeft: "30px" }}
+    <>
+    
+      <div
+        className="row"
+        
+      >
+        {imagearray.map((item, index) => (
+          <div
+            className="lan-con col-12 col-md-4  m-3"
+            key={index}
+            onClick={() => {
+              test(item);
+            }}
           >
-            {item.imgdesc}
-          </h2>
-        </div>
-      ))}
-    </div>
+            <img
+              src={item.img}
+              className="con-img-size"
+              alt={`image-${index}`}
+            />
+            <h2
+              style={{ color: "white", marginTop: "-92px", marginLeft: "60px" }}
+            >
+              {item.imgdesc}
+            </h2>
+          </div>
+        ))}
+      </div>
+      
+    </>
+
   );
 };
 

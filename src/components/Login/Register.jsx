@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { register  } from '../services/api';
 import { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
-import registerimage from '../../assets/register.png'
+import registerimage from '../../Resources/register.jpg'
 
 const Register = () => {
   const navigate=useNavigate()
