@@ -5,8 +5,7 @@ const { uploadBytesToBlobStorage } = require("../Resources/UploadToBlob");
 const db = require("../Resources/db");
 
 module.exports.uploadFiles = async (req, res) => {
-  console.log(req.body.categoryName, "initial",req.body.AuthorCategory,req.body['BookType'],
-      req.body['Book Language'],req.body['Book Excerpt']);
+  console.log(req.headers);
   let categorieArray=req.body.categoryName
   let AuthorCategory=req.body.AuthorCategory
   let splitArray=categorieArray.split(',')
@@ -28,7 +27,7 @@ module.exports.uploadFiles = async (req, res) => {
   
     await uploadBytesToBlobStorage(pdfId, fileContent);
     const query = `INSERT INTO UploadFiles 
-                          VALUES (?, ?, ?,?,?, ?, ?, ?, 0,?,?,?,'syuva893@gmail.com',?,0,?,?,?,?,?)`;
+                          VALUES (?, ?, ?,?,?, ?, ?, ?, 0,?,?,?,?,?,0,?,?,?,?,?)`;
 for(var i=0;i<splitArray.length;i++)
 {
   const Likes = Math.floor(Math.random() * 1000);
@@ -46,6 +45,7 @@ for(var i=0;i<splitArray.length;i++)
       req.body.Price,
       req.body.description,
       Numberofpages,
+      req.headers.email,
       mysqlDatetime,
       imageContent,
       req.body['BookType'],

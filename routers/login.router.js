@@ -15,6 +15,7 @@ const {getCart}=require('../Controllers/getCart')
 const {tags}=require('../Controllers/tags')
 const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,getquizresults}=require('../Controllers/contest');
 const { getallusers } = require("../Controllers/getallusers");
+const {getRole}=require('../Controllers/getRole')
 const basePath = "/register"
 module.exports = (app) => {
   console.log("inside ");
@@ -42,4 +43,5 @@ module.exports = (app) => {
   app.route('/authorcategory').post(authorCategory)
   app.route('/authorcategoryimages/:name').post(authorCategoryImages)
   app.route('/gettags/:id').get(tags)
+  app.route('/getrole').post(getRole)
 };

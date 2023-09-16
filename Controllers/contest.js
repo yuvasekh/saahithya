@@ -14,7 +14,7 @@ module.exports.createpole = async (req, res) => {
   let Id = uuidv4();
   let PoleId = uuidv4();
 
-  const selectQuery = `SELECT COUNT(*) AS count FROM Register WHERE email ="syuva893@gmail.com"`;
+  const selectQuery = `SELECT COUNT(*) AS count FROM Register WHERE email ='${req.headers.email}'`;
   console.log(selectQuery, "test");
 
   const insertQuery = "INSERT INTO pole  VALUES (?, ?)";
@@ -203,7 +203,7 @@ module.exports.createquiz = async (req, res) => {
   let Id = uuidv4();
   let QuizId = uuidv4();
 
-  const selectQuery = `SELECT COUNT(*) AS count FROM Register WHERE email ="syuva893@gmail.com"`;
+  const selectQuery = `SELECT COUNT(*) AS count FROM Register WHERE email ='${req.headers.email}'`;
   console.log(selectQuery, "test");
 
   const insertQuery = "INSERT INTO QuizMainTable  VALUES (?, ?)";
