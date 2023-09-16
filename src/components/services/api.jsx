@@ -315,3 +315,15 @@ return response.data
   console.error('Error:', error.message);
 })
 }
+export  async function getTags(id)
+{
+  console.log(id,"Idfromdesc")
+return await axios.get(`${rootUrl}api/gettags/${id}`).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
