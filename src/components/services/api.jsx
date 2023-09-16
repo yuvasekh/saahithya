@@ -8,22 +8,18 @@ if(token!=null)
 {
   let info=jwtDecode(token)
   console.log(info,"info")
-}
-
-console.log(token,"for headers")
+  console.log(token,"for headers")
 let headers={ headers: {
   token:"hello"}}
   axios.interceptors.request.use((config) => {
     // Add the authorization header to the request
-    if(token!=null)
-    {
-      let info=jwtDecode(token)
-      console.log(info,"info")
-      config.headers['Email'] =info.Email
-      return config;
-    }
 
+    config.headers['Email'] =info.Email
+    return config;
   });
+}
+
+
 
   
 export  async function getSuggestions(text)
