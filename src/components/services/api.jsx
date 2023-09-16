@@ -88,6 +88,7 @@ export async function fileUpload(values) {
   formData.append("Price",values.Price);
   formData.append("description",values.description);
   formData.append("AuthorCategory",values.AuthorCategory);
+  formData.append("Book Excerpt",values['Book Excerpt']);
   formData.append("Published Year",values['Published Year']);
   formData.append("image",values.BookCover.fileList[0].originFileObj);
   return await axios.post(
@@ -168,19 +169,7 @@ return response.data
   console.error('Error:', error.message);
 })
 }
-// export  async function addtocart(data)
-// {
-//   console.log(data,"yuvabackoo")
-  
-//  await axios.post(`${rootUrl}api/addtocart`,data).then((response)=>
-// {
-//     console.log(response)
-// return response;
-// }).catch((error)=>
-// {
-//   console.error('Error:', error.message);
-// })
-// }
+
 export async function addToCart(data) {
   try {
     console.log(data, "yuvaback000");

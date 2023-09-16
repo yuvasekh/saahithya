@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import './Itemdesc.scss'
-import { Button ,Tag} from 'antd';
+import { Button ,Tag,Popover} from 'antd';
 import { EyeOutlined, ShoppingCartOutlined, StarOutlined } from '@ant-design/icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import { addToCart } from './services/api';
-
+import ReadMore from './common/ReadMore';
 import { useNavigate } from 'react-router-dom';
  const Itemdesc = () => {
   const [liked, setLiked] = useState(false);
@@ -66,11 +66,14 @@ const [selectedimage,setSelectedImage]=useState(myProp.FileImage.data)
       myProp.Iscart.data[0]==1?<> <Button style={{backgroundColor:"f81414d0 !important",marginLeft:'20px',width:'140px'}} onClick={()=>{navigate('/viewcart')}}><ShoppingCartOutlined /> View Cart</Button></>:<> <Button style={{backgroundColor:"f81414d0 !important",marginLeft:'20px',width:'140px'}} onClick={()=>{cart(myProp.FileId)}}><ShoppingCartOutlined /> Addtocart</Button></>
     } */}
     <Button style={{backgroundColor:"f81414d0 !important",marginLeft:'20px',width:'140px'}} onClick={()=>{cart(myProp.FileId)}}><ShoppingCartOutlined /> Addtocart</Button>
-    
+
+
+   
     <br>
     </br>
     <br>
     </br>
+  
     <div style={{display:'flex',justifyContent:'start'}}>
 
       <Tag color="#2db7f5">{myProp.BookLanguage}</Tag>
@@ -86,7 +89,11 @@ const [selectedimage,setSelectedImage]=useState(myProp.FileImage.data)
     <img src={myProp.img}/>
     <div><h1>{myProp.imgdesc}</h1></div> */}
     <br></br>
-  
+    <ReadMore
+        text={myProp.BookExcerpt}
+        maxChars={50}
+      />
+      <br></br>
     </div>
   )
 }

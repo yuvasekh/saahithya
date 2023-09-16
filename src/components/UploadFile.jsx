@@ -250,6 +250,18 @@ const handleChange=((e)=>
       >
         <Input.TextArea rows={4} placeholder="Enter your message here" />
       </Form.Item>
+      <Form.Item
+        name="Book Excerpt"
+        label="Book Excerpt"
+        rules={[
+          {
+            required: true,
+            message: 'Please Enter Book Excerpt',
+          },
+        ]}
+      >
+        <Input.TextArea rows={10} placeholder="Enter your message here" />
+      </Form.Item>
 {LanguageSelection=="Telugu"?<>     <Form.Item
             label="Author Category"
             name="AuthorCategory"
@@ -333,12 +345,12 @@ const handleChange=((e)=>
         <Input type="number" />
       </Form.Item>
       <Form.Item
-    label="Published Year"
+    label="Book Published Year"
     name="Published Year"
     rules={[
         {
             required: true,
-            message: 'Please enter the Published Year',
+            message: 'Please enter the Book Published Year',
         },
     ]}
 >
