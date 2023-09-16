@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
+import ProtectedRoute from './components/ProtectedRoute.jsx'
 import './index.css'
 import {
   BrowserRouter as Router,

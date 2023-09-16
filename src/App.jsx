@@ -43,6 +43,7 @@ import Admin from "./components/Admin/Index";
 import Langugage from "./components/categories/language"
 import AuthorsBooksDisplay from './components/common/Authors/AuthorsBooksDisplay'
 import AuthorsGroup from "./components/common/Authors/AuthorsGroup";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function useQuery() {
   const { search } = useLocation();
@@ -91,8 +92,17 @@ const App = () => {
           element={<Poll question={question} options={options} />}
         />
         <Route path="/createcompetataion" element={<Competation />} />
-        <Route path="/upload" element={<Upload />} />
-        <Route path="/teams" element={<Teams />} />
+        <Route path="/upload" element={
+        <ProtectedRoute>
+        <Upload/>
+        </ProtectedRoute>
+     }/>
+           <Route path="/teams" element={
+        <ProtectedRoute>
+        <Teams/>
+        </ProtectedRoute>
+     }/>
+      
         <Route path="/read" element={<Read />} />
         <Route path="/cartLogs" element={<CartItems />} />
         <Route path="/Privacy" element={<Privacy />} />
