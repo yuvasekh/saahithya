@@ -1,7 +1,27 @@
 
 import { faTemperatureUp } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import jwtDecode from "jwt-decode";
 const rootUrl="http://localhost:8001/"
+var token=localStorage.getItem('token')
+if(token!=null)
+{
+  let info=jwtDecode(token)
+  console.log(info,"info")
+  console.log(token,"for headers")
+let headers={ headers: {
+  token:"hello"}}
+  axios.interceptors.request.use((config) => {
+    // Add the authorization header to the request
+
+    config.headers['Email'] =info.Email
+    return config;
+  });
+}
+
+
+
+  
 export  async function getSuggestions(text)
 {
    console.log(text)
@@ -134,6 +154,7 @@ return response.data
 }
 export  async function latest ()
 {
+
   // console.log(data,"yuvaback")
 return await axios.get(`${rootUrl}api/latest`).then((response)=>
 {
@@ -319,6 +340,18 @@ export  async function getTags(id)
 {
   console.log(id,"Idfromdesc")
 return await axios.get(`${rootUrl}api/gettags/${id}`).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function getRole(id)
+{
+  console.log(id,"Idfromdesc")
+return await axios.post(`${rootUrl}api/gettags/${id}`).then((response)=>
 {
 console.log(response.data,"backenddata")
 return response.data

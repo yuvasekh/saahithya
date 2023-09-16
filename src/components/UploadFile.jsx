@@ -20,6 +20,7 @@ import { fileUpload } from '../components/services/api'
 import '../components/Layout/Upload.scss'
 import { useNavigate } from 'react-router-dom';
 import Checkbox from 'antd/es/checkbox/Checkbox';
+import { useEffect } from 'react';
 const UploadFile = () => {
   const { Option } = Select;
   const navigate=useNavigate()
@@ -99,6 +100,7 @@ const bookCategories = [
 
   const subcategoryOptions = ['Novel', 'Books', 'Crime',"Genra"];
   const categoryOptions1 = ['Books', 'Audio', 'Reels'];
+  const TeluguCategoryOptions1=["ఆడియో","పుస్తకములు","వీడియో"]
   const categoryOptions2 = ['Telugu', 'English'];
   const AuthorCategoryOptions = ['గ్రంధకర్తలు', 'ఆధునిక కవులు','వర్ధమాన కవులు'];
   const onFinish = async (values) => {
@@ -120,6 +122,10 @@ const handleChange=((e)=>
   console.log(e,"event")
   setLanguageSelection(e)
 })
+useEffect(()=>
+{
+
+},[LanguageSelection])
   return (
 
     <>
@@ -141,24 +147,7 @@ const handleChange=((e)=>
           >
             <Input />
           </Form.Item>
-          <Form.Item
-            label="Book Type"
-            name="BookType"
-            rules={[
-              {
-                required: true,
-                message: 'Please enter the Book Type',
-              },
-            ]}
-          >
-            <Select placeholder="Select a category">
-              {categoryOptions1.map((category) => (
-                <Option key={category} value={category}>
-                  {category}
-                </Option>
-              ))}
-            </Select>
-          </Form.Item>
+    
           <Form.Item
             label="Book Language"
             name="Book Language"
@@ -206,6 +195,36 @@ const handleChange=((e)=>
               ))}
         </Select>
       </Form.Item>
+    <Form.Item
+            label="Book Type"
+            name="BookType"
+            rules={[
+              {
+                required: true,
+                message: 'Please enter the Book Type',
+              },
+            ]}
+          >
+             <Select placeholder="Select a category">
+             {LanguageSelection !== 'Telugu'?<>
+             
+              {categoryOptions1.map((category1) => (
+                <Option key={category1} value={category1}>
+                  {category1}
+                </Option>
+              ))}
+           </>:<> 
+              {TeluguCategoryOptions1.map((category1) => (
+                <Option key={category1} value={category1}>
+                  {category1}
+                </Option>
+              ))}
+            </>
+}
+           </Select>
+
+           
+          </Form.Item>
 
           <Form.Item
             label="SubCategory Name"
