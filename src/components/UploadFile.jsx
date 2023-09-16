@@ -195,7 +195,7 @@ useEffect(()=>
               ))}
         </Select>
       </Form.Item>
-      <Form.Item
+    <Form.Item
             label="Book Type"
             name="BookType"
             rules={[
@@ -205,20 +205,24 @@ useEffect(()=>
               },
             ]}
           >
-             {LanguageSelection !== 'Telugu'?<> <Select placeholder="Select a category">
-              {categoryOptions1.map((category) => (
-                <Option key={category} value={category}>
-                  {category}
+             <Select placeholder="Select a category">
+             {LanguageSelection !== 'Telugu'?<>
+             
+              {categoryOptions1.map((category1) => (
+                <Option key={category1} value={category1}>
+                  {category1}
                 </Option>
               ))}
-            </Select></>:<> <Select placeholder="Select a category">
-              {TeluguCategoryOptions1.map((category) => (
-                <Option key={category} value={category}>
-                  {category}
+           </>:<> 
+              {TeluguCategoryOptions1.map((category1) => (
+                <Option key={category1} value={category1}>
+                  {category1}
                 </Option>
               ))}
-            </Select></>
+            </>
 }
+           </Select>
+
            
           </Form.Item>
 
@@ -282,7 +286,7 @@ useEffect(()=>
             name="AuthorCategory"
             rules={[
               {
-                required: false,
+                required: true,
                 message: 'Please enter the Author Category',
               },
             ]}

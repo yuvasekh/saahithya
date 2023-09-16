@@ -55,7 +55,7 @@ console.log(bufferData,"ccccccccccccc")
         item.FileImage.data=base64
 
       })
-     
+     console.log(res,"checkdb")
       
    setFilesData(res)
       
