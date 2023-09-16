@@ -12,6 +12,7 @@ const {TextEditor}=require('../Controllers/TextEditor')
 const {addtocarts}=require('../Controllers/addtocart')
 const {updatecart}=require('../Controllers/updatecart')
 const {getCart}=require('../Controllers/getCart')
+const {tags}=require('../Controllers/tags')
 const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,getquizresults}=require('../Controllers/contest');
 const { getallusers } = require("../Controllers/getallusers");
 const basePath = "/register"
@@ -40,4 +41,5 @@ module.exports = (app) => {
   app.route('/participateQuiz').post(participateQuiz)
   app.route('/authorcategory').post(authorCategory)
   app.route('/authorcategoryimages/:name').post(authorCategoryImages)
+  app.route('/gettags/:id').get(tags)
 };
