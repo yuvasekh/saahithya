@@ -2,7 +2,7 @@
 import { faTemperatureUp } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import jwtDecode from "jwt-decode";
-const rootUrl="http://localhost:8001/"
+const rootUrl="https://saahithyabackend.azurewebsites.net//"
 var token=localStorage.getItem('token')
 if(token!=null)
 {
