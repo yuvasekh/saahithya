@@ -42,17 +42,17 @@ const UploadFile = () => {
 
   const [projectData, setProjectData] = useState([]);
   const categoryOptions = [
-    "పిల్లలు",
+    "బాల సాహిత్యం",
     "ఆధ్యాత్మిక",
-    "స్త్రీలు",
+    "మహిళ",
     "ప్రేమ",
-    "రోమాన్స్",
+    "శృంగారం",
     "సామాజికం",
     "ఆరోగ్యం",
-    "భయం",
-    "కామెడీ",
+    "భయానకం",
+    "హాస్యం",
     "జీవితం",
-    "శాస్త్రం",
+    "శాస్త్రీయం",
     "సస్పెన్స్",
     "అనుబంధాలు",
     "ఫాంటసీ",
@@ -61,10 +61,10 @@ const UploadFile = () => {
     "మండలిక కథలు",
     "ప్రేరణ",
     "పాటలు",
-    "మిని కథలు",
+    "కథలు",
     "క్రీడలు",
     "డిటెక్టివ్",
-    "క్రైమ్",
+    "నేరం",
     "జీవిత చరిత్ర"
 ];
 const bookCategories = [
@@ -105,7 +105,7 @@ const bookCategories = [
   const categoryOptions1 = ['Books', 'Audio', 'Reels'];
   const TeluguCategoryOptions1=["ఆడియో","పుస్తకములు","వీడియో"]
   const categoryOptions2 = ['Telugu', 'English'];
-  const AuthorCategoryOptions = ['గ్రంధకర్తలు', 'ఆధునిక కవులు','వర్ధమాన కవులు'];
+  const AuthorCategoryOptions = ['గ్రంధకర్తలు', 'ఆధునిక కవులు','నవలా రచయితలు','ప్రాచీన కవులు','సినిమా పాటలు'];
   const onFinish = async (values) => {
     try {
       setLoadingupload(true); // Set loading to true when the API call starts
