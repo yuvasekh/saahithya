@@ -181,14 +181,6 @@ useEffect(()=>
             <Navbar.Collapse id="responsive-navbar-nav  ">
               <Nav className="me-auto">
           
-          
-                {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Item 1</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Item 2</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">Item 3</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">Separated Item</NavDropdown.Item>
-                </NavDropdown> */}
               </Nav>
               <Nav >
               <input
@@ -203,10 +195,21 @@ useEffect(()=>
                 </button>
                 <Nav.Link href="#features">Home</Nav.Link>
                 <Nav.Link href="/language">Categories</Nav.Link>
+                {token==null?
+                <>
                 <Nav.Link href="/register">Register</Nav.Link>
                 <Nav.Link  href="/login">
                   login
                 </Nav.Link>
+                </>
+                :
+                <>
+                <NavDropdown title={<UserOutlined />} id="collasible-nav-dropdown">
+                  <NavDropdown.Item onClick={logout}>logout</NavDropdown.Item>
+                  
+                </NavDropdown>
+                </>
+ }
               </Nav>
             </Navbar.Collapse>
           </Container>

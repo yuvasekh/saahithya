@@ -43,7 +43,7 @@ const CategoryOptions = () => {
       <div className='row'>
     {myProp === "Telugu"
     ? teluguimagearray.map((item, index) => (
-        <div className='col-12 col-md-3' style={{margin:'30px'}}>
+        <div className='col-12 col-md-3' style={{margin:'20px 5px 30px 20px'}}>
         {/* {imagearray.map((item, index) => ( */}
           <div  key={index} onClick={()=>{test(item)}}>
             <img src={item.img} className='img-opt' alt={`image-${index}`} />

@@ -50,12 +50,12 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='formdiv' >
+    <div className='login-form' >
    <br></br>
-      <h1 style={{ color: '#f8780e', fontWeight: '650', fontSize: '42px' }}>Login to Saaithya.com</h1>
+      <h1 className="login-head" >Login to Saaithya.com</h1>
       <br></br>
       <Form
-      className='login-form'
+      className='login-form2'
         name="login-form"
         onFinish={onFinish}
         onFieldsChange={handleFormChange}
