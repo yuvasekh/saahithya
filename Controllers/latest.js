@@ -9,7 +9,7 @@ module.exports.latest = async (req, res) => {
       FROM UploadFiles
     ) AS subquery
     ORDER BY PublishedTime DESC
-    LIMIT 5;`, (err, rows) => {
+    LIMIT 7;`, (err, rows) => {
         if (err) {
             console.error('Error executing query:', err.stack); 
             res.status(500).json({message:err})
