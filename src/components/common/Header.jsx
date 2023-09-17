@@ -26,7 +26,7 @@ const Header = () => {
           <CompassOutlined style={{fontSize: "20px"}}/>
      
      
-           <Link to="/categoryOptions">Category</Link> 
+           <Link to="/language">Category</Link> 
          
         </div>
         <div className="header-item">

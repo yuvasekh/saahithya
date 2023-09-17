@@ -21,13 +21,16 @@ import '../components/Layout/Upload.scss'
 import { useNavigate } from 'react-router-dom';
 import Checkbox from 'antd/es/checkbox/Checkbox';
 import { useEffect } from 'react';
+import LoaderImage from '../Resources/loader.gif'
 const UploadFile = () => {
   const { Option } = Select;
   const navigate=useNavigate()
   const [LanguageSelection,setLanguageSelection]=useState("Telugu")
   // let { projectId } = useParams();
+  
   const [imageUrl, setImageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [loadingupload, setLoadingupload] = useState(false);
   const handleImageUpload = async (file) => {
     setLoading(true);
     setTimeout(() => {
@@ -104,19 +107,23 @@ const bookCategories = [
   const categoryOptions2 = ['Telugu', 'English'];
   const AuthorCategoryOptions = ['గ్రంధకర్తలు', 'ఆధునిక కవులు','వర్ధమాన కవులు'];
   const onFinish = async (values) => {
-    console.log('Form values:', values);
-    var res=await fileUpload(values)
-    console.log(res.status,"test")
-    if(res.status==200)
-    {
-      navigate('/home')
+    try {
+      setLoadingupload(true); // Set loading to true when the API call starts
+      console.log('Form values:', values);
+      var res = await fileUpload(values);
+      console.log(res.status, "test");
+      if (res.status === 200) {
+        navigate('/home');
+      } else {
+        alert("Upload Failed");
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert("An error occurred during upload");
+    } finally {
+      setLoadingupload(false); // Set loading back to false when the API call completes (whether it succeeded or failed)
     }
-else{
-  alert("Uplaod Failed")
-}
-
   };
-
 const handleChange=((e)=>
 {
   console.log(e,"event")
@@ -129,7 +136,9 @@ useEffect(()=>
   return (
 
     <>
-    <div className='upload-con'>
+    {
+      loadingupload===true?<><img src={LoaderImage} alt="Loading..." /></>:<>  
+      <div className='upload-con'>
       <h1 style={{  textAlign: 'center',   color: 'tomato' }}>Publish A Book</h1>
      
       <div className='form-container' >
@@ -390,7 +399,9 @@ useEffect(()=>
         </Form>
       
       </div>
-    </div>
+    </div></>
+    }
+  
     </>
   )
 }
