@@ -195,12 +195,18 @@ useEffect(()=>
                 </button>
                 <Nav.Link href="#features">Home</Nav.Link>
                 <Nav.Link href="/language">Categories</Nav.Link>
+                <Nav.Link href="/home">Trending</Nav.Link>
+                <Nav.Link href="/Comingsoon">Aboutus</Nav.Link>
+                <Nav.Link href="/teams">Team</Nav.Link>
+                <Nav.Link href="/Comingsoon">Media</Nav.Link>
+                <Nav.Link href="/Publications">Publications</Nav.Link>
+                <Nav.Link href="/Comingsoon">Events</Nav.Link>
+                <Nav.Link href="/Comingsoon">Contactus</Nav.Link>
+                <Nav.Link href="/Comingsoon">Download Now</Nav.Link>
                 {token==null?
                 <>
                 <Nav.Link href="/register">Register</Nav.Link>
-                <Nav.Link  href="/login">
-                  login
-                </Nav.Link>
+                <Nav.Link  href="/login">login</Nav.Link>
                 </>
                 :
                 <>

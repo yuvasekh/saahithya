@@ -23,11 +23,11 @@ const pagemove=()=>
     <div className="image-rotator">
       <div className='row'>
         <div className='content col-12 col-md-8'>
-          <h1 >మీ పుస్తకాన్ని ప్రచురించండి...</h1>
+          <h1 style={{paddingTop:'10px'}}>మీ పుస్తకాన్ని ప్రచురించండి...</h1>
           <h1>Publish your Book...</h1>
 
           <br/>
-          <p >
+          <p style={{fontSize:'25px'}} >
             "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..  మనసు విదిల్చిన భావోద్వేగాలు"
           </p>
           <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" }}>Books Section</Button>

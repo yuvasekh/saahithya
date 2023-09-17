@@ -100,17 +100,18 @@ console.log(filesdata,"----------->>>>>>>>>")
      
       navigate('/itemdesc', { state: { myProp:item } })
   }
-  console.log(props, "props")
+  console.log(path, "hari")
   return (
     <div className='homecontent' style={{marginTop:"40px"}}>
       {
-        path!=='/'?<><p className='heading'> కనుగొనండి
+        path=='/'?<><p style={{fontSize:'30px'}}> కనుగొనండి
+
       
         కథల ప్రపంచం
       </p></>:<></>
       }
       
-      <h3>టాప్ ట్రెండింగ్ సిరీస్</h3>
+      <p className='trending-head'>టాప్ ట్రెండింగ్ సిరీస్</p>
      
       {/* <div className='ld-con'>
           <img className='ld-img' src={Trending} />
@@ -135,7 +136,7 @@ console.log(filesdata,"----------->>>>>>>>>")
      
      
       <br></br>
-      <h3>ఇటీవల అప్డేట్ చేసిన టాప్ సిరీస్</h3>
+      <p className='trending-head'>ఇటీవల అప్డేట్ చేసిన టాప్ సిరీస్</p>
       <div className='bookimages'>
         {/* <div className='ld-con'>
           <img className='ld-img' src={Upcoming} />

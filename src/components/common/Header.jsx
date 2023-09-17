@@ -14,23 +14,23 @@ const Header = () => {
   })
   return (
     <>
-    <div className='header'>
-   
-
+    <div className='header'  >
+      
         <div className="header-content">
           <div className="header-item">
        
-          <HomeOutlined className="Home-Outlined"/>
+          <HomeOutlined style={{fontSize: "20px"}}/>
           <Link to="/">Home</Link> 
         </div>
-
         <div className="header-item">
-          <CompassOutlined className='Compass-Outlined'/>
-           <Link to="/language">Category</Link> 
+          <CompassOutlined style={{fontSize: "20px"}}/>
+     
+     
+           <Link to="/categoryOptions">Category</Link> 
+         
         </div>
-
         <div className="header-item">
-          <UsergroupDeleteOutlined  className='Usergroup-DeleteOutlined'/>
+          <UsergroupDeleteOutlined  style={{fontSize: "20px"}}/>
      
      
            <Link to="/authors">Authors</Link> 
@@ -39,31 +39,25 @@ const Header = () => {
  
         <div className="header-item" >
          
-          <EditOutlined  className='Edit-Outlined'/>
+          <EditOutlined style={{fontSize: "20px"}}/>
           <Link to="/texteditor">Write</Link>  
        
         </div>
         <div className="header-item" >
       
-         <UploadOutlined className='Upload-Outlined'/>
+         <UploadOutlined style={{fontSize: "20px"}}/>
          <Link to="/upload">Upload</Link>  
       
-
-      
-
        </div>
-       <div className="header-item" >
-      
-      <AudioOutlined  className='Upload-Outlined'/>
-      <Link to="/uploadaudio">Record</Link>  
-   
-
-   
-
-    </div>
-
-   
-       <div className="vamsi-search-fixed">
+        {/* <div className="header-item">
+         
+          <UserOutlined style={{fontSize: "30px"}}/>
+          <Link to="/register">User</Link> 
+       
+        </div> */}
+        </div>
+        
+        <div className="search-bar">
          <div className="bell-container">
             <BellOutlined className="bell-icon" />
             <span className="red-dot" />
@@ -71,9 +65,6 @@ const Header = () => {
           <div className='shop'>
             <ShoppingCartOutlined className='shop-icon' onClick={()=>{goToCart()}}/>
           </div>
-      </div>
-
-
       </div>
     </div>
 

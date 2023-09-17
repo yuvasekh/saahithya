@@ -8,6 +8,7 @@ import { Outlet, Link } from "react-router-dom";
 import child from '../../Resources/child.png'
 import { Select } from 'antd';
 import './subheader.scss'
+import "bootstrap/dist/css/bootstrap.min.css"
 
 // import './Subheader.scss';
 // import write from'../../Resources/write.jpg';
@@ -16,7 +17,8 @@ import './subheader.scss'
     console.log(`selected ${value}`);
   };
   return (
-    <div className='subheader'>
+    
+    <div className='subheader d-none d-lg-block'>
     
         <div className="subheader-content">
          
