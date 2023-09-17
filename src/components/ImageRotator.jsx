@@ -23,14 +23,14 @@ const pagemove=()=>
     <div className="image-rotator">
       <div className='row'>
         <div className='content col-12 col-md-8'>
-          <h1 style={{paddingTop:'10px'}}>మీ పుస్తకాన్ని ప్రచురించండి...</h1>
-          <h1>Publish your Book...</h1>
+          <h1 style={{paddingTop:'10px',fontSize:'50px'}}>మీ పుస్తకాన్ని ప్రచురించండి...</h1>
+          <h1 style={{paddingTop:'10px',fontSize:'50px'}}>Publish your Book...</h1>
 
           <br/>
-          <p style={{fontSize:'25px'}} >
+          <p style={{fontSize:'25px',padding:'10px'}} >
             "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..  మనసు విదిల్చిన భావోద్వేగాలు"
           </p>
-          <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" }}>Books Section</Button>
+          <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" ,padding:'10px'}}>Books Section</Button>
         </div>
 
         <div className='imagescontent col-12 col-md-4'>

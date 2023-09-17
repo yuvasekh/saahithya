@@ -40,8 +40,7 @@ const Landingpage = () => {
     <div className="landing-con">
     <div className='landing-page'>
       <ImageRotator images={images} />
-      <div className='animationcontainer'>
-      </div>
+     
        {/* <Modal
         centered
         open={open}
