@@ -126,7 +126,11 @@ console.log(filesdata,"----------->>>>>>>>>")
         {
           filesdata.map((item,index)=>
           (
-            <img  src={`data:image/png;base64,${item.FileImage.data}`} className='img1' onClick={()=>{test(item)}}/>
+            <div>
+ <img  src={`data:image/png;base64,${item.FileImage.data}`} className='img1' onClick={()=>{test(item)}}/>
+ <h3>{item.FileName}</h3>
+              </div>
+           
           ))
         }
      
@@ -141,7 +145,8 @@ console.log(filesdata,"----------->>>>>>>>>")
         {
           filesdata1.map((item,index)=>
           (
-            <img  src={`data:image/png;base64,${item.FileImage.data}`} className='img1' onClick={()=>{test(item)}}/>
+            <div> <img  src={`data:image/png;base64,${item.FileImage.data}`} className='img1' onClick={()=>{test(item)}}/> <h3>{item.FileName}</h3></div>
+           
           ))
         }
         </div>

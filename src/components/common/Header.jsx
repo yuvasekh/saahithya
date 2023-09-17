@@ -52,6 +52,15 @@ const Header = () => {
       
 
        </div>
+       <div className="header-item" >
+      
+      <AudioOutlined  className='Upload-Outlined'/>
+      <Link to="/uploadaudio">Record</Link>  
+   
+
+   
+
+    </div>
 
    
        <div className="vamsi-search-fixed">

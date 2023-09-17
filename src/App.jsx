@@ -44,6 +44,7 @@ import Langugage from "./components/categories/language"
 import AuthorsBooksDisplay from './components/common/Authors/AuthorsBooksDisplay'
 import AuthorsGroup from "./components/common/Authors/AuthorsGroup";
 import ProtectedRoute from "./components/ProtectedRoute";
+import UploadAudio from "./components/Audio/UploadAudio";
 
 function useQuery() {
   const { search } = useLocation();
@@ -124,6 +125,8 @@ const App = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path='/language' element={<Langugage/>}/>
         <Route path='/authorsgroup' element={<AuthorsGroup/>}/>
+        <Route path='/uploadaudio' element={<UploadAudio/>}/>
+        
         <Route path='/authorsbooksdisplay' element={<AuthorsBooksDisplay/>}/>
 
 
