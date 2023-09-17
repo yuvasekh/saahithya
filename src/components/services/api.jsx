@@ -3,6 +3,7 @@ import { faTemperatureUp } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import jwtDecode from "jwt-decode";
 const rootUrl="https://saahithyabackend.azurewebsites.net/"
+// const rootUrl="http://localhost:8001/"
 var token=localStorage.getItem('token')
 if(token!=null)
 {
@@ -180,7 +181,7 @@ return response.data
 export  async function cartLog()
 {
   const formData = new FormData();
-  formData.append("FileId","syuva893@gmail.com");
+  formData.append("FileId",);
 return await axios.post(`${rootUrl}api/getCart`,formData    ).then((response)=>
 {
 console.log(response.data)
