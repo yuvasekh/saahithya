@@ -1,12 +1,14 @@
-
-var {EmailSent}=require('../Resources/Emailsent')
-var {Jwttoken}=require('../Resources/Jwttoken')
-
-var mysql = require('mysql2');
+var { EmailSent } = require("../Resources/Emailsent");
+var { Jwttoken } = require("../Resources/Jwttoken");
+const moment = require('moment');
+var mysql = require("mysql2");
+require("dotenv").config();
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
-const TWILIO_ACCOUNT_SID = "ACf8253f88733b8853ef16262e1f1df7b6";
-const  TWILIO_AUTH_TOKEN = "4d16f3076f971fa2f64860d72bd2486f";
-const TWILIO_SERVICE_SID = "VA93fc6b4b82426bb21d9d840d53fcb501";
+const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
+const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
+const TWILIO_SERVICE_SID = process.env.TWILIO_SERVICE_SID;
+console.log(TWILIO_SERVICE_SID,"TWILIO_SERVICE_SID")
+// process.env;
 const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, {
   lazyLoading: true,
 });
@@ -15,74 +17,76 @@ const connection = mysql.createConnection({
   user: process.env.user,
   password: process.env.password,
   database: process.env.database,
-}); 
+});
 module.exports.verifyotp = async (req, res) => {
-    // console.log(req.body.data,"check++++++++++")
-    // const { data, otp } = req.body.data ?? {};
-    // console.log(data)
-    console.log(req.body.data.mobile,req.body.otp,"mobile check")
-    var dob=req.body.data.dob;
-    const year = dob['$y'];
-const month = dob['$M'] + 1; // Note: Month is zero-based, so add 1
-const day = dob['$D'];
-
-// Create a new Date object using the extracted components
-const dateObj = new Date(year, month, day);
-
-// Format the date as a string
-const formattedDate = dateObj.toDateString();
-
-console.log(formattedDate);
-    try {
-      const result = await client.verify
-        .services(TWILIO_SERVICE_SID)
-        .verificationChecks.create({
-          to: `+91 ${req.body.data.mobile}`,
-          code: req.body.otp,
-        });
-        console.log(req.body.data.mobile,"mobile check")
-          await EmailSent(req.body.data.email)
-   
-  
-          const selectQuery = 'SELECT COUNT(*) AS count FROM Register WHERE email = ?';
-        //   const insertQuery = 'INSERT INTO users (email) VALUES (?)';
-          const insertQuery = 'INSERT INTO Register  VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
-          connection.query(selectQuery, [req.body.data.email], (error, results) => {
+  console.log(req.body, req.body.otp, "mobile check");
+  var dob = req.body.dob;
+  let data = req.files;
+  console.log(data,"data")
+  const year = dob["$y"];
+  const month = dob["$M"] + 1; // Note: Month is zero-based, so add 1
+  const day = dob["$D"];
+  const formattedDate = moment(dob["$d"]).format('YYYY-MM-DD HH:mm:ss');
+  try {
+    const result = await client.verify
+      .services(TWILIO_SERVICE_SID)
+      .verificationChecks.create({
+        to: `+91 ${req.body.mobile}`,
+        code: req.body.otp,
+      });
+    console.log(req.body.mobile, "mobile check");
+    await EmailSent(req.body.email);
+    const selectQuery =
+      "SELECT COUNT(*) AS count FROM Register WHERE email = ?";
+    const insertQuery = "INSERT INTO Register  VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+    connection.query(selectQuery, [req.body.email], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      const count = results[0].count;
+console.log(count,"Email Count")
+      if (count === 0) {
+        console.log("Inside if")
+        connection.query(
+          insertQuery,
+          [
+            req.body.name,
+            req.body.email,
+            req.body.mobile,
+            req.body.gender,
+            req.body.password,
+            req.body.address,
+            "user",
+            formattedDate,
+            data[0].buffer
+          ],
+          async (error, result) => {
             if (error) {
-              throw error;
+              console.log(error)
+              res.status(500).json({ message: error });
             }
-        
-            const count = results[0].count;
-        
-            if (count === 0) {
-          
-              
-              
-              connection.query(insertQuery, [req.body.data.name, req.body.data.email, req.body.data.mobile,req.body.data.gender, req.body.data.password,req.body.data.address,"user",formattedDate],async (error,result) => {
-                if (error) {
-                 
-                  res.status(500).json({message:error})
-                }
-                var token=await Jwttoken(req.body.data.email,"user",req.body.data.mobile)
-                console.log('Email inserted successfully.',token);
-                res.cookie('Token',token, { maxAge: 900000, httpOnly: true });
-                res.status(200).json(result);
-              });
-            } else {
-              console.log('Email already exists.');
-              res.status(500).json({message:error})
-            }
-          });
-    //   res.status(200).send({
-    //     success: true,
-    //     message: `OTP verified successfully`,
-    //     payload: result,
-    //   });
-    } catch (err) {
-        console.log(err)
+            console.log("No error")
+            var token = await Jwttoken(
+              req.body.email,
+              "user",
+              req.body.mobile
+            );
+            console.log("Email inserted successfully.", token);
+
+            res.status(200).json(result);
+          }
+        );
+      } else {
+        console.log("Email already exists.");
+        res.status(400).json({ message: "Email Already Exists" });
+      }
+    });
+
+  } catch (err) {
+    console.log(err);
     //   res.status(500).send({
     //     success: false,
     //     message: `Error in verifying otp: ${err.message}`,
     //   });
-    }
-  };
+  }
+};

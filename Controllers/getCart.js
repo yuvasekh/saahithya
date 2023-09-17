@@ -9,9 +9,11 @@ var email=req.body.FileId
             res.status(500).json({message:err})
             return;
         }
+        console.log('Query result:', rows);
         res.status(200).json(rows);
         
-        console.log('Query result:', rows);
+       
+
     });
     
        
