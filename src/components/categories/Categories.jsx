@@ -137,13 +137,13 @@ const Categories = () => {
       <div className='row '>
       {myProp?.language === "Telugu"
         ? Teluguimagearray.map((item, index) => (
-            <div className=' col-12 col-md-3 m-4 text-center' key={index} onClick={() => test(item)}>
+            <div className='category-cont col-12 col-md-2 m-4 text-center' key={index} onClick={() => test(item)}>
               <img src={item.img} className='con-img' alt={`image-${index}`} />
               <h4 className="heading-one" style={{ backdropFilter: 'blur(20px) saturate(70%)' }}>{item.imgdesc}</h4>
             </div>
           ))
         : Englishimagearray.map((item, index) => (
-            <div className=' col-12 col-md-3  m-4 text-center' key={index} onClick={() => test(item)}>
+            <div className='category-cont col-12 col-md-3  m-4 text-center' key={index} onClick={() => test(item)}>
               <img src={item.img} className='con-img' alt={`image-${index}`} />
               <h4 className="heading-one" style={{ backdropFilter: 'blur(20px) saturate(70%)' }}>{item.imgdesc}</h4>
             </div>

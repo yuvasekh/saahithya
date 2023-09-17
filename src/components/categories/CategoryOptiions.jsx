@@ -40,27 +40,30 @@ const CategoryOptions = () => {
     })
     return (
       <>
+<div className='cate-option'>
+  
       <div className='row'>
-    {myProp === "Telugu"
-    ? teluguimagearray.map((item, index) => (
-        <div className='col-12 col-md-3' style={{margin:'20px 5px 30px 20px'}}>
-        {/* {imagearray.map((item, index) => ( */}
+      {myProp === "Telugu"
+      ? teluguimagearray.map((item, index) => (
+          <div className='col-12 col-md-3 ' style={{margin:'20px 5px 30px 20px'}}>
+          {/* {imagearray.map((item, index) => ( */}
+            <div  key={index} onClick={()=>{test(item)}}>
+              <img src={item.img} className='img-opt' alt={`image-${index}`} />
+              <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
+            </div>
+            </div>
+  
+        ))
+        : imagearray.map((item, index) => (
+        <div className=' col-12 col-md-3' style={{position:'relative',margin:'30px'}}>
           <div  key={index} onClick={()=>{test(item)}}>
             <img src={item.img} className='img-opt' alt={`image-${index}`} />
             <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
           </div>
-          </div>
-        
-      ))
-      : imagearray.map((item, index) => (
-      <div className=' col-12 col-md-3' style={{position:'relative',margin:'30px'}}>
-        <div  key={index} onClick={()=>{test(item)}}>
-          <img src={item.img} className='img-opt' alt={`image-${index}`} />
-          <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
         </div>
-      </div>
-      ))}
-      </div>
+        ))}
+        </div>
+</div>
     </>
   );
 };
