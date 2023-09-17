@@ -113,7 +113,10 @@ dummy()
         </div>
       </div>
       <br></br>
-      <ReadMore text={myProp.BookExcerpt} maxChars={50} />
+      {
+        myProp.BookExcerpt?<> <ReadMore text={myProp.BookExcerpt} maxChars={50} /></>:<></>
+      }
+     
       <br></br>
     </div>
   );
