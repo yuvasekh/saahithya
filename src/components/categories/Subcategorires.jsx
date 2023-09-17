@@ -32,7 +32,7 @@ const Subcategories = () => {
     }
   return (
 
-    <div  >
+    <div  className='sub-cat-con'>
       <div className='row'>
         {imagearray.map((item, index) => (
           <div className=' col-12 col-md-3' key={index} onClick={()=>{test(item)}}>

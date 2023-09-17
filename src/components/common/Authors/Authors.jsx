@@ -28,8 +28,7 @@ const Authors = () => {
   return (
     <>
     <div style={{backgroundColor:'white',borderRadius:'20px', margin:'20px'}}>
-      <div className='row'>
-        <div className='categorycontainers col-12'>
+        <div className='categorycontainers'>
           <div className='row'>
               {imagearray.map((item, index) => (
                 <div className='containerimg col-12 col-md-4 col-lg-2  text-center' key={index} onClick={()=>{test(item)}}>
@@ -40,7 +39,6 @@ const Authors = () => {
           </div>
 
         </div>
-      </div>
     </div>
 </>
   )
