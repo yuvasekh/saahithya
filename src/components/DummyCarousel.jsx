@@ -4,13 +4,47 @@ import './DummyCarosel.scss'
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import {getData,latest,trending} from '../components/services/api'
+import { Slide } from 'react-toastify';
 export const DummyCarousel = (props) => {
   const [imagedata,setImageData]=useState("")
   const [filesdata,setFilesData]=useState([])
   const [filesdata1,setFilesData1]=useState([])
   var path = location.pathname;
+  var settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+         slidesToShow: 3,
+         slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+         slidesToShow: 2,
+         slidesToScroll: 1,
+        }
+       },
+       {
+        breakpoint: 480, // Adjust this value for your desired mobile breakpoint
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      }
+    ]
+  };
   console.log(path,"path")
   const navigate=useNavigate();
   // const imagearray = [
@@ -112,37 +146,33 @@ console.log(filesdata,"----------->>>>>>>>>")
       }
       
       <p className='trending-head'>టాప్ ట్రెండింగ్ సిరీస్</p>
-     
+     <br></br>
       {/* <div className='ld-con'>
           <img className='ld-img' src={Trending} />
         </div> */}
         
+        <Slider {...settings}>
         
-          <div className='trend-con'>
             {
               filesdata.map((item,index)=>
               (
             
             
-                  <div className='trend-img-con'>
+                  <div className='trend-img-con1'>
                       <img  src={`data:image/png;base64,${item.FileImage.data}`} className='img5' onClick={()=>{test(item)}}/>
                       <h3 className='trend-head'>{item.FileName}</h3>
                   </div>
             
               ))
             }
-          </div>
-        
+          
+        </Slider>
      
      
       <br></br>
       <p className='trending-head'>ఇటీవల అప్డేట్ చేసిన టాప్ సిరీస్</p>
-      <div className='bookimages'>
-        {/* <div className='ld-con'>
-          <img className='ld-img' src={Upcoming} />
-        </div> */}
-        
-        <div className='trend-con'>
+      <br></br>
+      <Slider {...settings}>
           {
             filesdata1.map((item,index)=>
             (
@@ -153,9 +183,9 @@ console.log(filesdata,"----------->>>>>>>>>")
           
             ))
           }
-        </div>
-        </div>
-     
+      
+      
+        </Slider>
     
 <br></br>
     </div>

@@ -13,6 +13,34 @@
     
 }
 
+button.slick-arrow.slick-next
+{
+background-color: rgb(55, 45, 45);
+top: -25px;
+right: 25px;
+color: rgb(249, 249, 255);
+font-size:  0px;
+
+}
+button{
+width: 60px;
+font-size: 5px;
+height: 25px;
+color: white;
+border-radius: 60%;
+color: #111;
+}
+button.slick-arrow.slick-prev
+{
+top: -28px;
+margin-left: 40px;
+background-color: rgb(75, 57, 57);
+color: #111;
+margin-right: 100px;
+font-size: 0px;
+}
+
+
 .trending-head{
     font-size: 20px;
     font-weight: 750px;
