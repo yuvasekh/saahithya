@@ -22,6 +22,12 @@ const Itemdesc = () => {
   const [tags,setTags]=useState([])
   const [text, setText] = useState("");
   const [comments,setcomments]=useState([])
+  const [commentsclick,setcommentsclick]=useState(false)
+  const [rating, setRating] = useState(0); // Initialize the rating state with 0 stars
+
+  const handleRatingClick = (selectedRating) => {
+    setRating(selectedRating); // Update the rating when a star is clicked
+  };
 
   function handleOnEnter(text) {
     console.log("enter", text);
@@ -59,6 +65,15 @@ dummy()
     console.log(FileID, "message");
     navigate("/read", { state: { myProp: FileID } });
   }
+  async function commentsfun()
+  {
+   console.log("comments",comments)
+   commentsclick==true?setcommentsclick(false):setcommentsclick(true)
+  }
+  useEffect(()=>
+  {
+
+  },[comments])
   async function cart(CartItem) {
     console.log(CartItem, "Inside Fun");
     await addToCart(CartItem);
@@ -86,6 +101,10 @@ dummy()
            
             {myProp.Likes}
           </h2>
+          <h2 onClick={commentsfun}>
+          <CommentOutlined />
+
+          </h2>
           <h2
             style={{
               backgroundColor: "f81414d0 !important",
@@ -95,12 +114,24 @@ dummy()
               cart(myProp.FileId);
             }}
           >
+         
             <ShoppingCartOutlined /> 
           </h2>
-          <h2>
-          <CommentOutlined />
-
-          </h2>
+          {[1, 2, 3, 4, 5].map((star) => (
+        <span
+          key={star}
+          onClick={() => handleRatingClick(star)}
+          style={{
+            color: star <= rating ? 'gold' : 'gray',
+            cursor: 'pointer',
+          }}
+        >
+          <StarOutlined size={24} />
+        </span>
+      ))}
+     <Button style={{width:'120px'}}>Submit Rating</Button>
+    
+        
           </div>
           <br></br>
           
@@ -142,7 +173,8 @@ dummy()
         myProp.BookExcerpt?<> <ReadMore text={myProp.BookExcerpt} maxChars={50} /></>:<></>
       }
      <div>
-      <div className="commentscontainers">
+      {
+        commentsclick==true?<>   <div className="commentscontainers">
         <div className="Input-com">
         {
           comments.length>0?<>{
@@ -163,7 +195,9 @@ dummy()
         
         
        
-      </div>
+      </div></>:<></>
+      }
+   
 
      </div>
       <br></br>
