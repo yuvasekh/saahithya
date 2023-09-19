@@ -49,6 +49,12 @@ const Header = () => {
          <Link to="/upload">Upload</Link>  
       
        </div>
+       <div className="header-item" >
+      
+      <AudioOutlined  style={{fontSize: "20px"}}/>
+      <Link to="/uploadAudio">Audio</Link>  
+   
+    </div>
         {/* <div className="header-item">
          
           <UserOutlined style={{fontSize: "30px"}}/>

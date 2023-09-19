@@ -45,6 +45,7 @@ import AuthorsBooksDisplay from './components/common/Authors/AuthorsBooksDisplay
 import AuthorsGroup from "./components/common/Authors/AuthorsGroup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UploadAudio from "./components/Audio/UploadAudio";
+import AudioPlayer from './components/Audio/AudioPlayer'
 
 function useQuery() {
   const { search } = useLocation();
@@ -103,6 +104,11 @@ const App = () => {
         <Teams/>
         </ProtectedRoute>
      }/>
+         <Route path="/uploadaudio" element={
+        <ProtectedRoute>
+        <UploadAudio/>
+        </ProtectedRoute>
+     }/>
       
         <Route path="/read" element={<Read />} />
         <Route path="/cartLogs" element={<CartItems />} />
@@ -125,8 +131,8 @@ const App = () => {
         <Route path="/admin" element={<Admin />} />
         <Route path='/language' element={<Langugage/>}/>
         <Route path='/authorsgroup' element={<AuthorsGroup/>}/>
-        <Route path='/uploadaudio' element={<UploadAudio/>}/>
-        
+       
+        <Route path="/audioplayer" element={<AudioPlayer/>}/>
         <Route path='/authorsbooksdisplay' element={<AuthorsBooksDisplay/>}/>
 
 
