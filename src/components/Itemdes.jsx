@@ -68,7 +68,7 @@ dummy()
     <div style={{ position: "relative" }} className="itemcontaineritems">
       <div className="styleconainer"></div>
       <div className="imgcontainers">
-        <div style={{ width: "850px", gap: "32px" }}>
+        <div style={{ width: "850px", gap: "22px" }}>
           {" "}
           <h2>{myProp.FileName}</h2>
           <p>{myProp.bookdescription}</p>
@@ -80,37 +80,30 @@ dummy()
             <EyeOutlined />
             {myProp.Views}
           </p>
-          <Button
-            style={{ backgroundColor: "f81414d0 !important" }}
-            onClick={() => {
-              readPage(myProp.FileId);
-            }}
-          >
-            Read
-          </Button>
-          <Button onClick={handleLike}>
+        <div style={{display:'flex',gap:'22px',alignItems:'center'}}>
+          <h2 onClick={handleLike}>
             <FontAwesomeIcon icon={liked ? faThumbsDown : faThumbsUp} />
-            {liked ? " Likes" : " Likes"}
+           
             {myProp.Likes}
-          </Button>
-          <Button
+          </h2>
+          <h2
             style={{
               backgroundColor: "f81414d0 !important",
-              marginLeft: "20px",
-              width: "140px",
+            
             }}
             onClick={() => {
               cart(myProp.FileId);
             }}
           >
-            <ShoppingCartOutlined /> Addtocart
-          </Button>
-          <Button>
+            <ShoppingCartOutlined /> 
+          </h2>
+          <h2>
           <CommentOutlined />
 
-          </Button>
+          </h2>
+          </div>
           <br></br>
-          <br></br>
+          
           <div style={{ display: "flex", justifyContent: "start" }}>
             {tags.length>0?<>{
             tags.map((item)=>
@@ -127,12 +120,21 @@ dummy()
           />
          
         
-        <div> <br></br><Button>
+        <div style={{display:'flex',marginTop:'3px'}}> 
+        <Button  style={{ cursor: "true" ? 'not-allowed' : 'pointer' }}>
         <FlagOutlined />
           Report
          
-          </Button></div>
-          
+          </Button>
+          <Button
+            style={{ backgroundColor: "f81414d0 !important" }}
+            onClick={() => {
+              readPage(myProp.FileId);
+            }}
+          >
+            Read
+          </Button>
+          </div>
         </div>
       </div>
       <br></br>
