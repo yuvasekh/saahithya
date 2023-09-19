@@ -10,7 +10,7 @@ width: 100vw;
 {
     box-shadow: 0 2px 4px 0 #b5adad;
     width: 80vw;
-    height: 320px;
+
     margin-top: -200px;
     background-color: white;
     border-radius: 20px;
@@ -20,13 +20,36 @@ width: 100vw;
     display: flex;
    
 }
+.commentscontainers
+{
+    box-shadow: 0 2px 4px 0 #b5adad;
+width: 80vw;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 20px;
+    justify-content: space-around;
+    padding: 35px;
+    margin-left: 110px;
+   
+}
 .ant-btn 
 {
     background-color: #f81414d0 !important;
     color: white;
     width: 100px;
-    height: 45px;
+    height: 38px;
     border-radius: 10px;
     font-weight: 500px;
+}
+.Input-com
+{
+    display: block;
+    overflow-y: scroll;
+    height: 30vh;
+}
+.Input-com
+{
+    // bottom: 0;
+    // position: relative;
 }
 }
