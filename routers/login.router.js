@@ -17,6 +17,7 @@ const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,get
 const { getallusers } = require("../Controllers/getallusers");
 const {getRole}=require('../Controllers/getRole')
 const {getFileById}=require('../Controllers/getFileById')
+const {comments,getcomments}=require('../Controllers/comments')
 const basePath = "/register"
 module.exports = (app) => {
   console.log("inside ");
@@ -46,4 +47,6 @@ module.exports = (app) => {
   app.route('/gettags/:id').get(tags)
   app.route('/getrole').post(getRole)
   app.route('/file/:id').get(getFileById)
+  app.route('/addcomment/:id').post(comments)
+  app.route('/getcomments/:id').get(getcomments)
 };

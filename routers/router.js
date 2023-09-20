@@ -9,7 +9,9 @@ const upload = multer();
 //     console.log(req.headers.email)
 
 //   }
+
 router.use(upload.any(), jsonParser, (req, res, next) => {
+    console.log(req.headers,"headerslist")
     return next();
 });
 

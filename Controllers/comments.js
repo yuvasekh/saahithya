@@ -1,7 +1,92 @@
 const db = require('../Resources/db');
+const { v4: uuidv4 } = require("uuid");
 module.exports.comments = async (req, res) => {
+    let CommentId = uuidv4();
+    console.log(req.params.id,"paramsId",req.body)
+    let checkuserquery=`select * from register where Email='${req.headers.email}'`
+    let commentssquery = `select CategoryName from uploadfiles where FileId='${req.params.id}'`;
+    const insertQuery = 'INSERT INTO comments  VALUES (?, ?, ?, ?, ?)';
+
+    db.query(checkuserquery, async (error, results) => {
+        if (error) {
+          throw error;
+        }
+        console.log(results,"userscount")
+        if(results.length>0)
+        {
+            db.query(insertQuery, [CommentId,req.headers.email,req.params.id,req.body.comment,new Date()],async (error, results) => {
+                if (error) {
+                    console.log(error)
+                  throw error;
+                }
+                console.log('Comment item inserted successfully.',results);
+                res.status(200).json("Comment added");
+             
+            });
+        }
+    else
+    {
+        res.status(500).json({message:"Invalid User"})
+    }
+    })
+  
+    
+       
+};
+module.exports.getcomments = async (req, res) => {
     console.log(req.params.id,"paramsId")
-    let query = `select CategoryName from uploadfiles where FileId='${req.params.id}'`;
+    let query = `select * from comments where FileId='${req.params.id}' ORDER BY CreatedAt;`;
+
+    db.query(query, (err, rows) => {
+        if (err) {
+            console.error('Error executing query:', err); 
+            res.status(500).json({message:err})
+           
+        }
+        console.log('Query result for Images:', rows);
+        res.status(200).json(rows);
+        
+    });
+    
+       
+};
+
+module.exports.reports = async (req, res) => {
+    let CommentId = uuidv4();
+    console.log(req.params.id,"paramsId",req.body)
+    let checkuserquery=`select * from register where Email='${req.headers.email}'`
+    
+    const insertQuery = 'INSERT INTO reports  VALUES (?, ?, ?, ?, ?)';
+
+    db.query(checkuserquery, async (error, results) => {
+        if (error) {
+          throw error;
+        }
+        console.log(results,"userscount")
+        if(results.length>0)
+        {
+            db.query(insertQuery, [CommentId,req.headers.email,req.params.id,req.body.comment,new Date()],async (error, results) => {
+                if (error) {
+                    console.log(error)
+                  throw error;
+                }
+                console.log('Comment item inserted successfully.',results);
+                res.status(200).json("Comment added");
+             
+            });
+        }
+    else
+    {
+        res.status(500).json({message:"Invalid User"})
+    }
+    })
+  
+    
+       
+};
+module.exports.getreports = async (req, res) => {
+    console.log(req.params.id,"paramsId")
+    let query = `select * from comments where FileId='${req.params.id}' ORDER BY CreatedAt;`;
 
     db.query(query, (err, rows) => {
         if (err) {
