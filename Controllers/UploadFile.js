@@ -113,3 +113,55 @@ module.exports.deleteFile = async (req, res) => {
     
        
 };
+
+module.exports.uploadNewsFiles = async (req, res) => {
+ console.log(req.body)
+ let Id= uuidv4()
+
+ if(req.body.file && req.body.title && req.body.mimeType)
+ {
+  // Base64 encoded string
+const base64String = req.body.file;
+
+// Convert to Buffer
+const bufferData = Buffer.from(base64String, "base64");
+
+ await uploadBytesToBlobStorage(Id,bufferData);
+ const values = [
+  Id,
+  req.body.title,req.body.mimeType,new Date(),100,100]
+ const query = `INSERT INTO News 
+                          VALUES (?, ?, ?,?,?, ?)`;
+ db.query(query, values, (err, rows) => {
+  if (err) {
+    console.error("Error executing query:", err.stack);
+    return;
+  }
+  console.log("Query req.body:", rows);
+  res.status(200).json("suceesfully upload the news")
+});
+ }
+ else
+ {
+  res.status(500).json("Invalid Body")
+ }
+ 
+};
+
+module.exports.getNews = async (req, res) => {
+  
+  let query = `select *from News`;
+
+  db.query(query, (err, rows) => {
+      if (err) {
+          console.error('Error executing query:', err); 
+          res.status(500).json({message:err})
+         
+      }
+      console.log('Query result for Images:', rows);
+      res.status(200).json(rows);
+      
+  });
+  
+     
+};
