@@ -5,7 +5,10 @@ import jwtDecode from "jwt-decode";
 // const rootUrl="https://saahithya-api.azurewebsites.net/"
 const rootUrl="http://localhost:8001/"
 var token=localStorage.getItem('token')
-if(token!=null)
+// console.log(token,"token")
+async function tokencheck()
+{
+  if(token!=null)
 {
   let info=jwtDecode(token)
   console.log(info,"info")
@@ -18,7 +21,11 @@ let headers={ headers: {
     config.headers['Email'] =info.Email
     return config;
   });
+
 }
+
+}
+
 
 
 
@@ -207,7 +214,7 @@ export async function addToCart(data) {
   }
 }
 export async function createpole(data) {
-
+tokencheck()
     console.log(data, "yuvaback000");
     const formData = new FormData();
     formData.append("Poledata",data);
@@ -355,6 +362,105 @@ export  async function getRole(id)
 return await axios.post(`${rootUrl}api/gettags/${id}`).then((response)=>
 {
 console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function getFileById(id)
+{
+  console.log(id,"Idfromdesc")
+return await axios.get(`${rootUrl}api/file/${id}`).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function addcomments(id,comment)
+{
+  let commentvalue={
+    comment:comment
+  }
+  console.log(id,"Idfromdesc")
+  tokencheck()
+return await axios.post(`${rootUrl}api/addcomment/${id}`,commentvalue).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function getcomments(id)
+{
+
+  console.log(id,"Idfromdesc")
+  tokencheck()
+return await axios.get(`${rootUrl}api/getcomments/${id}`).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function addreport(id,reason)
+{
+  let commentvalue={
+    comment:"Testing"
+  }
+  console.log(id,"Idfromdesc")
+  tokencheck()
+return await axios.post(`${rootUrl}api/getreports/${id}`,commentvalue).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function getreports(id)
+{
+
+  console.log(id,"Idfromdesc")
+  tokencheck()
+return await axios.get(`${rootUrl}api/getreports/${id}`).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+
+export  async function deleteFile(id)
+{
+
+  console.log(id,"Idfromdesc")
+  tokencheck()
+return await axios.delete(`${rootUrl}api/deletefile/${id}`).then((response)=>
+{
+console.log(response.data,"backenddata")
+return response.data
+}).catch((error)=>
+{
+  console.error('Error:', error.message);
+})
+}
+export  async function gettopcomments()
+{
+  // tokencheck()
+return await axios.get(`${rootUrl}api/gettopcomments`).then((response)=>
+{
+console.log(response.data,"comentedbooks")
 return response.data
 }).catch((error)=>
 {

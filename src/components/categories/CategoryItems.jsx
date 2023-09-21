@@ -42,8 +42,6 @@ setFilesData(res)
 },[])
 const test=(item)=>
 {
-alert("okk")
-   
     navigate('/itemdesc', { state: { myProp:item } })
 }
 const [selectedimage,setSelectedImage]=useState()

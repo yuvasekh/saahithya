@@ -4,6 +4,7 @@ import {
   ContainerOutlined,
   DesktopOutlined,
   MailOutlined,
+  FlagOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   PieChartOutlined,
@@ -18,6 +19,8 @@ import PoleCreation from "../Quiz/PoleCreation.jsx";
 import OnGoingCompetation from "./OnGoingCompetation.jsx";
 import Quiz from "../Quiz/Quiz.jsx";
 import Poll from "../Quiz/Poller.jsx";
+import Reports from "./Reports.jsx";
+import TopCommentedBooks from "./TopCommentedBooks.jsx";
 
 const Teams = () => {
   
@@ -64,16 +67,13 @@ const Teams = () => {
       getItem("OnGoingCompetions", "23"),
       getItem("Scores", "24"),
     ]),
-    getItem("ChatRoom", "3", <ContainerOutlined />),
-    getItem("Requests", "4", <MailOutlined />, [
-      getItem("Become a Author", "41"),
-      getItem("Transactions", "42"),
-      getItem("WithdrawRequest", "43"),
+    getItem("Reports", "3", <FlagOutlined />, [
+      getItem("BooksReports", "31"),
+
     ]),
-    getItem("Messages", "5", <AppstoreOutlined />, [
-      getItem("Admin", "51"),
-      getItem("Users", "52"),
-      // getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
+    getItem("Requests", "3", <MailOutlined />, [
+      getItem("Transactions", "32"),
+      getItem("WithdrawRequest", "33"),
     ]),
   ];
 
@@ -83,6 +83,8 @@ const Teams = () => {
     setCollapsed(!collapsed);
   };
   const selection = (values) => {
+
+    console.log(values,"click")
     if(values==11)
     {
       setShowItem(<CategoryOptions />);
@@ -91,11 +93,20 @@ const Teams = () => {
     {
       setShowItem(<DummyCarousel />);
     }
+    if(values==13)
+    {
+      setShowItem(<TopCommentedBooks />);
+
+
+    }
     if (values == 21) {
       setShowItem(<CreateCompetation sendData={sendData} />);
     }
     if (values == 23) {
       setShowItem(<OnGoingCompetation sendData={sendData} />);
+    }
+    if (values == 31) {
+      setShowItem(<Reports sendData={sendData} />);
     }
     console.log(values, "values");
   };

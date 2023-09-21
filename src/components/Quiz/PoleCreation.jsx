@@ -76,7 +76,7 @@ const PoleCreation = () => {
       
         <Form.Item>
           <Button type="primary" htmlType="submit">
-            Save Pole
+            Save Poll
           </Button>
         </Form.Item>
       </Form>

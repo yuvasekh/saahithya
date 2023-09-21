@@ -12,7 +12,7 @@ function PDFViewer() {
   const [url,setUrl]=useState()
   const myProp = location.state && location.state.myProp;
 useEffect(()=>{
-  console.log(myProp)
+  console.log(myProp,"checkteam")
   let data=`https://saahithyapdffiles.blob.core.windows.net/uploadfilessaahithya/${myProp}.pdf?sp=r&st=2023-08-28T11:42:38Z&se=2023-12-30T19:42:38Z&spr=https&sv=2022-11-02&sr=c&sig=fvbUPQhstqAT7OaFy7XS7LuERdDsNu6U8uACd72XLmA%3D`
 setUrl(data)
 },[])
