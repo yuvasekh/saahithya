@@ -8,7 +8,7 @@ module.exports.topBooks = async (req, res) => {
       FROM UploadFiles
     ) AS subquery
     ORDER BY likes DESC
-    LIMIT 5;`, (err, rows) => {
+    LIMIT 7;`, (err, rows) => {
        
         if (err) {
             console.error('Error executing query:', err); 

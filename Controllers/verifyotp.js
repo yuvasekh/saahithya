@@ -2,10 +2,12 @@ var { EmailSent } = require("../Resources/Emailsent");
 var { Jwttoken } = require("../Resources/Jwttoken");
 const moment = require('moment');
 var mysql = require("mysql2");
+require("dotenv").config();
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
-const TWILIO_ACCOUNT_SID = "ACf8253f88733b8853ef16262e1f1df7b6";
-const TWILIO_AUTH_TOKEN = "4d16f3076f971fa2f64860d72bd2486f";
-const TWILIO_SERVICE_SID = "VA93fc6b4b82426bb21d9d840d53fcb501";
+const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
+const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
+const TWILIO_SERVICE_SID = process.env.TWILIO_SERVICE_SID;
+console.log(TWILIO_SERVICE_SID,"TWILIO_SERVICE_SID")
 // process.env;
 const client = require("twilio")(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, {
   lazyLoading: true,

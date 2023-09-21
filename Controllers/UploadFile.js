@@ -74,3 +74,42 @@ for(var i=0;i<splitArray.length;i++)
     console.log("There is no data to process");
   }
 };
+
+module.exports.deleteFile = async (req, res) => {
+    console.log(req.params.id,"paramsId")
+    let fileId=req.params.id
+    const sql = `
+    DELETE FROM uploadfiles WHERE FileId = ?;`;
+    const sql1 = `
+    DELETE FROM comments WHERE FileId = ?;`;
+    const sql2 = `
+    DELETE FROM reports WHERE FileId = ?;`;
+  // Execute the SQL query
+  db.query(sql1, [fileId], (error, results) => {
+    if (error) {
+      console.error('Error:', error);
+      res.status(500).json({ message:error });
+      // Handle the error and possibly roll back the transaction
+    } 
+    db.query(sql2, [fileId], (error, results) => {
+      if (error) {
+        console.error('Error:', error);
+        res.status(500).json({ message:error });
+        // Handle the error and possibly roll back the transaction
+      } 
+    db.query(sql, [fileId], (error, results) => {
+      if (error) {
+        console.error('Error:', error);
+        res.status(500).json({ message:error });
+        // Handle the error and possibly roll back the transaction
+      }
+    else {
+      console.log('Transaction committed successfully.');
+      res.status(200).json({ data: "uploaded" });
+      // }
+    }})
+  })
+})
+    
+       
+};

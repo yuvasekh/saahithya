@@ -1,7 +1,7 @@
 const { register } = require("../Controllers/Register");
 const {login}=require('../Controllers/login')
 const {verifyotp}=require('../Controllers/verifyotp')
-const {uploadFiles}=require('../Controllers/UploadFile')
+const {uploadFiles,deleteFile}=require('../Controllers/UploadFile')
 const {getData}=require('../Controllers/getData')
 // const {getDataById}=require('../Controllers/getDataById')
 const {topBooks}=require("../Controllers/topBooks")
@@ -16,6 +16,8 @@ const {tags}=require('../Controllers/tags')
 const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,getquizresults}=require('../Controllers/contest');
 const { getallusers } = require("../Controllers/getallusers");
 const {getRole}=require('../Controllers/getRole')
+const {getFileById}=require('../Controllers/getFileById')
+const {comments,getcomments,getreports,reports,getTopComments}=require('../Controllers/comments')
 const basePath = "/register"
 module.exports = (app) => {
   console.log("inside ");
@@ -44,4 +46,11 @@ module.exports = (app) => {
   app.route('/authorcategoryimages/:name').post(authorCategoryImages)
   app.route('/gettags/:id').get(tags)
   app.route('/getrole').post(getRole)
+  app.route('/file/:id').get(getFileById)
+  app.route('/deletefile/:id').delete(deleteFile)
+  app.route('/addcomment/:id').post(comments)
+  app.route('/getcomments/:id').get(getcomments)
+  app.route('/getreports/:id').post(reports)
+  app.route('/getreports/:id').get(getreports)
+  app.route('/gettopcomments').get(getTopComments)
 };
