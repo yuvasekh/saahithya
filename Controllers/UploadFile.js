@@ -126,7 +126,7 @@ const base64String = req.body.file;
 // Convert to Buffer
 const bufferData = Buffer.from(base64String, "base64");
 
- await uploadBytesToBlobStorage(Id,bufferData);
+ await uploadBytesToBlobStorage(Id,req.body.file,req.body.mimeType);
  const values = [
   Id,
   req.body.title,req.body.mimeType,new Date(),100,100]
