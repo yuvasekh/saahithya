@@ -1,7 +1,7 @@
 const { register } = require("../Controllers/Register");
 const {login}=require('../Controllers/login')
 const {verifyotp}=require('../Controllers/verifyotp')
-const {uploadFiles,deleteFile}=require('../Controllers/UploadFile')
+const {uploadFiles,deleteFile,uploadNewsFiles,getNews}=require('../Controllers/UploadFile')
 const {getData}=require('../Controllers/getData')
 // const {getDataById}=require('../Controllers/getDataById')
 const {topBooks}=require("../Controllers/topBooks")
@@ -52,5 +52,7 @@ module.exports = (app) => {
   app.route('/getcomments/:id').get(getcomments)
   app.route('/getreports/:id').post(reports)
   app.route('/getreports/:id').get(getreports)
+  app.route('/uploadnews').post(uploadNewsFiles)
+  app.route('/getnews').get(getNews)
   app.route('/gettopcomments').get(getTopComments)
 };

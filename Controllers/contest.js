@@ -18,7 +18,7 @@ module.exports.createpole = async (req, res) => {
   console.log(selectQuery, "test");
 
   const insertQuery = "INSERT INTO pole  VALUES (?, ?)";
-  const insertQuery1 = "INSERT INTO PoleQuestion  VALUES (?, ?,?, ?,?, ?,?, ?)";
+  const insertQuery1 = `INSERT INTO PoleQuestion  VALUES (?, ?,?, ?,?, ?,?, ?,?)`;
 
   connection.query(selectQuery, async (error, results) => {
     if (error) {
@@ -43,6 +43,7 @@ module.exports.createpole = async (req, res) => {
               req.body.input3,
               req.body.input4,
               req.body.answer,
+              new Date()
             ],
             async (error, results) => {
               if (error) {
@@ -183,7 +184,8 @@ module.exports.participatepole = async (req, res) => {
   });
 };
 module.exports.getpole = async (req, res) => {
-  const selectQuery = `SELECT PoleId,PoleQuestion,PoleOption1,PoleOption2,PoleOption3,PoleOption4  FROM PoleQuestion`;
+  const selectQuery = `SELECT PoleId,PoleQuestion,PoleOption1,PoleOption2,PoleOption3,PoleOption4  FROM PoleQuestion order by createdAt desc limit 1
+  `;
 
   connection.query(selectQuery, async (error, results) => {
     if (error) {

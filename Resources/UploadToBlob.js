@@ -1,5 +1,6 @@
 const { BlobServiceClient } = require("@azure/storage-blob");
 async function uploadBytesToBlobStorage(blobname,fileContent) {
+  console.log(blobname,"inside")
     const connectionString = process.env.connectionString;
     let containerName=process.env.containerName
     console.log(connectionString,"ccccccccccccccccccc")

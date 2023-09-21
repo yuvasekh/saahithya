@@ -14,8 +14,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 require("dotenv").config();
 var multer = require("multer");
-
-const upload = multer();
+const upload =multer({
+  limits: { fieldSize: 25 * 1024 * 1024 }
+})
 app.use(upload.any());
 var port = process.env.PORT || 8001
 const url = process.env.embedingsurl;
