@@ -21,7 +21,6 @@ module.exports.addtocarts = async (req,res)=>{
       const selectQuery1 = `SELECT * FROM UploadFiles WHERE   Fileid='${FileId}'`;
       const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?)';
 
-
       connection.query(selectQuery, async (error, results) => {
         if (error) {
           throw error;

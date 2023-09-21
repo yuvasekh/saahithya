@@ -70,8 +70,8 @@ module.exports.reports = async (req, res) => {
                     console.log(error)
                   throw error;
                 }
-                console.log('Comment item inserted successfully.',results);
-                res.status(200).json("Comment added");
+                console.log('Report item inserted successfully.',results);
+                res.status(200).json("Report added");
              
             });
         }
@@ -86,7 +86,35 @@ module.exports.reports = async (req, res) => {
 };
 module.exports.getreports = async (req, res) => {
     console.log(req.params.id,"paramsId")
-    let query = `select * from comments where FileId='${req.params.id}' ORDER BY CreatedAt;`;
+    let query = `select * from reports ORDER BY CreatedAt;`;
+
+    db.query(query, (err, rows) => {
+        if (err) {
+            console.error('Error executing query:', err); 
+            res.status(500).json({message:err})
+           
+        }
+        console.log('Query result for Images:', rows);
+        res.status(200).json(rows);
+        
+    });
+    
+       
+};
+
+module.exports.getTopComments = async (req, res) => {
+console.log("top comments")
+    let query = `SELECT DISTINCT uploadfiles.*
+    FROM uploadfiles
+    JOIN (
+        SELECT FileId, COUNT(*) AS CommentCount
+        FROM comments
+        GROUP BY FileId
+        ORDER BY CommentCount DESC
+        LIMIT 10
+    ) AS top_file
+    ON uploadfiles.FileId = top_file.FileId;
+    `;
 
     db.query(query, (err, rows) => {
         if (err) {

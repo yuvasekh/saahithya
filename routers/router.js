@@ -11,7 +11,7 @@ const upload = multer();
 //   }
 
 router.use(upload.any(), jsonParser, (req, res, next) => {
-    console.log(req.headers,"headerslist")
+    // console.log(req.headers,"headerslist")
     return next();
 });
 
