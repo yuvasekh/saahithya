@@ -31,11 +31,19 @@ extension=".webm"
   {
     extension=".mp4"
   }
+  else if(mimeType=="image/png")
+  {
+    extension=".png"
+  }
+  else if(mimeType=="image/png")
+  {
+    extension=".webp"
+  }
   else
   {
     extension="pdf"
   }
-  console.log(blobname,"inside")
+  console.log(blobname,"inside",extension)
     const connectionString = process.env.connectionString;
     let containerName=process.env.containerName
     console.log(connectionString,"ccccccccccccccccccc")
