@@ -15,16 +15,21 @@ async function uploadBytesToBlobStorage(blobname,fileContent) {
     await blockBlobClient.uploadData(fileContent);
     console.log(`Bytes uploaded successfully to blob storage.`);
   }
-  const { BlobServiceClient } = require("@azure/storage-blob");
+
 async function uploadBytesToBlobStorage1(blobname,fileContent,mimeType) {
   let extension;
+  console.log(mimeType,"checkmime")
   if(mimeType=="image/jpeg")
   {
 extension=".jpg"
   }
-  if(mimeType=="video/webm")
+ else if(mimeType=="video/webm")
   {
 extension=".webm"
+  }
+  else if(mimeType=="video/mp4")
+  {
+    extension=".mp4"
   }
   else
   {
@@ -42,7 +47,17 @@ extension=".webm"
       containerName
     );
     const blockBlobClient = containerClient.getBlockBlobClient(blobname+extension);
-    await blockBlobClient.uploadData(fileContent);
+    const parts = fileContent.split(';base64,');
+    const contentType = parts[0].split(':')[1];
+    const base64Data = parts[1];
+    
+    // Convert Base64 to bytes (Buffer)
+    const buffer = Buffer.from(base64Data, 'base64');
+
+
+// Now 'buffer' contains the bytes
+console.log(buffer);
+    await blockBlobClient.uploadData(buffer);
     console.log(`Bytes uploaded successfully to blob storage.`);
   }
   module.exports.uploadBytesToBlobStorage1=uploadBytesToBlobStorage1

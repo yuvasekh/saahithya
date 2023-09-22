@@ -1,7 +1,7 @@
 const { Readable } = require("stream");
 var path = require("path");
 const { v4: uuidv4 } = require("uuid");
-const { uploadBytesToBlobStorage } = require("../Resources/UploadToBlob");
+const { uploadBytesToBlobStorage,uploadBytesToBlobStorage1 } = require("../Resources/UploadToBlob");
 const db = require("../Resources/db");
 
 module.exports.uploadFiles = async (req, res) => {
@@ -126,7 +126,7 @@ const base64String = req.body.file;
 // Convert to Buffer
 const bufferData = Buffer.from(base64String, "base64");
 
- await uploadBytesToBlobStorage(Id,req.body.file,req.body.mimeType);
+ await uploadBytesToBlobStorage1(Id,req.body.file,req.body.mimeType);
  const values = [
   Id,
   req.body.title,req.body.mimeType,new Date(),100,100]
