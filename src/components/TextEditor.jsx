@@ -38,8 +38,14 @@ const TextEditor = (props) => {
   ];
 
   return (
-    <div>
-      <ReactQuill
+
+
+    <div className='ReactQuill-con' >
+      <h1>WRITE Your STORY</h1>
+
+
+      <div >
+      <ReactQuill 
         value={content}
         onChange={handleEditorChange}
         modules={{ toolbar: toolbarOptions }}
@@ -52,9 +58,14 @@ const TextEditor = (props) => {
         )}
       </ul>
       <Button/>
+      </div>
+
+
     </div>
+
+
+
   );
 };
 
 export default TextEditor;
-

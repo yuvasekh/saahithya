@@ -1,0 +1,27 @@
+.Home-con-bg{
+    // background-color: aqua;
+    // padding-left: 20px;
+
+    .button-element{
+      
+            margin-top:10px
+         
+    }
+
+}
+
+
+
+@media (max-width:576px){
+    .Home-con-bg{
+        padding: 0px;
+    
+    }
+
+    .button-team{
+        margin-bottom: 0px;
+        width:14.4vw;
+        border-radius:0px;
+    }
+    
+}

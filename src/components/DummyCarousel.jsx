@@ -158,7 +158,7 @@ console.log(filesdata,"----------->>>>>>>>>")
               (
             
             
-                  <div className='trend-img-con1'>
+                  <div className='trend-img-con'>
                       <img  src={`data:image/png;base64,${item.FileImage.data}`} className='img5' onClick={()=>{test(item)}}/>
                       <h3 className='trend-head'>{item.FileName}</h3>
                   </div>

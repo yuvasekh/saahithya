@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './Home.scss'
 import {
   AppstoreOutlined,
   ContainerOutlined,
@@ -110,28 +111,35 @@ const Teams = () => {
     }
     console.log(values, "values");
   };
+
+
+
+
+
   return (
-    <div
-      style={{
-        display: "flex", 
-      }}
+
+
+
+
+    <div className="Home-con-bg"
     >
-      <div
-        style={{
+      <div className="button-element"
+       style={{
           width: collapsed ? 80 : 256, 
           transition: "width 0.2s", 
+          
         }}
       >
         <Button
+        className="button-team"
           type="primary"
           onClick={toggleCollapsed}
-          style={{
-            marginBottom: 16,
-          }}
         >
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
-        <Menu
+
+
+        <Menu 
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}
           mode="inline"

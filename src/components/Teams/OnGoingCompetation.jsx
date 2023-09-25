@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './OnGoingCompetation.scss'
 
 import img1 from '../../Resources/Images/horror.jpg';
 import img2 from '../../Resources/Images/comedy.jpg';
@@ -20,13 +21,14 @@ let nav=item.imgdesc
 })
 
   return (
-    <div>   <h1>   OnGoing Competations</h1>
-    <div className='categorycontainer' style={{position:'relative',margin:'35px'}}>
+    <div>  
+       <h1> OnGoning Competetion</h1>
+    <div className='OnGoing-category-container'>
    
       {imagearray.map((item, index) => (
-        <div className='containerimg' key={index} onClick={()=>{test(item)}}>
-          <img src={item.img} style={{ width: '340px', height: '200px' }} alt={`image-${index}`} />
-          <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
+        <div className='OnGoing-container-img' key={index} onClick={()=>{test(item)}}>
+          <img className='OnGoing-container-img-size'src={item.img}  alt={`image-${index}`} />
+          <h2  className="heading-four" >{item.imgdesc}</h2>
         </div>
       ))}
     </div>

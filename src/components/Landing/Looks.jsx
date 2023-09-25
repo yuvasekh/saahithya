@@ -11,76 +11,82 @@ function Looks() {
 <div >
     <div class="con">
         <div className='row'>
-            <div class="card col-12 col-md-4 ">
-                <div class="face face1">
-                    <div class="content">
-                        <div class="icon">
-                            <Link to='/read'>
-                            <h1 className="element" style={{ backdropFilter:'blur(5px) saturate(70%)' ,fontWeight:'600'}}>
-                                Read
-                            </h1>
-                            </Link>
+            <div class="card col-12 col-md-4 p-4">
+
+                <Link to='/read'>
+                    <div class="face face1">
+                        <div class="content">
+                            <div class="icon">
+                                <h1 className="element" style={{ backdropFilter:'blur(5px) saturate(70%)' ,fontWeight:'600'}}>
+                                    Read
+                                </h1>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Link>
 
 
-
-                <div class="face face2">
-                    <div class="content">
-                    <Link to='/texteditor'>
-                    <h1 className="element text-center" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
-                                Write
-                    </h1>
-                    </Link>   
-                    </div>
-                </div>
-            </div>
-
-            <div class="card col-12 col-md-4 ">
-                <div class="face face1">
-                    <div class="content">
-                        <div class="icon">
-                        <Link to='/Comingsoon'>   
+                <Link to='/texteditor'>
+                    <div class="face face2">
+                        <div class="content">
                         <h1 className="element" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
-                                Listen
-                    </h1>
-                    </Link>
+                                    Write
+                        </h1>
                         </div>
                     </div>
-                </div>
-                <div class="face face3">
-                    <div class="content">
-                    <Link to='/Comingsoon'>
-                    <h1 className="element text-center" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
-                            Record
-                    </h1>
-                    </Link>
-                    </div>
-                </div>
+                </Link>   
+
             </div>
 
-            <div class="card col-12 col-md-4 ">
+            <div class="card col-12 col-md-4 p-4">
+
+                <Link to='/Comingsoon'>   
+                    <div class="face face1">
+                        <div class="content">
+                            <div class="icon">
+                            <h1 className="element" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
+                                    Listen
+                        </h1>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+
+                <Link to='/Comingsoon'>
+                    <div class="face face3">
+                        <div class="content">
+                        <h1 className="element" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
+                                Record
+                        </h1>
+                        </div>
+                    </div>
+                </Link>
+
+            </div>
+
+            <div class="card col-12 col-md-4 p-4">
+            <Link to='/Comingsoon'>
                 <div class="face face1">
                     <div class="content">
                         <div class="icon">
-                        <Link to='/Comingsoon'>
+                        
                         <h1 className="element" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
                                 Watch
                         </h1>
-                        </Link>
                         </div>
                     </div>
                 </div>
+            </Link>
+
+            <Link to="/upload">
                 <div class="face face4">
                     <div class="content">
-                    <Link to="/upload">
-                    <h1 className="element text-center" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
+                    <h1 className="element" style={{ backdropFilter:'blur(5px) saturate(70%)'  ,fontWeight:'700'}}>
                             Upload
                     </h1>
-                    </Link>
                     </div>
                 </div>
+            </Link>
             </div>
         </div>
     </div>

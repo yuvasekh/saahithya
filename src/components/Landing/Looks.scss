@@ -1,16 +1,4 @@
-// .wrap-con {
-//     margin-right: 40px;
-//     padding-top: 10px;
-//     padding-bottom: 10px;
-//     padding-left: 20px;
-//     padding-right: 20px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;   
-    // font-family: sans-serif;
-    // border-width: 2px;
-    // border-style: solid;
-// }
+
 
 .element{
     background: linear-gradient(to left, #000000 47%, #000000 58%); 
@@ -22,8 +10,6 @@
 
 
 .con {
-    // display: flex;
-    // justify-content: space-between;
     margin: 0px;
 }
 
@@ -31,7 +17,7 @@
     border-width: 0px;
     border-style: none;
     background-color:  #E0F4EB;
-    // margin-right: 10px;
+
 }
 
 .con .card .icon {
@@ -42,7 +28,6 @@
     height: 100%;  
     transition: 0.7s;
     z-index: 1;
-    text-align: center;
     font-size: 15px;
     font-weight: bold;
     
@@ -81,15 +66,12 @@
 
 
 .con .card .face {
-    // width: 400px;
     height: 200px;
     transition: 0.5s;
 }
 
 .con .card .face.face1 {
     position: relative;
-    // display: flex;
-    // justify-content: center;
     z-index: 1;
     transform: translateY(100px);
 
@@ -116,14 +98,8 @@
 
 
 .con .card .face.face2 {
-    // position: relative;
     background-image: url("../../Resources/Images/Landing_components/Write.jpg") ;
     background-size: cover;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // padding: 20px;
-    // box-sizing: border-box;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     transform: translateY(-100px);
     font-size: 15px;
@@ -134,11 +110,6 @@
     position: relative;
     background-image: url("../../Resources/Images/Landing_components/Record.jpg") ;
     background-size: cover;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // padding: 20px;
-    // box-sizing: border-box;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     transform: translateY(-100px);
     font-size: 15px;
@@ -148,11 +119,6 @@
     position: relative;
     background-image: url("../../Resources/Images/Landing_components/Upload.jpg") ;
     background-size: cover;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // padding: 20px;
-    // box-sizing: border-box;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     transform: translateY(-100px);
     font-size: 15px;
