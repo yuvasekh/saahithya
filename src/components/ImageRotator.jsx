@@ -28,7 +28,7 @@ const pagemove=()=>
 
           <br/>
           <p style={{fontSize:'25px',padding:'10px'}} >
-            "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..  మనసు విదిల్చిన భావోద్వేగాలు"
+            "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..<br/>  మనసు విదిల్చిన భావోద్వేగాలు"
           </p>
           <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" ,padding:'10px'}}>Books Section</Button>
         </div>

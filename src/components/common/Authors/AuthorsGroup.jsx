@@ -52,14 +52,17 @@ navigate('/authorsbooksdisplay', { state: { myProp:data } })
     })
   
   return (
-    <div className='imagearrayProfiles'>
+    <div >
     {
   imagearray.length > 0 ? (
-    <div className='imagearray'>
+    <div className='profile-con'>
        {
           imagearray.map((item,index)=>
           (
-            <div className='imagearraycontainer'> <img  src={`data:image/png;base64,${item.ProfileImage.data}`} className='img1' onClick={()=>{test(item)}}/><h2>{item.Name}</h2></div>
+            <div className='image-cont'> 
+              <img  src={`data:image/png;base64,${item.ProfileImage.data}`} className='img-sizing' onClick={()=>{test(item)}}/>
+              <h2 className='heading-size'>{item.Name}</h2>
+            </div>
            
           ))
         }

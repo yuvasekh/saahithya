@@ -1,200 +1,195 @@
 
-.headers
-{
+// .land-cont{
+//   display: grid;
+//   grid-template-columns: repeat(5,1fr);
+//   gap: 15px;
+//   align-items: center;
+//   box-shadow: 10px 10px 10px rgba(0, 0, 0, 14%);
+
+//   a:hover{
+//     color: black !important;
+//   }
+// }
+
+// .search{
+// width: 20vw;
+// height: 6vh;
+// }
+
+// .logoimg
+//   {
+//     height: 15vh;
+//     width: 12vw;
+//   }
+
+
  
-  top: 0;
-  left:0;
-  position: relative;
-  width: 100vw;
-  // height: 80px;
-  align-items: center;
-  justify-content: space-between;
-  right: 0;
-  margin-top: 15px;
-
-
-  display: flex;
-  // box-shadow: 0px 1px 2px rgb(0, 0, 0,0.2);
-  box-shadow: 0px 2px 4px rgba(230, 230, 230, 0.2);
-
-  a{
-    color: black !important;
-  }
   
-  .ant-input 
+//   .ant-input 
+//   {
+//       background: none !important;
+//   }
+
+//     .registerbutton, .signinbutton
+//     {
+//       background-color: #f8991f;
+//       font-family: Poppins;
+//       font-style: normal;
+//       font-weight: 600;
+//       width: max-content;
+//       font-size: 16px;
+//       border: none;
+//       margin-right: 10px;
+//       border-radius: 7px;
+//       line-height: 24px;
+//       color: #fff;
+//       padding: 20px 20px 40px 20px;
+//     }
+  
+// :where(.css-dev-only-do-not-override-1wazalj).ant-avatar-lg.ant-avatar-icon {
+//   justify-self: self-end;
+//   margin-right: 20px;
+//   padding-bottom: 50px;
+// }
+
+
+
+@media (max-width: 576px) {
+  .logoimg
   {
-      height: 20px;
-    
-      background: none !important;
+    height: 12vh;
+    width: 27vw;
   }
-  .anticon 
-  {
-    font-size: 23px;
-  }
-  .anticon selected 
-  {
-    font-size: 23px;
-  }
-    
-    .header-content {
-      display: flex;
-      align-items: center;
-      margin: 25px;
-      justify-content: space-evenly;
-      // gap: 30px;
-  
-    }
-    .loginItems
-    {
-      justify-content: space-evenly;
-      display: flex;
-    }
-    .registerbutton
-    {
-      text-align: center;
-      background-color: #f8991f;
-      font-family: Poppins;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-      border: none;
-      margin-right: 10px;
-      border-radius: 7px;
-      line-height: 24px;
-      color: #fff;
-      width: 144px;
-      height: 45px;
-    }
-    .signinbutton
-    {
-      text-align: center;
-      background-color: #f8991f;
-      font-family: Poppins;
-      font-style: normal;
-      margin-right: 10px;
-      font-weight: 600;
-      font-size: 16px;
-      border: none;
-      border-radius: 7px;
-      line-height: 24px;
-      color: #fff;
-      width: 144px;
-      height: 45px;
-    }
-    .header-item {
-  
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .search-bar
-    {
-      margin: 5 px;
-      display: flex;
-      justify-content: end;
-      align-items: center;
-      gap: 15px;
-    }
-    .red-dot {
-      position: absolute;
-      top: 4px;
-      right: 4px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background-color: red;
-    }
-    .bell-container {
-      position: relative;
-      display: inline-block;
-    }
-    
-    .bell-icon {
-      font-size: 24px;
-    }
-    
-  
-    .logoitems
-    {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+}
 
-      .blinking-button {
-        animation: blinking 1s infinite;
-        border-radius: 16px;
-        min-height:40px; 
-        min-width: 90px;
-        border-color:red;
-        color: white;
-        cursor: pointer;
-      }
-      
-    @keyframes blinking {
-      0% { background-color: red; border-color: red;}
-      50% { background-color: blue; border-color: blue;}
-      100% { background-color: red;border-color: red; }
-    }
-    
- 
+@media (min-width: 577px) and (max-width: 992px) {
+  .logoimg
+  {
+    height: 15vh;
+    width: 20vw;
+  }
 }
 
 
-.logosmain
-  {
-    // background-color: green !important;
-  height: 11vh;
-  width: 8vw
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .land-cont{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 5%);
+  
+    a:hover{
+      color: black !important;
+    }
   }
 
+  .common-button-con{
+    text-align: end;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  
+  .search{
+  width: 20vw;
+  height: 6vh;
+  }
+  
+  .logoimg
+    {
+      height: 15vh;
+      width: 12vw;
+    }
+  
+  
+   
+    
+    .ant-input 
+    {
+        background: none !important;
+    }
+  
+      .registerbutton, .signinbutton
+      {
+        background-color: #f8991f;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        width: max-content;
+        font-size: 16px;
+        border: none;
+        margin-right: 10px;
+        border-radius: 7px;
+        line-height: 24px;
+        color: #fff;
+        padding: 20px 20px 40px 20px;
+      }
+    
+  :where(.css-dev-only-do-not-override-1wazalj).ant-avatar-lg.ant-avatar-icon {
+    justify-self: self-end;
+    margin-right: 20px;
+    padding-bottom: 50px;
+  }
+}
 
-//110
-// @media only screen and (max-width:1352.73px ) and (min-width: 670px)  {
-//   .headers
-//   {
-//     height: 75px;
-//     background-color: red;
-//   .logosmain
-//   {
-//   height: 58px;
-//   width: 180px;
-//   background-color: rgb(63, 219, 42);
-//   }
-//   }
-// }
-// @media only screen and (max-width:1190.40px ) and (min-width: 591px)  {
-//   .headers
-//   {
-//     background-color: rgb(187, 255, 0);
-//   }
-
-// }
-// @media only screen and (max-width:992px ) and (min-width: 492px)  {
-//   .headers
-//   {
-//     background-color: rgb(22, 232, 85);
-//   }
-
-// }
-// @media only screen and (min-width:1653.33px ) {
-//   .headers
-//   {
-//     background-color: rgb(236, 46, 176);
-//   }
-
-// }
-// // @media only screen and (min-width:1860px ) {
-// //   .headers
-// //   {
-// //     background-color: rgb(201, 163, 29);
-// //   }
-
-// // }
-// @media only screen and (min-width:1984px ) {
-//   .headers
-//   {
-//     background-color: rgb(29, 69, 201);
-//   }
-
-// }
+@media (min-width: 1201px) {
+  .land-cont{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 5%);
+  
+    a:hover{
+      color: black !important;
+    }
+  }
+  
+  .search{
+  width: 20vw;
+  height: 6vh;
+  }
+  
+  .logoimg
+    {
+      height: 12vh;
+      width: 8vw;
+    }
+  
+    .common-button-con{
+      text-align: end;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+  
+   
+    
+    .ant-input 
+    {
+        background: none !important;
+    }
+  
+      .registerbutton, .signinbutton
+      {
+        background-color: #f8991f;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        width: max-content;
+        font-size: 16px;
+        border: none;
+        margin-right: 10px;
+        border-radius: 7px;
+        line-height: 24px;
+        color: #fff;
+        padding: 20px 20px 40px 20px;
+      }
+    
+  :where(.css-dev-only-do-not-override-1wazalj).ant-avatar-lg.ant-avatar-icon {
+    justify-self: self-end;
+    margin-right: 20px;
+    padding-bottom: 50px;
+  }
+}

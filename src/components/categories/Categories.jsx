@@ -47,7 +47,7 @@ import Thriller from '../../Resources/Images/English/thriller.jpg'
 import Humor from '../../Resources/Images/English/comedy.jpg'
 import Devotional from '../../Resources/Images/English/devotional.jpg'
 import love from '../../Resources/Images/English/love.jpg'
-import romance from '../../Resources/Images/English/romance.png'
+import romance from '../../Resources/Images/English/romance.jpg'
 import health from '../../Resources/Images/English/health.jpg'
 import horror from '../../Resources/Images/English/horror.jpg'
 import fantasy from '../../Resources/Images/English/fantasy.jpg'
@@ -133,19 +133,19 @@ const Categories = () => {
     }
   return (
 
-    <div className='cate-con'>
-      <div className='row '>
+    <div >
+      <div className='category-cont '>
       {myProp?.language === "Telugu"
         ? Teluguimagearray.map((item, index) => (
-            <div className='category-cont col-12 col-md-2 m-4 text-center' key={index} onClick={() => test(item)}>
-              <img src={item.img} className='con-img' alt={`image-${index}`} />
-              <h4 className="heading-one" style={{ backdropFilter: 'blur(20px) saturate(70%)' }}>{item.imgdesc}</h4>
+            <div className='category-cont2' key={index} onClick={() => test(item)}>
+              <img src={item.img} className='cotegory-img' alt={`image-${index}`} />
+              <h4 className="category-head" style={{ backdropFilter: 'blur(50px) saturate(70%)' }}>{item.imgdesc}</h4>
             </div>
           ))
         : Englishimagearray.map((item, index) => (
-            <div className='category-cont col-12 col-md-3  m-4 text-center' key={index} onClick={() => test(item)}>
-              <img src={item.img} className='con-img' alt={`image-${index}`} />
-              <h4 className="heading-one" style={{ backdropFilter: 'blur(20px) saturate(70%)' }}>{item.imgdesc}</h4>
+            <div className='category-cont2' key={index} onClick={() => test(item)}>
+              <img src={item.img} className='cotegory-img' alt={`image-${index}`} />
+              <h4 className="category-head" style={{ backdropFilter: 'blur(20px) saturate(70%)' }}>{item.imgdesc}</h4>
             </div>
           ))}
       </div>

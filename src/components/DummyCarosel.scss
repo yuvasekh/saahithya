@@ -1,3 +1,16 @@
+// .trending-cont{
+
+// }
+
+// .trending-img{
+//     width: 100%;
+// }
+
+
+.slick-list{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
 
 .homecontent
 {
@@ -22,6 +35,7 @@ color: rgb(249, 249, 255);
 font-size:  0px;
 
 }
+
 button{
 width: 60px;
 font-size: 5px;
@@ -41,12 +55,12 @@ font-size: 0px;
 }
 
 
-.trending-head{
-    font-size: 20px;
-    font-weight: 750px;
-    margin-bottom: 30px;
-    margin-top:20px;
-}
+// .trending-head{
+//     font-size: 20px;
+//     font-weight: 750px;
+//     margin-bottom: 30px;
+//     margin-top:20px;
+// }
 
 .trend-con{
     display: flex;
@@ -57,6 +71,7 @@ font-size: 0px;
 .img5{
     width: 200px;
     border-radius: 10px;
+    height: 300px;
     box-shadow: 0 2px 4px 0 #111;
    
 }
@@ -71,12 +86,12 @@ font-size: 0px;
 }
 }
 
-.trend-img-con:hover 
-    {
-    transform: scale(1.1);
-    }
-  .trend-img-con
-    {
-    transition: transform 0.5s;
-    // width: 21em;
-    }
+// .trend-img-con:hover 
+//     {
+//     transform: scale(1.1);
+//     }
+//   .trend-img-con
+//     {
+//     transition: transform 0.5s;
+//     // width: 21em;
+//     }

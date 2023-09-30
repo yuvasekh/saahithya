@@ -11,11 +11,11 @@ import cinimapatallu from '../../../Resources/Images/Authors/cinimapatallu.jpg'
 const Authors = () => {
     const navigate=useNavigate();
     const imagearray = [
-      {img:cinimapatallu,imgdesc:"ప్రాచీన కవులు"},
-      {img:prachina,imgdesc:"గ్రంథకర్తలు"},
+      {img:prachina,imgdesc:"ప్రాచీన కవులు"},
+      {img:grandha,imgdesc:"గ్రంథకర్తలు"},
       {img:adinika,imgdesc:"ఆధునిక కవులు"},
       {img:navala,imgdesc:"నవలా రచయితలు"},
-       {img:grandha,imgdesc:"సినిమా పాటలు"}
+      {img:cinimapatallu,imgdesc:"సినిమా పాటలు"}
      
      
     ];
@@ -27,19 +27,18 @@ const Authors = () => {
       }
   return (
     <>
-    <div style={{backgroundColor:'white',borderRadius:'20px', margin:'20px'}}>
-        <div className='categorycontainers'>
-          <div className='row'>
-              {imagearray.map((item, index) => (
-                <div className='containerimg col-12 col-md-4 col-lg-2  text-center' key={index} onClick={()=>{test(item)}}>
-                    <img src={item.img} className='imgauthors' alt={`image-${index}`} />
-                    <h4 style={{backdropFilter:'blur(20px) saturate(70%)', color: 'black', fontWeight:"bold" }}>{item.imgdesc}</h4>
-                </div>
-              ))}
-          </div>
-
+    <div >
+  <div className='category-con-bg'>
+    {imagearray.map((item, index) => (
+      <div className='categorycontainers' key={index}>
+        <div className='containerimg text-center' onClick={() => { test(item) }}>
+          <img src={item.img} className='imgauthors' alt={`image-${index}`} />
+          <h4 style={{ backdropFilter: 'blur(20px) saturate(70%)', color: 'black', fontWeight: 'bold' }}>{item.imgdesc}</h4>
         </div>
-    </div>
+      </div>
+    ))}
+  </div>
+</div>
 </>
   )
 }

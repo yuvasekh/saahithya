@@ -67,7 +67,7 @@ const LoginForm = () => {
             { type: 'email', message: 'Please enter a valid email' },
           ]}
         >
-          <Input prefix={<UserOutlined />} placeholder="Email" />
+          <Input className='login-user' prefix={<UserOutlined />} placeholder="Email" />
         </Form.Item>
         <Form.Item
           name="password"

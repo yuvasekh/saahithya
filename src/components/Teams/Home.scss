@@ -1,0 +1,27 @@
+.Home-con-bg{
+    display: flex;
+
+    .button-element{
+      
+            margin-top:20px
+         
+    }
+
+}
+
+
+
+@media (min-width:769px)and (max-width:1200px){
+    .Home-con-bg{
+        display: flex;
+    
+        .button-element{
+          
+                margin: top 20px;
+                margin-bottom: 30px;
+             
+        }
+    
+    }
+    
+}

@@ -1,83 +1,43 @@
-@media only screen and (max-width:767px) {
-    .login-form{
+
+.login-form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    // background-color: green;
-    }
+    align-items: center;
+    
+}
 
-    .login-head{
-        color: #f8780e;
-        font-size: 42px;
-        font-weight: 650px;
-        margin-left: 70px;
-    }
+.login-form2{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px 0 #111;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
 
+.login-head{
+    font-size: 54px;
+    color: red;
+}
+
+
+@media (max-width: 576px) {
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .login-form2{
-        padding-left: 70px;
-        padding-right: 400px;
+        display: flex;
+        flex-direction: column;
+        
     }
-
-}
-
- @media only screen and (min-width: 768px) and (max-width:991px) {
-    .login-form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        // background-color: green;
-        }
-        .login-head{
-            color: #f8780e;
-            font-size: 42px;
-            font-weight: 650px;
-            margin-left: 230px;
-        }
     
-        .login-form2{
-            padding-left: 230px;
-            padding-right: 270px;
-        }
-
-}
-
-@media only screen and (min-width: 992px) and (max-width:1200px) {
-    .login-form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        // background-color: green;
-        }
-        .login-head{
-            color: #f8780e;
-            font-size: 42px;
-            font-weight: 650px;
-            margin-left: 340px;
-        }
+    .login-head{
+        font-size: 54px;
+        color: red;
+        text-align: center;
+    }
     
-        .login-form2{
-            padding-left: 340px;
-            padding-right: 380px;
-        }
-}
-
-@media only screen and (min-width: 1201px) {
-
-    .login-form{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        // background-color: green;
-        }
-        .login-head{
-            color: #f8780e;
-            font-size: 42px;
-            font-weight: 650px;
-            margin-left: 550px;
-        }
-    
-        .login-form2{
-            padding-left: 550px;
-            padding-right: 480px;
-        }
 }

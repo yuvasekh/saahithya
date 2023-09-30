@@ -1,63 +1,92 @@
-//media quiries
-//media quiries
-//media quiries
-
-.subheader{
-
-.subheader-content {
-  display: flex;
+.sub-head-con{
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  gap: 10px;
   align-items: center;
-  margin: 10px;
-  justify-content:start;
-  gap: 100px;
-  width: 100vw;
-  padding-left: 50px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 30px;
 
-}
-
-.registerbutton
-      {
-        text-align: center;
-        background-color:#266B69;
-        font-family: Poppins;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 22px;
-        border: none;
-        border-radius: 7px;
-        line-height: 24px;
-        color: #fff;
-        width: 185px;
-        height: 50px;
-      }
-
-.subheader
-{
-    top: 0;
-    left:0;
-    position: relative;
-    width: 100vw;
-    height: 80px;
-    align-items: center;
-    justify-content: start;
-    right: 0;
-    gap: 3px;
-    background-color: #ffffff;
-    display: flex;
-    box-shadow: 0px 2px 4px rgb(0, 0, 0,0.2);
-}
   a{
-    color: black !important;
+    color: black;
   }
 
-  .subheader-item 
-    {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-size: 20px;
+  a:hover{
+    button:hover{
+    color: white;
     }
+  }
 }
+
+
+
+
+
+
+
+
+
+
+//media quiries
+//media quiries
+//media quiries
+
+// .subheader{
+
+// .subheader-content {
+//   display: flex;
+//   align-items: center;
+//   margin: 10px;
+//   justify-content:start;
+//   gap: 100px;
+//   width: 100vw;
+//   padding-left: 50px;
+
+// }
+
+// .registerbutton
+//       {
+//         text-align: center;
+//         background-color:#266B69;
+//         font-family: Poppins;
+//         font-style: normal;
+//         font-weight: 600;
+//         font-size: 22px;
+//         border: none;
+//         border-radius: 7px;
+//         line-height: 24px;
+//         color: #fff;
+//         width: 185px;
+//         height: 50px;
+//       }
+
+// .subheader
+// {
+//     top: 0;
+//     left:0;
+//     position: relative;
+//     width: 100vw;
+//     height: 80px;
+//     align-items: center;
+//     justify-content: start;
+//     right: 0;
+//     gap: 3px;
+//     background-color: #ffffff;
+//     display: flex;
+//     box-shadow: 0px 2px 4px rgb(0, 0, 0,0.2);
+// }
+//   a{
+//     color: black !important;
+//   }
+
+//   .subheader-item 
+//     {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       font-size: 20px;
+//     }
+// }
 
 
 // /* Small screens (e.g., smartphones) */

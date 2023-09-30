@@ -18,58 +18,58 @@ import "bootstrap/dist/css/bootstrap.min.css"
   };
   return (
     
-    <div className='subheader d-none d-lg-block'>
+    <div className=' d-none d-lg-block'>
     
-        <div className="subheader-content">
+        <div className="sub-head-con">
          
         
-        <div className="subheader-item">
+        <div className="">
        
           
           <Link to="/">Home</Link> 
         </div>
-        <div className="subheader-item">
+        <div className="">
          
      
-           <Link to="/Comingsoon">Aboutus</Link> 
+           <Link to="/Comingsoon">About us</Link> 
          
         </div>
-        <div className="subheader-item">
+        <div className="">
          
          
           <Link to="/teams">Team</Link> 
        
         </div>
-        <div className="subheader-item">
+        <div className="">
          
      
          <Link to="/Comingsoon">Media</Link> 
        
       </div>
-      <div className="subheader-item">
+      <div className="">
          
      
          <Link to="/Publications">Publications</Link> 
        
       </div>
-      <div className="subheader-item">
+      <div className="">
          
      
            <Link to="/Comingsoon">Events</Link> 
          
         </div>
-        <div className="subheader-item">
+        <div className="">
          
      
-         <Link to="/Comingsoon">Contactus</Link> 
+         <Link to="/Comingsoon">Contact Us</Link> 
        
       </div>
-      <div className="subheader-item">
-         
-      <Link to='/Comingsoon'>
-       <Button className='registerbutton'>Download App</Button>
-       </Link>
-      </div>
+          <div className="">
+            
+            <Link to='/Comingsoon'>
+                <Button className='registerbutton'>Download App</Button>
+            </Link>
+          </div>
       </div>
      
       

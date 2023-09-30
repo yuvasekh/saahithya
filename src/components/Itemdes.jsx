@@ -107,103 +107,129 @@ const Itemdesc = () => {
     navigate("/cart", { state: { myProp: FileID } });
   }
   return (
-    <div style={{ position: "relative" }} className="itemcontaineritems">
+    <div>
       {
-        info.length>0?<>      <div className="styleconainer"></div>
-        <div className="imgcontainers">
-          <div style={{ width: "850px", gap: "22px" }}>
-            {" "}
-            <h2>{info[0].FileName}</h2>
-            <p>{info[0].bookdescription}</p>
-            <p style={{ color: "green", fontWeight: "800x" }}>
-              <StarOutlined />
-              {info[0].Rating}
-            </p>
-            <p style={{ color: "black", fontWeight: "800x" }}>
-              <EyeOutlined />
-              {info[0].Views}
-            </p>
-            <div style={{ display: "flex", gap: "22px", alignItems: "center" }}>
-              <h2 onClick={handleLike}>
-                <FontAwesomeIcon icon={liked ? faThumbsDown : faThumbsUp} />
-  
-                {info[0].Likes}
-              </h2>
-              <h2 onClick={commentsfun}>
-                <CommentOutlined />
-              </h2>
-              <h2
-                style={{
-                  backgroundColor: "f81414d0 !important",
-                }}
-                onClick={() => {
-                  cart(info[0].FileId);
-                }}
-              >
-                <ShoppingCartOutlined />
-              </h2>
-              {[1, 2, 3, 4, 5].map((star) => (
-                <span
-                  key={star}
-                  onClick={() => handleRatingClick(star)}
-                  style={{
-                    color: star <= rating ? "gold" : "gray",
-                    cursor: "pointer",
-                  }}
-                >
-                  <StarOutlined size={24} />
-                </span>
-              ))}
-              <Button style={{ width: "120px" }}>Submit Rating</Button>
+        info.length>0?<>      
+
+          <div className="itemdesc-con">
+            <div className="item-con2">
+              <div className="item-con">
+              
+                  <div>
+                    <h2>{info[0].FileName}</h2>
+                    <p>{info[0].bookdescription}</p>
+                  </div>
+                  <div className="icons-cont">
+                    <p style={{ color: "green", fontWeight: "800x", marginTop:'10px'}}>
+                      <StarOutlined style={{fontSize:'24px'}}/>
+                      <span style={{marginLeft:'10px'}}>{info[0].Rating}</span>
+                    </p>
+                    <p style={{ color: "black", fontWeight: "800x",marginTop:'10px' }}>
+                      <EyeOutlined style={{fontSize:'24px'}}/>
+                      <span style={{marginLeft:'10px'}}>{info[0].Views}</span>
+                    </p>
+              
+                    <h2 onClick={handleLike}>
+                        <FontAwesomeIcon style={{fontSize:'24px'}} icon={liked ? faThumbsDown : faThumbsUp} />
+                        <span style={{marginLeft:'10px',fontSize:'24px'}}>{info[0].Likes}</span>
+                    </h2>
+
+                    <h2 style={{marginLeft:'10px',marginTop:'-5px'}} onClick={commentsfun}>
+                      <CommentOutlined />
+                    </h2>
+
+                    <h2
+                      style={{
+                        backgroundColor: "f81414d0 !important",
+                        marginLeft:'-10px',marginTop:'-5px'
+                      }}
+                      onClick={() => {
+                        cart(info[0].FileId);
+                      }}
+                    >
+                      <ShoppingCartOutlined />
+                    </h2>
+                  </div>
+
+                  <div className="rating-con" >
+              
+                      <div className="star-icons">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <span
+                            key={star}
+                            onClick={() => handleRatingClick(star)}
+                            style={{
+                              color: star <= rating ? "gold" : "gray",
+                              cursor: "pointer",
+                            }}
+                          >
+                            <StarOutlined size={24} />
+                          </span>
+                        ))}
+                      </div>
+
+                      <Button className="submit-btn" style={{ width: "120px" }}>Submit Rating</Button>
+                  
+                  </div>
+
+                  <br></br>
+                  <div>
+                    {tags.length > 0 ? (
+                      <>
+                        {tags.map((item) => (
+                          <div>
+                            <Tag color="#2db7f5">{item}</Tag>
+                          </div>
+                        ))}
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </div>
+              </div>
+              <div className="item-image-con" >
+
+                <img
+                  src={`data:image/png;base64,${selectedimage}`} className="item-image" 
+                />
+
+                <div className="buttons-con">
+                  {/* style={{ cursor: "true" ? "not-allowed" : "pointer" }} */}
+                    <Button className="report-btn btn" onClick={addreportfun}>
+                      <FlagOutlined />
+                      Report
+                    </Button>
+
+                    <Button className="read-btn btn"
+                      style={{ backgroundColor: "f81414d0 !important" }}
+                      onClick={() => {
+                        readPage(info[0].FileId);
+                      }}
+                    >
+                      Read
+                    </Button>
+
+                </div>
+
+              </div>
             </div>
-            <br></br>
-            <div style={{ display: "flex", justifyContent: "start" }}>
-              {tags.length > 0 ? (
-                <>
-                  {tags.map((item) => (
-                    <div>
-                      <Tag color="#2db7f5">{item}</Tag>
-                    </div>
-                  ))}
-                </>
-              ) : (
-                <></>
-              )}
-            </div>
+
           </div>
-          <div>
-            {" "}
-            <img
-              src={`data:image/png;base64,${selectedimage}`}
-              style={{ width: "180px", height: "250px" }}
-            />
-            <div style={{ display: "flex", marginTop: "3px" }}>
-            {/* style={{ cursor: "true" ? "not-allowed" : "pointer" }} */}
-              <Button onClick={addreportfun}>
-                <FlagOutlined />
-                Report
-              </Button>
-              <Button
-                style={{ backgroundColor: "f81414d0 !important" }}
-                onClick={() => {
-                  readPage(info[0].FileId);
-                }}
-              >
-                Read
-              </Button>
-            </div>
+          <br></br>
+          
+          <h4 style={{marginLeft:'25px'}}>Book Excerpt</h4>
+          <div className="book-excerp">
+            {info[0].BookExcerpt ? (
+              <>
+                {" "}
+                <ReadMore text={info[0].BookExcerpt} maxChars={50} />
+              </>
+            ) : (
+              <></>
+            )}
           </div>
-        </div>
-        <br></br>
-        {info[0].BookExcerpt ? (
-          <>
-            {" "}
-            <ReadMore text={info[0].BookExcerpt} maxChars={50} />
-          </>
-        ) : (
-          <></>
-        )}
-        <div>
+
+        <div className="comment-sec">
           {commentsclick == true ? (
             <>
               {" "}
@@ -234,10 +260,11 @@ const Itemdesc = () => {
           ) : (
             <div ref={commentsContainerRef}></div>
           )}
-        </div></>:<></>
+        </div>
+        </>:<></>
       }
 
-      <br></br>
+        <br></br>
     </div>
   );
 };
