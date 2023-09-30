@@ -1,18 +1,43 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import {createpole} from '../services/api'
-
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 const PoleCreation = () => {
+  const notify = (msg) => toast(msg);
+  const navigate=useNavigate()
+  const [form] = Form.useForm();
   const onFinish =async (values) => {
     console.log('Form values:', values);
-    await createpole(values);
+   var res= await createpole(values);
+   console.log(res,"backend")
+   if (res.hasOwnProperty('response')) {
+   if(res.response.status==401)
+   {
+   notify("Token Expired")
+     localStorage.clear();
+    navigate('/login')
+   }
+   if(res.response.status==400)
+   {
+    notify(" Token Expired Login Again")  
+    navigate('/login')
+   }
+  }
+  else
+  {
+    if(res.status==200)
+    { form.resetFields();
+     notify("Pole Created Sucessfully")
+    }
+  }
   };
 
   return (
     <div>
-     <Form onFinish={(values) => onFinish(values)}>
-    
-        
+      <ToastContainer />
+     <Form form={form} onFinish={(values) => onFinish(values)}>
             <Form.Item
               name={`textarea-${1}`}
               label={`Textarea ${0 + 1}`}
