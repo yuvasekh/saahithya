@@ -15,3 +15,10 @@
         padding: 30px;
         border-radius: 20px;
     }
+
+@media (max-width:768px){
+    .form-div-con{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -28,10 +28,10 @@ let nav=item.imgdesc
 
 
   return (
-    <div className='compatetion-category-container'>
+    <div className='team-cat-op-con'>
       {imagearray.map((item, index) => (
-        <div className='compatetion-container-img' key={index} onClick={()=>{test(item)}}>
-          <img  className='compatetion-container-img-size' src={item.img}  alt={`image-${index}`} />
+        <div className='team-cat-op-con2' key={index} onClick={()=>{test(item)}}>
+          <img  className='team-op-img' src={item.img}  alt={`image-${index}`} />
           <h2 className='heading-three'>{item.imgdesc}</h2>
         </div>
       ))}

@@ -1,5 +1,7 @@
 import React from "react";
 import { AudioRecorder } from 'react-audio-voice-recorder';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 const UploadAudio=()=>
 {
     const addAudioElement = (blob) => {
@@ -9,7 +11,9 @@ const UploadAudio=()=>
         audio.controls = true;
         document.body.appendChild(audio);
       };
-    return(<div style={{display:'flex',justifyContent:'center'}}>
+    return(
+    
+    <div className='col-12 m-5' style={{display:'flex',justifyContent:'center'}}>
 <AudioRecorder 
       onRecordingComplete={addAudioElement}
       audioTrackConstraints={{

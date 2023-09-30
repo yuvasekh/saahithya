@@ -93,7 +93,7 @@ useEffect(()=>
 
 
                 <Link to="/language">
-                    <Button className='registerbutton' style={{fontFamily:'sans-serif', width:"12vw",fontSize:"17px",backgroundColor:"#266B69" }}>
+                    <Button className='registerbutton' style={{fontFamily:'sans-serif',fontSize:"17px",backgroundColor:"#266B69" }}>
                       CATEGORIES
                     </Button>
                 </Link>

@@ -1,10 +1,9 @@
 .Home-con-bg{
-    // background-color: aqua;
-    // padding-left: 20px;
+    display: flex;
 
     .button-element{
       
-            margin-top:10px
+            margin-top:20px
          
     }
 
@@ -12,16 +11,17 @@
 
 
 
-@media (max-width:576px){
+@media (min-width:769px)and (max-width:1200px){
     .Home-con-bg{
-        padding: 0px;
+        display: flex;
     
-    }
-
-    .button-team{
-        margin-bottom: 0px;
-        width:14.4vw;
-        border-radius:0px;
+        .button-element{
+          
+                margin: top 20px;
+                margin-bottom: 30px;
+             
+        }
+    
     }
     
 }

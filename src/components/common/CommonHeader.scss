@@ -79,7 +79,7 @@
     grid-template-columns: repeat(5,1fr);
     gap: 15px;
     align-items: center;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 14%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 5%);
   
     a:hover{
       color: black !important;
@@ -140,7 +140,7 @@
     grid-template-columns: repeat(5,1fr);
     gap: 15px;
     align-items: center;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 14%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 5%);
   
     a:hover{
       color: black !important;
@@ -154,8 +154,8 @@
   
   .logoimg
     {
-      height: 15vh;
-      width: 11vw;
+      height: 12vh;
+      width: 8vw;
     }
   
     .common-button-con{
