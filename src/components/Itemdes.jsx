@@ -13,10 +13,16 @@ import InputEmoji from "react-input-emoji";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp, faThumbsDown } from "@fortawesome/free-solid-svg-icons";
-import { addToCart, getTags,getFileById,addcomments,getcomments,addreport} from "./services/api";
+import { addToCart, getTags,getFileById,addcomments,getcomments,addreport,giverating,giveLikes} from "./services/api";
 import ReadMore from "./common/ReadMore";
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
 const Itemdesc = () => {
+  const notify = (msg) => toast(msg);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const myProp = location.state && location.state.myProp;
   const [liked, setLiked] = useState(false);
   const [items, setItems] = useState();
   const [tags, setTags] = useState([]);
@@ -25,12 +31,34 @@ const Itemdesc = () => {
   const [commentsclick, setcommentsclick] = useState(false);
   const [commentpage,setCommentPage]=useState(false)
   const commentsContainerRef = useRef(null);
+  const [selectedstars,setSelectedStars]=useState()
   const [info,setInfo]=useState([])
 
   const [rating, setRating] = useState(0); 
+  async function dummy() {
+    console.log(myProp, "checkprops");
+    var data=await getFileById(myProp.FileId)
+    console.log(data,"filesdata")
+    if(data.length>0)
+    {
+      setInfo(data)
 
-  const handleRatingClick = (selectedRating) => {
+    
+
+    }
+    var res = await getTags(myProp.FileId);
+    console.log(res, "reslist");
+    let temp = [];
+    res.map((item, index) => {
+      temp.push(item.CategoryName);
+    });
+    setTags(temp);
+   
+  }
+  const handleRatingClick = async(selectedRating) => {
+    console.log(selectedRating)
     setRating(selectedRating); 
+    setSelectedStars(selectedRating)
   };
 
  async function handleOnEnter(text) {
@@ -43,36 +71,24 @@ const Itemdesc = () => {
     console.log(commentslist,"check")
     setcomments(commentslist)
   }
-  const handleLike = () => {
+  const handleLike = async() => {
+    console.log(liked,"checklike")
+    let fileid=info[0].FileId
+
+console.log(fileid,"sendback",info)
+    let data={FileId:fileid,likestatus:liked}
+  var res=giveLikes(data)
+  dummy()
     setLiked(!liked);
   };
-
-  const navigate = useNavigate();
-  const location = useLocation();
-  const myProp = location.state && location.state.myProp;
   useEffect(() => {
-    async function dummy() {
-      console.log(myProp, "checkprops");
-      var data=await getFileById(myProp.FileId)
-      console.log(data,"filesdata")
-      if(data.length>0)
-      {
-        setInfo(data)
-
-      
-
-      }
-      var res = await getTags(myProp.FileId);
-      console.log(res, "reslist");
-      let temp = [];
-      res.map((item, index) => {
-        temp.push(item.CategoryName);
-      });
-      setTags(temp);
-     
-    }
+   
     dummy();
   }, []);
+  useEffect(()=>
+  {
+
+  },[info])
   const [selectedimage, setSelectedImage] = useState(myProp.FileImage.data);
 
   function readPage(FileID) {
@@ -91,14 +107,48 @@ const Itemdesc = () => {
     }
   }
   async function addreportfun() {
-  
     console.log("comments", comments);
     var commentslist=await addreport(info[0].FileId,"test")
     if(commentslist)
     {
       console.log(commentslist,"checkstatus")
     }
-  
+  }
+  async function ratingfun()
+  {
+    console.log(selectedstars,"give",info)
+    if(selectedstars>0)
+    {
+      let fileid=info[0].FileId
+      let data={rating:selectedstars,FileId:fileid}
+      var res=await giverating(data)
+      if (res.hasOwnProperty('response')) {
+        if(res.response.status==401)
+        {
+        notify("Token Expired")
+          localStorage.clear();
+         navigate('/login')
+        }
+        if(res.response.status==400)
+        {
+         localStorage.clear();
+         notify(" Token Expired Login Again")  
+         navigate('/login')
+        }
+        if(res.response.status==409)
+        {
+        notify("Already Rated")
+        
+        }
+       }
+       else
+       {
+         if(res.status==200)
+         {
+          notify("Rating Submitted Sucessfully")
+         }
+       }
+    }
   }
   useEffect(() => {}, [comments]);
   async function cart(CartItem) {
@@ -108,6 +158,7 @@ const Itemdesc = () => {
   }
   return (
     <div>
+       <ToastContainer />
       {
         info.length>0?<>      
 
@@ -168,7 +219,7 @@ const Itemdesc = () => {
                         ))}
                       </div>
 
-                      <Button className="submit-btn" style={{ width: "120px" }}>Submit Rating</Button>
+                      <Button className="submit-btn" style={{ width: "120px" }} onClick={ratingfun}>Submit Rating</Button>
                   
                   </div>
 

@@ -21,6 +21,7 @@ const PoleCreation = () => {
    }
    if(res.response.status==400)
    {
+    localStorage.clear();
     notify(" Token Expired Login Again")  
     navigate('/login')
    }

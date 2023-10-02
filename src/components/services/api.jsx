@@ -227,37 +227,42 @@ export async function getpole() {
     });
 }
 export async function poller(data) {
-  const dataToSend = {
-    data: data,
-    Email: "syuva893@gmail.com",
-  };
+  var token = localStorage.getItem("token");
+const headers = {
+  'Authorization':token,
+  'Content-Type': 'application/json', 
+};
   return await axios
-    .post(`${rootUrl}api/poller`, dataToSend)
-    .then((response) => {
-      console.log(response.data);
-      return response.data;
-    })
-    .catch((error) => {
-      console.error("Error:", error.message);
-    });
+  .post(`${rootUrl}api/poller`, data, { headers }) 
+  .then((res) => {
+    console.log(res,"checkdb")
+    return res;
+  })
+  .catch((error) => {
+    console.log(error,"chekerror")
+    return error.response;
+  });
 }
 
 export async function createquiz(data) {
-  try {
+  var token = localStorage.getItem("token");;
+  const headers = {
+    'Authorization':token,
+    'Content-Type': 'application/json', 
+  };
     console.log(data, "api");
     const dataToSend = {
       data: data,
       Email: "syuva893@gmail.com",
-      // Add more key-value pairs as needed
     };
-    const response = await axios.post(`${rootUrl}api/createquiz`, dataToSend);
-    console.log(response.data); // Print the response data
-    return response.data;
-  } catch (error) {
-    console.error("Error:", error.message);
-    // Handle the error further or throw it to be caught by the calling function
-    throw error;
-  }
+    return await axios
+    .post(`${rootUrl}api/createquiz`, dataToSend, { headers }) 
+    .then((res) => {
+      return res;
+    })
+    .catch((error) => {
+      return error;
+    });
 }
 export async function getquiz() {
   return await axios
@@ -271,18 +276,23 @@ export async function getquiz() {
     });
 }
 export async function participateQuiz(data) {
+  var token = localStorage.getItem("token");
+  const headers = {
+    'Authorization':token,
+    'Content-Type': 'application/json', 
+  };
   const dataToSend = {
     data: data,
-    Email: "syuva893@gmail.com",
   };
   return await axios
-    .post(`${rootUrl}api/participateQuiz`, dataToSend)
+    .post(`${rootUrl}api/participateQuiz`, dataToSend,{headers})
     .then((response) => {
-      console.log(response.data);
-      return response.data;
+      console.log(response);
+      return response;
     })
     .catch((error) => {
       console.error("Error:", error.message);
+      return error
     });
 }
 export async function getallusers() {
@@ -438,5 +448,101 @@ export async function gettopcomments() {
     })
     .catch((error) => {
       console.error("Error:", error.message);
+    });
+}
+export async function getquizresults() {
+  
+  return await axios
+    .get(`${rootUrl}api/getquizresult`)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+    });
+}
+export async function poleparticipators() {
+
+  return await axios
+    .get(`${rootUrl}api/getpoleresult`)
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+    });
+}
+export async function giverating(data) {
+  console.log(data)
+  var token = localStorage.getItem("token");
+  const headers = {
+    'Authorization':token,
+    'Content-Type': 'application/json', 
+  };
+  return await axios
+    .post(`${rootUrl}api/rating`,data,{headers})
+    .then((response) => {
+      console.log(response.data);
+      return response;
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+      return error
+    });
+}
+export async function giveLikes(data) {
+  console.log(data)
+  var token = localStorage.getItem("token");
+  const headers = {
+    'Authorization':token,
+    'Content-Type': 'application/json', 
+  };
+  return await axios
+    .post(`${rootUrl}api/likes`,data,{headers})
+    .then((response) => {
+      console.log(response.data);
+      return response;
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+      return error
+    });
+}
+export async function deleteuser(data) {
+  console.log(data,"delete")
+  var token = localStorage.getItem("token");
+  const headers = {
+    'Authorization':token,
+    'Content-Type': 'application/json', 
+  };
+  return await axios
+    .delete(`${rootUrl}api/deleteuser/${data}`,{headers})
+    .then((response) => {
+      console.log(response);
+      return response;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      return error
+    });
+}
+export async function getallfiles(data) {
+  console.log(data)
+  var token = localStorage.getItem("token");
+  const headers = {
+    'Authorization':token,
+    'Content-Type': 'application/json', 
+  };
+  return await axios
+    .get(`${rootUrl}api/getallfiles/${data}`,{headers})
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+      return error
     });
 }

@@ -1,79 +1,91 @@
-import React from 'react'
-import { getreports,deleteFile} from '../services/api'
-import { useEffect } from 'react'
-import { Button, Table } from 'antd'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-// import './usersList.scss'
- const Reports = () => {                                                            
-const [reports,setReports]=useState([])
-const [headers,setHeaders]=useState([])
-const navigate=useNavigate()
-    useEffect(()=>
-    {
-        async function users()
-        {
-           var res= await getreports()
-           console.log(res,"val")
-           let head=Object.keys(res[0])
-           head.push("Review the Book")
-           head.push("Delelte")
-           setHeaders(head)
-           setReports(res)
-           console.log(res,"names")
-        }
-        users()
-    },[])
-    function readPage(item) {
-        console.log(item.FileId, "message");
-        let file=item.FileId
-        navigate("/read", { state: { myProp: file } });
-      }
-      async function deletebook(item)
-      {
-console.log(item)
-await deleteFile(item)
+import React, { useEffect, useState } from 'react';
+import { getreports, deleteFile } from '../services/api';
+import { Button, Table, Input } from 'antd'; // Import Table and Input components
+import { useNavigate } from 'react-router-dom';
+ // Import your custom CSS file
 
-      }
+ const Reports = () => {
+  const [reports, setReports] = useState([]);
+  const [headers, setHeaders] = useState([]);
+  const [searchQuery, setSearchQuery] = useState(''); // State for search query
+  const navigate = useNavigate();
+  const { Search } = Input;
+
+  useEffect(() => {
+    async function fetchReports() {
+      const res = await getreports();
+      console.log(res, "val");
+      let head = Object.keys(res[0]);
+      head.push("Review the Book");
+      head.push("Delete");
+      setHeaders(head);
+      setReports(res);
+      console.log(res, "names");
+    }
+    fetchReports();
+  }, []);
+
+  function readPage(item) {
+    console.log(item.FileId, "message");
+    let file = item.FileId;
+    navigate("/read", { state: { myProp: file } });
+  }
+
+  async function deletebook(item) {
+    console.log(item);
+    await deleteFile(item);
+  }
+
+  const columns = headers.map((header) => ({
+    title: header,
+    dataIndex: header,
+    key: header,
+  }));
+
+  columns.push(
+    {
+      title: 'Review the Book',
+      key: 'review',
+      render: (text, record) => (
+        <Button onClick={() => readPage(record)}>Read</Button>
+      ),
+    },
+    {
+      title: 'Delete',
+      key: 'delete',
+      render: (text, record) => (
+        <Button onClick={() => deletebook(record.FileId)}>Delete</Button>
+      ),
+    }
+  );
+
   return (
-    <div className='listdata'>  
-    <input type="text" id="nameSearch" placeholder="Search by Name">
-        </input><table>
-  <thead>
-    <tr>
-      {headers.length > 0 ? (
-        headers.map((item, index) => (
-          <th key={item}>{item}</th>
-        ))
-      ) : (
-        <></>
-      )}
-    </tr>
-  </thead>
-  <tbody>
-    {reports.length > 0 ? (
-      reports.map((item, index) => (
-        <tr key={item.Id}>
-          {Object.entries(item).map(([key, value]) => (
-            <><td key={key}>
-            {value}
-            </td>
-            </>
-            
-       
-          ))}
-           <td><Button onClick={()=>{readPage(item)}}>Read</Button></td>
-             <td><Button onClick={()=>{deletebook(item.FileId)}}>Delete</Button></td>
-        </tr>
-      ))
-    ) : (
-      <tr>
-        <td colSpan={headers.length}>No data available</td>
-      </tr>
-    )}
-  </tbody>
-</table>
-</div>
-  )
-}
-export default Reports
+    <div className='listdata'>
+      <Search
+        placeholder='Search by Name or Email' // Update placeholder
+        onSearch={(value) => {
+          setSearchQuery(value); // Set search query
+        }}
+        style={{ marginBottom: 10 }}
+      />
+      <Table
+        dataSource={
+          searchQuery
+            ? reports.filter(
+                (item) =>
+                  item.Name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                  item.Email.toLowerCase().includes(searchQuery.toLowerCase())
+              )
+            : reports
+        } // Filter data based on search query
+        columns={columns}
+        pagination={{ pageSize: 10 }}
+        locale={{
+          emptyText: 'No data available',
+        }}
+      />
+    </div>
+  );
+};
+
+export default Reports;

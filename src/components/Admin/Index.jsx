@@ -1,22 +1,66 @@
 import React, { useEffect, useState } from "react";
+// import './Home.scss'
 import {
   AppstoreOutlined,
   ContainerOutlined,
   DesktopOutlined,
   MailOutlined,
+  FlagOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   PieChartOutlined,
 } from "@ant-design/icons";
-import UsersList from './UsersList.jsx'
 import { Button, Menu } from "antd";
 import { Link } from "react-router-dom";
-
-import CategoryOptions from "../categories/CategoryOptiions.jsx";
-import DummyCarousel from "../DummyCarousel.jsx";
-
+import CreateCompetation from "../Teams/Competation.jsx";
+import UsersList from "./UsersList.jsx";
+import QuizCreation from "../Teams/../Quiz/QuizCreation.jsx";
+import CategoryOptions from "../Teams/../categories/CategoryOptiions.jsx";
+import DummyCarousel from "../Teams/../DummyCarousel.jsx";
+import PoleCreation from "../Teams/../Quiz/PoleCreation.jsx";
+import OnGoingCompetation from "../Teams/OnGoingCompetation.jsx";
+import Quiz from "../Quiz/Quiz.jsx";
+import Poll from "../Quiz/Poller.jsx";
+import Reports from "../Teams/Reports.jsx";
+import TopCommentedBooks from "../Teams/TopCommentedBooks.jsx";
+import Scores from "../Teams/Scores";
+import QuizScores from "../Teams/quizscores";
+import BooksList from "./BooksList.jsx";
 const Teams = () => {
-  const [showItem, setShowItem] = useState(<UsersList/>);
+  
+  const sendData = (data) => {
+    console.log(data,"valuesssssssssssss")
+    if(data=='poll')
+    {
+      setShowItem(<PoleCreation/>)
+    }
+    if(data=='quiz')
+    {
+      setShowItem(<QuizCreation/>)
+    }
+    if(data=='pollarea')
+    {
+      setShowItem(<Poll/>)
+    }
+    if(data=='quizarea')
+    {
+      setShowItem(<Quiz/>)
+    }
+    if(data=='pollResults')
+    {
+      setShowItem(<QuizScores value={data}/>)
+
+    }
+    if(data=='quizResults')
+    {
+      setShowItem(<QuizScores value={data}/>)
+    }
+  }
+
+  const [showItem, setShowItem] = useState(<CreateCompetation sendData={sendData} />);
+  useEffect(()=>
+    {
+    },[showItem])
   function getItem(label, key, icon, children, type) {
     return {
       key,
@@ -26,10 +70,6 @@ const Teams = () => {
       type,
     };
   }
-// useEffect(()=>
-// {
-
-// },[showItem])
   const items = [
     getItem("Categories", "1", <PieChartOutlined />, [
       getItem("Each Category", "11"),
@@ -38,19 +78,24 @@ const Teams = () => {
     ]),
     getItem("Competitions", "2", <DesktopOutlined />, [
       getItem("createcompetataion", "21"), // This line seems incorrect, fix the usage of the Link component
-      getItem("Competions", "23"),
+      getItem("OnGoingCompetions", "23"),
       getItem("Scores", "24"),
     ]),
-    getItem("ChatRoom", "3", <ContainerOutlined />),
-    getItem("Requests", "4", <MailOutlined />, [
-      getItem("Become a Author", "41"),
-      getItem("Transactions", "42"),
-      getItem("WithdrawRequest", "43"),
+    getItem("Reports", "3", <FlagOutlined />, [
+      getItem("BooksReports", "31"),
+
     ]),
-    getItem("Messages", "5", <AppstoreOutlined />, [
-      getItem("Admin", "51"),
-      getItem("Users", "52"),
-      // getItem('Submenu', 'sub3', null, [getItem('Option 11', '11'), getItem('Option 12', '12')]),
+    getItem("usersList", "4", <FlagOutlined />, [
+      getItem("HandleUsers", "41"),
+
+    ]),
+    getItem("Books", "5", <FlagOutlined />, [
+      getItem("HandleBooks", "51"),
+
+    ]),
+    getItem("Requests", "6", <MailOutlined />, [
+      getItem("Transactions", "62"),
+      getItem("WithdrawRequest", "63"),
     ]),
   ];
 
@@ -60,6 +105,8 @@ const Teams = () => {
     setCollapsed(!collapsed);
   };
   const selection = (values) => {
+
+    console.log(values,"click")
     if(values==11)
     {
       setShowItem(<CategoryOptions />);
@@ -68,33 +115,57 @@ const Teams = () => {
     {
       setShowItem(<DummyCarousel />);
     }
+    if(values==13)
+    {
+      setShowItem(<TopCommentedBooks />);
+
+
+    }
+    if(values==24)
+    {
+      setShowItem(<Scores sendData={sendData} />);
+    }
     if (values == 21) {
-      setShowItem(<CreateCompetation key={showItem} />);
+      setShowItem(<CreateCompetation sendData={sendData} />);
+    }
+    if (values == 23) {
+      setShowItem(<OnGoingCompetation sendData={sendData} />);
+    }
+    if (values == 31) {
+      setShowItem(<Reports sendData={sendData} />);
+    }
+    if (values == 41) {
+      setShowItem(<UsersList sendData={sendData} />);
+    }
+    if (values == 51) {
+      setShowItem(<BooksList sendData={sendData} />);
     }
     console.log(values, "values");
   };
   return (
-    <div
-      style={{
-        display: "flex", 
-      }}
+
+
+
+
+    <div className="Home-con-bg"
     >
-      <div
-        style={{
+      <div className="button-element"
+       style={{
           width: collapsed ? 80 : 256, 
           transition: "width 0.2s", 
+          
         }}
       >
         <Button
+        className="button-team"
           type="primary"
           onClick={toggleCollapsed}
-          style={{
-            marginBottom: 16,
-          }}
         >
           {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         </Button>
-        <Menu
+
+
+        <Menu 
           defaultSelectedKeys={["1"]}
           defaultOpenKeys={["sub1"]}
           mode="inline"

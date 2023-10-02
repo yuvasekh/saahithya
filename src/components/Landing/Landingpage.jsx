@@ -30,11 +30,11 @@ const Landingpage = () => {
    Record
     // Add more image URLs here
   ];
-  useEffect(()=>
-  {
-    setOpen(true)
+  // useEffect(()=>
+  // {
+  //   setOpen(true)
 
-  },[])
+  // },[])
   return (
     <>
     <div className="landing-con">

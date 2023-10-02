@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./Poll.scss";
 import { poller, getpole } from "../services/api";
+import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+  import 'react-toastify/dist/ReactToastify.css';
 const Poll = () => {
   const [selectedOption, setSelectedOption] = useState(null);
+  const navigate=useNavigate()
   const [options, setOptions] = useState([]);
   const [percentage, setpercentage] = useState();
   const [question, setquestion] = useState();
   const [votes, setvotes] = useState([]);
   const [flag, setflag] = useState(false);
+  const notify = (msg) => toast(msg);
   useEffect(() => {
     async function getdata() {
       var resp = await getpole();
@@ -31,18 +36,28 @@ const Poll = () => {
   const handleOptionChange = async (optionId) => {
     console.log(optionId, "fun");
     setSelectedOption(optionId);
-    var voters = await poller(optionId);
-    console.log(voters.data, "percenatge");
-    const parsedData = voters.data[0]; // Assuming there's only one object in the array
-    console.log(parsedData, "check");
-    let temp = options;
-    temp[0].votes = parsedData.Option1Percentage;
-    temp[1].votes = parsedData.Option2Percentage;
-    temp[2].votes = parsedData.Option3Percentage;
-    temp[3].votes = parsedData.Option4Percentage;
-    console.log(temp, "final values");
-    setOptions(temp);
-    setflag(true);
+    var res = await poller(optionId);
+    console.log(res,"poller")
+    if(res.data.hasOwnProperty('data'))
+    { let voters=res.data.data
+      console.log(voters,"votess")
+      console.log(voters.data, "percenatge");
+      const parsedData = voters[0]; // Assuming there's only one object in the array
+      console.log(parsedData, "check");
+      let temp = options;
+      temp[0].votes = parsedData.Option1Percentage;
+      temp[1].votes = parsedData.Option2Percentage;
+      temp[2].votes = parsedData.Option3Percentage;
+      temp[3].votes = parsedData.Option4Percentage;
+      console.log(temp, "final values");
+      setOptions(temp);
+      setflag(true);
+    }
+  else{
+    notify(res.data.message)
+    navigate('/login')
+    console.log(res.data.message,"polemsg")
+  }
   };
 
   useEffect(() => {
@@ -52,6 +67,7 @@ const Poll = () => {
 
   return (
     <div className="opinion-poll">
+         <ToastContainer />
       <h2>Opinion Poll</h2>
 
       <ul className="options-list">

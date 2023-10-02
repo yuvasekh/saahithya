@@ -3,13 +3,16 @@ import './Poll.scss';
 import { Button } from 'antd';
 import { Radio } from 'antd';
 import './Quiz.scss';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  import { useNavigate } from 'react-router-dom';
 import { getquiz,participateQuiz } from '../services/api';
-
 const Quiz = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [QuizId,setQuizId]=useState()
   const [options, setOptions] = useState([]);
-
+  const notify = (msg) => toast(msg);
+  const navigate=useNavigate()
   useEffect(() => {
     async function getdata() {
       var resp = await getquiz();
@@ -50,7 +53,36 @@ const Quiz = () => {
     console.log(selectedAnswers);
     if (allOptionsSelected) {
       selectedAnswers['QuizId']=QuizId
-      participateQuiz(selectedAnswers);
+     var res= await participateQuiz(selectedAnswers);
+     console.log(res,"quizback")
+     if (res.hasOwnProperty('response')) {
+      if(res.response.status==401)
+      {
+      notify("Token Expired")
+        localStorage.clear();
+       navigate('/login')
+      }
+      if(res.response.status==400)
+      {
+        localStorage.clear();
+       notify(" Token Expired Login Again")  
+       navigate('/login')
+      }
+      if(res.response.status==409)
+      {
+        console.log("yes")
+       notify(" Already participated")  
+       
+      }
+     }
+     else
+     {
+      console.log("no")
+       if(res.status==200)
+       { 
+        notify("Quiz submitted SucessFully")
+       }
+     }
     } else {
       console.log("Please select all options.");
     }
@@ -59,6 +91,7 @@ const Quiz = () => {
   return (
     <div className="quiz-poll">
       <div className="ItemsList">
+      <ToastContainer />
         <h1 className="Title">Welcome To Saahithya Quiz</h1>
         <br />
         {

@@ -22,7 +22,8 @@ import Quiz from "../Quiz/Quiz.jsx";
 import Poll from "../Quiz/Poller.jsx";
 import Reports from "./Reports.jsx";
 import TopCommentedBooks from "./TopCommentedBooks.jsx";
-
+import Scores from "./Scores";
+import QuizScores from "./quizscores";
 const Teams = () => {
   
   const sendData = (data) => {
@@ -43,7 +44,17 @@ const Teams = () => {
     {
       setShowItem(<Quiz/>)
     }
+    if(data=='pollResults')
+    {
+      setShowItem(<QuizScores value={data}/>)
+
+    }
+    if(data=='quizResults')
+    {
+      setShowItem(<QuizScores value={data}/>)
+    }
   }
+
   const [showItem, setShowItem] = useState(<CreateCompetation sendData={sendData} />);
   useEffect(()=>
     {
@@ -72,9 +83,9 @@ const Teams = () => {
       getItem("BooksReports", "31"),
 
     ]),
-    getItem("Requests", "3", <MailOutlined />, [
-      getItem("Transactions", "32"),
-      getItem("WithdrawRequest", "33"),
+    getItem("Requests", "4", <MailOutlined />, [
+      getItem("Transactions", "42"),
+      getItem("WithdrawRequest", "43"),
     ]),
   ];
 
@@ -100,6 +111,10 @@ const Teams = () => {
 
 
     }
+    if(values==24)
+    {
+      setShowItem(<Scores sendData={sendData} />);
+    }
     if (values == 21) {
       setShowItem(<CreateCompetation sendData={sendData} />);
     }
@@ -111,11 +126,6 @@ const Teams = () => {
     }
     console.log(values, "values");
   };
-
-
-
-
-
   return (
 
 

@@ -5,9 +5,6 @@ import {Link} from 'react-router-dom'
 function Looks() {
   return (
     <>
-     
-
-
 <div >
     <div class="con">
         <div className='row'>

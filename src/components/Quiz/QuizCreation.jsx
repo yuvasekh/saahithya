@@ -1,16 +1,44 @@
 import React from 'react';
 import { Form, Input, Button } from 'antd';
 import {createquiz} from '../services/api'
-
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
+  import { useNavigate } from 'react-router-dom';
 const RepeatedForm = () => {
+  const notify = (msg) => toast(msg);
+  const navigate=useNavigate()
+  const [form] = Form.useForm();
   const onFinish = async(values) => {
     console.log('Form values:', values);
-    await createquiz(values)
+    var res=await createquiz(values)
+    console.log("quiz",res)
+    if (res.hasOwnProperty('response')) {
+      if(res.response.status==401)
+      {
+      notify("Token Expired")
+        localStorage.clear();
+       navigate('/login')
+      }
+      if(res.response.status==400)
+      {
+        localStorage.clear();
+       notify(" Token Expired Login Again")  
+       navigate('/login')
+      }
+     }
+     else
+     {
+       if(res.status==200)
+       { form.resetFields();
+        notify("Pole Created Sucessfully")
+       }
+     }
   };
 
   return (
     <div>
-     <Form onFinish={(values) => onFinish(values)}>
+       <ToastContainer />
+     <Form form={form} onFinish={(values) => onFinish(values)}>
         {[...Array(5)].map((_, index) => (
           <div key={index}>
             <Form.Item

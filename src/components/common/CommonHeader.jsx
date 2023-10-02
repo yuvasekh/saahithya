@@ -90,7 +90,9 @@ useEffect(()=>
                 ],
               },
           ]}/>
-
+   <Link to="/admin">
+                      <Button className='signinbutton' style={{fontFamily:'sans-serif', fontSize:"17px",backgroundColor:"#266B69" }}>Admin</Button>
+                    </Link>
 
                 <Link to="/language">
                     <Button className='registerbutton' style={{fontFamily:'sans-serif',fontSize:"17px",backgroundColor:"#266B69" }}>
@@ -104,6 +106,7 @@ useEffect(()=>
 
 
                   <div className='common-button-con' >
+               
                     <Link to="/login">
                       <Button className='signinbutton' style={{fontFamily:'sans-serif', fontSize:"17px",backgroundColor:"#266B69" }}>SignIn</Button>
                     </Link>
