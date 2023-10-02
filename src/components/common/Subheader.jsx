@@ -67,7 +67,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
           <div className="">
             
             <Link to='/Comingsoon'>
-                <Button className='registerbutton'>Download App</Button>
+                <Button style={{backgroundColor:'rgb(38, 107, 105)'}} className='registerbutton'>Download App</Button>
             </Link>
           </div>
       </div>

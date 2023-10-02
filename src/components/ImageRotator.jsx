@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './ImageRotator.scss'
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+
 const ImageRotator = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 const navigate=useNavigate()
@@ -30,7 +33,7 @@ const pagemove=()=>
           <p style={{fontSize:'25px',padding:'10px'}} >
             "సాహిత్యం అంటే తెల్లకాగితం పై రాసే నల్లని అక్షరాలు కాదు..<br/>  మనసు విదిల్చిన భావోద్వేగాలు"
           </p>
-          <Button className='bookssection' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" ,padding:'10px'}}>Books Section</Button>
+          <Button className='bookssection btn' onClick={()=>{pagemove()}} style={{ backgroundColor:"#266B69",fontFamily:"Trebuchet MS" ,padding:'20px'}}>Books Section</Button>
         </div>
 
         <div className='imagescontent col-12 col-md-4'>

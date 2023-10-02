@@ -93,8 +93,8 @@
   }
   
   .search{
-  width: 20vw;
-  height: 6vh;
+  width: 30vw;
+  height: max-content;
   }
   
   .logoimg
@@ -148,7 +148,7 @@
   }
   
   .search{
-  width: 20vw;
+  width: 30vw;
   height: 6vh;
   }
   
@@ -178,13 +178,14 @@
         font-style: normal;
         font-weight: 600;
         width: max-content;
-        font-size: 16px;
+        height: max-content;
+        font-size: 19px;
         border: none;
         margin-right: 10px;
         border-radius: 7px;
         line-height: 24px;
         color: #fff;
-        padding: 20px 20px 40px 20px;
+        padding:10px;
       }
     
   :where(.css-dev-only-do-not-override-1wazalj).ant-avatar-lg.ant-avatar-icon {
