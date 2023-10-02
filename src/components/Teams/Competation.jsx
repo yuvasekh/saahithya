@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './Competation.scss';
 
-import img1 from '../../Resources/Images/horror.jpg';
-import img2 from '../../Resources/Images/comedy.jpg';
-import img3 from '../../Resources/Images/life.jpg';
+import img1 from '../../Resources/Teams/quiz.jpeg'
+import img2 from '../../Resources/Teams/contest.jpeg';
+import img3 from '../../Resources/Teams/poll.jpeg';
 // import img4 from '../../Resources/Images/love.jpg';
 import { useNavigate,useLocation } from 'react-router-dom';
 

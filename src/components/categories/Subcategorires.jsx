@@ -37,7 +37,7 @@ const Subcategories = () => {
         {imagearray.map((item, index) => (
           <div className=' col-12 col-md-3' key={index} onClick={()=>{test(item)}}>
             <img   src={item.img} className='sub-cat-img' alt={`image-${index}`} />
-            <h2 className="heading-one" style={{marginRight:'10px',marginTop:'10px',backdropFilter:'blur(20px) saturate(70%)' }}>{item.imgdesc}</h2>
+            <h2 className="heading-one" style={{marginLeft:'20px',marginRight:'15px',marginTop:'-60px',backdropFilter:'blur(20px) saturate(70%)',color:'white' }}>{item.imgdesc}</h2>
           </div>
         ))}
       </div>
