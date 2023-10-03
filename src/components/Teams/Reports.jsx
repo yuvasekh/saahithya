@@ -33,7 +33,7 @@ import { useNavigate } from 'react-router-dom';
 
   async function deletebook(item) {
     console.log(item);
-    await deleteFile(item);
+    var res=await deleteFile(item);
   }
 
   const columns = headers.map((header) => ({

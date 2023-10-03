@@ -16,12 +16,12 @@ import {
   ExperimentOutlined,
   LoadingOutlined,
 } from "@ant-design/icons";
-import { fileUpload } from '../components/services/api'
-import '../components/Layout/Upload.scss'
+import { fileUpload } from '../../services/api'
+import './Upload.scss'
 import { useNavigate } from 'react-router-dom';
 import Checkbox from 'antd/es/checkbox/Checkbox';
 import { useEffect } from 'react';
-import LoaderImage from '../Resources/loader.gif'
+import LoaderImage from '../../../Resources/loader.gif'
 const UploadFile = () => {
   const { Option } = Select;
   const navigate=useNavigate()

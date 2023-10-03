@@ -546,3 +546,21 @@ export async function getallfiles(data) {
       return error
     });
 }
+export async function getFilesByEmail(data) {
+  console.log(data)
+  var token = localStorage.getItem("token");
+  const headers = {
+    'Authorization':token,
+    'Content-Type': 'application/json', 
+  };
+  return await axios
+    .get(`${rootUrl}api/getuserfiles`,{headers})
+    .then((response) => {
+      console.log(response.data);
+      return response.data;
+    })
+    .catch((error) => {
+      console.error("Error:", error.message);
+      return error.resoponse
+    });
+}

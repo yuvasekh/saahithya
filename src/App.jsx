@@ -18,7 +18,7 @@ import Itemdesc from "./components/Itemdes";
 import Authors from "./components/common/Authors/Authors";
 import CartItems from "./components/Cart/CartItems";
 import Otpverification from "./components/Login/Otpverification";
-import Upload from "./components/UploadFile";
+import Upload from "./components/Quiz/Episodes/UploadFile";
 import Teams from "./components/Teams/Home";
 import Read from "../src//components/Read";
 import Poll from "./components/Quiz/Poller";
@@ -46,8 +46,8 @@ import AuthorsGroup from "./components/common/Authors/AuthorsGroup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import UploadAudio from "./components/Audio/UploadAudio";
 import AudioPlayer from './components/Audio/AudioPlayer'
-// import UploadOptions from "./components/Quiz/Episodes/UploadOptions";
-
+import UploadOptions from "./components/Quiz/Episodes/UploadOptions";
+import UploadExisting from './components/Quiz/Episodes/UploadExisting'
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -95,9 +95,9 @@ const App = () => {
           element={<Poll question={question} options={options} />}
         />
         <Route path="/createcompetataion" element={<Competation />} />
-        <Route path="/upload" element={
+        <Route path="/uploadOptions" element={
         <ProtectedRoute>
-        <Upload/>
+        <UploadOptions/>
         </ProtectedRoute>
      }/>
            <Route path="/teams" element={
@@ -108,6 +108,17 @@ const App = () => {
          <Route path="/uploadaudio" element={
         <ProtectedRoute>
         <UploadAudio/>
+        </ProtectedRoute>
+     }/>
+      <Route path="/upload" element={
+        <ProtectedRoute>
+        <Upload/>
+        </ProtectedRoute>
+     }/>
+     <Route path="/uploadexisting" element={
+        <ProtectedRoute>
+        <UploadExisting/>
+
         </ProtectedRoute>
      }/>
         {/* <Route path="/uploadoptions" element={<UploadOptions />} />

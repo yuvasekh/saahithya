@@ -11,12 +11,10 @@ const Header = () => {
   {
     // alert("ok")
     navigate('/cartLogs')
-    
   })
   return (
     <>
     <div className='d-none d-lg-block'  >
-      
         <div className="second-head-con">
 
           <div className='second-head-con2'>
@@ -39,7 +37,7 @@ const Header = () => {
             </div>
             <div className="second-head-card" >
               <UploadOutlined style={{fontSize: "20px"}}/>
-              <Link to="/upload">Upload</Link>
+              <Link to="/uploadOptions">Upload</Link>
             </div>
             <div className="second-head-card" >
               <AudioOutlined  style={{fontSize: "20px"}}/>
