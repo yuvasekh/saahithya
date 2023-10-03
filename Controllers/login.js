@@ -21,11 +21,12 @@ module.exports.login = async (req,res)=>{
 
     if (results.length > 0) {
 
-console.log(results)
-const secretKey = 'your_secret_key'; // Replace with your own secret key
-const options = { expiresIn: '1h' };
 
-   var token= jwt.sign(results[0], secretKey, options);
+const secretKey = '4sdigilabs'; // Replace with your own secret key
+const options = { expiresIn: '1h' };
+let data=results[0]
+let userdetails={Name:data.Name,Email:data.Email,MobileNumber:data.MobileNumber,Role:data.Role}
+   var token= jwt.sign(userdetails, secretKey, options);
         res.status(200).json({ token: token });
       console.log('Login successful.');
       // Perform further actions after successful login

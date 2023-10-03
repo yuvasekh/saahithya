@@ -45,7 +45,7 @@ for(var i=0;i<splitArray.length;i++)
       req.body.Price,
       req.body.description,
       Numberofpages,
-      req.headers.email,
+      req.headers.Email,
       mysqlDatetime,
       imageContent,
       req.body['BookType'],
@@ -74,6 +74,7 @@ for(var i=0;i<splitArray.length;i++)
     console.log("There is no data to process");
   }
 };
+
 
 module.exports.deleteFile = async (req, res) => {
     console.log(req.params.id,"paramsId")
