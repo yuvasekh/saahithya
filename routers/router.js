@@ -4,8 +4,6 @@ const jwtDecode=require('jwt-decode')
 const jsonParser = bodyParser.json({ limit: '10mb' }); // Set the limit to a suitable value
 var router = express.Router();
 var multer = require("multer");
-const httpProxy = require('http-proxy');
-const proxy = httpProxy.createServer({})
 const storage = multer.memoryStorage(); // You can use other storage options as needed
 const upload = multer({
   storage: storage,
