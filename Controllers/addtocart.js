@@ -16,7 +16,7 @@ module.exports.addtocarts = async (req,res)=>{
     let Id = uuidv4();
     // var email=req.bodyp.email
 
-      const selectQuery = `SELECT COUNT(*) AS count FROM cart WHERE email ='${req.headers.email}' and Fileid='${FileId}'`;
+      const selectQuery = `SELECT COUNT(*) AS count FROM cart WHERE email ='${req.headers.Email}' and Fileid='${FileId}'`;
       console.log(selectQuery,"test")
       const selectQuery1 = `SELECT * FROM UploadFiles WHERE   Fileid='${FileId}'`;
       const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?)';

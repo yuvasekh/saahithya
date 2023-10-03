@@ -33,3 +33,32 @@ module.exports.getallusers = async (req, res) => {
       return results;
     });
   };
+  const util = require('util');
+  const dbQuery = util.promisify(connection.query).bind(connection);
+  
+  module.exports.deleteuser = async (req, res) => {
+    try {
+      const Email = req.params.email;
+      console.log(Email,"email")
+      // Define SQL queries
+      const sqlQueries = [
+        'DELETE FROM comments WHERE Email = ?;',
+        'DELETE FROM reports WHERE Email = ?;',
+        'DELETE FROM contestparticipators WHERE Email = ?;',
+        'DELETE FROM likes WHERE Email = ?;',
+        'DELETE FROM rating WHERE Email = ?;',
+        'DELETE FROM Register WHERE Email = ?;'
+      ];
+  
+      // Execute SQL queries concurrently using Promise.all
+      await Promise.all(sqlQueries.map(sql => dbQuery(sql, [Email])));
+      
+      console.log('Transaction committed successfully.');
+      res.status(200).json({ data: 'deleted' });
+    } catch (error) {
+      console.error('Error:', error);
+      res.status(500).json({ message: error });
+      // Handle the error and possibly roll back the transaction
+    }
+  };
+  

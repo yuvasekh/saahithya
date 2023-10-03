@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require("uuid");
 module.exports.comments = async (req, res) => {
     let CommentId = uuidv4();
     console.log(req.params.id,"paramsId",req.body)
-    let checkuserquery=`select * from register where Email='${req.headers.email}'`
+    let checkuserquery=`select * from register where Email='${req.headers.Email}'`
     let commentssquery = `select CategoryName from uploadfiles where FileId='${req.params.id}'`;
     const insertQuery = 'INSERT INTO comments  VALUES (?, ?, ?, ?, ?)';
 
@@ -14,7 +14,7 @@ module.exports.comments = async (req, res) => {
         console.log(results,"userscount")
         if(results.length>0)
         {
-            db.query(insertQuery, [CommentId,req.headers.email,req.params.id,req.body.comment,new Date()],async (error, results) => {
+            db.query(insertQuery, [CommentId,req.headers.Email,req.params.id,req.body.comment,new Date()],async (error, results) => {
                 if (error) {
                     console.log(error)
                   throw error;
@@ -54,7 +54,7 @@ module.exports.getcomments = async (req, res) => {
 module.exports.reports = async (req, res) => {
     let CommentId = uuidv4();
     console.log(req.params.id,"paramsId",req.body)
-    let checkuserquery=`select * from register where Email='${req.headers.email}'`
+    let checkuserquery=`select * from register where Email='${req.headers.Email}'`
     
     const insertQuery = 'INSERT INTO reports  VALUES (?, ?, ?, ?, ?)';
 
@@ -65,7 +65,7 @@ module.exports.reports = async (req, res) => {
         console.log(results,"userscount")
         if(results.length>0)
         {
-            db.query(insertQuery, [CommentId,req.headers.email,req.params.id,req.body.comment,new Date()],async (error, results) => {
+            db.query(insertQuery, [CommentId,req.headers.Email,req.params.id,req.body.comment,new Date()],async (error, results) => {
                 if (error) {
                     console.log(error)
                   throw error;
@@ -122,7 +122,7 @@ console.log("top comments")
             res.status(500).json({message:err})
            
         }
-        console.log('Query result for Images:', rows);
+        console.log('Query result for Images For Top  Comments:', rows);
         res.status(200).json(rows);
         
     });

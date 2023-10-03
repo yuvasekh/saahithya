@@ -1,8 +1,8 @@
 const db = require('../Resources/db');
 module.exports.latest = async (req, res) => {
-    console.log("latest")
-
-          
+    console.log("latestdata")
+    try
+    {
     db.query(`SELECT FileId, FileName,FileImage
     FROM (
       SELECT DISTINCT FileId, FileName, PublishedTime,FileImage
@@ -15,10 +15,15 @@ module.exports.latest = async (req, res) => {
             res.status(500).json({message:err})
             return;
         }
-        res.status(200).json(rows);
-        
         console.log('Query result:', rows);
+        res.status(200).json(rows);
+       
     });
+}
+catch(error)
+{
+    console.log(error,"latesterror")
+}
     
        
 };
