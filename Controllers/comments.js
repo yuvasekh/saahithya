@@ -3,32 +3,37 @@ const { v4: uuidv4 } = require("uuid");
 module.exports.comments = async (req, res) => {
     let CommentId = uuidv4();
     console.log(req.params.id,"paramsId",req.body)
-    let checkuserquery=`select * from register where Email='${req.headers.Email}'`
-    let commentssquery = `select CategoryName from uploadfiles where FileId='${req.params.id}'`;
-    const insertQuery = 'INSERT INTO comments  VALUES (?, ?, ?, ?, ?)';
-
-    db.query(checkuserquery, async (error, results) => {
-        if (error) {
-          throw error;
-        }
-        console.log(results,"userscount")
-        if(results.length>0)
+    
+    let token = req.headers.authorization;
+    if (token) {
+      verifyToken(token).then(async (decodedToken) => {
+        let checkuserquery=`select * from register where Email='${decodedToken.Email}'`
+        let commentssquery = `select CategoryName from uploadfiles where FileId='${req.params.id}'`;
+        const insertQuery = 'INSERT INTO comments  VALUES (?, ?, ?, ?, ?)';
+    
+        db.query(checkuserquery, async (error, results) => {
+            if (error) {
+              throw error;
+            }
+            console.log(results,"userscount")
+            if(results.length>0)
+            {
+                db.query(insertQuery, [CommentId,decodedToken.Email,req.params.id,req.body.comment,new Date()],async (error, results) => {
+                    if (error) {
+                        console.log(error)
+                      throw error;
+                    }
+                    console.log('Comment item inserted successfully.',results);
+                    res.status(200).json("Comment added");
+                 
+                });
+            }
+        else
         {
-            db.query(insertQuery, [CommentId,req.headers.Email,req.params.id,req.body.comment,new Date()],async (error, results) => {
-                if (error) {
-                    console.log(error)
-                  throw error;
-                }
-                console.log('Comment item inserted successfully.',results);
-                res.status(200).json("Comment added");
-             
-            });
+            res.status(500).json({message:"Invalid User"})
         }
-    else
-    {
-        res.status(500).json({message:"Invalid User"})
-    }
-    })
+        })
+      })}
   
     
        
@@ -54,32 +59,36 @@ module.exports.getcomments = async (req, res) => {
 module.exports.reports = async (req, res) => {
     let CommentId = uuidv4();
     console.log(req.params.id,"paramsId",req.body)
-    let checkuserquery=`select * from register where Email='${req.headers.Email}'`
+    let token = req.headers.authorization;
+  if (token) {
+    verifyToken(token).then(async (decodedToken) => {
+        let checkuserquery=`select * from register where Email='${decodedToken.Email}'`
+        let commentssquery = `select CategoryName from uploadfiles where FileId='${req.params.id}'`;
+        const insertQuery = 'INSERT INTO comments  VALUES (?, ?, ?, ?, ?)';
     
-    const insertQuery = 'INSERT INTO reports  VALUES (?, ?, ?, ?, ?)';
-
-    db.query(checkuserquery, async (error, results) => {
-        if (error) {
-          throw error;
-        }
-        console.log(results,"userscount")
-        if(results.length>0)
+        db.query(checkuserquery, async (error, results) => {
+            if (error) {
+              throw error;
+            }
+            console.log(results,"userscount")
+            if(results.length>0)
+            {
+                db.query(insertQuery, [CommentId,decodedToken.Email,req.params.id,req.body.comment,new Date()],async (error, results) => {
+                    if (error) {
+                        console.log(error)
+                      throw error;
+                    }
+                    console.log('Comment item inserted successfully.',results);
+                    res.status(200).json("Comment added");
+                 
+                });
+            }
+        else
         {
-            db.query(insertQuery, [CommentId,req.headers.Email,req.params.id,req.body.comment,new Date()],async (error, results) => {
-                if (error) {
-                    console.log(error)
-                  throw error;
-                }
-                console.log('Report item inserted successfully.',results);
-                res.status(200).json("Report added");
-             
-            });
+            res.status(500).json({message:"Invalid User"})
         }
-    else
-    {
-        res.status(500).json({message:"Invalid User"})
-    }
-    })
+        })
+    })}
   
     
        

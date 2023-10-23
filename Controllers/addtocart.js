@@ -15,8 +15,11 @@ module.exports.addtocarts = async (req,res)=>{
     var FileId=req.body.FileId
     let Id = uuidv4();
     // var email=req.bodyp.email
-
-      const selectQuery = `SELECT COUNT(*) AS count FROM cart WHERE email ='${req.headers.Email}' and Fileid='${FileId}'`;
+    let token = req.headers.authorization;
+    if (token) {
+      verifyToken(token).then(async (decodedToken) => {
+        
+      const selectQuery = `SELECT COUNT(*) AS count FROM cart WHERE email ='${decodedToken.Email}' and Fileid='${FileId}'`;
       console.log(selectQuery,"test")
       const selectQuery1 = `SELECT * FROM UploadFiles WHERE   Fileid='${FileId}'`;
       const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?)';
@@ -50,6 +53,8 @@ module.exports.addtocarts = async (req,res)=>{
     return results;
        
        });
+      }
+      )}
     
       
   
