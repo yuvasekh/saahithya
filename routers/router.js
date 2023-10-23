@@ -4,6 +4,16 @@ const jwtDecode=require('jwt-decode')
 const jsonParser = bodyParser.json({ limit: '10mb' }); // Set the limit to a suitable value
 var router = express.Router();
 var multer = require("multer");
+const cors=require('cors')
+router.use(cors())
+router.use(
+  cors({
+    origin: 'http://localhost:5173',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    headers: 'Authorization, Content-Type', // Add your custom headers here
+  })
+)
 const storage = multer.memoryStorage(); // You can use other storage options as needed
 const upload = multer({
   storage: storage,
@@ -30,7 +40,8 @@ function checkAccessKey(req, res, next) {
   }
 }
 router.use(upload.any(), jsonParser,checkAccessKey, (req, res, next) => {
-      return next();
+  // console.log(req)   
+  return next();
 });
 
 require('./login.router')(router);

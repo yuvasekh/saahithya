@@ -45,7 +45,6 @@ module.exports.register = async (req, res) => {
         const sendOtp = async (req, res) => {
           const phoneNumber = mobile;
           console.log(phoneNumber, "checkyuva");
-
           try {
             const result = await client.verify
               .services(TWILIO_SERVICE_SID)

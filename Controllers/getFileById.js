@@ -2,7 +2,10 @@ const db = require('../Resources/db');
 const {verifyToken}=require('../Resources/TokenVerifier')
 module.exports.getFileById = async (req, res) => {
     console.log(req.params.id,"paramsId")
-    let query = `select * from uploadfiles where FileId='${req.params.id}'`;
+    let query = `SELECT *
+    FROM uploadfiles
+    LEFT JOIN episodes ON uploadfiles.fileId = episodes.fileId
+    WHERE uploadfiles.fileId='${req.params.id}'`;
     db.query(query, (err, rows) => {
         if (err) {
             console.error('Error executing query:', err); 
@@ -17,7 +20,7 @@ module.exports.getFileById = async (req, res) => {
        
 };
 module.exports.getFilesByEmail = async (req, res) => {
-    console.log(req.headers.authorization, "HHHH");
+    console.log(req.headers.authorization, "users");
     let token = req.headers.authorization;
     if (token) {
       verifyToken(token)

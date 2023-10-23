@@ -1,18 +1,22 @@
-var express = require("express");
+const express = require("express");
+const app = express();
+const multer = require("multer");
+const cors = require("cors"); // Import the CORS middleware
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const apirouter = require("./routers/router");
+require("dotenv").config();
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    headers: "Authorization, Content-Type",
+  })
+);
 
-var app = express();
-const multer = require('multer');
-require("dotenv").config();
-const cors = require("cors");
-const cookieParser = require('cookie-parser');
-app.use(cookieParser());
-app.use(cors());
-var bodyParser = require("body-parser");
-let apirouter = require('./routers/router');
-app.use('/api',apirouter)
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-require("dotenv").config();
+app.use(express.json());
+app.use("/api", apirouter);
 const storage = multer.memoryStorage(); // You can use other storage options as needed
 const upload = multer({
   storage: storage,
@@ -20,13 +24,12 @@ const upload = multer({
     fieldSize: 50 * 1024 * 1024, // Increase the field size limit to 10MB (adjust as needed)
   },
 });
-app.use(upload.single('file'));
-var port = process.env.PORT || 8001
-const url = process.env.embedingsurl;
-var server = app.listen(port, function () {
-  var host = server.address().address;
+app.use(upload.single("file"));
 
-  var port = server.address().port;
+const port = process.env.PORT || 8001;
+const server = app.listen(port, () => {
+  const host = server.address().address;
+  const serverPort = server.address().port;
 
-  console.log(" app listening at http://%s:%s", host, port);
+  console.log(`App listening at http://${host}:${serverPort}`);
 });
