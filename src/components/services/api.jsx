@@ -213,9 +213,14 @@ export async function trending() {
 }
 export async function cartLog() {
   const formData = new FormData();
+  var token = localStorage.getItem("token");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "application/json",
+  };
   formData.append("FileId");
   return await axios
-    .post(`${rootUrl}api/getCart`, formData)
+    .post(`${rootUrl}api/getCart`, formData,{ headers })
     .then((response) => {
       console.log(response.data);
       return response.data;
@@ -227,10 +232,15 @@ export async function cartLog() {
 
 export async function addToCart(data) {
   try {
+    var token = localStorage.getItem("token");
+    const headers = {
+      Authorization: token,
+      "Content-Type": "application/json",
+    };
     console.log(data, "yuvaback000");
     const formData = new FormData();
     formData.append("FileId", data);
-    const response = await axios.post(`${rootUrl}api/addtocart`, formData);
+    const response = await axios.post(`${rootUrl}api/addtocart`, formData, { headers });
     console.log(response.data); // Print the response data
     return response.data; // Return the response data to handle it outside the function if needed
   } catch (error) {
@@ -413,10 +423,13 @@ export async function addcomments(id, comment) {
   let commentvalue = {
     comment: comment,
   };
-  console.log(id, "Idfromdesc");
-  tokencheck();
+  var token = localStorage.getItem("token");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "application/json",
+  };
   return await axios
-    .post(`${rootUrl}api/addcomment/${id}`, commentvalue)
+    .post(`${rootUrl}api/addcomment/${id}`, commentvalue, { headers })
     .then((response) => {
       console.log(response.data, "backenddata");
       return response.data;
