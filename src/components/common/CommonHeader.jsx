@@ -203,7 +203,7 @@ useEffect(()=>
                 <Nav.Link href="/teams">Team</Nav.Link>
                 <Nav.Link href="/Comingsoon">Media</Nav.Link>
                 <Nav.Link href="/Publications">Publications</Nav.Link>
-                <Nav.Link href="/Comingsoon">Events</Nav.Link>
+                <Nav.Link href="/events">Events</Nav.Link>
                 <Nav.Link href="/Comingsoon">Contactus</Nav.Link>
                 <Nav.Link href="/Comingsoon">Download Now</Nav.Link>
                 </>

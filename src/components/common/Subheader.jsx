@@ -55,7 +55,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
       <div className="">
          
      
-           <Link to="/Comingsoon">Events</Link> 
+           <Link to="/events">Events</Link> 
          
         </div>
         <div className="">

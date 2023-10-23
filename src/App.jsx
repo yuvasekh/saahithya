@@ -48,6 +48,8 @@ import UploadAudio from "./components/Audio/UploadAudio";
 import AudioPlayer from './components/Audio/AudioPlayer'
 import UploadOptions from "./components/Quiz/Episodes/UploadOptions";
 import UploadExisting from './components/Quiz/Episodes/UploadExisting'
+import Events from "./components/Events/Events";
+import ParticipateContest from "./components/Quiz/PartcipateContest";
 function useQuery() {
   const { search } = useLocation();
   return new URLSearchParams(search);
@@ -100,6 +102,12 @@ const App = () => {
         <UploadOptions/>
         </ProtectedRoute>
      }/>
+          <Route path="/contest" element={
+        <ProtectedRoute>
+        <ParticipateContest/>
+        </ProtectedRoute>
+     }/>
+       
            <Route path="/teams" element={
         <ProtectedRoute>
         <Teams/>
@@ -121,6 +129,13 @@ const App = () => {
 
         </ProtectedRoute>
      }/>
+       <Route path="/events" element={
+        <ProtectedRoute>
+        <Events/>
+
+
+        </ProtectedRoute>
+     }/>
         {/* <Route path="/uploadoptions" element={<UploadOptions />} />
         <Route path="/uploadexistingbooks" element={
         <ProtectedRoute>
@@ -135,7 +150,12 @@ const App = () => {
         <Route path="/Refund" element={<Refund />} />
         <Route path="/Shipping" element={<Shipping />} />
         <Route path="/Contactus" element={<Contactus />} />
-        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/quiz" element={
+        <ProtectedRoute>
+        <Quiz/>
+        </ProtectedRoute>
+     }/>
+       
         <Route path="/createquiz" element={<QuizCreation />} />
         <Route path="/createpoll" element={<PoleCreation />} />
         <Route path="/Privacy" element={<Privacy />} />
