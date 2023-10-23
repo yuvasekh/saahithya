@@ -88,9 +88,13 @@ console.log(fileid,"sendback",info)
   },[info])
   const [selectedimage, setSelectedImage] = useState(myProp.FileImage.data);
 
-  function readPage(FileID) {
+  function readPage(FileID,extension) {
+    let data={
+      FileId:FileID,
+      extension:extension
+    }
     console.log(FileID, "message");
-    navigate("/read", { state: { myProp: FileID } });
+    navigate("/read", { state: { myProp: data } });
   }
   async function commentsfun() {
     console.log("comments", comments);
@@ -251,7 +255,7 @@ console.log(fileid,"sendback",info)
                     <Button className="read-btn btn"
                       style={{ backgroundColor: "f81414d0 !important" }}
                       onClick={() => {
-                        readPage(info[0].EpisodeId);
+                        readPage(info[0].EpisodeId,info[0].extension);
                       }}
                     >
                       Read
@@ -268,7 +272,7 @@ console.log(fileid,"sendback",info)
           <div className="episodemain">
   {info.length > 0 && info.map((item, index) => (
     <div key={index} className="episode"    onClick={() => {
-      readPage(info[index].EpisodeId
+      readPage(info[index].EpisodeId,info[index].extension
         );
     }}>
       <h3>{item.FileName}  @{index+1}</h3>
