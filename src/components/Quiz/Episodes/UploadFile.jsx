@@ -310,18 +310,17 @@ useEffect(()=>
             </Select>
           </Form.Item></>:<></>}
  
+          <Form.Item name="pdf" label="PDF File">
+  <Upload.Dragger
+    name="pdf"
+    maxCount={1}
+  >
+    <p className="ant-upload-drag-icon" style={{ marginTop: '-18px' }}>
+      <UploadOutlined />
+    </p>
+  </Upload.Dragger>
+</Form.Item>
 
-          <Form.Item>
-
-            <Form.Item name="pdf" label="PDF File">
-              <Upload.Dragger name="pdf" beforeUpload={() => false}>
-                <p className="ant-upload-drag-icon" style={{ marginTop: '-18px' }}>
-                  <UploadOutlined />
-                </p>
-              </Upload.Dragger>
-
-            </Form.Item>
-          </Form.Item>
           <Form.Item>
             <Form.Item
               label="Upload Book Cover Page"
