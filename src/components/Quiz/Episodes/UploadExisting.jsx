@@ -134,14 +134,16 @@ console.log(selectedItem,"value")
       >
         <Input.TextArea rows={10} placeholder="Enter your message here" />
       </Form.Item>
-        <Form.Item name="pdf" label="PDF File">
-          <Upload.Dragger name="pdf" beforeUpload={() => false}>
-            <p className="ant-upload-drag-icon" style={{ marginTop: '-18px' }}>
-              <UploadOutlined />
-            </p>
-          </Upload.Dragger>
-        
-        </Form.Item>
+      <Form.Item name="pdf" label="PDF File">
+  <Upload.Dragger
+    name="pdf"
+    maxCount={1}
+  >
+    <p className="ant-upload-drag-icon" style={{ marginTop: '-18px' }}>
+      <UploadOutlined />
+    </p>
+  </Upload.Dragger>
+</Form.Item>
         <Button type="primary" htmlType="submit">
             Submit
           </Button>
