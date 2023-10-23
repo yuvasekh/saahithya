@@ -39,6 +39,7 @@ const Landingpage = () => {
     <>
     <div className="landing-con">
     <div className='landing-page'>
+   <h1><marquee>Click here for Opinion Poll <Button>Click</Button></marquee></h1>
       <ImageRotator images={images} />
      
        {/* <Modal

@@ -108,7 +108,7 @@ const bookCategories = [
   const AuthorCategoryOptions = ['గ్రంధకర్తలు', 'ఆధునిక కవులు','నవలా రచయితలు','ప్రాచీన కవులు','సినిమా పాటలు'];
   const onFinish = async (values) => {
     try {
-      setLoadingupload(true); // Set loading to true when the API call starts
+      // setLoadingupload(true); // Set loading to true when the API call starts
       console.log('Form values:', values);
       var res = await fileUpload(values);
       console.log(res.status, "test");

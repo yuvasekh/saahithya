@@ -7,7 +7,7 @@ import img3 from '../../Resources/Images/life.jpg';
 import img4 from '../../Resources/Images/love.jpg';
 import { useNavigate,useLocation } from 'react-router-dom';
  const imagearray = [
-    {img:img1,imgdesc:"quizarea"},  {img:img2,imgdesc:"contest"},
+    {img:img1,imgdesc:"quizarea"},  {img:img2,imgdesc:"contestarea"},
     {img:img3,imgdesc:"pollarea"}]
 
 const OnGoingCompetation = (props) => {

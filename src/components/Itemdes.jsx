@@ -42,9 +42,6 @@ const Itemdesc = () => {
     if(data.length>0)
     {
       setInfo(data)
-
-    
-
     }
     var res = await getTags(myProp.FileId);
     console.log(res, "reslist");
@@ -254,7 +251,7 @@ console.log(fileid,"sendback",info)
                     <Button className="read-btn btn"
                       style={{ backgroundColor: "f81414d0 !important" }}
                       onClick={() => {
-                        readPage(info[0].FileId);
+                        readPage(info[0].EpisodeId);
                       }}
                     >
                       Read
@@ -267,7 +264,18 @@ console.log(fileid,"sendback",info)
 
           </div>
           <br></br>
-          
+          <h3 style={{textAlign:'left',marginLeft:'50px'}}>Episodes</h3>
+          <div className="episodemain">
+  {info.length > 0 && info.map((item, index) => (
+    <div key={index} className="episode"    onClick={() => {
+      readPage(info[index].EpisodeId
+        );
+    }}>
+      <h3>{item.FileName}  @{index+1}</h3>
+    </div>
+  ))}
+</div>
+
           <h4 style={{marginLeft:'25px'}}>Book Excerpt</h4>
           <div className="book-excerp">
             {info[0].BookExcerpt ? (

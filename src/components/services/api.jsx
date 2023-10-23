@@ -7,14 +7,14 @@ const rootUrl = "http://localhost:8001/";
 var token = localStorage.getItem("token");
 // console.log(token,"token")
 async function tokencheck() {
-  let info
+  let info;
   var token = localStorage.getItem("token");
   if (token != null) {
-     info = jwtDecode(token);
-     
-    console.log(info, "info")
+    info = jwtDecode(token);
+
+    console.log(info, "info");
   }
-  return token
+  return token;
 }
 
 export async function getSuggestions(text) {
@@ -90,23 +90,67 @@ export async function Otpvlidate(values) {
 }
 export async function fileUpload(values) {
   const formData = new FormData();
-  console.log(values, "apii");
+  const token = localStorage.getItem("token");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "multipart/form-data", // Use 'multipart/form-data' for file uploads
+  };
+
   formData.append("inputFile", values.pdf.fileList[0].originFileObj);
   formData.append("authorName", values.authorName);
   formData.append("categoryName", values.categoryName);
   formData.append("BookTitle", values.BookTitle);
-  formData.append("Book Language", values["Book Language"]);
+  formData.append("BookLanguage", values["Book Language"]); // Removed spaces
   formData.append("BookType", values.BookType);
   formData.append("SubCategory", values.SubCategory);
   formData.append("fileName", values.fileName);
   formData.append("Price", values.Price);
   formData.append("description", values.description);
   formData.append("AuthorCategory", values.AuthorCategory);
-  formData.append("Book Excerpt", values["Book Excerpt"]);
-  formData.append("Published Year", values["Published Year"]);
+  formData.append("BookExcerpt", values["Book Excerpt"]); // Removed spaces
+  formData.append("PublishedYear", values["Published Year"]); // Removed spaces
   formData.append("image", values.BookCover.fileList[0].originFileObj);
-  return await axios.post(`${rootUrl}api/uploadfile`, formData);
+
+  try {
+    const response = await axios.post(`${rootUrl}api/uploadfile`, formData, {
+      headers: headers,
+    });
+    return response;
+  } catch (error) {
+    // Handle errors here
+    console.error("Error uploading file:", error);
+    throw error;
+  }
 }
+export async function fileUploadExisting(values) {
+  const formData = new FormData();
+  const token = localStorage.getItem("token");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "multipart/form-data", // Use 'multipart/form-data' for file uploads
+  };
+
+  formData.append("inputFile", values.pdf.fileList[0].originFileObj);
+  formData.append("BookExcerpt", values["Book Excerpt"]); // Removed spaces
+  formData.append("FileId", values.FileId);
+  formData.append("EpisodeNumber", values["Episode Number"]);
+
+  try {
+    const response = await axios.post(
+      `${rootUrl}api/uploadexistingfile`,
+      formData,
+      {
+        headers: headers,
+      }
+    );
+    return response;
+  } catch (error) {
+    // Handle errors here
+    console.error("Error uploading file:", error);
+    throw error;
+  }
+}
+
 export async function getData(data) {
   console.log(data, "yuvaback");
   return await axios
@@ -196,16 +240,15 @@ export async function addToCart(data) {
   }
 }
 
-
 export async function createpole(data) {
-    var token = localStorage.getItem("token");;
-    console.log(token,"check")
+  var token = localStorage.getItem("token");
+  console.log(token, "check");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
   return await axios
-    .post(`${rootUrl}api/createpole`, data, { headers }) 
+    .post(`${rootUrl}api/createpole`, data, { headers })
     .then((res) => {
       return res;
     })
@@ -228,35 +271,35 @@ export async function getpole() {
 }
 export async function poller(data) {
   var token = localStorage.getItem("token");
-const headers = {
-  'Authorization':token,
-  'Content-Type': 'application/json', 
-};
+  const headers = {
+    Authorization: token,
+    "Content-Type": "application/json",
+  };
   return await axios
-  .post(`${rootUrl}api/poller`, data, { headers }) 
-  .then((res) => {
-    console.log(res,"checkdb")
-    return res;
-  })
-  .catch((error) => {
-    console.log(error,"chekerror")
-    return error.response;
-  });
+    .post(`${rootUrl}api/poller`, data, { headers })
+    .then((res) => {
+      console.log(res, "checkdb");
+      return res;
+    })
+    .catch((error) => {
+      console.log(error, "chekerror");
+      return error.response;
+    });
 }
 
 export async function createquiz(data) {
-  var token = localStorage.getItem("token");;
+  var token = localStorage.getItem("token");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
-    console.log(data, "api");
-    const dataToSend = {
-      data: data,
-      Email: "syuva893@gmail.com",
-    };
-    return await axios
-    .post(`${rootUrl}api/createquiz`, dataToSend, { headers }) 
+  console.log(data, "api");
+  const dataToSend = {
+    data: data,
+    Email: "syuva893@gmail.com",
+  };
+  return await axios
+    .post(`${rootUrl}api/createquiz`, dataToSend, { headers })
     .then((res) => {
       return res;
     })
@@ -278,21 +321,21 @@ export async function getquiz() {
 export async function participateQuiz(data) {
   var token = localStorage.getItem("token");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
   const dataToSend = {
     data: data,
   };
   return await axios
-    .post(`${rootUrl}api/participateQuiz`, dataToSend,{headers})
+    .post(`${rootUrl}api/participateQuiz`, dataToSend, { headers })
     .then((response) => {
       console.log(response);
       return response;
     })
     .catch((error) => {
       console.error("Error:", error.message);
-      return error
+      return error;
     });
 }
 export async function getallusers() {
@@ -451,7 +494,6 @@ export async function gettopcomments() {
     });
 }
 export async function getquizresults() {
-  
   return await axios
     .get(`${rootUrl}api/getquizresult`)
     .then((response) => {
@@ -463,7 +505,6 @@ export async function getquizresults() {
     });
 }
 export async function poleparticipators() {
-
   return await axios
     .get(`${rootUrl}api/getpoleresult`)
     .then((response) => {
@@ -475,92 +516,157 @@ export async function poleparticipators() {
     });
 }
 export async function giverating(data) {
-  console.log(data)
+  console.log(data);
   var token = localStorage.getItem("token");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
   return await axios
-    .post(`${rootUrl}api/rating`,data,{headers})
+    .post(`${rootUrl}api/rating`, data, { headers })
     .then((response) => {
       console.log(response.data);
       return response;
     })
     .catch((error) => {
       console.error("Error:", error.message);
-      return error
+      return error;
     });
 }
 export async function giveLikes(data) {
-  console.log(data)
+  console.log(data);
   var token = localStorage.getItem("token");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
   return await axios
-    .post(`${rootUrl}api/likes`,data,{headers})
+    .post(`${rootUrl}api/likes`, data, { headers })
     .then((response) => {
       console.log(response.data);
       return response;
     })
     .catch((error) => {
       console.error("Error:", error.message);
-      return error
+      return error;
     });
 }
 export async function deleteuser(data) {
-  console.log(data,"delete")
+  console.log(data, "delete");
   var token = localStorage.getItem("token");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
   return await axios
-    .delete(`${rootUrl}api/deleteuser/${data}`,{headers})
+    .delete(`${rootUrl}api/deleteuser/${data}`, { headers })
     .then((response) => {
       console.log(response);
       return response;
     })
     .catch((error) => {
       console.error("Error:", error);
-      return error
+      return error;
     });
 }
 export async function getallfiles(data) {
-  console.log(data)
+  console.log(data);
   var token = localStorage.getItem("token");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
   return await axios
-    .get(`${rootUrl}api/getallfiles/${data}`,{headers})
+    .get(`${rootUrl}api/getallfiles/${data}`, { headers })
     .then((response) => {
       console.log(response.data);
       return response.data;
     })
     .catch((error) => {
       console.error("Error:", error.message);
-      return error
+      return error;
     });
 }
 export async function getFilesByEmail(data) {
-  console.log(data)
+  console.log(data);
   var token = localStorage.getItem("token");
   const headers = {
-    'Authorization':token,
-    'Content-Type': 'application/json', 
+    Authorization: token,
+    "Content-Type": "application/json",
   };
   return await axios
-    .get(`${rootUrl}api/getuserfiles`,{headers})
+    .get(`${rootUrl}api/getuserfiles`, { headers })
     .then((response) => {
-      console.log(response.data);
+      console.log(response, "check");
       return response.data;
     })
     .catch((error) => {
-      console.error("Error:", error.message);
-      return error.resoponse
+      console.error("Error:", error);
+      return error.resoponse;
     });
+}
+export async function createContestapi(data1) {
+  var token = localStorage.getItem("token");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "application/json",
+  };
+  return await axios
+    .post(`${rootUrl}api/createcontest`, data1, { headers })
+    .then((response) => {
+      console.log(response, "check");
+      return response;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      return error;
+    });
+}
+export async function getContest(data) {
+  console.log(data);
+  var token = localStorage.getItem("token");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "application/json",
+  };
+  return await axios
+    .get(`${rootUrl}api/getcontest`, { headers })
+    .then((response) => {
+      console.log(response, "check");
+      return response.data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      return error.resoponse;
+    });
+}
+
+export async function participatecontestapi(values) {
+  const formData = new FormData();
+  console.log(values,"contestapi");
+  const token = localStorage.getItem("token");
+  const headers = {
+    Authorization: token,
+    "Content-Type": "multipart/form-data", // Use 'multipart/form-data' for file uploads
+  };
+
+  formData.append("inputFile", values.pdf.fileList[0].originFileObj);
+  formData.append("Id", values["Id"]); // Removed spaces
+  formData.append("ContestName", values.ContestName);
+  formData.append("Description", values["Description"]);
+
+  try {
+    const response = await axios.post(
+      `${rootUrl}api/participatecontest`,
+      formData,
+      {
+        headers: headers,
+      }
+    );
+    return response;
+  } catch (error) {
+    // Handle errors here
+    console.error("Error uploading file:", error);
+    return error;
+  }
 }

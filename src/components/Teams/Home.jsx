@@ -24,6 +24,8 @@ import Reports from "./Reports.jsx";
 import TopCommentedBooks from "./TopCommentedBooks.jsx";
 import Scores from "./Scores";
 import QuizScores from "./quizscores";
+import CreateContestForm from "../Quiz/CreateContest";
+import ParticipateContest from '../Quiz/PartcipateContest'
 const Teams = () => {
   
   const sendData = (data) => {
@@ -52,6 +54,14 @@ const Teams = () => {
     if(data=='quizResults')
     {
       setShowItem(<QuizScores value={data}/>)
+    }
+    if(data=='contest')
+    {
+      setShowItem(<CreateContestForm value={data}/>)
+    }
+    if(data=='contestarea')
+    {
+      setShowItem(<ParticipateContest value={data}/>)
     }
   }
 
@@ -127,9 +137,6 @@ const Teams = () => {
     console.log(values, "values");
   };
   return (
-
-
-
 
     <div className="Home-con-bg"
     >

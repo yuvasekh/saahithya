@@ -9,7 +9,7 @@ import {
     LoadingOutlined,
   } from "@ant-design/icons";
 
-const UploadExisting = () => {
+const Contest = () => {
   const [categoryOptions, setCategoryOptions] = useState([]);
   const [FileInfo, setFileInfo] = useState([]);
   const [form] = Form.useForm();
@@ -152,5 +152,5 @@ console.log(selectedItem,"value")
     </div>
   );
 };
-
-export default UploadExisting;
+    
+export default Contest;

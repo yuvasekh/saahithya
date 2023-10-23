@@ -9,6 +9,7 @@ const Register = () => {
   };
 
   return (
+    <div className='register-con'>
     <Form onFinish={onFinish}>
       <Row gutter={24}>
         <Col span={12}>
@@ -103,6 +104,7 @@ const Register = () => {
         <Button type="primary" htmlType="submit">Submit</Button>
       </Form.Item>
     </Form>
+    </div>
   );
 }
 
