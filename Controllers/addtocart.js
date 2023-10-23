@@ -1,6 +1,7 @@
 
 
 var mysql = require('mysql2');
+const { verifyToken } = require("../Resources/TokenVerifier.js");
 const connection = mysql.createConnection({
   host: process.env.server,
   user: process.env.user,

@@ -1,5 +1,6 @@
 const db = require('../Resources/db');
 const { v4: uuidv4 } = require("uuid");
+const { verifyToken } = require("../Resources/TokenVerifier.js");
 module.exports.comments = async (req, res) => {
     let CommentId = uuidv4();
     console.log(req.params.id,"paramsId",req.body)
