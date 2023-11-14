@@ -1,10 +1,25 @@
+.roman
+{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  padding: 20px;
+}
+
 .con-img-size{
     height: 40vh;
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 6px 0 #000000;
-    margin-bottom: 50px;
-    margin-left: 50px;
+    
+    
+}
+.language
+{
+  color: white;
+  text-align: center;
+  margin-top:-92px; 
+  font-size: 5vw;
+
 }
 
 .con-img-size:hover 
@@ -13,6 +28,150 @@
     }
   .con-img-size
     {
-    transition: transform 0.5s;
-    // width: 21em;
+    transition: transform 0.2s;
+    
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// media-quireies
+// media-quireies
+// media-quireies
+
+
+
+
+/* For screens up to 767px wide (typical smartphones) */
+@media (max-width: 767px) {
+  .roman
+{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+}
+
+  .con-img-size
+  {
+    height: 100%;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 #000000;
+}
+.language
+{
+  color: white;
+  text-align: center;
+  margin-top:-92px; 
+  font-size: 2vw;
+
+}
+/* Your mobile-specific CSS here */
+}
+
+
+
+
+
+/* For screens between 768px and 1023px wide (typical tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+/* Your tablet-specific CSS here */  
+.roman
+{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+  .con-img-size
+  {
+    height: 100%;
+    width: 280%;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 #000000;
+}
+.language
+{
+  color: white;
+  text-align: center;
+  margin-top:-92px; 
+  font-size: 2vw;
+
+}
+
+}
+
+
+/* For screens between 1024px and 1279px wide (small desktops and laptops) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .roman
+{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+
+  .con-img-size
+  {
+    height: 100%;
+    width: 250%;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 #000000;
+}
+.language
+{
+  color: white;
+  text-align: center;
+  margin-top:-92px; 
+  font-size: 2vw;
+
+}
+
+/* Your small desktop-specific CSS here */
+}
+
+
+
+/* For screens 1280px and wider (medium to large desktops) */
+@media (min-width: 1280px) {
+  .roman
+  {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+  }
+  
+    .con-img-size
+    {
+      margin-top: 50px;
+      height: 90%;
+      width: 250%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px 0 #000000;
+    
+  }
+  .language
+  {
+    color: white;
+    text-align: center;
+    margin-top:-92px; 
+    font-size: 2vw;
+/* Your medium to large desktop-specific CSS here */
+}
+
+}

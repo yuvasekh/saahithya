@@ -74,7 +74,7 @@ const CreateContestForm = () => {
 
       
         <Form.Item wrapperCol={{ offset: 6, span: 12 }}>
-          <Button type="primary" htmlType="submit" className="ant-btn-primary">Create Contest</Button> {/* Apply the button class */}
+          <Button   type="primary" htmlType="submit" className="ant-btn-primary inside">Create Contest</Button> {/* Apply the button class */}
         </Form.Item>
       </Form>
     </div>

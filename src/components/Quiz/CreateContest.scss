@@ -46,4 +46,16 @@
     background-color: #126bb0;
     border-color: #126bb0;
   }
+
+ 
+  /* For screens up to 767px wide (typical smartphones) */
+@media (max-width: 767px) {
   
+.inside
+{
+  text-align: center;
+  width:60%;
+  font-size: 5px;
+}
+
+}

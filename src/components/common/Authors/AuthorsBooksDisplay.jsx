@@ -47,7 +47,7 @@ dummy()
         filesdata.map((item, index) => (
             <div className='containerimg' key={index} onClick={() => test(item)}>
               <img src={`data:image/png;base64,${item.FileImage.data}`} className='category-image-size01' alt={`image-${index}`} />
-              <h2 className="heading-one" style={{ backdropFilter: 'blur(20px) saturate(70%)',color:'Black' }}>{item.FileName}</h2>
+              <h2 className="heading-redesigned">{item.FileName}</h2>
             </div>))
 }
     </div>

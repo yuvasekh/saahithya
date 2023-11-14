@@ -58,8 +58,8 @@ function UncontrolledEditor() {
   }, [updater]);
 
   return (
-    <div>
-      <Editor
+    <div className="text">
+      <Editor 
         editorState={editorState}
         onEditorStateChange={onEditorStateChange}
         wrapperClassName="demo-wrapper"

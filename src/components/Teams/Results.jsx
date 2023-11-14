@@ -20,7 +20,9 @@ let nav=item.imgdesc
 })
 
   return (
-    <div>   <h1>   OnGoing Competations</h1>
+    <div> 
+      
+        <h1>OnGoing Competations</h1>
     <div className='categorycontainer' style={{position:'relative',margin:'35px'}}>
    
       {imagearray.map((item, index) => (

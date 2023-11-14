@@ -13,7 +13,10 @@
 
 @media (min-width:769px)and (max-width:1200px){
     .Home-con-bg{
-        display: flex;
+        // display: flex;
+       
+        // display: grid;
+        grid-template-columns: repeat(1fr,1);
     
         .button-element{
           

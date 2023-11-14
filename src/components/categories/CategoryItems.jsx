@@ -5,7 +5,10 @@ import { categories } from '../services/api';
  const CategoryItems = () => {
 const [filesdata,setFilesData]=useState()
 const navigate=useNavigate()
-  const location = useLocation();
+const location = useLocation();
+
+
+
   
 const myProp = location.state && location.state.myProp;
 console.log(myProp,"whole")

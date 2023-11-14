@@ -1,4 +1,5 @@
 import React from 'react';
+// import { useNavigate } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 import Children from '../../Resources/Images/childrens.jpg';
@@ -117,8 +118,17 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const Categories = () => {  
-    const navigate=useNavigate();
-    const location = useLocation();
+
+
+  const goBack = () => {
+    navigate(-1);
+  };
+
+  const navigate=useNavigate();
+  // const location = useLocation();
+    
+
+
 
   
     const myProp = location.state && location.state.myProp;
@@ -129,19 +139,28 @@ const Categories = () => {
        console.log(append,"cnecccccccccccc")
 
        item['type']=myProp.imgdesc
-      navigate('/subcateogories', { state: { myProp:append } })
+      navigate('/cateogories', { state: { myProp:append } })
     }
+
+
+
   return (
 
     <div >
-      <div className='category-cont '>
-      {myProp?.language === "Telugu"
+      <div className='category-cont'>
+
+      
+
+      {myProp.category.language === "Telugu"
         ? Teluguimagearray.map((item, index) => (
             <div className='category-cont2' key={index} onClick={() => test(item)}>
               <img src={item.img} className='cotegory-img' alt={`image-${index}`} />
-              <h4 className="category-head" style={{ backdropFilter: 'blur(50px) saturate(70%)' }}>{item.imgdesc}</h4>
+              <h4 className="category-head" style={{ backdropFilter: 'blur(50px) saturate(70%)'}}>{item.imgdesc}</h4>
+             
             </div>
+         
           ))
+          
         : Englishimagearray.map((item, index) => (
             <div className='category-cont2' key={index} onClick={() => test(item)}>
               <img src={item.img} className='cotegory-img' alt={`image-${index}`} />

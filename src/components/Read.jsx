@@ -44,29 +44,34 @@ setUrl(data)
   
 
   return (
-    <div className='mains'>
-      {
-showItem==true?<div> <Document
-file={url}
-onLoadSuccess={onDocumentLoadSuccess}
->
-<Page
-  pageNumber={pageNumber}
 
-/>
-</Document>
-<div className='buttonItems'>
-<Button onClick={goToPrevPage} disabled={pageNumber <= 1} className='buttonnormal'>
-  Previous Page
-</Button>
-<p>Page {pageNumber} of {numPages}</p>
-<Button onClick={goToNextPage} disabled={pageNumber >= numPages} className='buttonnormal'>
-  Next Page
-</Button>
-</div></div>:<><AudioPlayer value={info}/></>
-      }
+
+    <div className='mains' >
+
+                  {
+                  showItem==true?<div> <Document
+                  file={url}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  >
+                  <Page className='page-size'
+                    pageNumber={pageNumber}
+
+                  />
+                  </Document>
+                  <div className='buttonItems'>
+                  <Button onClick={goToPrevPage} disabled={pageNumber <= 1} className='buttonnormal'>
+                    Previous Page
+                  </Button>
+                  <p>Page {pageNumber} of {numPages}</p>
+                  <Button onClick={goToNextPage} disabled={pageNumber >= numPages} className='buttonnormal'>
+                    Next Page
+                  </Button>
+                  </div></div>:<><AudioPlayer value={info}/>
+                  </>
+                  }
      
     </div>
+
   );
 }
 

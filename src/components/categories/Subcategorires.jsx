@@ -4,14 +4,17 @@ import Books2 from '../../Resources/Images/Books2.jpg';
 import Quotes from '../../Resources/Images/Quotes.jpg';
 import Cartoons from '../../Resources/Images/Cartoon.jpg';
 import Others from '../../Resources/Images/Others.jpg';
+import Serries from '../../Resources/Serries.jpeg';
+import Kavitalu from '../../Resources/kavitalu.jpeg';
 import './Subcategory.scss'
 
 // import './Categories.scss';
 import { useNavigate,useLocation } from 'react-router-dom';
  const imagearray = [
-    {img:Novels,imgdesc:"Novel"},  {img:Books2,imgdesc:"Books"},
-    {img:Quotes,imgdesc:"Quotes"}, {img:Cartoons,imgdesc:"Cartoons"},
+    {img:Kavitalu,imgdesc:"Poetry"},{img:Serries,imgdesc:"Series"},
+    {img:Novels,imgdesc:"Novel"},  {img:Books2,imgdesc:" StoryBooks"},
     {img:Others,imgdesc:"Others"}
+    
   ];
 
 const Subcategories = () => {
@@ -28,16 +31,16 @@ const Subcategories = () => {
         category:myProp
        }
        console.log(items,"total")
-        navigate('/categorieitem', { state: { myProp:items } })
+        navigate('/categories', { state: { myProp:items } })
     }
   return (
 
     <div  className='sub-cat-con'>
-      <div className='row'>
+      <div className='mexico'>
         {imagearray.map((item, index) => (
           <div className=' col-12 col-md-3' key={index} onClick={()=>{test(item)}}>
             <img   src={item.img} className='sub-cat-img' alt={`image-${index}`} />
-            <h2 className="heading-one" style={{marginLeft:'20px',marginRight:'15px',marginTop:'-60px',backdropFilter:'blur(20px) saturate(70%)',color:'white' }}>{item.imgdesc}</h2>
+            <h2 className="heading-one" >{item.imgdesc}</h2>
           </div>
         ))}
       </div>

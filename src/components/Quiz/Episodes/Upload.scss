@@ -1,8 +1,11 @@
+// .upload-bg{
+//   padding: 20px;
+// }
+
 .my-form {
   padding: 20px;  
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   width: 600px;
-  
   margin-bottom: 15px;
   border-radius: 15px;
   background-color: white;
@@ -14,67 +17,13 @@
   flex-direction:column;
   align-items:center;
   padding-top: 10px;
+  padding: 30px;
 }
-
-
-
-
-  // .form-container {
-  
-  //   align-items: center;
-  //   width: 50vw;
-  //   margin-left: 390px;
-    
-    
-  //  height: 77vh;
-  // }
-
-//   @media only screen and (max-width:1352.73px ) and (min-width: 670px){
-//     .form-container {
-//       width: 50vw;
-//       margin-left:310px ;
-    
-//     }
-//   }
-
-// .upload-con{
-//   background-color: #E0F4EB;
-// }
-  // .ant-upload
-  // {
-   
-  // }
-  // :where(.css-dev-only-do-not-override-1wazalj).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select >.ant-upload, :where(.css-dev-only-do-not-override-1wazalj).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload.ant-upload-select >.ant-upload
-  // {
-  //   height: 50px;
-  //   font-size: 12px ;
-  // }
-
-// .form-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//  height: 77vh;
-// }
-// .ant-upload
-// {
-//   height: 48px !important;
-// }
-// :where(.css-dev-only-do-not-override-1wazalj).ant-upload-wrapper.ant-upload-picture-card-wrapper .ant-upload.ant-upload-select >.ant-upload, :where(.css-dev-only-do-not-override-1wazalj).ant-upload-wrapper.ant-upload-picture-circle-wrapper .ant-upload.ant-upload-select >.ant-upload
-// {
-//   height: 20px;
-//   font-size: 12px !important;
-// }
-
-
-
-
-
-// media-quireies
-// media-quireies
-// media-quireies
-
-
+.color-head{
+  font-family:'Times New Roman', Times, serif;
+  font-size: 8vw;
+  color: rgb(22, 22, 22);
+}
 
 
 /* Small screens (e.g., smartphones) */
@@ -85,8 +34,7 @@
   .my-form {
     padding: 20px;  
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    width: 380px;
-    
+    width: 100%;
     margin-bottom: 15px;
     border-radius: 15px;
     background-color: white;
@@ -98,6 +46,9 @@
     flex-direction:column;
     align-items:center;
     padding-top: 10px;
+  }
+  .color-head{
+    font-size: 8vw;
   }
 
 }
@@ -125,6 +76,9 @@
     padding-top: 10px;
   }
 
+  .color-head{
+    font-size: 5vw;
+  }
 }
 
 /* Large screens (e.g., desktops) */
@@ -151,6 +105,9 @@
     padding-top: 10px;
   }
 
+  .color-head{
+    font-size: 5vw;
+  }
 }
 
 /* Extra-large screens (e.g., large desktops) */
@@ -176,6 +133,9 @@
     flex-direction:column;
     align-items:center;
     padding-top: 10px;
+  }
+  .color-head{
+    font-size: 4vw;
   }
 
 }

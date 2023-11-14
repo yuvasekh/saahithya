@@ -1,32 +1,85 @@
+.team-cat-op-con{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+}
+.team-cat-op-con2{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 5px;
+}
+
+.team-op-img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.heading-three
+{
+color:rgb(255, 255, 255);
+margin-top: -50px;
+margin-left: 50px;
+font-weight: 800;
+}
 
 
 
-@media (max-width:767px){
+
+
+
+
+
+
+
+
+// @media (max-width:767px){
+//     .team-cat-op-con{
+//         display: grid;
+//         grid-template-columns: repeat(1,1fr);
+//         gap: 20px;
+//     }
+    
+//     .team-op-img{
+//         width: 100%;
+//         border-radius: 20px;
+//     }
+    
+//     .heading-three
+//     {
+//     color:rgb(255, 255, 255);
+//     margin-top: -50px;
+//     margin-left: 50px;
+//     font-weight: 800;
+//     }
+
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For screens up to 767px wide (typical smartphones) */
+@media (max-width: 767px) {
     .team-cat-op-con{
         display: grid;
         grid-template-columns: repeat(1,1fr);
         gap: 20px;
     }
-    
-    .team-op-img{
-        width: 100%;
-        border-radius: 20px;
-    }
-    
-    .heading-three{
-                    color:rgb(255, 255, 255);
-                    margin-top: -50px;
-                    margin-left: 50px;
-                    font-weight: 800;
-            }
-
-}
-
-@media (min-width:768px) and (max-width:991px){
-    .team-cat-op-con{
+    .team-cat-op-con2{
         display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 20px;
+        grid-template-columns: repeat(1,1fr);
+        gap: 5px;
     }
     
     .team-op-img{
@@ -34,39 +87,32 @@
         border-radius: 20px;
     }
     
-    .heading-three{
-                    color:rgb(255, 255, 255);
-                    margin-top: -50px;
-                    margin-left: 50px;
-                    font-weight: 800;
-            }
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-    .team-cat-op-con{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 20px;
+    .heading-three
+    {
+    color:rgb(255, 255, 255);
+    margin-top: -50px;
+    margin-left: 50px;
+    font-weight: 800;
     }
     
-    .team-op-img{
-        width: 100%;
-        border-radius: 20px;
-    }
-    
-    .heading-three{
-                    color:rgb(255, 255, 255);
-                    margin-top: -50px;
-                    margin-left: 50px;
-                    font-weight: 800;
-            }
+    /* Your mobile-specific CSS here */
   }
+  
 
-  @media only screen and (min-width: 1200px) {
+
+
+  /* For screens between 768px and 1023px wide (typical tablets) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Your tablet-specific CSS here */
     .team-cat-op-con{
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
         gap: 20px;
+    }
+    .team-cat-op-con2{
+        display: grid;
+        grid-template-columns: repeat(1 ,1fr);
+        gap: 5px;
     }
     
     .team-op-img{
@@ -74,10 +120,71 @@
         border-radius: 20px;
     }
     
-    .heading-three{
-                    color:rgb(255, 255, 255);
-                    margin-top: -50px;
-                    margin-left: 50px;
-                    font-weight: 800;
-            }
+    .heading-three
+    {
+    color:rgb(255, 255, 255);
+    margin-top: -50px;
+    margin-left: 50px;
+    font-weight: 800;
+    }
   }
+  
+  
+  /* For screens between 1024px and 1279px wide (small desktops and laptops) */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    /* Your small desktop-specific CSS here */
+    .team-cat-op-con{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    .team-cat-op-con2{
+        display: grid;
+        grid-template-columns: repeat(1 ,1fr);
+        gap: 5px;
+    }
+    
+    .team-op-img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    .heading-three
+    {
+    color:rgb(255, 255, 255);
+    margin-top: -50px;
+    margin-left: 50px;
+    font-weight: 800;
+    }
+  }
+  
+  
+  
+  /* For screens 1280px and wider (medium to large desktops) */
+  @media (min-width: 1280px) {
+    .team-cat-op-con{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+    }
+    .team-cat-op-con2{
+        display: grid;
+        grid-template-columns: repeat(1 ,1fr);
+        gap: 5px;
+    }
+    
+    .team-op-img{
+        width: 100%;
+        border-radius: 20px;
+    }
+    
+    .heading-three
+    {
+    color:rgb(255, 255, 255);
+    margin-top: -50px;
+    margin-left: 50px;
+    font-weight: 800;
+    }
+    /* Your medium to large desktop-specific CSS here */
+  }
+  

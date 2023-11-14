@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import './Upload.scss'
 import {
   Button,
   message,
@@ -17,7 +18,7 @@ import {
   LoadingOutlined,
 } from "@ant-design/icons";
 import { fileUpload } from '../../services/api'
-import './Upload.scss'
+
 import { useNavigate } from 'react-router-dom';
 import Checkbox from 'antd/es/checkbox/Checkbox';
 import { useEffect } from 'react';
@@ -133,13 +134,17 @@ useEffect(()=>
 {
 
 },[LanguageSelection])
-  return (
 
+
+
+  return (
     <>
     {
       loadingupload===true?<><img src={LoaderImage} alt="Loading..." /></>:<>  
+
       <div className='upload-con'>
-      <h1 style={{  textAlign: 'center',   color: 'tomato' }}>Publish A Book</h1>
+
+      <h1 className='color-head'>Publish A Book</h1>
      
       <div className='form-container' >
         <Form onFinish={onFinish} className="my-form" >

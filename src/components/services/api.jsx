@@ -2,8 +2,8 @@ import { faTemperatureUp } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 
-// const rootUrl="https://saahithya-api.azurewebsites.net/"
-const rootUrl = "http://localhost:8001/";
+const rootUrl="https://saahithya-api.azurewebsites.net/"
+// const rootUrl = "http://localhost:8001/";
 var token = localStorage.getItem("token");
 // console.log(token,"token")
 async function tokencheck() {

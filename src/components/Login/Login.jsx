@@ -52,7 +52,7 @@ const LoginForm = () => {
   return (
     <div className='login-form' >
    <br></br>
-      <h1 className="login-head" >Login to Saaithya.com</h1>
+      <h1 className="login-head" >Login To Saahithya</h1>
       <br></br>
       <Form
       className='login-form2'
@@ -61,13 +61,14 @@ const LoginForm = () => {
         onFieldsChange={handleFormChange}
       >
         <Form.Item
+        className='formitem'
           name="email"
           rules={[
             { required: true, message: 'Please enter your email' },
             { type: 'email', message: 'Please enter a valid email' },
           ]}
         >
-          <Input className='login-user' prefix={<UserOutlined />} placeholder="Email" />
+          <Input  style={{marginBottom:"20px"}} className='login-user' prefix={<UserOutlined />} placeholder="Email" />
         </Form.Item>
         <Form.Item
           name="password"

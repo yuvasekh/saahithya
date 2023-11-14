@@ -41,7 +41,8 @@ const TextEditor = (props) => {
 
 
     <div className='ReactQuill-con' >
-      <h1>WRITE Your STORY</h1>
+
+      <h1 className='text-head'>WRITE YOUR STORY</h1>
 
 
       <div >

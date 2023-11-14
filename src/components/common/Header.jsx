@@ -12,6 +12,9 @@ const Header = () => {
     // alert("ok")
     navigate('/cartLogs')
   })
+
+  
+
   return (
     <>
     <div className='d-none d-lg-block'  >

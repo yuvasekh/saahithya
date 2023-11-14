@@ -157,8 +157,13 @@ console.log(fileid,"sendback",info)
     await addToCart(CartItem);
     navigate("/cart", { state: { myProp: FileID } });
   }
-  return (
-    <div>
+
+
+
+
+  return(
+
+    <div className="entire-bg">
        <ToastContainer />
       {
         info.length>0?<>      
@@ -168,51 +173,82 @@ console.log(fileid,"sendback",info)
               <div className="item-con">
               
                   <div>
-                    <h2>{info[0].FileName}</h2>
-                    <p>{info[0].bookdescription}</p>
+                    <h2 style={{fontSize:"3vw",fontFamily:"fantasy"}}>{info[0].FileName}</h2>
+                    <p style={{fontSize:"1.5vw",fontWeight:'bold',fontFamily:"fantasy"}}>{info[0].bookdescription}</p>
                   </div>
+
+
+
+
+
                   <div className="icons-cont">
-                    <p style={{ color: "green", fontWeight: "800x", marginTop:'10px'}}>
-                      <StarOutlined style={{fontSize:'24px'}}/>
+                  
+                    <h2  className="refined">
+                      <StarOutlined className="icon-font"/>
                       <span style={{marginLeft:'10px'}}>{info[0].Rating}</span>
-                    </p>
-                    <p style={{ color: "black", fontWeight: "800x",marginTop:'10px' }}>
-                      <EyeOutlined style={{fontSize:'24px'}}/>
+                    </h2>
+
+                    <h2  className="refined">
+                      <EyeOutlined className="icon-font"/>
                       <span style={{marginLeft:'10px'}}>{info[0].Views}</span>
-                    </p>
+                    </h2>
               
-                    <h2 onClick={handleLike}>
-                        <FontAwesomeIcon style={{fontSize:'24px'}} icon={liked ? faThumbsDown : faThumbsUp} />
-                        <span style={{marginLeft:'10px',fontSize:'24px'}}>{info[0].Likes}</span>
+                    <h2 className="refined" onClick={handleLike}>
+                        <FontAwesomeIcon className="icon-font" icon={liked ? faThumbsDown : faThumbsUp} />
+                        <span style={{marginLeft:'10px'}}> {info[0].Likes}</span>
                     </h2>
 
-                    <h2 style={{marginLeft:'10px',marginTop:'-5px'}} onClick={commentsfun}>
-                      <CommentOutlined />
+
+
+
+                    <div className="red">
+
+             
+                  <h2 onClick={commentsfun}>
+                      <CommentOutlined   className="icon-font"/>
                     </h2>
 
-                    <h2
+                    <h2 className="icon-font"
                       style={{
                         backgroundColor: "f81414d0 !important",
-                        marginLeft:'-10px',marginTop:'-5px'
+                        marginLeft:'-10px',marginTop:'-5px',
                       }}
+
                       onClick={() => {
                         cart(info[0].FileId);
                       }}
                     >
-                      <ShoppingCartOutlined />
+                      <ShoppingCartOutlined className="icon-font"/>
                     </h2>
+
+                </div>
+                 
+                 
+
+
+
                   </div>
 
-                  <div className="rating-con" >
+
+
+
+
+
+
+
+                  <div className="rating-con " >
               
                       <div className="star-icons">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <span
+
                             key={star}
                             onClick={() => handleRatingClick(star)}
+
                             style={{
                               color: star <= rating ? "gold" : "gray",
-                              cursor: "pointer",
+                              cursor: "pointer",gap:"12px"
+                              
                             }}
                           >
                             <StarOutlined size={24} />
@@ -220,7 +256,7 @@ console.log(fileid,"sendback",info)
                         ))}
                       </div>
 
-                      <Button className="submit-btn" style={{ width: "120px" }} onClick={ratingfun}>Submit Rating</Button>
+                      <Button className="submit-btn" onClick={ratingfun}>Submit Rating</Button>
                   
                   </div>
 
@@ -267,20 +303,31 @@ console.log(fileid,"sendback",info)
             </div>
 
           </div>
-          <br></br>
-          <h3 style={{textAlign:'left',marginLeft:'50px'}}>Episodes</h3>
-          <div className="episodemain">
-  {info.length > 0 && info.map((item, index) => (
-    <div key={index} className="episode"    onClick={() => {
-      readPage(info[index].EpisodeId,info[index].extension
-        );
-    }}>
-      <h3>{item.FileName}  @{index+1}</h3>
-    </div>
-  ))}
-</div>
 
-          <h4 style={{marginLeft:'25px'}}>Book Excerpt</h4>
+
+
+          <br></br>
+
+          <div>
+          <h3 className="headfont">EPISODES :- </h3>
+          </div>
+                    <div className="episodemain">
+                  {info.length > 0 && info.map((item, index) => (
+                    <div key={index} className="episode"    onClick={() => {
+                      readPage(info[index].EpisodeId,info[index].extension
+                        );
+                    }}>
+                <h2 style={{fontWeight:"bold",fontFamily:"fantasy"}}>{item.FileName}  @{index+1}</h2>
+              </div>
+                   ))}
+        </div>
+
+
+
+          <div>
+          <h4 className="headfont2" style={{marginLeft:'25px'}}>BOOK EXCRET :-</h4>
+          </div>
+
           <div className="book-excerp">
             {info[0].BookExcerpt ? (
               <>
@@ -308,6 +355,7 @@ console.log(fileid,"sendback",info)
                     <>No Comments</>
                   )}
                 </div>
+
                 <div>
                   <InputEmoji
                     value={text}

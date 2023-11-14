@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from "react-router-dom";
-import './Authors.scss';
 import { useNavigate } from 'react-router-dom';
 import {authorCategoryImages} from '../../services/api'
-import './AuthorGroup.scss'
+import './AuthorGroup.scss';
 const AuthorsGroup = () => {
     const navigate=useNavigate();
     const location=useLocation()
@@ -52,26 +51,35 @@ navigate('/authorsbooksdisplay', { state: { myProp:data } })
     })
   
   return (
-    <div >
+
+
+    <div>
     {
-  imagearray.length > 0 ? (
-    <div className='profile-con'>
+      imagearray.length > 0 ? (
+        <div className='profile-con'>
        {
           imagearray.map((item,index)=>
           (
-            <div className='image-cont'> 
-              <img  src={`data:image/png;base64,${item.ProfileImage.data}`} className='img-sizing' onClick={()=>{test(item)}}/>
-              <h2 className='heading-size'>{item.Name}</h2>
+            <div className='modified'>
+
+              <div className='image-cont'> 
+                <img  src={`data:image/png;base64,${item.ProfileImage.data}`} className='img-sizing-two' onClick={()=>{test(item)}}/>
+                <h2 className='heading-size'>Name:-{item.Name}</h2>
+              </div>
+
             </div>
            
           ))
         }
     </div>
+
   ) : (
     <></>
   )
 }
 </div>
+
+
   )
 }
 

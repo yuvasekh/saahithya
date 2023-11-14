@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Quizscores.scss'
 import { Table, Input } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { poleparticipators, getquizresults } from '../services/api';

@@ -5,6 +5,13 @@
     margin-top: 10px;
     /* background-color:rgb(159, 237, 206);/ */
     }
+
+    .text-head
+    {
+        font-family:'Times New Roman', Times, serif;
+        font-size: 5vw;
+        color: rgb(0, 0, 0);
+    }
     
     
     .quill 
@@ -56,20 +63,22 @@
         align-items:center;
         margin-top: 10px;
         margin-left: 2px;
+        padding: 50px;
         /* background-color:rgb(159, 237, 206);/ */
         }
-        
+
+        .text-head
+        {
+            font-size: 7vw;
+        }
         
         .quill 
         {
             text-align: center;
             height: 60vh;
             position: relative ;
-            /* width: 30vw; */
             background-color: white;
         
-            
-          
         }
         
         
@@ -111,10 +120,12 @@
             /* width: 30vw; */
             background-color: white;
         
-            
-          
         }
         
+        .text-head
+        {
+            font-size: 5vw;
+        }
         
         .rdw-suggestion-dropdown 
         {
@@ -145,7 +156,10 @@
         /* background-color:rgb(159, 237, 206);/ */
         }
         
-        
+        .text-head
+        {
+            font-size: 5vw;
+        }
         .quill 
         {
             text-align: center;
@@ -168,7 +182,7 @@
             min-width: 100px;
             max-height: 150px;
             overflow: auto;
-            background: rgb(249, 13, 13);
+            /* background: rgb(249, 13, 13); */
             z-index: 100;
         }
 }
@@ -187,6 +201,10 @@
         /* background-color:rgb(159, 237, 206);/ */
         }
         
+        .text-head
+        {
+            font-size: 3vw;
+        }
         
         .quill 
         {
@@ -195,11 +213,8 @@
             position: relative ;
             width: 60vw;
             background-color: white;
-        
-            
           
         }
-        
         
         .rdw-suggestion-dropdown 
         {
@@ -210,9 +225,8 @@
             min-width: 100px;
             max-height: 150px;
             overflow: auto;
-            background: rgb(249, 13, 13);
+            /* background: rgb(249, 13, 13); */
             z-index: 100;
         }
-
 
 }

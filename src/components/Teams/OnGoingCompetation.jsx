@@ -4,7 +4,13 @@ import './OnGoingCompetation.scss'
 import img1 from '../../Resources/Images/horror.jpg';
 import img2 from '../../Resources/Images/comedy.jpg';
 import img3 from '../../Resources/Images/life.jpg';
-import img4 from '../../Resources/Images/love.jpg';
+
+
+// import img4 from '../../Resources/Images/love.jpg';
+
+
+
+
 import { useNavigate,useLocation } from 'react-router-dom';
  const imagearray = [
     {img:img1,imgdesc:"quizarea"},  {img:img2,imgdesc:"contest"},
@@ -22,7 +28,7 @@ let nav=item.imgdesc
 
   return (
     <div>  
-       <h1> OnGoning Competetion</h1>
+       <h1 className='font-s'> OnGoning Competetion</h1>
     <div className='OnGoing-category-container'>
    
       {imagearray.map((item, index) => (

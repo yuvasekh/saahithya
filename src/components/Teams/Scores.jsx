@@ -19,7 +19,7 @@ let nav=item.imgdesc
 
   return (
     <div>  
-       <h1> Select Category</h1>
+       <h1 className='font-s'> Select Category</h1>
     <div className='OnGoing-category-container'>
    
       {imagearray.map((item, index) => (

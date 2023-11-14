@@ -27,7 +27,7 @@ import { useNavigate,useLocation } from 'react-router-dom';
      {img:video,imgdesc:"వీడియో"}
   ];
 
-const CategoryOptions = () => {
+    const CategoryOptions = () => {
     const navigate=useNavigate()
     const location = useLocation();
     const myProp = location.state && location.state.myProp;
@@ -36,16 +36,16 @@ const CategoryOptions = () => {
     {
       // alert(item.imgdesc)
       var append={language:myProp,BookType:item.imgdesc}
-      navigate('/categories', { state: { myProp:append } })
+      navigate('/subcateogories', { state: { myProp:append } })
     })
     return (
       <>
 <div className='cate-option'>
   
-      <div className='row'>
+     
       {myProp === "Telugu"
       ? teluguimagearray.map((item, index) => (
-          <div className='col-12 col-md-3 ' style={{margin:'20px 5px 30px 20px'}}>
+          <div  className="" style={{margin:'20px 5px 30px 20px'}}>
           {/* {imagearray.map((item, index) => ( */}
             <div  key={index} onClick={()=>{test(item)}}>
               <img src={item.img} className='img-opt' alt={`image-${index}`} />
@@ -55,14 +55,14 @@ const CategoryOptions = () => {
   
         ))
         : imagearray.map((item, index) => (
-        <div className=' col-12 col-md-3' style={{position:'relative',margin:'30px'}}>
+        <div  style={{position:'relative',margin:'30px'}}>
           <div  key={index} onClick={()=>{test(item)}}>
             <img src={item.img} className='img-opt' alt={`image-${index}`} />
             <h2 style={{ color: 'white', marginTop: '-42px', marginLeft: '30px' }}>{item.imgdesc}</h2>
           </div>
         </div>
         ))}
-        </div>
+        
 </div>
     </>
   );

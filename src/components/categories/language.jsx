@@ -21,7 +21,7 @@ const Language = () => {
     <>
     
       <div
-        className="row"
+        className="roman"
         
       >
         {imagearray.map((item, index) => (
@@ -38,7 +38,7 @@ const Language = () => {
               alt={`image-${index}`}
             />
             <h2
-              style={{ color: "white", marginTop: "-92px", marginLeft: "60px" }}
+              className="language"
             >
               {item.imgdesc}
             </h2>
