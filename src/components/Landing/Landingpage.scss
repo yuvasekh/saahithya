@@ -1,0 +1,362 @@
+
+
+.landing-con{
+  background-color: #E0F4EB;
+  padding-left: 10px;
+  // padding-right: 40px;
+  width: 100vw;
+}
+
+.landing-page
+{
+  
+  // background-color: #E0F4EB;
+
+  // .saahithyalogo
+  // {
+  //   height: 450px;
+    
+  // }
+  // .subcontentimg
+  // {
+  //   // width: 380px;
+  //   height: 200px;
+  //   border-radius: 20px;
+  // }
+  //   .animationcontainer
+  //   {
+  //       display: flex;
+  //       gap: 2px;
+  //   }
+  //   .video{
+  // width: 80vw;
+  // height: 400px;
+  //   }
+    // .imgtelugu
+    // {
+    //     width: 20vw;
+
+    // }
+    // .telugutalli
+    // {
+    //     width: 20vw;
+    //     height: 500px;
+    // }
+    // .iframeclass
+    // {
+    //     height: 500px;
+    //     width: 40vw;
+    //     margin-right:-35px;
+
+    // }
+    .ant-modal-body
+    {
+        margin-left: -600px !important;
+    }
+    .animationiframe
+    {
+        // width: 100vw;
+        height: 600px;
+    }
+    
+        // position: relative;
+    // .videocontainer
+    // {
+      
+    //     position: relative;
+    //     display: flex;
+    //     // gap: 20px;
+    //     justify-content: space-around;
+    // }
+// .card
+// {
+//       margin-left: 100px;
+//       margin-top: 30px;
+//     align-items: center;
+//     height: 150px;
+//     width: 300px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+//     background-color: #fff;
+// }
+// .cardcontain
+// {
+//     align-items: center;
+//     justify-content: center;
+//     text-align: center;
+//     gap: 520px;
+//     display: flex;
+// }
+// .features
+// {
+//     border-top: 1px solid #fcfcfc;
+//     border-bottom: 1px solid #f0e7e7;
+//     display: grid;
+//     background-color: #489248d4;
+//     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+//     // margin: 35px;
+//     display: flex;
+//     justify-content:start;
+//     gap: 92px;
+//     grid-template-columns: repeat(3,1fr);
+//     align-items: center;
+//     height: 350px;
+// }
+.ant-modal
+{
+  width: 700px !important;
+  display: flex;
+  justify-content: center;
+}
+// .subcontents
+// {
+//     margin-left: 40px;
+//     // margin-top: 30px;
+//     border-radius: 15px;
+//     height: 300px;
+//     width: 380px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+//     background-color: #fff;
+// }
+// .features {
+//     position: relative;
+//     overflow: hidden;
+//     width: 100%;
+//     height: 100vh; /* Adjust the height to fit your layout */
+//   }
+  
+  // .subcontents {
+  //   animation-duration: 3s;
+  //   animation-name: slidein;
+  //   animation-iteration-count: 2;
+  //   animation-direction: alternate;
+  // }
+ 
+  // .saahithyalogo
+  // {
+  //   animation-duration: 3s;
+  //   animation-name: saahithyalogo;
+  //   animation-iteration-count: 1;
+  //   animation-direction: left;
+  // }
+
+}
+
+
+// @keyframes slidein {
+//     from {
+//       margin-left: 100%;
+//       width: 300%;
+//     }
+  
+//     to {
+//       margin-left: 0%;
+//       width: 100%;
+//     }
+//   }
+//   @keyframes saahithyalogo {
+//     from {
+//       margin-left: 100%;
+//       width: 300%;
+//     }
+  
+//     to {
+//       margin-left: 0%;
+//       width: 100%;
+//     }
+//   }
+//   .logoimgs {
+//     /* Initial styles */
+//     transform: scale(1);
+//     transition: transform 1.5s;
+//   }
+  
+//   .logoimgs.zoom-in {
+//     /* Apply zoom-in animation */
+//     animation: zoomInAnimation 1.5s forwards;
+//   }
+  
+//   @keyframes zoomInAnimation {
+//     from {
+//       transform: scale(0);
+//     }
+//     to {
+//       transform: scale(1);
+//     }
+//   }
+
+
+  //80 
+
+//   @media only screen and (min-width:1860px ) {
+//     .landing-page
+//     {
+//       .features
+// {
+//     border-top: 1px solid #fcfcfc;
+//     border-bottom: 1px solid #f0e7e7;
+//     display: grid;
+//     background-color: #e8e1e1d4;
+//     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+// // margin: 35px;
+// display: flex;
+// justify-content:start;
+// gap: 92px;
+//     grid-template-columns: repeat(3,1fr);
+//     align-items: center;
+//     height: 460px;
+// }
+// .telugutalli
+// {
+//     width: 20vw;
+//     height: 620px;
+// }
+// .video{
+
+//   width: 80vw;
+//   height: 620px;
+//     }
+//     .iframeclass
+//     {
+//         height: 620px;
+//         width: 80vw;
+
+//     }
+//     .saahithyalogo
+//     {
+//       height: 550px;
+//       // width: 100vw;
+//     }
+//     .subcontents
+// {
+ 
+//     // margin-top: 30px;
+//     margin-left: 70px;
+//     border-radius: 15px;
+//     height: 390px;
+//     width: 480px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+//     background-color: #fff;
+// }
+// .subcontentimg
+// {
+//   width: 480px;
+//   height: 220px;
+// }
+//     }
+  
+//   }
+
+
+//   @media only screen and (min-width:1984px ) {
+//     .landing-page
+//     {
+//       .features
+// {
+//     border-top: 1px solid #fcfcfc;
+//     border-bottom: 1px solid #f0e7e7;
+//     display: grid;
+//     background-color: #e8e1e1d4;
+//     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+// // margin: 35px;
+// display: flex;
+// justify-content:start;
+// gap: 92px;
+//     grid-template-columns: repeat(3,1fr);
+//     align-items: center;
+//     height: 480px;
+// }
+// .telugutalli
+// {
+//     width: 20vw;
+//     height: 580px;
+// }
+// .video{
+//   width: 80vw;
+//   height: 580px;
+//     }
+//     .iframeclass
+//     {
+//         height: 580px;
+//         width: 80vw;
+
+//     }
+//     .saahithyalogo
+//     {
+//       height: 580px;
+//       width: 100vw;
+//     }
+// .subcontents
+// {
+//     margin-left: 140px;
+//     // margin-top: 30px;
+//     border-radius: 15px;
+//     height: 380px;
+//     width: 440px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+//     background-color: #fff;
+// }
+// .subcontentimg
+// {
+//   width: 440px;
+//   height: 230px;
+// }
+//     }
+  
+  
+//   }
+//   @media only screen and (min-width:1653.33px ) {
+//     .landing-page
+//     {
+//       .features
+// {
+//     border-top: 1px solid #fcfcfc;
+//     border-bottom: 1px solid #f0e7e7;
+//     display: grid;
+//     background-color: #e8e1e1d4;
+//     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+// // margin: 35px;
+// display: flex;
+// justify-content:start;
+// gap: 92px;
+//     grid-template-columns: repeat(3,1fr);
+//     align-items: center;
+//     height: 480px;
+// }
+// .telugutalli
+// {
+//     width: 20vw;
+//     height: 520px;
+// }
+// .video{
+//   width: 80vw;
+//   height: 520px;
+//     }
+//     .iframeclass
+//     {
+//         height: 520px;
+//         width: 80vw;
+
+//     }
+//     .saahithyalogo
+//     {
+//       height: 480px;
+//       width: 100vw;
+//     }
+// .subcontents
+// {
+//     margin-left: 95px;
+//     // margin-top: 30px;
+//     border-radius: 15px;
+//     height: 400px;
+//     width: 470px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+//     background-color: #fff;
+// }
+// .subcontentimg
+// {
+//   width: 470px;
+//   height: 240px;
+// }
+//     }
+  
+//   }

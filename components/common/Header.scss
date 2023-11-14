@@ -1,0 +1,35 @@
+.second-head-con{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  padding:15px 20px 10px 0px;
+  gap: 10px;
+
+  a{
+    color: black;
+  }
+
+  .second-head-con2{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 20px;
+  }
+
+  .second-head-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .second-icon-con{
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+  }
+
+  .second-bell-container, .second-shop{
+    font-size: 24px;
+  }
+}
+
+

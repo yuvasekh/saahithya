@@ -1,0 +1,195 @@
+.profile-con
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+
+.image-cont
+{
+    display: flex;
+    place-items: center;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 0 2px 4px 0 #111;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    padding-left: 2px;
+    background: linear-gradient(90deg, rgb(255, 255, 255) 25%, rgb(226, 226, 226) 85%, rgb(175, 206, 183) 96%);
+    border-radius: 20px;
+}
+
+.img-sizing-two
+{
+    width: 120px;
+    height: 100%;
+    padding: 5px;
+    border-radius: 50%; 
+    box-shadow: 0 2px 6px 0 #111;
+}
+
+.heading-size
+{   font-family: fantasy;
+    font-size: 5vw;
+    font-weight: bold;
+    padding-left: 20px;
+    color: black;
+}
+
+.modified{
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// media-quireies
+// media-quireies
+// media-quireies
+
+
+
+
+/* For screens up to 767px wide (typical smartphones) */
+@media (max-width: 767px) {
+
+    .profile-con
+    {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 15px;
+    margin: 20px;
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    padding: 15px;
+}
+.img-sizing-two
+{
+    width: 30%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 50%; 
+    box-shadow: 0 2px 6px 0 #111;
+}
+    /* Your mobile-specific CSS here */
+  }
+  
+
+
+
+
+  /* For screens between 768px and 1023px wide (typical tablets) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Your tablet-specific CSS here */
+    .profile-con
+    {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin: 20px;
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    padding: 15px;
+    // background-color: pink;
+}
+.img-sizing-two
+{
+    width: 30%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 50%; 
+    box-shadow: 0 2px 6px 0 #111;
+}
+.heading-size
+{
+    font-size: 3vw;
+}
+
+
+  }
+  
+  
+  /* For screens between 1024px and 1279px wide (small desktops and laptops) */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .profile-con
+    {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin: 20px;
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.img-sizing-two
+{
+    width: 30%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 50%; 
+    box-shadow: 0 2px 6px 0 #111;
+}
+.heading-size
+{   
+    font-size: 2vw;
+   
+}
+  }
+  
+  
+  
+  /* For screens 1280px and wider (medium to large desktops) */
+  @media (min-width: 1280px) {
+    .profile-con
+    {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+    margin: 20px;
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+}
+.img-sizing-two
+{
+    width: 30%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 50%; 
+    box-shadow: 0 2px 6px 0 #111;
+}
+.heading-size
+{   
+    font-size: 1.5vw;
+   
+}
+  }
+  

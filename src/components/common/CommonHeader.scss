@@ -1,0 +1,196 @@
+
+// .land-cont{
+//   display: grid;
+//   grid-template-columns: repeat(5,1fr);
+//   gap: 15px;
+//   align-items: center;
+//   box-shadow: 10px 10px 10px rgba(0, 0, 0, 14%);
+
+//   a:hover{
+//     color: black !important;
+//   }
+// }
+
+// .search{
+// width: 20vw;
+// height: 6vh;
+// }
+
+// .logoimg
+//   {
+//     height: 15vh;
+//     width: 12vw;
+//   }
+
+
+ 
+  
+//   .ant-input 
+//   {
+//       background: none !important;
+//   }
+
+//     .registerbutton, .signinbutton
+//     {
+//       background-color: #f8991f;
+//       font-family: Poppins;
+//       font-style: normal;
+//       font-weight: 600;
+//       width: max-content;
+//       font-size: 16px;
+//       border: none;
+//       margin-right: 10px;
+//       border-radius: 7px;
+//       line-height: 24px;
+//       color: #fff;
+//       padding: 20px 20px 40px 20px;
+//     }
+  
+// :where(.css-dev-only-do-not-override-1wazalj).ant-avatar-lg.ant-avatar-icon {
+//   justify-self: self-end;
+//   margin-right: 20px;
+//   padding-bottom: 50px;
+// }
+
+
+
+@media (max-width: 576px) {
+  .logoimg
+  {
+    height: 12vh;
+    width: 27vw;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .logoimg
+  {
+    height: 15vh;
+    width: 20vw;
+  }
+}
+
+
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .land-cont{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 15px;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 5%);
+  
+    a:hover{
+      color: black !important;
+    }
+  }
+
+  .common-button-con{
+    text-align: end;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+  
+  .search{
+  width: 30vw;
+  height: max-content;
+  }
+  
+  .logoimg
+    {
+      height: 15vh;
+      width: 12vw;
+    }
+  
+  
+   
+    
+    .ant-input 
+    {
+        background: none !important;
+    }
+  
+      .registerbutton, .signinbutton
+      {
+        background-color: #f8991f;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        width: max-content;
+        font-size: 16px;
+        border: none;
+        margin-right: 10px;
+        border-radius: 7px;
+        line-height: 24px;
+        color: #fff;
+        padding: 20px 20px 40px 20px;
+      }
+    
+  :where(.css-dev-only-do-not-override-1wazalj).ant-avatar-lg.ant-avatar-icon {
+    justify-self: self-end;
+    margin-right: 20px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .land-cont{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 15px;
+    align-items: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 5%);
+  
+    a:hover{
+      color: black !important;
+    }
+  }
+  
+  .search{
+  width: 30vw;
+  height: 6vh;
+  }
+  
+  .logoimg
+    {
+      height: 12vh;
+      width: 8vw;
+    }
+  
+    .common-button-con{
+      text-align: end;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+  
+   
+    
+    .ant-input 
+    {
+        background: none !important;
+    }
+  
+      .registerbutton, .signinbutton
+      {
+        background-color: #f8991f;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 600;
+        width: max-content;
+        height: max-content;
+        font-size: 19px;
+        border: none;
+        margin-right: 10px;
+        border-radius: 7px;
+        line-height: 24px;
+        color: #fff;
+        padding:10px;
+      }
+    
+  :where(.css-dev-only-do-not-override-1wazalj).ant-avatar-lg.ant-avatar-icon {
+    justify-self: self-end;
+    margin-right: 20px;
+    padding-bottom: 50px;
+  }
+}

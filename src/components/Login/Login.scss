@@ -1,0 +1,120 @@
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+}
+
+.login-form2{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px 0 #000000;
+    padding: 20px;
+    border-radius: 20px;
+    
+    
+}
+
+.login-head{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 3vw;
+    color: rgb(22, 22, 22);
+    
+}
+.formitem{
+    width:600px;
+    height:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//media-Qurries
+//media-Qurries
+//media-Qurries
+
+
+
+@media (max-width: 576px) {
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .login-form2{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .login-head{
+       font-size: 8vw;
+        color: rgb(63, 32, 32);
+        text-align: center;
+    }
+
+    .formitem{
+        width:100%;
+        height:100%;
+    }
+    
+}
+
+
+
+
+
+  
+  /* For screens between 768px and 1023px wide (typical tablets) */
+
+  
+  
+
+  
+  
+  
+  /* For screens 1280px and wider (medium to large desktops) */
+  @media (min-width: 1280px) {
+    /* Your medium to large desktop-specific CSS here */
+
+    .login-form2{
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 2px 4px 0 #000000;
+        padding: 50px;
+        border-radius: 20px;
+        
+        
+    }
+    .formitem
+    {
+        width:600px;
+        height:100%;
+        ;
+    }
+
+    .login-head
+    {
+        
+         color: rgb(0, 0, 0);
+         text-align: center;
+     }
+
+  }
+  
+  

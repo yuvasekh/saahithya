@@ -1,0 +1,141 @@
+.categorycontainer
+{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 5px;
+    position:relative;
+    padding: 20px; 
+    background-color:#E0F4EB;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    
+.containerimg
+    {
+        display: flex;
+        place-items: center;
+        gap: 20px;
+        flex-direction: row;
+        justify-content: left;
+        box-shadow: 0 2px 4px 0 #111;
+        height: 100%;
+        width: 100%;
+        padding: 10px;
+        padding-left: 15px;
+        background: linear-gradient(90deg, rgb(255, 255, 255) 25%, rgb(226, 226, 226) 85%, rgb(175, 206, 183) 96%);
+        border-radius: 20px;
+    }
+ 
+    .heading-redesigned
+    {
+        // font-size: 1.2vw;
+        font-weight:bold;
+        color: rgb(0, 0, 0);
+        margin-top: 10px;
+        background-color: #ffffff49;
+        border-radius: 10px;
+        font-family: fantasy;
+       
+    }
+    .category-image-size01
+    {
+        width: 150px;
+        height: 100px; 
+        border-radius: 50%;
+    }  
+
+    .containerimg:hover 
+        {
+        transform: scale(1.1);
+        }
+      .containerimg 
+        {
+        transition: transform 0.5s;
+        }
+}
+
+
+
+ 
+// media-quireies
+// media-quireies
+// media-quireies
+
+
+
+
+/* For screens up to 767px wide (typical smartphones) */
+@media (max-width: 767px) {
+.categorycontainer
+{
+    
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+ 
+
+}
+.heading-redesigned
+{
+    font-size: 5vw;
+}
+}
+
+/* For screens between 768px and 1023px wide (typical tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .categorycontainer
+    {
+        
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+     
+    
+    }
+    .heading-redesigned
+    {
+        font-size: 3vw;
+    }
+
+    }
+
+
+
+/* For screens between 1024px and 1279px wide (small desktops and laptops) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+ .categorycontainer
+    {
+        
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+     
+    
+    }
+    .heading-redesigned
+    {
+        font-size: 2.5vw;
+    }
+}
+
+
+
+/* For screens 1280px and wider (medium to large desktops) */
+@media (min-width: 1280px) {
+    .categorycontainer
+    {
+        
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+     
+    
+    }
+    .heading-redesigned
+    {
+        font-size: 1.5vw;
+    }
+}
+
+
+
+
+
+

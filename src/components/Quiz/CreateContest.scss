@@ -1,0 +1,61 @@
+/* Add this to your CSS file or use a CSS-in-JS solution if you prefer. */
+
+/* Style the form container */
+.create-contest-form {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the form header */
+  .create-contest-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Style form labels */
+  .ant-form-item-label {
+    font-weight: bold;
+    color: #444;
+  }
+  
+  /* Style form fields */
+  .ant-input,
+  .ant-picker {
+    width: 100%;
+  }
+  
+  /* Style form submit button */
+  .ant-form-item-control-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .ant-btn-primary {
+    background-color: #1890ff;
+    border-color: #1890ff;
+    margin-top: 10px;
+  }
+  
+  .ant-btn-primary:hover {
+    background-color: #126bb0;
+    border-color: #126bb0;
+  }
+
+ 
+  /* For screens up to 767px wide (typical smartphones) */
+@media (max-width: 767px) {
+  
+.inside
+{
+  text-align: center;
+  width:60%;
+  font-size: 5px;
+}
+
+}

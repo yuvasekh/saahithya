@@ -1,0 +1,574 @@
+.entire-bg
+{
+    background-color:#e0f4eb;
+    padding-top: 30px;
+}
+
+.itemdesc-con{
+    margin: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+
+}
+
+.item-con2{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.icons-cont{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    
+}
+
+.icon-font
+{
+    font-size:100%;
+    padding-left: 10px;
+    // display: flex;
+    
+}
+
+.rating-con
+{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px  ;
+}
+
+.item-image-con
+{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.item-image
+{
+    margin-bottom: 20px;
+    width: 80%;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.report-btn
+{
+    background-color: #266b69;
+    margin-right: 10px;
+    padding-bottom:  30px ;
+    color: white;
+}
+
+.submit-btn
+{
+    background-color: #266b69;
+    color: white;
+    font-size: 4vw;
+    width: 100%;
+    height: 100%;
+}
+
+.read-btn
+{
+    background-color: #266b69;
+    padding-bottom:  30px;
+    color: white;
+    
+}
+
+.buttons-con
+{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-right: 20px;
+
+}
+
+.star-icons{
+    margin-left: 20px;
+    font-size: 10px;
+}
+
+.book-excerp{
+    width:40%;
+    margin: 20px;
+    box-shadow: 10px 10px 20px 20px rgba(30, 252, 1, 0.295);
+    padding: 25px;
+    // border-radius: 20px;
+}
+.episodemain{
+    display: grid;
+    border-radius: 20px;
+    grid-template-columns: repeat(2,1fr);
+  
+}
+.episode{
+    
+    width: 50%;
+    margin: 20px;
+    box-shadow: 5px 10px 10px 10px rgba(0, 0, 0, 0.295);
+    padding: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    // border-radius: 20px;
+ 
+}
+.comment-sec{
+    
+    padding: 20px;
+    width:50%;
+    height: 200px;
+    margin: 20px;
+    box-shadow: 10px 10px 20px 20px  rgba(10, 10, 10, 0.295);
+    // border-radius: 20px;
+}
+.headfont{
+    text-shadow:  2px ;
+    font-size: 20px;
+    font-family: fantasy;
+    margin-left: 25px;
+}
+.headfont2{
+    text-shadow:  2px ;
+    font-size: 20px;
+    font-family: fantasy;
+}
+
+h2{
+
+    font-size: 2vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// media Queries
+// media Queries
+// media Queries
+
+
+
+
+
+@media (max-width:768px){
+    .itemdesc-con{
+        margin: 30px;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 14%);
+    
+    }
+    
+    .refined 
+    {
+        color: green;
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .red{
+        display: flex;
+        gap: 30px;
+        padding-top: 20px;
+    }
+
+
+    .icons-cont
+    {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        font-size: 25px;
+    }
+
+
+    .item-con2
+    {
+        display: flex;
+        flex-direction: column-reverse;
+    
+    }
+    
+   
+    
+    .rating-con
+    {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px  ;
+    }
+    
+    .item-image-con
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    
+    .item-image
+    {
+        margin-bottom: 20px;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .report-btn
+    {
+        background-color: #266b69;
+        margin-right: 10px;
+        padding-bottom:  30px ;
+        color: white;
+        width: 90%;
+        font-size: 3vw;
+        text-align: center;
+        height: 60%;
+    }
+    
+    .submit-btn{
+        background-color: #266b69;
+        color: white;
+    }
+    
+    .read-btn{
+        background-color: #266b69;
+        padding-bottom:  30px ;
+        color: white;
+        width: 100%;
+        height: 60%;
+        font-size: 3vw;
+        text-align: center;
+        
+    }
+    
+    .buttons-con{
+
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    
+    }
+    
+    .star-icons{
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .icon-font
+    {
+    font-size:25px;
+    padding-left: 10px;
+    }
+    
+    .episode
+    {
+        width: 100%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        padding: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+     
+    }
+    .book-excerp{
+        width:80%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 25px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+    .comment-sec
+    {
+        padding: 20px;
+        width:80%;
+        height: 200px;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For screens between 768px and 1023px wide (typical tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .episode
+    {
+        width: 80%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        padding: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+     
+    }
+    .book-excerp{
+        width:80%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 25px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .comment-sec
+    {
+        padding: 20px;
+        width:80%;
+        height: 200px;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .item-image{
+        margin-bottom: 20px;
+        width: 60%;
+        height: 100%;
+    }
+
+    
+   
+    .icon-font
+    {
+    font-size:20px;
+    padding-left: 10px;
+    }
+    
+    .star-icons{
+        margin-left: 20px;
+        font-size: 30px;
+    }
+    .submit-btn
+    {
+        background-color: #266b69;
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        width: 150px;
+        height: 100%;
+    
+    }   
+    .icon-font{
+        font-size: 2vw;
+     
+    }
+
+    .red
+    {
+        display: flex;
+        gap: 30px;
+        padding-top: 20px;
+    }
+
+    h2{
+
+        font-size: 2vw;
+    }
+  }
+  
+  
+  /* For screens between 1024px and 1279px wide (small desktops and laptops) */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+
+    .episode
+    {
+        width: 80%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        padding: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+     
+    }
+    .book-excerp{
+        width:70%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: 25px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .comment-sec
+    {
+        padding: 20px;
+        width:70%;
+        height: 200px;
+        margin: 20px;
+        background-color:rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .item-image{
+        margin-bottom: 20px;
+        width: 50%;
+        height: 100%;
+    }
+   
+    .star-icons{
+        margin-left: 20px;
+        font-size: 30px;
+    }
+    .submit-btn
+    {
+    background-color: #266b69;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 180px;
+    height: 100%;
+    
+    }   
+    h2{
+
+        font-size: 2vw;
+    }
+    .red{
+        display: flex;
+        gap: 20px;
+        // padding-top: 20px;
+        
+    }
+    .icon-font{
+        font-size: 2vw;
+     
+    }
+ 
+  }
+  
+  
+  
+  /* For screens 1280px and wider (medium to large desktops) */
+  @media (min-width: 1280px) {
+    /* Your medium to large desktop-specific CSS here */
+    .episode
+    {
+        width: 80%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px rgba(30, 252, 1, 0.295);
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        padding: 50px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        font-style: italic;
+     
+    }
+    .book-excerp{
+        width:80%;
+        margin: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        box-shadow: 1px  12px 5px rgba(30, 252, 1, 0.295);
+        font-style: italic;
+        padding: 25px;
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+    }
+
+    .comment-sec
+    {
+        padding: 20px;
+        background-color: rgba(133, 170, 147, 0.631);
+        width:80%;
+        height: 200px;
+        margin: 20px;
+        box-shadow: 1px  12px rgba(30, 252, 1, 0.295);
+        border-top-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        // border-bottom-left-radius: 20px;
+    }
+
+    .submit-btn
+    {
+    background-color: #266b69;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 180px;
+    height: 100%;
+    
+    }
+
+    .item-image{
+        margin-bottom: 20px;
+        width: 40%;
+        height: 350px;
+    }
+   
+    .star-icons{
+        margin-left: 20px;
+        font-size: 30px;
+    }
+    .icon-font{
+        font-size: 1.8vw;
+     
+
+    }
+    .red
+    {
+        display: flex;
+        gap: 30px;
+        // padding-top: 20px;
+    }
+
+
+    h2{
+
+        font-size: 1.3vw;
+    }
+  }
+  
+

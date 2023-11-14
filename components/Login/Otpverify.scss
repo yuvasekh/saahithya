@@ -1,0 +1,58 @@
+/* OtpVerify.css */
+
+.mainotpdiv
+{
+   position: relative;
+   width: 500px;
+
+      box-shadow: 0 2px 4px 0 #111;
+height: 400px;
+    left: 500px;
+    padding: 50px;
+    
+.otp-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+  }
+  
+  .otp-input {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }
+  
+  .verify-button {
+    display: block;
+    width: 50%;
+
+    padding: 11px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    margin-left: 110px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+    cursor: pointer;
+  }
+  
+  .verify-button:hover {
+    background-color: #45a049;
+  }
+  
+  .verify-button:active {
+    background-color: #3e8e41;
+  }
+  
+  .verify-button:focus {
+    outline: none;
+  }
+}

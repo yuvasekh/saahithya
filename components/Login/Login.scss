@@ -1,0 +1,43 @@
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.login-form2{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px 0 #111;
+    padding: 20px;
+    border-radius: 20px;
+    
+}
+
+.login-head{
+    font-size: 54px;
+    color: red;
+}
+
+
+@media (max-width: 576px) {
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .login-form2{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    
+    .login-head{
+        font-size: 54px;
+        color: red;
+        text-align: center;
+    }
+    
+}

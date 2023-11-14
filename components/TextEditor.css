@@ -1,0 +1,218 @@
+.ReactQuill-con{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-top: 10px;
+    /* background-color:rgb(159, 237, 206);/ */
+    }
+    
+    
+    .quill 
+    {
+        text-align: center;
+        height: 60vh;
+        position: relative ;
+        /* width: 50vw; */
+        background-color: white;
+    
+        
+      
+    }
+    
+    
+    .rdw-suggestion-dropdown 
+    {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #F1F1F1;
+        min-width: 100px;
+        max-height: 150px;
+        overflow: auto;
+        background: rgb(249, 13, 13);
+        z-index: 100;
+    }
+
+
+
+
+
+
+/* //media-quireies
+//media-quireies
+//media-quireies */
+
+
+
+
+/* Small screens (e.g., smartphones) */
+/* Small screens (e.g., smartphones) */
+
+
+@media (max-width: 576px) {
+    .ReactQuill-con{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-top: 10px;
+        margin-left: 2px;
+        /* background-color:rgb(159, 237, 206);/ */
+        }
+        
+        
+        .quill 
+        {
+            text-align: center;
+            height: 60vh;
+            position: relative ;
+            /* width: 30vw; */
+            background-color: white;
+        
+            
+          
+        }
+        
+        
+        .rdw-suggestion-dropdown 
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #F1F1F1;
+            min-width: 100px;
+            max-height: 150px;
+            overflow: auto;
+            background: rgb(249, 13, 13);
+            z-index: 100;
+        }
+
+}
+
+/* Medium screens (e.g., tablets) */
+/* Medium screens (e.g., tablets) */
+
+
+@media (min-width: 577px) and (max-width: 992px) {
+  
+    .ReactQuill-con{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-top: 10px;
+        /* background-color:rgb(159, 237, 206);/ */
+        }
+        
+        
+        .quill 
+        {
+            text-align: center;
+            height: 60vh;
+            position: relative ;
+            /* width: 30vw; */
+            background-color: white;
+        
+            
+          
+        }
+        
+        
+        .rdw-suggestion-dropdown 
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #F1F1F1;
+            min-width: 100px;
+            max-height: 150px;
+            overflow: auto;
+            background: rgb(249, 13, 13);
+            z-index: 100;
+        }
+
+}
+
+/* Large screens (e.g., desktops) */
+/* Large screens (e.g., desktops) */
+
+
+@media (min-width: 993px) and (max-width: 1200px) {
+
+    .ReactQuill-con{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-top: 10px;
+        /* background-color:rgb(159, 237, 206);/ */
+        }
+        
+        
+        .quill 
+        {
+            text-align: center;
+            height: 60vh;
+            position: relative ;
+            width: 60vw;
+            background-color: white;
+        
+            
+          
+        }
+        
+        
+        .rdw-suggestion-dropdown 
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #F1F1F1;
+            min-width: 100px;
+            max-height: 150px;
+            overflow: auto;
+            background: rgb(249, 13, 13);
+            z-index: 100;
+        }
+}
+
+/* Extra-large screens (e.g., large desktops) */
+/* Extra-large screens (e.g., large desktops) */
+
+
+@media (min-width: 1201px) {
+
+    .ReactQuill-con{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        margin-top: 10px;
+        /* background-color:rgb(159, 237, 206);/ */
+        }
+        
+        
+        .quill 
+        {
+            text-align: center;
+            height: 60vh;
+            position: relative ;
+            width: 60vw;
+            background-color: white;
+        
+            
+          
+        }
+        
+        
+        .rdw-suggestion-dropdown 
+        {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #F1F1F1;
+            min-width: 100px;
+            max-height: 150px;
+            overflow: auto;
+            background: rgb(249, 13, 13);
+            z-index: 100;
+        }
+
+
+}

@@ -1,0 +1,142 @@
+.mexico
+{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  width: 100%;
+  padding: 20px;
+}
+.sub-cat-img{
+    height: 100vh;
+    width: 250%;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.sub-cat-img:hover 
+        {
+        transform: scale(1.1);
+        }
+      .sub-cat-img
+        {
+        transition: transform 0.5s;
+        // width: 21em;
+        }
+
+
+
+.heading-one{
+  margin-left: 20px;
+  margin-right: 15px;
+  margin-top: -60px;
+  backdrop-filter: blur(20px) saturate(70%);
+  color: white;
+  font-size: 5vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// media-quireies
+// media-quireies
+// media-quireies
+
+
+
+
+/* For screens up to 767px wide (typical smartphones) */
+@media (max-width: 767px) {
+  .mexico
+{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+
+}
+.sub-cat-img{
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+}
+/* Your mobile-specific CSS here */
+}
+
+
+
+
+
+
+
+/* For screens between 768px and 1023px wide (typical tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+/* Your tablet-specific CSS here */
+.mexico
+{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  background-color: rgb(255, 255, 255);
+
+}
+.sub-cat-img{
+  height: 100%;
+  width: 300%;
+  padding: 10px;
+  border-radius: 20px;
+}
+.heading-one{
+  font-size: 3vw;
+}
+}
+
+
+/* For screens between 1024px and 1279px wide (small desktops and laptops) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+/* Your small desktop-specific CSS here */
+.mexico
+{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  background-color: rgb(255, 255, 255);
+
+}
+.sub-cat-img{
+  height: 100%;
+  width: 300%;
+  padding: 10px;
+  border-radius: 20px;
+}
+.heading-one{
+  font-size: 2vw;
+}
+}
+
+
+
+/* For screens 1280px and wider (medium to large desktops) */
+@media (min-width: 1280px) {
+  .mexico
+{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  background-color: rgb(255, 255, 255);
+
+}
+.sub-cat-img{
+  height: 100%;
+  width: 300%;
+  padding: 10px;
+  border-radius: 20px;
+}
+.heading-one{
+  font-size: 2vw;
+}
+/* Your medium to large desktop-specific CSS here */
+}

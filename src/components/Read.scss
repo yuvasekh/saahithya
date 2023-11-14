@@ -1,0 +1,46 @@
+.mains
+{
+    
+    .react-pdf__Document
+    {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+
+    }
+    .react-pdf__Page__canvas
+    {
+        width: 1000px;
+    }
+    .subitem
+    {
+        display: flex;
+        position: relative;
+        justify-content: space-evenly;
+        gap: 32px;
+    }
+    .react-pdf__Page
+    {
+        top: 5px;
+        position: absolute;
+        height: 70vh;
+        overflow: scroll;
+    }
+   .buttonItems
+   {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+   }
+   .ant-btn{
+    color: white;
+    margin-top: 12px;
+    background-color: rgb(38, 107, 105);
+
+   }
+   .page-size{
+    width: 1000px;
+   }
+}
