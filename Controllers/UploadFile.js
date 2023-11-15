@@ -83,7 +83,7 @@ module.exports.uploadFiles = async (req, res) => {
           Numberofpages,
           decodedToken.Email,
           formattedDate,
-          imageContent,
+          "",
           req.body["BookType"],
           req.body["BookLanguage"],
           AuthorCategory,
@@ -108,10 +108,11 @@ module.exports.uploadFiles = async (req, res) => {
               console.log("sucess");
             }
           );
+          res.status(200).json({ data: "uploaded" });
           console.log("Query req.body:", rows);
         });
 
-        res.status(200).json({ data: "uploaded" });
+    
       } else {
         res.status(500).json({ message: "There is no data to process" });
         console.log("There is no data to process");
