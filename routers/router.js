@@ -7,13 +7,7 @@ var multer = require("multer");
 const cors=require('cors')
 router.use(cors())
 router.use(
-  cors({
-    origin: 'http://localhost:5173',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    headers: 'Authorization, Content-Type', // Add your custom headers here
-  })
-)
+  cors())
 const storage = multer.memoryStorage(); // You can use other storage options as needed
 const upload = multer({
   storage: storage,
