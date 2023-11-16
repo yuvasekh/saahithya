@@ -2,18 +2,9 @@ const express = require("express");
 const app = express();
 const multer = require("multer");
 const cors = require("cors"); // Import the CORS middleware
-const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
 const apirouter = require("./routers/router");
 require("dotenv").config();
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    headers: "Authorization, Content-Type",
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 app.use("/api", apirouter);
