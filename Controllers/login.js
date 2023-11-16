@@ -23,7 +23,7 @@ module.exports.login = async (req,res)=>{
 
 
 const secretKey = '4sdigilabs'; // Replace with your own secret key
-const options = { expiresIn: '1h' };
+const options = { expiresIn: '24h' };
 let data=results[0]
 let userdetails={Name:data.Name,Email:data.Email,MobileNumber:data.MobileNumber,Role:data.Role}
    var token= jwt.sign(userdetails, secretKey, options);
