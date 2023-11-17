@@ -209,7 +209,6 @@ module.exports.likes = async (req, res) => {
   
       const selectQuery = `SELECT COUNT(*) AS count FROM Register WHERE email ='${decodedToken.Email}'`;
       const ratingCheckQuery = `SELECT COUNT(*) AS count FROM views WHERE Email ='${decodedToken.Email}' and FileId=?`;
-      const getLikesQuery = `SELECT Likes FROM UploadFiles WHERE FileId='${req.body.data}'`;
       const insertQuery = "INSERT INTO views (FileId, Email) VALUES (?, ?)";
   
       db.query(selectQuery, async (error, results) => {
