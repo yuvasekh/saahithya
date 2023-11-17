@@ -252,6 +252,7 @@ module.exports.createquiz = async (req, res) => {
   let QuizId = uuidv4();
   console.log(req.headers.authorization, "HHHH");
   let token = req.headers.authorization;
+  let createAt=new Date()
   if (token) {
     verifyToken(token)
       .then((decodedToken) => {
@@ -260,7 +261,7 @@ module.exports.createquiz = async (req, res) => {
 
         const insertQuery = "INSERT INTO QuizMainTable  VALUES (?, ?)";
         const insertQuery1 =
-          "INSERT INTO Quiz  VALUES (?, ?,?, ?,?, ?,?, ?,?,?,?, ?,?, ?,?, ?,?, ?,?,?,?, ?,?, ?,?, ?,?, ?,?,?,?,?)";
+          "INSERT INTO Quiz  VALUES (?, ?,?, ?,?, ?,?, ?,?,?,?, ?,?, ?,?, ?,?, ?,?,?,?, ?,?, ?,?, ?,?, ?,?,?,?,?,?)";
 
         connection.query(selectQuery, async (error, results) => {
           if (error) {
@@ -309,6 +310,7 @@ module.exports.createquiz = async (req, res) => {
                     data["input3-4"],
                     data["input4-4"],
                     data["answer-4"],
+                    createAt
                   ],
                   async (error, results) => {
                     if (error) {
@@ -335,7 +337,7 @@ module.exports.createquiz = async (req, res) => {
   }
 };
 module.exports.getquiz = async (req, res) => {
-  const selectQuery = `SELECT * FROM Quiz LIMIT 1`;
+  const selectQuery = `SELECT * FROM Quiz order by createdAt desc LIMIT 1`;
 
   connection.query(selectQuery, async (error, results) => {
     if (error) {
