@@ -10,18 +10,12 @@ module.exports.login = async (req, res) => {
     password: process.env.password,
     database: process.env.database,
   });
-
-
   const query = 'SELECT * FROM Register WHERE email = ? AND password = ?';
-
   connection.query(query, [req.body.email, req.body.password], (error, results) => {
     if (error) {
       throw error;
     }
-
     if (results.length > 0) {
-
-
       const secretKey = '4sdigilabs'; // Replace with your own secret key
       const options = { expiresIn: '24h' };
       let data = results[0]

@@ -3,6 +3,7 @@ require("dotenv").config();
 let secretKey = process.env.secretKey;
 
 async function verifyToken(token) {
+  console.log("Not sorry")
   return new Promise((resolve, reject) => {
     jwt.verify(token, secretKey, (err, decoded) => {
       if (err) {

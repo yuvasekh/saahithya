@@ -19,7 +19,7 @@ const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,cre
 const { getallusers,deleteuser } = require("../Controllers/getallusers");
 const {getRole}=require('../Controllers/getRole')
 const {getFileById,getAllFiles,getFilesByEmail}=require('../Controllers/getFileById')
-const {rating,likes}=require('../Controllers/Likes')
+const {rating,likes,updateviews}=require('../Controllers/Likes')
 const {comments,getcomments,getreports,reports,getTopComments}=require('../Controllers/comments')
 const basePath = "/register"
 module.exports = (app) => {
@@ -67,6 +67,7 @@ module.exports = (app) => {
   app.route('/getuserfiles').get(getFilesByEmail)
   app.route('/rating').post(rating)
   app.route('/likes').post(likes)
+  app.route('/views').post(updateviews)
   app.route('/uploadnews').post(uploadNewsFiles)
   app.route('/getnews').get(getNews)
   app.route('/gettopcomments').get(getTopComments)
