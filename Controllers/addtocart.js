@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
 const { v4: uuidv4 } = require("uuid");
  
 module.exports.addtocarts = async (req,res)=>{
-  console.log(req.body.FileId,"yuva fileId")
+  console.log(req.body,"yuva cart")
 
     var FileId=req.body.FileId
     let Id = uuidv4();
@@ -22,8 +22,14 @@ module.exports.addtocarts = async (req,res)=>{
         
       const selectQuery = `SELECT COUNT(*) AS count FROM cart WHERE email ='${decodedToken.Email}' and Fileid='${FileId}'`;
       console.log(selectQuery,"test")
-      const selectQuery1 = `SELECT * FROM UploadFiles WHERE   Fileid='${FileId}'`;
-      const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?)';
+      const selectQuery1 = `
+      SELECT uploadfiles.*
+      FROM episodes
+      INNER JOIN uploadfiles ON episodes.FileId = uploadfiles.FileId
+      WHERE episodes.EpisodeId = '${req.body.FileId}'
+    `;
+      // const selectQuery1 = `SELECT * FROM UploadFiles WHERE   Fileid='${FileId}'`;
+      const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)';
 
       connection.query(selectQuery, async (error, results) => {
         if (error) {
