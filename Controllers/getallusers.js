@@ -44,10 +44,15 @@ module.exports.getallusers = async (req, res) => {
       const sqlQueries = [
         'DELETE FROM comments WHERE Email = ?;',
         'DELETE FROM reports WHERE Email = ?;',
+        'DELETE FROM episodes WHERE Email = ?;',
         'DELETE FROM contestparticipators WHERE Email = ?;',
         'DELETE FROM likes WHERE Email = ?;',
+        'DELETE FROM views WHERE Email = ?;',
         'DELETE FROM rating WHERE Email = ?;',
-        'DELETE FROM Register WHERE Email = ?;'
+        'DELETE FROM resetpassword WHERE Email = ?;',
+        'DELETE FROM Register WHERE Email = ?;',
+     
+     
       ];
   
       // Execute SQL queries concurrently using Promise.all

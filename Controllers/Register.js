@@ -1,5 +1,9 @@
 var mysql = require("mysql2");
 require("dotenv").config();
+const {
+  uploadBytesToBlobStorage,
+  uploadBytesToBlobStorage1,
+} = require("../Resources/UploadToBlob");
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
 const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
 const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
@@ -44,6 +48,7 @@ module.exports.register = async (req, res) => {
       if (count === 0) {
         const sendOtp = async (req, res) => {
           const phoneNumber = mobile;
+          const message="Yuva Verification"
           console.log(phoneNumber, "checkyuva");
           try {
             const result = await client.verify
@@ -51,6 +56,7 @@ module.exports.register = async (req, res) => {
               .verifications.create({
                 to: `+91 ${phoneNumber}`,
                 channel: "sms",
+                message
               });
             console.log("sent");
           } catch (err) {
