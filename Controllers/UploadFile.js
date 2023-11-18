@@ -58,7 +58,7 @@ module.exports.uploadFiles = async (req, res) => {
         console.log(formattedDate, "check");
         let pdfId = uuidv4();
         let EpisodeId = uuidv4();
-        await uploadBytesToBlobStorage(EpisodeId, imageContent, mimeType);
+        await uploadBytesToBlobStorage(pdfId, imageContent, mimeType);
 
         console.log(mimeType, "checkmime", Imageextension);
         await uploadBytesToBlobStorage(EpisodeId, fileContent);

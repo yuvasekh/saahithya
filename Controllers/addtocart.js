@@ -23,11 +23,11 @@ module.exports.addtocarts = async (req,res)=>{
       const selectQuery = `SELECT COUNT(*) AS count FROM cart WHERE email ='${decodedToken.Email}' and Fileid='${FileId}'`;
       console.log(selectQuery,"test")
       const selectQuery1 = `
-      SELECT uploadfiles.*
+      SELECT uploadfiles.*, episodes.EpisodeId
       FROM episodes
       INNER JOIN uploadfiles ON episodes.FileId = uploadfiles.FileId
-      WHERE episodes.EpisodeId = '${req.body.FileId}'
-    `;
+      WHERE episodes.EpisodeId = '${req.body.FileId}'`;
+      ;
       // const selectQuery1 = `SELECT * FROM UploadFiles WHERE   Fileid='${FileId}'`;
       const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)';
 
@@ -35,14 +35,15 @@ module.exports.addtocarts = async (req,res)=>{
         if (error) {
           throw error;
         }
+    
         if(results[0].count==0)
         {
           connection.query(selectQuery1,async (error, results) => {
             if (error) {
               throw error;
             }
-            console.log(results)
-            connection.query(insertQuery, [Id,results[0].FileId,results[0].CategoryName,results[0].SubCategory,1,results[0].Price,results[0].Email,results[0].FileImage,results[0].FileName],async (error, results) => {
+            console.log(results,"info")
+            connection.query(insertQuery, [Id,results[0].FileId,results[0].CategoryName,results[0].SubCategory,1,results[0].Price,decodedToken.Email,results[0].FileImage,results[0].FileName,results[0].EpisodeId],async (error, results) => {
                 if (error) {
                   throw error;
                 }
