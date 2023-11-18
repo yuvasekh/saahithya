@@ -29,7 +29,7 @@ module.exports.addtocarts = async (req,res)=>{
       WHERE episodes.EpisodeId = '${req.body.FileId}'`;
       ;
       // const selectQuery1 = `SELECT * FROM UploadFiles WHERE   Fileid='${FileId}'`;
-      const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)';
+      const insertQuery = 'INSERT INTO cart  VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?,?)';
 
       connection.query(selectQuery, async (error, results) => {
         if (error) {
@@ -42,12 +42,12 @@ module.exports.addtocarts = async (req,res)=>{
             if (error) {
               throw error;
             }
-            console.log(results,"info")
-            connection.query(insertQuery, [Id,results[0].FileId,results[0].CategoryName,results[0].SubCategory,1,results[0].Price,decodedToken.Email,results[0].FileImage,results[0].FileName,results[0].EpisodeId],async (error, results) => {
+            console.log(results,"frontinfo")
+            connection.query(insertQuery, [Id,results[0].FileId,results[0].CategoryName,results[0].SubCategory,1,results[0].Price,decodedToken.Email,results[0].FileImage,results[0].FileName,results[0].ImageExtension,results[0].EpisodeId],async (error, results) => {
                 if (error) {
                   throw error;
                 }
-                res.status(200).json("Cart added");
+                res.status(200).json("Item added to Cart successFully");
                 console.log('Cart item inserted successfully.');
             });
           
