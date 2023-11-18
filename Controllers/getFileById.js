@@ -90,8 +90,6 @@ module.exports.getAllFiles = async (req, res) => {
     console.log(req.params.pagecount,"pagecount")
     let query = `SELECT FileId,FileName,CategoryName,SubCategory,Author,Likes,Views,Rating,Email,FileImage,Type
     FROM Uploadfiles
-    LIMIT 10
-    OFFSET ${req.params.pagecount};
     `;
     db.query(query, (err, rows) => {
         if (err) {
