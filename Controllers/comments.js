@@ -59,13 +59,13 @@ module.exports.getcomments = async (req, res) => {
 
 module.exports.reports = async (req, res) => {
     let CommentId = uuidv4();
-    console.log(req.params.id,"paramsId",req.body)
+    console.log(req.params.id,"yuvasekhartest",req.body)
     let token = req.headers.authorization;
   if (token) {
     verifyToken(token).then(async (decodedToken) => {
         let checkuserquery=`select * from register where Email='${decodedToken.Email}'`
         let commentssquery = `select CategoryName from uploadfiles where FileId='${req.params.id}'`;
-        const insertQuery = 'INSERT INTO comments  VALUES (?, ?, ?, ?, ?)';
+        const insertQuery = 'INSERT INTO reports  VALUES (?, ?, ?, ?, ?)';
     
         db.query(checkuserquery, async (error, results) => {
             if (error) {
@@ -95,7 +95,7 @@ module.exports.reports = async (req, res) => {
        
 };
 module.exports.getreports = async (req, res) => {
-    console.log(req.params.id,"paramsId")
+    console.log("getcall")
     let query = `select * from reports ORDER BY CreatedAt;`;
 
     db.query(query, (err, rows) => {

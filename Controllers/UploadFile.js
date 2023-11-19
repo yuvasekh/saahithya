@@ -43,7 +43,7 @@ module.exports.uploadFiles = async (req, res) => {
             Imageextension = ".webp";
             break;
           default:
-            Imageextension = ".pdf";
+            Imageextension = ".jpg";
         }
 
 
@@ -178,6 +178,8 @@ module.exports.deleteFile = async (req, res) => {
     DELETE FROM comments WHERE FileId = ?;`;
   const sql2 = `
     DELETE FROM reports WHERE FileId = ?;`;
+    const sql3 = `
+    DELETE FROM episodes WHERE FileId = ?;`;
   // Execute the SQL query
   db.query(sql1, [fileId], (error, results) => {
     if (error) {
@@ -191,14 +193,22 @@ module.exports.deleteFile = async (req, res) => {
         res.status(500).json({ message: error });
         // Handle the error and possibly roll back the transaction
       }
-      db.query(sql, [fileId], (error, results) => {
+      db.query(sql3, [fileId], (error, results) => {
         if (error) {
           console.error("Error:", error);
           res.status(500).json({ message: error });
           // Handle the error and possibly roll back the transaction
         } else {
-          console.log("Transaction committed successfully.");
-          res.status(200).json({ data: "uploaded" });
+          db.query(sql, [fileId], (error, results) => {
+            if (error) {
+              console.error("Error:", error);
+              res.status(500).json({ message: error });
+              // Handle the error and possibly roll back the transaction
+            } 
+            console.log("Book Deleted successfully.");
+            res.status(200).json({ data: "uploaded" });
+          })
+      
           // }
         }
       });

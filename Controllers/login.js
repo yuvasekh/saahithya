@@ -19,7 +19,8 @@ module.exports.login = async (req, res) => {
       const secretKey = '4sdigilabs'; // Replace with your own secret key
       const options = { expiresIn: '24h' };
       let data = results[0]
-      let userdetails = { Name: data.Name, Email: data.Email, MobileNumber: data.MobileNumber, Role: data.Role }
+      console.log(data)
+      let userdetails = { Name: data.Name, Email: data.Email, MobileNumber: data.MobileNumber, Role: data.Role ,ProfileImageExtension:data.ProfileImageExtension}
       var token = jwt.sign(userdetails, secretKey, options);
       res.status(200).json({ token: token });
       console.log('Login successful.');

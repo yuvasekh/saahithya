@@ -514,7 +514,7 @@ module.exports.createcontest = async (req, res) => {
   }
 };
 module.exports.getcontest = async (req, res) => {
-  const selectQuery = `SELECT * FROM contest ORDER BY createdAt DESC LIMIT 1;`;
+  const selectQuery = `SELECT * FROM contest ORDER BY createdAt DESC LIMIT 1;  `;
 
   connection.query(selectQuery, async (error, results) => {
     if (error) {

@@ -24,10 +24,7 @@ module.exports.authorCategory = async (req, res) => {
 };
 module.exports.authorCategoryImages = async (req, res) => {
     console.log(req.body,"requested datafrom api",req.params.name)
-   
-    
-
-    let query = `SELECT  Name,ProfileImage,Email FROM register WHERE Email IN (
+    let query = `SELECT  Name,ProfileImageExtension,Email FROM register WHERE Email IN (
 
         SELECT Email FROM uploadfiles WHERE AuthorCategory='${req.params.name}'
     );`;

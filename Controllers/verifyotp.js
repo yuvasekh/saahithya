@@ -3,6 +3,8 @@ var { Jwttoken } = require("../Resources/Jwttoken");
 const moment = require('moment');
 var mysql = require("mysql2");
 require("dotenv").config();
+var path = require("path");
+const { uploadBytesToBlobStorage } = require("../Resources/UploadToBlob");
 // const { TWILIO_AUTH_TOKEN, TWILIO_ACCOUNT_SID, TWILIO_SERVICE_SID } =
 const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
 const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
@@ -22,10 +24,29 @@ module.exports.verifyotp = async (req, res) => {
   console.log(req.body, req.body.otp, "mobile check");
   var dob = req.body.dob;
   let data = req.files;
-  console.log(data,"data")
-  const year = dob["$y"];
-  const month = dob["$M"] + 1; // Note: Month is zero-based, so add 1
-  const day = dob["$D"];
+  var mimeType = path.extname(data[0].originalname);
+  console.log("extension:----->", mimeType);
+  const imageContent = data[0].buffer;
+  let Imageextension;
+  switch (mimeType) {
+    case "image/jpeg":
+      Imageextension = ".jpg";
+      break;
+      case "image/jpg":
+        Imageextension = ".jpg";
+        break;
+      
+    case "image/png":
+      Imageextension = ".png";
+      break;
+    case "image/webp": // Corrected duplicate case
+      Imageextension = ".webp";
+      break;
+    default:
+      Imageextension = ".pdf";
+  }
+
+
   const formattedDate = moment(dob["$d"]).format('YYYY-MM-DD HH:mm:ss');
   try {
     const result = await client.verify
@@ -38,7 +59,7 @@ module.exports.verifyotp = async (req, res) => {
     await EmailSent(req.body.email);
     const selectQuery =
       "SELECT COUNT(*) AS count FROM Register WHERE email = ?";
-    const insertQuery = "INSERT INTO Register  VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+    const insertQuery = "INSERT INTO Register  VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?)";
     connection.query(selectQuery, [req.body.email], (error, results) => {
       if (error) {
         throw error;
@@ -58,21 +79,23 @@ console.log(count,"Email Count")
             req.body.address,
             "user",
             formattedDate,
-            data[0].buffer
+           "",
+           mimeType
           ],
+         
           async (error, result) => {
             if (error) {
               console.log(error)
               res.status(500).json({ message: error });
             }
+            await uploadBytesToBlobStorage(req.body.email,imageContent, mimeType)
             console.log("No error")
-            var token = await Jwttoken(
-              req.body.email,
-              "user",
-              req.body.mobile
-            );
-            console.log("Email inserted successfully.", token);
-
+            // var token = await Jwttoken(
+            //   req.body.email,
+            //   "user",
+            //   req.body.mobile
+            // );
+            // console.log("Email inserted successfully.", token);
             res.status(200).json(result);
           }
         );
