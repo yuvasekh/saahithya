@@ -18,7 +18,7 @@ const {tags}=require('../Controllers/tags')
 const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,createcontest, getcontest, participatecontest}=require('../Controllers/contest');
 const { getallusers,deleteuser } = require("../Controllers/getallusers");
 const {getRole}=require('../Controllers/getRole')
-const {getFileById,getAllFiles,getFilesByEmail}=require('../Controllers/getFileById')
+const {getFileById,getAllFiles,getFilesByEmail,getSearchRequest}=require('../Controllers/getFileById')
 const {rating,likes,updateviews}=require('../Controllers/Likes')
 const {comments,getcomments,getreports,reports,getTopComments}=require('../Controllers/comments')
 const basePath = "/register"
@@ -40,6 +40,7 @@ module.exports = (app) => {
   app.route('/textupload').post(TextEditor)
   app.route('/addtocart').post(addtocarts)
   app.route('/getCart').post(getCart)
+  app.route('/getsearchrequest').post(getSearchRequest)
   app.route('/updatecart').put(updatecart)
   app.route('/createpole').post(createpole)
   app.route('/poller').post(participatepole)

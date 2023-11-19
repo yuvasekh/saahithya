@@ -47,7 +47,41 @@ module.exports.getFileById = async (req, res) => {
 
 
 // Rest of your code remains the same...
-
+module.exports.getSearchRequest = async (req, res) => {
+ 
+    let token = req.headers.authorization;
+    console.log(req.body,"search")
+    if (token) {
+      verifyToken(token)
+        .then((decodedToken)=>
+        {
+            let query = `SELECT * FROM uploadfiles
+            WHERE FileName LIKE '${req.body.comment}'
+               OR Author LIKE '${req.body.comment}'
+               OR BookDescription LIKE '${req.body.comment}'
+                  OR Email LIKE '${req.body.comment}';`;
+            db.query(query, (err, rows) => {
+                if (err) {
+                    console.error('Error executing query:', err); 
+                    res.status(500).json({message:err})
+                   
+                }
+                console.log('Query result for Images:', rows,query);
+                res.status(200).json(rows);
+                
+            });
+        }).catch((error)=>
+        {
+            res.status(404).json({message:"Invalid user"})
+        })
+   
+}
+else{
+    res.status(400).json({message:"Bad Request"})
+}
+    
+       
+};
 
 module.exports.getFilesByEmail = async (req, res) => {
     console.log(req.headers.authorization, "users");
