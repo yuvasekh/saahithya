@@ -16,7 +16,7 @@ const {updatecart}=require('../Controllers/updatecart')
 const {getCart}=require('../Controllers/getCart')
 const {tags}=require('../Controllers/tags')
 const {createpole,createquiz,getpole,participatepole,getquiz,participateQuiz,createcontest, getcontest, participatecontest}=require('../Controllers/contest');
-const { getallusers,deleteuser } = require("../Controllers/getallusers");
+const { getallusers,getusersinfo,deleteuser } = require("../Controllers/getallusers");
 const {getRole}=require('../Controllers/getRole')
 const {getFileById,getAllFiles,getFilesByEmail,getSearchRequest}=require('../Controllers/getFileById')
 const {rating,likes,updateviews}=require('../Controllers/Likes')
@@ -39,6 +39,7 @@ module.exports = (app) => {
   app.route('/trending').get(topBooks)
   app.route('/textupload').post(TextEditor)
   app.route('/addtocart').post(addtocarts)
+  app.route('/userinfo').get(getusersinfo)
   app.route('/getCart').post(getCart)
   app.route('/getsearchrequest').post(getSearchRequest)
   app.route('/updatecart').put(updatecart)
