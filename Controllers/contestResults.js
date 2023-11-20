@@ -20,6 +20,19 @@ module.exports.getquizresults = async (req, res) => {
       return results;
     });
   };
+  module.exports.contestparticipators = async (req, res) => {
+    const selectQuery = `SELECT * FROM contestparticipators`;
+  
+    connection.query(selectQuery, async (error, results) => {
+      if (error) {
+        throw error;
+      } else {
+        res.status(200).json(results);
+      }
+      console.log(results, "yuva resullt");
+      return results;
+    });
+  };
   module.exports.poleparticipators = async (req, res) => {
     const selectQuery = `SELECT * FROM poleparticipators`;
   
