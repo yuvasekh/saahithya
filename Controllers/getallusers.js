@@ -46,7 +46,35 @@ module.exports.getallusers = async (req, res) => {
       }
 
   };
+  module.exports.updateusersinfo = async (req, res) => {
+    console.log(req.body,"userupdated")
+    const selectQuery = `UPDATE Register SET gender = '${req.body.Gender}', Name = '${req.body.Name}' , Address = '${req.body.Address}' where  Email = ?`;
 
+    let token = req.headers.authorization;
+    if (token) {    
+      verifyToken(token)
+        .then((decodedToken) => {
+          console.log(decodedToken.Email)
+          connection.query(selectQuery,[decodedToken.Email], async (error, results) => {
+            if (error) {
+              throw error;
+            } else {
+              console.log(selectQuery,"check")
+              res.status(200).json(results);
+            }
+            console.log(results, "yuva resullt");
+            return results;
+          });
+        }).catch((error)=>
+        {
+          res.status(500).json({message:"error"});
+        })
+      }
+      else{
+        res.status(401).json({message:"unauthorised"});
+      }
+
+  };
   module.exports.updateRole = async (req, res) => {
     const selectQuery = `update Register set Role='Team' where Email='${req.body.Email}'`;
   
@@ -60,6 +88,7 @@ module.exports.getallusers = async (req, res) => {
       return results;
     });
   };
+  
   const util = require('util');
 const { verifyToken } = require('../Resources/TokenVerifier');
   const dbQuery = util.promisify(connection.query).bind(connection);

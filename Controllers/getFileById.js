@@ -88,8 +88,6 @@ module.exports.getFilesByEmail = async (req, res) => {
     let token = req.headers.authorization;
     if (token) {
       verifyToken(token)
-
-
         .then((decodedToken)=>
         {
             let query = `select Distinct FileId,FileName,ImageExtension from UploadFiles where Email='${decodedToken.Email}'`;
