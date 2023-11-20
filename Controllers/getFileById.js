@@ -92,7 +92,7 @@ module.exports.getFilesByEmail = async (req, res) => {
 
         .then((decodedToken)=>
         {
-            let query = `select Distinct FileId,FileName from UploadFiles where Email='${decodedToken.Email}'`;
+            let query = `select Distinct FileId,FileName,ImageExtension from UploadFiles where Email='${decodedToken.Email}'`;
             db.query(query, (err, rows) => {
                 if (err) {
                     console.error('Error executing query:', err); 
