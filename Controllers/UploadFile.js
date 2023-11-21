@@ -66,8 +66,8 @@ module.exports.uploadFiles = async (req, res) => {
                                 VALUES (?, ?, ?,?,?, ?, ?, ?, 0,?,?,?,?,?,0,?,?,?,?,?,?,?)`;
         const query1 = `INSERT INTO Episodes 
                                 VALUES (?, ?, ?,?,?)`;
-        const Likes = Math.floor(Math.random() * 1000);
-        const Views = Math.floor(Math.random() * 1000);
+        const Likes = 0
+        const Views = 0
         const Rating = 5;
         const values = [
           pdfId,

@@ -14,93 +14,84 @@ module.exports.latest = async (req, res) => {
     });     
 };
 module.exports.likes = async (req, res) => {
-    console.log(req.body,"unique")
-    // console.log(req.headers.authorization, "HHHH");
-    let token = req.headers.authorization;
-    if (token) {    
-      verifyToken(token)
-        .then((decodedToken) => {
-        //   console.log(decodedToken, "veriii");
-          const selectQuery = `SELECT COUNT(*) AS count FROM Register WHERE email ='${decodedToken.Email}'`;
-          const ratingcheck = `SELECT COUNT(*) AS count FROM likes WHERE Email ='${decodedToken.Email}' and FileId='${req.body.FileId}'`;
-          console.log(selectQuery, "test");
-          const getLikes=`select Likes from UploadFiles where FileId='${req.body.FileId}'`
-          const insertQuery = "INSERT INTO likes  VALUES (?, ?,?)";
-          db.query(selectQuery, async (error, results) => {
-            if (error) {
-              throw error; 
-            }
-            if (results[0].count == 1) {
-                db.query(ratingcheck, async (error, results) => {
+  let token = req.headers.authorization;
+
+  if (token) {
+    verifyToken(token)
+      .then((decodedToken) => {
+        const selectQuery = `SELECT COUNT(*) AS count FROM Register WHERE email ='${decodedToken.Email}'`;
+        const ratingcheck = `SELECT COUNT(*) AS count FROM likes WHERE Email ='${decodedToken.Email}' and FileId='${req.body.FileId}'`;
+        const insertQuery = "INSERT INTO likes VALUES (?, ?, ?)";
+        const likesQuery = `
+        SELECT *
+        FROM likes
+        WHERE email = ? AND fileId = ?`;
+
+    const likesCountQuery = `SELECT COUNT(*) AS count FROM likes WHERE fileId = ? AND likestatus = 1`;
+        db.query(selectQuery, async (error, results) => {
+          if (error) {
+            throw error;
+          }
+          if (results[0].count == 1) {
+            db.query(ratingcheck, async (error, results) => {
+              if (error) {
+                res.status(404).json({ message: "User Not Exists" });
+                throw error;
+              }
+              if (results[0].count <= 0) {
+                db.query(
+                  insertQuery,
+                  [req.body.FileId, decodedToken.Email, 1],
+                  async (error, results) => {
                     if (error) {
-                      res.status(404).json({ message: "User Not Exists" });
                       throw error;
                     }
-                    if (results[0].count <= 0) {
-                        db.query(
-                            insertQuery,
-                            [req.body.FileId,decodedToken.Email,1],
-                            async (error, results) => {
-                              if (error) {
-                                throw error;
-                              }
-                              db.query(
-                                getLikes,
-                                async (error, results) => {
-                                  if (error) {
-                                    throw error;
-                                  }
-                                  // console.log(results,"checkrate")
-                                  // let avglikes;
-                                  // if(req.body.likestatus==true)
-                                  // {
-                                  //   avglikes=results[0].Likes+1
-                                  // }
-                                  // else
-                                  // {
-                                  //    avglikes=results[0].Likes-1
-                                  // }
-                                
-                                // console.log(avglikes,"checklikes")
-                               
-                                res.status(200).json({ message: "Rated SucessFully" });
-                                }
-                              );
-                              
-                            }
-                          );
-                         
-                    }
-                    else {
-                      console.log(req.body.likestatus,"sorry")
-                      let likestatus=req.body.likestatus==true?1:0
-                      db.query(`update likes set likestatus=${likestatus} where FileId='${req.body.FileId}'`,
-                      async (error, results) => {
-                        if (error) {
-                          throw error;
-                        }
-                        console.log("Liked SucessFully");
-                        res.status(200).json({ message: "Rated SucessFully" });
-                      }
+                  
+                    const [likesRows] = await db.promise().query(likesQuery, [decodedToken.Email, req.body.FileId]);
+                    const [likesCountResult] = await db.promise().query(likesCountQuery, [req.body.FileId]);
+                        res.status(200).json(
+                        
+                          {likes: likesRows, likeCount: likesCountResult[0].count }
+                        
+                      
                     );
-                        // res.status(409).json({ message: "User Not Exists" });
-                      }
-                })
-            } else {
-              res.status(404).json({ status: 404, message: "User Not Exists" });
-            }
-  
-            return results;
-          });
-        })
-        .catch((error) => {
-          res.status(401).json({ message: "Invalid Token" });
-          console.log(error);
+                  }
+                );
+              } else {
+                let likestatus = req.body.likestatus == true ? 1 : 0;
+                db.query(
+                  `UPDATE likes SET likestatus=${likestatus} WHERE FileId='${req.body.FileId}'`,
+                  async (error, results) => {
+                    if (error) {
+                      throw error;
+                    }
+                    const [likesRows] = await db.promise().query(likesQuery, [decodedToken.Email, req.body.FileId]);
+                    const [likesCountResult] = await db.promise().query(likesCountQuery, [req.body.FileId]);
+                        res.status(200).json(
+                        
+                          {likes: likesRows, likeCount: likesCountResult[0].count }
+                        
+                      
+                    );
+                 
+                  }
+                );
+              }
+            });
+          } else {
+            res.status(404).json({ status: 404, message: "User Not Exists" });
+          }
         });
-    } else {
-      res.status(400).json({ message: "Need  Token" });
-    }
-  };
+      })
+      .catch((error) => {
+        res.status(401).json({ message: "Invalid Token" });
+        console.log(error);
+      });
+  } else {
+    res.status(400).json({ message: "Need Token" });
+  }
+};
+
   module.exports.rating = async (req, res) => {
     console.log(req.body,"rating")
     // console.log(req.headers.authorization, "HHHH");
