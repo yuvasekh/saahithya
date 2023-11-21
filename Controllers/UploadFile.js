@@ -60,8 +60,8 @@ module.exports.uploadFiles = async (req, res) => {
         let EpisodeId = uuidv4();
         await uploadBytesToBlobStorage(pdfId, imageContent, mimeType);
 
-        console.log(mimeType, "checkmime", Imageextension);
-        await uploadBytesToBlobStorage(EpisodeId, fileContent);
+        console.log(extension,"extension", "checkmime", Imageextension);
+        await uploadBytesToBlobStorage(EpisodeId, fileContent,extension);
         const query = `INSERT INTO UploadFiles 
                                 VALUES (?, ?, ?,?,?, ?, ?, ?, 0,?,?,?,?,?,0,?,?,?,?,?,?,?)`;
         const query1 = `INSERT INTO Episodes 
