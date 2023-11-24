@@ -37,8 +37,8 @@ async function ForgotEmailSent(email,link)
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user:"syuva893@gmail.com",
-          pass:"bqmsnfrvjxictcjh"
+          user:"saahithya.com@gmail.com",
+          pass:"yuae falp ktnb ohla"
         }
       });
       
