@@ -3,7 +3,7 @@ async function EmailSent(email)
 {
     console.log("callemailsent")
     const mailOptions = {
-        from: 'syuva893@gmail.com',
+        from: 'saahithya.com@gmail.com',
         to: [email,'hari.user20@gmail.com'],
         subject: 'Saahithya Registration',
         text: `Registration sucess  ${email}`
@@ -11,8 +11,8 @@ async function EmailSent(email)
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user:"syuva893@gmail.com",
-          pass:"bqmsnfrvjxictcjh"
+          user:"saahithya.com@gmail.com",
+          pass:"saah phlv adrd rjom"
         }
       });
       
@@ -29,7 +29,7 @@ async function ForgotEmailSent(email,link)
 {
     console.log("callemailsent")
     const mailOptions = {
-        from: 'syuva893@gmail.com',
+        from: 'saahithya.com@gmail.com',
         to: [email,'hari.user20@gmail.com'],
         subject: 'Saahithya Password Reset',
         text: `Link  Here ${link} It will expires in 5 minutes Dear  ${email}`
@@ -38,7 +38,7 @@ async function ForgotEmailSent(email,link)
         service: 'gmail',
         auth: {
           user:"saahithya.com@gmail.com",
-          pass:"yuae falp ktnb ohla"
+          pass:"saah phlv adrd rjom"
         }
       });
       
